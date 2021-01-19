@@ -1,32 +1,94 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <Navbar :style="cssProps" />
+    <v-main :style="cssProps">
+      <transition name="router-anim">
+        <router-view></router-view>
+      </transition>
+    </v-main>
+  </v-app>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+// import HelloWorld from './components/HelloWorld.vue';
+// import VuetifyColors from "vuetify/lib/util/colors";
+/* eslint-disable */
+// @ts-ignore
+import { generateColors } from './utils/customColors';
+/* eslint-enable */
+import Navbar from './components/shared/Navbar.vue';
+
+export default Vue.extend({
+  name: 'App',
+
+  components: {
+    // HelloWorld,
+    Navbar,
+  },
+
+  data: () => ({
+    //
+  }),
+  computed: {
+    cssProps() {
+      const generatedColors = generateColors(this.$vuetify.theme.currentTheme);
+      return generatedColors;
+    },
+  },
+});
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.router-anim-enter-active {
+  animation: coming 0.5s;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
-#nav {
-  padding: 30px;
+.router-anim-leave-active {
+  animation: going 0.3s;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+@keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
+/* body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+*::-webkit-scrollbar {
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--secondary);
+} */
 </style>

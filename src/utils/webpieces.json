@@ -1,0 +1,24 @@
+[
+  {
+    "route": "webpieces/vuetify/alerts",
+    "name": "Vuetify Alerts",
+    "image": "webpiecealert.jpg.webp",
+    "description": "Overview of different alerts available in vuetify",
+    "icon": "mdi-alert-circle",
+    "group": "Elements",
+    "icons": ["mdi-vuetify", "mdi-vuejs"],
+    "tags": ["vuetify", "vuejs", "vue", "alerts"],
+    "isUpdate": true
+  },
+  {
+    "route": "webpieces/vanilla/splitscreen",
+    "name": "Split Screen Hover Effect",
+    "image": "webpiecesplitscreen.jpg.webp",
+    "description": "Cool looking split screen hover effect with html css and vanilla javascript",
+    "icon": "mdi-alert-circle",
+    "group": "Elements",
+    "icons": ["mdi-language-html5", "mdi-language-css3", "mdi-language-javascript"],
+    "tags": ["html", "css", "javascript", "es6"],
+    "isUpdate": true
+  }
+]

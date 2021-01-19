@@ -1,18 +1,328 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div style="display: flex; flex-direction: column">
+    <v-card tile>
+      <v-img
+        :height="$vuetify.breakpoint.mdAndUp ? $vuetify.breakpoint.height - 72 : ''"
+        :src="
+          $vuetify.theme.dark
+            ? require('@/assets/images/247.jpg.webp')
+            : require('@/assets/images/homelight.jpg.webp')
+        "
+      >
+        <v-container class="fill-height" :class="$vuetify.breakpoint.mdAndUp ? 'px-16 py-8' : 'pa-4'">
+          <v-row class="d-flex align-start" style="justify-content: flex-start">
+            <v-col cols="12" sm="6">
+              <v-card class="glass-card rounded-xl pa-6">
+                <v-card-title>
+                  <h1 class="display-1 font-weight-light white--text">
+                    Welcome to <br v-if="$vuetify.breakpoint.smAndDown" />
+                    <span class="primary--text"> the Studio</span>
+                  </h1>
+                </v-card-title>
+                <div style="background-image: var(--rainbow); height: 5px; width 100%;"></div>
+                <v-card-text class="pb-0">
+                  <p class="text-h6 font-weight-light white--text mb-0">
+                    👋 Hi, my name is
+                    <span class="primary--text font-weight-medium">Esan Bankole</span>. Fullstack Developer
+                    with over 6 years coding experience. <small> Also a part time musician and gamer. </small>
+                  </p>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <home-info></home-info>
+                </v-card-actions>
+              </v-card>
+              <!-- <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
+              <h4 class="subheading">Build your application today!</h4> -->
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              class="d-flex flex-column justify-space-between"
+              style="align-self: stretch;"
+            >
+              <v-toolbar elevation="0" color="transparent" class="d-flex flex-row-reverse" floating>
+                <v-card class="d-flex align-center glass-card rounded-xl py-2 px-4 subactioncard">
+                  <v-text-field hide-details prepend-icon="mdi-magnify" single-line></v-text-field>
+
+                  <v-btn icon>
+                    <v-icon>mdi-map-marker</v-icon>
+                  </v-btn>
+
+                  <v-btn icon>
+                    <v-icon>mdi-dots-vertical</v-icon>
+                  </v-btn>
+                </v-card>
+              </v-toolbar>
+
+              <v-card class="rounded-xl menu-card glass-card px-2 py-4">
+                <v-autocomplete
+                  v-model="select"
+                  :loading="loading"
+                  :items="autoitems"
+                  :search-input.sync="search"
+                  cache-items
+                  class="mx-4"
+                  flat
+                  dark
+                  rounded
+                  placeholder="Search ('/' to focus, ';' to open menu)"
+                  solo-inverted
+                ></v-autocomplete>
+                <v-card-actions class="py-0">
+                  <v-tooltip v-for="(link, index) in otherLinks" :key="index" top>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        large
+                        icon
+                        class="glass-card mx-2 subactioncard"
+                        :class="`${link.class}--text`"
+                        v-bind="attrs"
+                        v-on="on"
+                        ><v-icon>{{ link.icon }}</v-icon></v-btn
+                      >
+                    </template>
+                    <span>{{ link.tooltipText }}</span>
+                  </v-tooltip>
+                  <!-- <v-btn large icon class="glass-card mx-2 subactioncard"><v-icon>mdi-email</v-icon></v-btn>
+                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
+                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
+                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
+                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
+                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn> -->
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6" v-for="(item, i) in items" :key="i">
+              <v-card class="rounded-xl menu-card" :class="`${item.color}-glass-card`">
+                <div
+                  :class="$vuetify.breakpoint.mdAndUp ? 'pr-8' : 'pr-4'"
+                  class="d-flex flex-no-wrap align-center justify-space-between"
+                >
+                  <v-avatar v-if="$vuetify.breakpoint.mdAndUp" class="ma-3 pl-4" size="125" rounded="xl">
+                    <v-img contain :src="require(`@/assets/images/${item.src}`)"></v-img>
+                  </v-avatar>
+                  <div>
+                    <v-card-title class="headline" v-text="item.title"></v-card-title>
+
+                    <v-card-subtitle v-text="item.artist"></v-card-subtitle>
+                  </div>
+                  <v-btn
+                    :to="item.link"
+                    x-large
+                    class="rounded-xl"
+                    :class="$vuetify.theme.dark ? 'glass-card' : 'glass-card'"
+                    ><v-icon size="32" :color="item.color">{{ item.icon }}</v-icon></v-btn
+                  >
+                </div>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-img>
+    </v-card>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<script>
+import HomeInfo from '@/components/modals/HomeInfo.vue';
+import VuetifyColors from 'vuetify/lib/util/colors';
+// import GlassCard from '@/components/blocks/GlassCard';
+// import Phone1 from '@/components/animated/Phone1';
 
-export default Vue.extend({
-  name: "Home",
+export default {
   components: {
-    HelloWorld
-  }
-});
+    HomeInfo,
+    // GlassCard,
+    // Phone1,
+  },
+  data: () => ({
+    drawers: ['Default (no property)', 'Permanent', 'Temporary'],
+    primaryDrawer: {
+      model: null,
+      type: 'default (no property)',
+      clipped: false,
+      floating: false,
+      mini: false,
+    },
+    footer: {
+      inset: false,
+    },
+    items: [
+      {
+        color: 'warning',
+        icon: 'mdi-puzzle-check',
+        src: 'webpiece.svg',
+        title: 'Web Pieces',
+        link: '/webpieces',
+        artist: `Search Webpieces or add a webpiece you're curious about`,
+      },
+      {
+        color: 'info',
+        icon: 'mdi-briefcase',
+        src: 'needhelp.svg',
+        title: 'Projects',
+        link: '/projects',
+        artist: `View some of my work. Interested in building together?`,
+      },
+      {
+        color: 'accent',
+        icon: 'mdi-music-box',
+        src: 'music.svg',
+        title: 'Music',
+        linke: '/music',
+        artist: 'So... I also do this on the side, apparently',
+      },
+      {
+        color: 'success',
+        icon: 'mdi-handshake',
+        src: 'client.svg',
+        title: 'Clients',
+        link: '/clients',
+        artist: 'Click here to go to the client area',
+      },
+    ],
+    // Autocomplete stuff
+    loading: false,
+    autoitems: [],
+    search: null,
+    select: null,
+    states: [
+      'Alabama',
+      'Alaska',
+      'American Samoa',
+      'Arizona',
+      'Arkansas',
+      'California',
+      'Colorado',
+      'Connecticut',
+      'Delaware',
+      'District of Columbia',
+      'Federated States of Micronesia',
+      'Florida',
+      'Georgia',
+      'Guam',
+      'Hawaii',
+      'Idaho',
+      'Illinois',
+      'Indiana',
+      'Iowa',
+      'Kansas',
+      'Kentucky',
+      'Louisiana',
+      'Maine',
+      'Marshall Islands',
+      'Maryland',
+      'Massachusetts',
+      'Michigan',
+      'Minnesota',
+      'Mississippi',
+      'Missouri',
+      'Montana',
+      'Nebraska',
+      'Nevada',
+      'New Hampshire',
+      'New Jersey',
+      'New Mexico',
+      'New York',
+      'North Carolina',
+      'North Dakota',
+      'Northern Mariana Islands',
+      'Ohio',
+      'Oklahoma',
+      'Oregon',
+      'Palau',
+      'Pennsylvania',
+      'Puerto Rico',
+      'Rhode Island',
+      'South Carolina',
+      'South Dakota',
+      'Tennessee',
+      'Texas',
+      'Utah',
+      'Vermont',
+      'Virgin Island',
+      'Virginia',
+      'Washington',
+      'West Virginia',
+      'Wisconsin',
+      'Wyoming',
+    ],
+    otherLinks: [
+      {
+        tooltipText: 'The Studio Blog',
+        link: '',
+        class: 'primary',
+        icon: 'mdi-post',
+      },
+      {
+        tooltipText: 'Call me',
+        link: '',
+        class: 'warning',
+        icon: 'mdi-phone',
+      },
+      {
+        tooltipText: 'Send me an Email',
+        link: '',
+        class: 'info',
+        icon: 'mdi-email',
+      },
+      {
+        tooltipText: 'Style Guide',
+        link: '',
+        class: 'success',
+        icon: 'mdi-palette',
+      },
+      {
+        tooltipText: 'Slack Group',
+        link: '',
+        class: 'accent',
+        icon: 'mdi-slack',
+      },
+      {
+        tooltipText: `What's up with me`,
+        link: '',
+        class: 'secondary',
+        icon: 'mdi-help',
+      },
+    ],
+  }),
+  // For Autocomplete
+  watch: {
+    search(val) {
+      val && val !== this.select && this.querySelections(val);
+    },
+  },
+  methods: {
+    showColors() {
+      console.log(VuetifyColors);
+      console.log(this.$vuetify);
+    },
+    // Autocomplete methods
+    querySelections(v) {
+      this.loading = true;
+      // Simulated ajax query
+      setTimeout(() => {
+        this.autoitems = this.states.filter((e) => {
+          return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1;
+        });
+        this.loading = false;
+      }, 500);
+    },
+  },
+  mounted() {
+    this.gsap.from('.menu-card', {
+      x: 500,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.25,
+    });
+    this.gsap.from('.subactioncard', {
+      x: 500,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+    });
+  },
+};
 </script>
