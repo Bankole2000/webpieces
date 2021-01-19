@@ -10,21 +10,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 // import HelloWorld from './components/HelloWorld.vue';
 // import VuetifyColors from "vuetify/lib/util/colors";
 /* eslint-disable */
 // @ts-ignore
 import { generateColors } from './utils/customColors';
 /* eslint-enable */
-import Navbar from './components/shared/Navbar.vue';
+import Navbar from "./components/shared/Navbar.vue";
 
 export default Vue.extend({
-  name: 'App',
+  name: "App",
 
   components: {
     // HelloWorld,
-    Navbar,
+    Navbar
   },
 
   data: () => ({
@@ -34,8 +34,8 @@ export default Vue.extend({
     cssProps() {
       const generatedColors = generateColors(this.$vuetify.theme.currentTheme);
       return generatedColors;
-    },
-  },
+    }
+  }
 });
 </script>
 <style>

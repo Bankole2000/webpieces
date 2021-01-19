@@ -15,7 +15,12 @@
     <!-- {{ toast.message }} -->
 
     <template v-slot:action="{ attrs }">
-      <v-btn text :class="!$vuetify.theme.dark ? 'morph-dark' : 'morph'" v-bind="attrs" :color="toast.sclass">
+      <v-btn
+        text
+        :class="!$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+        v-bind="attrs"
+        :color="toast.sclass"
+      >
         <!-- @click="toast.show = false" -->
         <v-icon left>{{ toast.icon }}</v-icon> &nbsp; Close
       </v-btn>
@@ -24,16 +29,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(['toast']),
+    ...mapGetters(["toast"])
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

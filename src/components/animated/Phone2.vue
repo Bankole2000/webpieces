@@ -1,5 +1,7 @@
 <template>
   <div class="phone-2">
+    <!-- eslint-disable -->
+
     <!-- <?xml version="1.0" encoding="utf-8"?> -->
     <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg
@@ -2349,17 +2351,17 @@ export default {
     return {};
   },
   mounted() {
-    this.gsap.to('#logo', { y: 20, x: 20 });
-    this.gsap.to('#logoshadow', { x: 20 });
-    this.gsap.to('#wireframe', { y: -50 });
-    this.gsap.to('#phoneshadow', { y: -20 });
-    this.gsap.to('#screenguard', { y: 50, x: 10 });
-    this.gsap.to('#searchform', { x: 60, y: 5 });
-    this.gsap.to('#loginform', { x: 60, y: 25 });
-    this.gsap.to('#blogpost', { x: 45 });
-    this.gsap.to('#spacetext', { x: 50 });
-    this.gsap.to('#spacetextshadow', { x: 55, y: 6 });
-  },
+    this.gsap.to("#logo", { y: 20, x: 20 });
+    this.gsap.to("#logoshadow", { x: 20 });
+    this.gsap.to("#wireframe", { y: -50 });
+    this.gsap.to("#phoneshadow", { y: -20 });
+    this.gsap.to("#screenguard", { y: 50, x: 10 });
+    this.gsap.to("#searchform", { x: 60, y: 5 });
+    this.gsap.to("#loginform", { x: 60, y: 25 });
+    this.gsap.to("#blogpost", { x: 45 });
+    this.gsap.to("#spacetext", { x: 50 });
+    this.gsap.to("#spacetextshadow", { x: 55, y: 6 });
+  }
 };
 </script>
 

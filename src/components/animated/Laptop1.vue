@@ -1,5 +1,7 @@
 <template>
   <div class="laptop1">
+    <!-- eslint-disable -->
+
     <!-- <?xml version="1.0" encoding="utf-8"?> -->
     <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg

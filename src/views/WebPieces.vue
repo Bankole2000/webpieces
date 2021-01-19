@@ -11,7 +11,10 @@
           <Phone1 id="phone" />
         </v-col>
       </v-row>
-      <div v-if="$vuetify.breakpoint.smAndUp" style="position: absolute; top: 15%; left: 0; width: 100%;">
+      <div
+        v-if="$vuetify.breakpoint.smAndUp"
+        style="position: absolute; top: 15%; left: 0; width: 100%;"
+      >
         <v-container>
           <v-row>
             <v-col cols="12" sm="7">
@@ -24,15 +27,21 @@
                   style="width: 95%; height: 10px; background-image: var(--rainbow)"
                 ></div>
                 <v-card-text class="pb-0">
-                  <p class="text-h5 font-weight-light" style="line-height: 3rem">
-                    Welcome to the lab. Here I collaboratively deconstruct pieces of the web (for
-                    science!🕵️‍♂)
+                  <p
+                    class="text-h5 font-weight-light"
+                    style="line-height: 3rem"
+                  >
+                    Welcome to the lab. Here I collaboratively deconstruct
+                    pieces of the web (for science!🕵️‍♂)
                   </p>
                 </v-card-text>
                 <v-card-actions class="pt-0">
                   <v-spacer></v-spacer>
-                  <v-btn large class="text-capitalize primary-glass-card rounded-xl"
-                    ><v-icon left>mdi-information-outline</v-icon> What do you mean?</v-btn
+                  <v-btn
+                    large
+                    class="text-capitalize primary-glass-card rounded-xl"
+                    ><v-icon left>mdi-information-outline</v-icon> What do you
+                    mean?</v-btn
                   >
                 </v-card-actions>
               </v-card>
@@ -66,40 +75,40 @@
 </template>
 
 <script>
-import VuetifyColors from 'vuetify/lib/util/colors';
+import VuetifyColors from "vuetify/lib/util/colors";
 // import GlassCard from '@/components/blocks/GlassCard';
-import Phone1 from '@/components/animated/Phone1';
+import Phone1 from "@/components/animated/Phone1";
 
 export default {
   components: {
     // GlassCard,
-    Phone1,
+    Phone1
   },
   data: () => ({
-    drawers: ['Default (no property)', 'Permanent', 'Temporary'],
+    drawers: ["Default (no property)", "Permanent", "Temporary"],
     primaryDrawer: {
       model: null,
-      type: 'default (no property)',
+      type: "default (no property)",
       clipped: false,
       floating: false,
-      mini: false,
+      mini: false
     },
     footer: {
-      inset: false,
-    },
+      inset: false
+    }
   }),
   methods: {
     showColors() {
       console.log(VuetifyColors);
       console.log(this.$vuetify);
-    },
+    }
   },
   mounted() {
     if (this.$vuetify.breakpoint.mdAndUp) {
-      this.gsap.from('#header', {
+      this.gsap.from("#header", {
         x: 200,
         opacity: 0,
-        duration: 1.5,
+        duration: 1.5
       });
     }
     // if (this.$vuetify.breakpoint.smAndUp) {
@@ -129,6 +138,6 @@ export default {
     //     duration: 1,
     //   });
     // }
-  },
+  }
 };
 </script>

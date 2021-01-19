@@ -1,5 +1,7 @@
 <template>
   <div class="phone1">
+    <!-- eslint-disable -->
+
     <!-- <?xml version="1.0" encoding="utf-8"?> -->
     <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg
@@ -1365,30 +1367,66 @@ export default {
     return {};
   },
   mounted() {
-    this.gsap.set('#cart', { y: 5, x: -25 });
-    this.gsap.set('#carticon', { y: 150 });
-    this.gsap.set('#screenguard', { y: 60, x: 20 });
-    this.gsap.set('#phoneshadow', { y: -13, x: 2, scale: 0.97 });
-    this.gsap.set('#cartitem', { y: 10, x: -18 });
-    this.gsap.set('#phoneskeleton', { y: -40, x: -20 });
-    this.gsap.set('#carticontobuttonline', { opacity: 0 });
-    this.gsap.set('#phonetoguard', { y: 43, opacity: 0 });
-    this.gsap.set('#guardtoskeleton', { y: 8, x: -10, opacity: 0 });
+    this.gsap.set("#cart", { y: 5, x: -25 });
+    this.gsap.set("#carticon", { y: 150 });
+    this.gsap.set("#screenguard", { y: 60, x: 20 });
+    this.gsap.set("#phoneshadow", { y: -13, x: 2, scale: 0.97 });
+    this.gsap.set("#cartitem", { y: 10, x: -18 });
+    this.gsap.set("#phoneskeleton", { y: -40, x: -20 });
+    this.gsap.set("#carticontobuttonline", { opacity: 0 });
+    this.gsap.set("#phonetoguard", { y: 43, opacity: 0 });
+    this.gsap.set("#guardtoskeleton", { y: 8, x: -10, opacity: 0 });
 
-    const phonetl = this.gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 });
+    const phonetl = this.gsap.timeline({
+      repeat: -1,
+      yoyo: true,
+      repeatDelay: 1
+    });
     // '#cartitem, #phoneskeleton, #carticon, #carticontobuttonline, #screenguard, #cart, #phonetoguard, #guardtoskeleton',
 
     phonetl
-      .to('#screenguard', { duration: 0.5, ease: 'power1.inOut', y: 0, x: 0 })
-      .to('#phoneskeleton', { duration: 0.5, ease: 'power1.inOut', y: -20, x: 0 }, '-=0.3')
-      .to('#phoneshadow', { duration: 0.5, ease: 'power1.inOut', y: -10, x: 0 }, '-=0.5')
-      .to('#cartitem', { duration: 0.5, ease: 'power1.inOut', y: -15 }, '-=0.25')
-      .to('#cart', { duration: 0.5, ease: 'power1.inOut', y: -8, x: 0 }, '-=0.25')
-      .to('#phonetoguard', { duration: 0.5, ease: 'power1.inOut', y: 0, x: 0, opacity: 1 }, '-=0.25')
-      .to('#guardtoskeleton', { duration: 0.5, ease: 'power1.inOut', y: 0, x: 0, opacity: 1 }, '-=0.5')
-      .to('#carticon', { duration: 0.5, ease: 'power1.inOut', y: 0, x: 0 }, '-=0.25')
-      .to('#carticontobuttonline', { duration: 0.5, ease: 'power1.inOut', y: 0, x: 0, opacity: 1 }, '-=0.25');
-  },
+      .to("#screenguard", { duration: 0.5, ease: "power1.inOut", y: 0, x: 0 })
+      .to(
+        "#phoneskeleton",
+        { duration: 0.5, ease: "power1.inOut", y: -20, x: 0 },
+        "-=0.3"
+      )
+      .to(
+        "#phoneshadow",
+        { duration: 0.5, ease: "power1.inOut", y: -10, x: 0 },
+        "-=0.5"
+      )
+      .to(
+        "#cartitem",
+        { duration: 0.5, ease: "power1.inOut", y: -15 },
+        "-=0.25"
+      )
+      .to(
+        "#cart",
+        { duration: 0.5, ease: "power1.inOut", y: -8, x: 0 },
+        "-=0.25"
+      )
+      .to(
+        "#phonetoguard",
+        { duration: 0.5, ease: "power1.inOut", y: 0, x: 0, opacity: 1 },
+        "-=0.25"
+      )
+      .to(
+        "#guardtoskeleton",
+        { duration: 0.5, ease: "power1.inOut", y: 0, x: 0, opacity: 1 },
+        "-=0.5"
+      )
+      .to(
+        "#carticon",
+        { duration: 0.5, ease: "power1.inOut", y: 0, x: 0 },
+        "-=0.25"
+      )
+      .to(
+        "#carticontobuttonline",
+        { duration: 0.5, ease: "power1.inOut", y: 0, x: 0, opacity: 1 },
+        "-=0.25"
+      );
+  }
 };
 </script>
 <style type="text/css" scoped>

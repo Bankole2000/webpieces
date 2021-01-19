@@ -69,7 +69,12 @@
       <div class="subheading" v-if="imageUrl">Image Preview</div>
 
       <!-- :gradient="`to top right, ${color.value}EE, ${color.value}00`" -->
-      <v-img v-if="imageUrl" :src="imageUrl" class="mb-2" :aspect-ratio="466 / 350"></v-img>
+      <v-img
+        v-if="imageUrl"
+        :src="imageUrl"
+        class="mb-2"
+        :aspect-ratio="466 / 350"
+      ></v-img>
       <v-select
         class="mt-4"
         v-model="selectedTechnologies"
@@ -127,46 +132,46 @@
 export default {
   data() {
     return {
-      username: '',
-      email: '',
-      title: '',
-      description: '',
-      facebookhandle: '',
-      twitterhandle: '',
-      githubhandle: '',
-      requestImage: '',
-      requestUrl: '',
+      username: "",
+      email: "",
+      title: "",
+      description: "",
+      facebookhandle: "",
+      twitterhandle: "",
+      githubhandle: "",
+      requestImage: "",
+      requestUrl: "",
       isImage: true,
       imageUrl: null,
       uploadedImage: null,
-      selectedTechnologies: '',
+      selectedTechnologies: "",
       technologies: [
-        'Html',
-        'CSS',
-        'Sass',
-        'Javascript',
-        'JQuery',
-        'ES6',
-        'Vue',
-        'Vuetify',
-        'Angular',
-        'Angular Material',
-        'React',
-        'Material UI',
-      ],
+        "Html",
+        "CSS",
+        "Sass",
+        "Javascript",
+        "JQuery",
+        "ES6",
+        "Vue",
+        "Vuetify",
+        "Angular",
+        "Angular Material",
+        "React",
+        "Material UI"
+      ]
     };
   },
   methods: {
     onFilePicked(file) {
       console.log(file);
       const fileReader = new FileReader();
-      fileReader.addEventListener('load', () => {
+      fileReader.addEventListener("load", () => {
         this.imageUrl = fileReader.result;
       });
       fileReader.readAsDataURL(file);
       this.uploadedImage = file;
-    },
-  },
+    }
+  }
 };
 </script>
 

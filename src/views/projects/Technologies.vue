@@ -1,6 +1,9 @@
 <template>
   <div class="technologies">
-    <h1 class=" display-2 font-weight-light" :class="$vuetify.breakpoint.mdAndUp ? 'mx-8' : ''">
+    <h1
+      class="display-2 font-weight-light"
+      :class="$vuetify.breakpoint.mdAndUp ? 'mx-8' : ''"
+    >
       Technologies
       <span class="text-h5 font-weight-light" v-if="$vuetify.breakpoint.mdAndUp"
         >(Stuff I work with and use)</span
@@ -15,7 +18,11 @@
         User Directory
       </v-card-title>
       <v-row class="pa-4" justify="space-between">
-        <v-col cols="12" sm="5" :order="$vuetify.breakpoint.mdAndUp ? '' : 'last'">
+        <v-col
+          cols="12"
+          sm="5"
+          :order="$vuetify.breakpoint.mdAndUp ? '' : 'last'"
+        >
           <v-treeview
             rounded
             :active.sync="activeTech"
@@ -50,7 +57,11 @@
 
         <v-divider vertical></v-divider>
 
-        <v-col class="d-flex text-center" offset-sm="-6" :order="$vuetify.breakpoint.mdAndUp ? '' : 'first'">
+        <v-col
+          class="d-flex text-center"
+          offset-sm="-6"
+          :order="$vuetify.breakpoint.mdAndUp ? '' : 'first'"
+        >
           <v-scroll-y-transition mode="out-in">
             <div
               v-if="!selectedTech"
@@ -65,9 +76,17 @@
               </v-card-title> -->
               <v-card-text class="pt-4">
                 <v-avatar tile size="180" class="ma-4">
-                  <v-img contain :src="require(`@/assets/images/techImages/${selectedTech.image}`)"></v-img>
+                  <v-img
+                    contain
+                    :src="
+                      require(`@/assets/images/techImages/${selectedTech.image}`)
+                    "
+                  ></v-img>
                 </v-avatar>
-                <div class="d-flex align-center justify-center" style="width: 100%">
+                <div
+                  class="d-flex align-center justify-center"
+                  style="width: 100%"
+                >
                   <v-icon size="36">{{ selectedTech.icon }}</v-icon>
                   <p class="mb-0 display-1 text-capitalize">
                     {{ selectedTech.name }}
@@ -86,14 +105,14 @@
 
 <script>
 const avatars = [
-  '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
-  '?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun',
-  '?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtVNeck&eyeType=Surprised&eyebrowType=Angry&facialHairColor=Blonde&facialHairType=Blank&hairColor=Blonde&hatColor=PastelOrange&mouthType=Smile&skinColor=Black&topType=LongHairNotTooLong',
-  '?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=Overall&eyeType=Close&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&graphicType=Pizza&hairColor=Black&hatColor=PastelBlue&mouthType=Serious&skinColor=Light&topType=LongHairBigHair',
-  '?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Gray01&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=Default&facialHairColor=Red&facialHairType=Blank&graphicType=Selena&hairColor=Red&hatColor=Blue02&mouthType=Twinkle&skinColor=Pale&topType=LongHairCurly',
+  "?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban",
+  "?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun",
+  "?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtVNeck&eyeType=Surprised&eyebrowType=Angry&facialHairColor=Blonde&facialHairType=Blank&hairColor=Blonde&hatColor=PastelOrange&mouthType=Smile&skinColor=Black&topType=LongHairNotTooLong",
+  "?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=Overall&eyeType=Close&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&graphicType=Pizza&hairColor=Black&hatColor=PastelBlue&mouthType=Serious&skinColor=Light&topType=LongHairBigHair",
+  "?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Gray01&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=Default&facialHairColor=Red&facialHairType=Blank&graphicType=Selena&hairColor=Red&hatColor=Blue02&mouthType=Twinkle&skinColor=Pale&topType=LongHairCurly"
 ];
 
-const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default {
   data: () => ({
@@ -106,197 +125,202 @@ export default {
     technologies: [
       {
         id: 1,
-        name: 'My Home Setup',
-        icon: 'mdi-home-account',
+        name: "My Home Setup",
+        icon: "mdi-home-account",
         children: [
           {
             id: 2,
-            name: 'My Laptop',
-            icon: 'mdi-laptop-windows',
-            image: 'zbook.png',
-            children: [],
+            name: "My Laptop",
+            icon: "mdi-laptop-windows",
+            image: "zbook.png",
+            children: []
           },
           {
             id: 23,
-            name: 'My Software',
-            icon: 'mdi-package',
+            name: "My Software",
+            icon: "mdi-package",
             children: [
               {
                 id: 24,
-                name: 'VS Code',
-                icon: 'mdi-microsoft-visual-studio-code',
+                name: "VS Code",
+                icon: "mdi-microsoft-visual-studio-code"
               },
               {
                 id: 25,
-                name: 'Cmder',
-                icon: 'mdi-console',
+                name: "Cmder",
+                icon: "mdi-console"
               },
               {
                 id: 26,
-                name: '',
-              },
-            ],
-          },
-        ],
+                name: ""
+              }
+            ]
+          }
+        ]
       },
       {
         id: 3,
-        name: 'Front End Technologies',
-        icon: 'mdi-monitor-dashboard',
+        name: "Front End Technologies",
+        icon: "mdi-monitor-dashboard",
         children: [
           {
             id: 27,
-            name: 'Languages / Basics',
-            icon: 'mdi-translate',
+            name: "Languages / Basics",
+            icon: "mdi-translate",
             children: [
               {
                 id: 28,
-                name: 'HTML',
-                icon: 'mdi-language-html5',
-                image: 'html.svg',
+                name: "HTML",
+                icon: "mdi-language-html5",
+                image: "html.svg"
               },
               {
                 id: 29,
-                name: 'CSS',
-                icon: 'mdi-language-css3',
-                image: 'css.svg',
+                name: "CSS",
+                icon: "mdi-language-css3",
+                image: "css.svg"
               },
               {
                 id: 30,
-                name: 'Javascript (ES6)',
-                icon: 'mdi-language-javascript',
-                image: 'es6.svg',
+                name: "Javascript (ES6)",
+                icon: "mdi-language-javascript",
+                image: "es6.svg"
               },
               {
                 id: 31,
-                name: 'SASS',
-                icon: 'mdi-sass',
-              },
-            ],
+                name: "SASS",
+                icon: "mdi-sass"
+              }
+            ]
           },
           {
             id: 4,
-            name: 'Frameworks',
-            icon: 'mdi-arrange-bring-to-front',
+            name: "Frameworks",
+            icon: "mdi-arrange-bring-to-front",
             children: [
               {
                 id: 5,
-                name: 'Vue Js',
-                icon: 'mdi-vuejs',
-                image: 'vuejs.svg',
+                name: "Vue Js",
+                icon: "mdi-vuejs",
+                image: "vuejs.svg"
               },
               {
                 id: 6,
-                name: 'Angular 2',
-                icon: 'mdi-angular',
-                image: 'angular.svg',
+                name: "Angular 2",
+                icon: "mdi-angular",
+                image: "angular.svg"
               },
               {
                 id: 7,
-                name: 'React',
-                icon: 'mdi-react',
-                image: 'react.svg',
-              },
-            ],
+                name: "React",
+                icon: "mdi-react",
+                image: "react.svg"
+              }
+            ]
           },
           {
             id: 8,
-            name: 'Libraries',
-            icon: 'mdi-ruler-square-compass',
+            name: "Libraries",
+            icon: "mdi-ruler-square-compass",
             children: [
               {
                 id: 9,
-                name: 'Vuetify',
-                icon: 'mdi-vuetify',
-                image: 'vuetify.svg',
+                name: "Vuetify",
+                icon: "mdi-vuetify",
+                image: "vuetify.svg"
               },
-              { id: 10, name: 'Angular Material', icon: 'mdi-material-design', image: 'angularmaterial.png' },
+              {
+                id: 10,
+                name: "Angular Material",
+                icon: "mdi-material-design",
+                image: "angularmaterial.png"
+              },
               {
                 id: 11,
-                name: 'JQuery',
-                icon: 'mdi-jquery',
+                name: "JQuery",
+                icon: "mdi-jquery"
               },
               {
                 id: 12,
-                name: 'Material UI',
-                icon: 'mdi-material-ui',
+                name: "Material UI",
+                icon: "mdi-material-ui"
               },
               {
                 id: 13,
-                name: 'Materialize CSS',
-                icon: 'mdi-note',
-                image: 'materialize.svg',
+                name: "Materialize CSS",
+                icon: "mdi-note",
+                image: "materialize.svg"
               },
               {
                 id: 14,
-                name: 'Bootstrap',
-                icon: 'mdi-bootstrap',
-                image: 'bootstrap.svg',
+                name: "Bootstrap",
+                icon: "mdi-bootstrap",
+                image: "bootstrap.svg"
               },
               {
                 id: 15,
-                name: 'GSAP',
-                icon: 'mdi-animation-play',
-                image: 'greensock.png',
-              },
-            ],
-          },
-        ],
+                name: "GSAP",
+                icon: "mdi-animation-play",
+                image: "greensock.png"
+              }
+            ]
+          }
+        ]
       },
       {
         id: 16,
-        name: 'Back End Technologies',
-        icon: 'mdi-server',
+        name: "Back End Technologies",
+        icon: "mdi-server",
         children: [
           {
             id: 17,
-            name: 'Node js',
-            icon: 'mdi-nodejs',
-            image: 'nodejs.svg',
+            name: "Node js",
+            icon: "mdi-nodejs",
+            image: "nodejs.svg"
           },
           {
             id: 18,
-            name: 'PHP',
-            icon: 'mdi-language-php',
-            image: 'php.svg',
+            name: "PHP",
+            icon: "mdi-language-php",
+            image: "php.svg"
           },
 
           {
             id: 19,
-            name: 'MySQL',
-            icon: 'mdi-database-search',
-            image: 'mysql.svg',
+            name: "MySQL",
+            icon: "mdi-database-search",
+            image: "mysql.svg"
           },
           {
             id: 20,
-            name: 'Firebase',
-            icon: 'mdi-firebase',
-            image: 'firebase.svg',
+            name: "Firebase",
+            icon: "mdi-firebase",
+            image: "firebase.svg"
           },
           {
             id: 21,
-            name: 'Sequelize',
-            icon: 'mdi-cube',
-            image: 'sequelize.svg',
+            name: "Sequelize",
+            icon: "mdi-cube",
+            image: "sequelize.svg"
           },
           {
             id: 22,
-            name: 'Symfony',
-            icon: 'mdi-symfony',
-            image: 'symfony.png',
-          },
-        ],
-      },
-    ],
+            name: "Symfony",
+            icon: "mdi-symfony",
+            image: "symfony.png"
+          }
+        ]
+      }
+    ]
   }),
 
   computed: {
     items() {
       return [
         {
-          name: 'Users',
-          children: this.users,
-        },
+          name: "Users",
+          children: this.users
+        }
       ];
     },
     selectedTech() {
@@ -309,15 +333,15 @@ export default {
 
       const id = this.active[0];
 
-      return this.users.find((user) => user.id === id);
-    },
+      return this.users.find(user => user.id === id);
+    }
   },
 
   watch: {
-    selected: 'randomAvatar',
+    selected: "randomAvatar",
     selectedTech: function() {
       console.log(this.activeTech[0]);
-    },
+    }
   },
 
   methods: {
@@ -326,15 +350,15 @@ export default {
       // you've made optimizations! :)
       await pause(1500);
 
-      return fetch('https://jsonplaceholder.typicode.com/users')
-        .then((res) => res.json())
-        .then((json) => item.children.push(...json))
-        .catch((err) => console.warn(err));
+      return fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(json => item.children.push(...json))
+        .catch(err => console.warn(err));
     },
     randomAvatar() {
       this.avatar = avatars[Math.floor(Math.random() * avatars.length)];
-    },
-  },
+    }
+  }
 };
 </script>
 

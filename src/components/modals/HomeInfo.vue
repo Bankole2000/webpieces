@@ -2,16 +2,25 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn v-bind="attrs" v-on="on" large class="glass-card rounded-lg white--text text-capitalize"
-          ><v-icon left>mdi-help-circle-outline</v-icon> What is this place?</v-btn
+        <v-btn
+          v-bind="attrs"
+          v-on="on"
+          large
+          class="glass-card rounded-lg white--text text-capitalize"
+          ><v-icon left>mdi-help-circle-outline</v-icon> What is this
+          place?</v-btn
         >
       </template>
 
       <v-card class="rounded-xl">
         <v-card-title class="headline">
-          <v-icon color="primary" class="mr-4">mdi-help-circle-outline</v-icon> What is this place?
+          <v-icon color="primary" class="mr-4">mdi-help-circle-outline</v-icon>
+          What is this place?
           <v-spacer></v-spacer>
-          <v-btn :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'" icon @click="dialog = false"
+          <v-btn
+            :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+            icon
+            @click="dialog = false"
             ><v-icon>mdi-close</v-icon></v-btn
           >
         </v-card-title>
@@ -30,7 +39,11 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" text @click="dialog = false">
+          <v-btn
+            :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            text
+            @click="dialog = false"
+          >
             I accept
           </v-btn>
         </v-card-actions>
@@ -42,9 +55,9 @@
 export default {
   data() {
     return {
-      dialog: false,
+      dialog: false
     };
-  },
+  }
 };
 </script>
 <style scoped>

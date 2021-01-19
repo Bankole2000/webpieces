@@ -6,12 +6,14 @@
           <div class="content-body">
             <h1>Look Sharp</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste id ipsa accusamus quae neque
-              tempora a, possimus, quibusdam nam totam omnis deserunt et dignissimos alias ab incidunt eveniet
-              voluptate.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste id
+              ipsa accusamus quae neque tempora a, possimus, quibusdam nam totam
+              omnis deserunt et dignissimos alias ab incidunt eveniet voluptate.
             </p>
           </div>
-          <img :src="require('@/assets/images/webpieces/splitscreen/pc1.webp')" />
+          <img
+            :src="require('@/assets/images/webpieces/splitscreen/pc1.webp')"
+          />
         </div>
       </div>
       <div class="layer top">
@@ -19,12 +21,14 @@
           <div class="content-body">
             <h1>Stay Cool</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste id ipsa accusamus quae neque
-              tempora a, possimus, quibusdam nam totam omnis deserunt et dignissimos alias ab incidunt eveniet
-              voluptate.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste id
+              ipsa accusamus quae neque tempora a, possimus, quibusdam nam totam
+              omnis deserunt et dignissimos alias ab incidunt eveniet voluptate.
             </p>
           </div>
-          <img :src="require('@/assets/images/webpieces/splitscreen/pc2.webp')" />
+          <img
+            :src="require('@/assets/images/webpieces/splitscreen/pc2.webp')"
+          />
         </div>
       </div>
       <div class="handle"></div>
@@ -57,23 +61,23 @@ export default {
     return {};
   },
   mounted() {
-    const wrapper = document.querySelector('#wrapper');
-    const topLayer = wrapper.querySelector('.top');
-    const handle = wrapper.querySelector('.handle');
+    const wrapper = document.querySelector("#wrapper");
+    const topLayer = wrapper.querySelector(".top");
+    const handle = wrapper.querySelector(".handle");
     let skew = 0,
       delta = 0;
 
-    if (wrapper.className.indexOf('skewed') != -1) {
+    if (wrapper.className.indexOf("skewed") != -1) {
       skew = 1000;
     }
 
-    wrapper.addEventListener('mousemove', (e) => {
+    wrapper.addEventListener("mousemove", e => {
       delta = (e.clientX - window.innerWidth / 2) * 0.5;
 
       handle.style.left = `${e.clientX + delta}px`;
       topLayer.style.width = `${e.clientX + skew + delta}px`;
     });
-  },
+  }
 };
 </script>
 

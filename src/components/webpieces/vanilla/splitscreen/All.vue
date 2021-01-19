@@ -1,7 +1,11 @@
 <template>
   <v-container>
     <p class="display-1 font-weight-light ">{{ $route.name }}</p>
-    <v-btn v-if="$vuetify.breakpoint.smAndDown" text class="mr-16 text-capitalize" to="/webpieces"
+    <v-btn
+      v-if="$vuetify.breakpoint.smAndDown"
+      text
+      class="mr-16 text-capitalize"
+      to="/webpieces"
       ><v-icon left>mdi-arrow-left-bold</v-icon> Back to Gallery</v-btn
     >
     <v-card-title v-else class="pl-0">
@@ -9,11 +13,19 @@
         ><v-icon left>mdi-arrow-left-bold</v-icon> Back to Gallery</v-btn
       >
       Click/tap
-      <v-btn icon :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" class="mx-2">
+      <v-btn
+        icon
+        :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+        class="mx-2"
+      >
         <v-icon>mdi-code-tags</v-icon>
       </v-btn>
       to view the code. Then click/tap
-      <v-btn icon :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" class="mx-2">
+      <v-btn
+        icon
+        :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+        class="mx-2"
+      >
         <v-icon>mdi-content-copy</v-icon>
       </v-btn>
       to copy to clipboard
@@ -40,9 +52,27 @@
       <v-expand-transition>
         <v-sheet v-if="splitscreen.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="splitscreen.window = 0">Html</v-btn>
-            <v-btn text class="white--text" rounded @click="splitscreen.window = 1">CSS</v-btn>
-            <v-btn text class="white--text" rounded @click="splitscreen.window = 2">JS</v-btn>
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="splitscreen.window = 0"
+              >Html</v-btn
+            >
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="splitscreen.window = 1"
+              >CSS</v-btn
+            >
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="splitscreen.window = 2"
+              >JS</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
@@ -52,7 +82,9 @@
                   v-bind="attrs"
                   v-on="on"
                   @mouseleave="tooltipText = 'Copy Code'"
-                  @click="copy(splitscreen.html + splitscreen.css + splitscreen.js)"
+                  @click="
+                    copy(splitscreen.html + splitscreen.css + splitscreen.js)
+                  "
                 >
                   <v-icon>mdi-content-copy</v-icon>
                 </v-btn>
@@ -60,16 +92,33 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window v-model="splitscreen.window">
               <v-window-item>
-                <highlightjs language="html" :code="splitscreen.html" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="splitscreen.html"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
               <v-window-item>
-                <highlightjs language="css" class=" my-0" :code="splitscreen.css"></highlightjs>
+                <highlightjs
+                  language="css"
+                  class=" my-0"
+                  :code="splitscreen.css"
+                ></highlightjs>
               </v-window-item>
               <v-window-item>
-                <highlightjs language="js" class=" my-0" :code="splitscreen.js"></highlightjs>
+                <highlightjs
+                  language="js"
+                  class=" my-0"
+                  :code="splitscreen.js"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -80,12 +129,20 @@
       </v-container>
     </v-card>
     <div class="d-flex">
-      <v-btn class="text-capitalize" text :disabled="!previous" :to="`/webpieces/${previous}`"
+      <v-btn
+        class="text-capitalize"
+        text
+        :disabled="!previous"
+        :to="`/webpieces/${previous}`"
         ><v-icon left>mdi-arrow-left</v-icon>Previous
         <span v-if="$vuetify.breakpoint.mdAndUp">Webpiece</span></v-btn
       >
       <v-spacer></v-spacer>
-      <v-btn class="text-capitalize" text :disabled="!next" :to="`/webpieces/${next}`"
+      <v-btn
+        class="text-capitalize"
+        text
+        :disabled="!next"
+        :to="`/webpieces/${next}`"
         >Next <span v-if="$vuetify.breakpoint.mdAndUp">Webpiece</span
         ><v-icon right>mdi-arrow-right</v-icon></v-btn
       >
@@ -94,12 +151,12 @@
 </template>
 
 <script>
-import SplitScreen from './SplitScreen.vue';
-import { mapActions } from 'vuex';
+import SplitScreen from "./SplitScreen.vue";
+import { mapActions } from "vuex";
 
 export default {
   components: {
-    SplitScreen,
+    SplitScreen
   },
   data() {
     return {
@@ -268,32 +325,40 @@ document.addEventListener('DOMContentLoaded', () => {
 </scrpt>`,
 
         showCode: false,
-        window: 0,
+        window: 0
       },
-      tooltipText: 'Copy Code',
+      tooltipText: "Copy Code"
     };
   },
   methods: {
-    ...mapActions(['showToast']),
+    ...mapActions(["showToast"]),
     copy(text) {
       this.$copyText(text).then(
-        (e) => {
-          this.tooltipText = 'Copied!';
+        e => {
+          this.tooltipText = "Copied!";
           console.log(`copied`, e);
-          this.showToast({ sclass: 'success', message: 'Copied to Clipboard', timeout: 2000 });
+          this.showToast({
+            sclass: "success",
+            message: "Copied to Clipboard",
+            timeout: 2000
+          });
         },
-        (e) => {
+        e => {
           console.log(`could not copy`, e);
-          this.showToast({ sclass: 'error', message: 'Error - Could not copy', timeout: 2000 });
+          this.showToast({
+            sclass: "error",
+            message: "Error - Could not copy",
+            timeout: 2000
+          });
         }
       );
-    },
+    }
   },
   mounted() {
     const webpieceRoutes = this.$router.options.routes[1].children[0].children;
-    const currentPath = this.$route.path.replace('/webpieces/', '');
+    const currentPath = this.$route.path.replace("/webpieces/", "");
 
-    const currentPathIndex = webpieceRoutes.findIndex((route) => {
+    const currentPathIndex = webpieceRoutes.findIndex(route => {
       return route.path == currentPath;
     });
     console.log({ currentPathIndex, currentPath });
@@ -305,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log({ next: this.next, previous: this.previous });
-  },
+  }
 };
 </script>
 

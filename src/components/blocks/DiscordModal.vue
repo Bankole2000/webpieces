@@ -19,11 +19,17 @@
       <v-card-title class="headline">
         <v-icon color="accent" class="mr-4">mdi-discord</v-icon> Discord
         <v-spacer></v-spacer>
-        <v-btn :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'" icon @click="dialog = false"
+        <v-btn
+          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+          icon
+          @click="dialog = false"
           ><v-icon>mdi-close</v-icon></v-btn
         >
       </v-card-title>
-      <div :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'" style="width: 100%; height: 2px;"></div>
+      <div
+        :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+        style="width: 100%; height: 2px;"
+      ></div>
 
       <v-card-text class="pt-4 d-flex flex-column justify-center align-center">
         <p class="text-h6 font-weight-light" v-if="!$vuetify.theme.dark">
@@ -36,7 +42,12 @@
         <link-prevue v-if="link" :url="link">
           <template slot="loading">
             <!-- set your custom loading -->
-            <v-progress-linear color="primary" indeterminate rounded height="6"></v-progress-linear>
+            <v-progress-linear
+              color="primary"
+              indeterminate
+              rounded
+              height="6"
+            ></v-progress-linear>
           </template>
           <template slot-scope="props">
             <v-card class="mx-auto" max-width="344">
@@ -69,8 +80,15 @@
           </template>
         </link-prevue>
         <v-card v-else class="glass-card pa-4" style="width: 100%;">
-          <p>Status: <span class="accent--text">Still Setting things up</span></p>
-          <v-progress-linear color="primary" indeterminate rounded height="6"></v-progress-linear>
+          <p>
+            Status: <span class="accent--text">Still Setting things up</span>
+          </p>
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
         </v-card>
       </v-card-text>
 
@@ -92,20 +110,20 @@
 </template>
 
 <script>
-import LinkPrevue from 'link-prevue';
+import LinkPrevue from "link-prevue";
 export default {
-  name: 'DiscordModal',
+  name: "DiscordModal",
   components: {
-    LinkPrevue,
+    LinkPrevue
   },
   data() {
     return {
       dialog: false,
-      link: 'https://discord.gg/rzx6Ruc',
+      link: "https://discord.gg/rzx6Ruc"
       // link: null,
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

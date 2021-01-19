@@ -1,24 +1,32 @@
-import { LightenDarkenColor } from './darken';
+import { LightenDarkenColor } from "./darken";
 
-const generateColors = (theme) => {
-  const colors = ['secondary', 'error', 'warning', 'success', 'info', 'primary', 'accent'];
+const generateColors = theme => {
+  const colors = [
+    "secondary",
+    "error",
+    "warning",
+    "success",
+    "info",
+    "primary",
+    "accent"
+  ];
   const colorValues = [];
-  const baseColorDark = '#111111';
-  const baseColorLight = '#eeeeee';
+  const baseColorDark = "#111111";
+  const baseColorLight = "#eeeeee";
   const colorComboForward = [];
-  let rainbowText = 'linear-gradient(to right,';
-  let reverseRainbowText = 'linear-gradient(to right,';
+  let rainbowText = "linear-gradient(to right,";
+  let reverseRainbowText = "linear-gradient(to right,";
   const generatedColors = {};
-  const shadowTypes = ['depressed', 'normal', 'elevated'];
+  const shadowTypes = ["depressed", "normal", "elevated"];
   const gradientTypes = [
     `vertical`,
     `horizontal`,
     `diagonal`,
     `diagonal-reverse`,
-    'horizontal-fade',
-    'vertical-fade',
-    'diagonal-fade',
-    `vertical-fade-reverse`,
+    "horizontal-fade",
+    "vertical-fade",
+    "diagonal-fade",
+    `vertical-fade-reverse`
   ];
   for (const key in theme) {
     generatedColors[`--${key}`] = theme[key];
@@ -30,23 +38,38 @@ const generateColors = (theme) => {
   let lightenBackgroundLight = LightenDarkenColor(baseColorLight, 20);
   let darkenBackgroundLight = LightenDarkenColor(baseColorLight, -20);
 
-  lightenBackground = lightenBackground.length < 7 ? (lightenBackground = '#cccccc') : lightenBackground;
+  lightenBackground =
+    lightenBackground.length < 7
+      ? (lightenBackground = "#cccccc")
+      : lightenBackground;
   lightenBackgroundLight =
-    lightenBackgroundLight.length < 7 ? (lightenBackgroundLight = '#ffffff') : lightenBackgroundLight;
-  darkenBackground = darkenBackground.length < 7 ? (darkenBackground = '#000000') : darkenBackground;
+    lightenBackgroundLight.length < 7
+      ? (lightenBackgroundLight = "#ffffff")
+      : lightenBackgroundLight;
+  darkenBackground =
+    darkenBackground.length < 7
+      ? (darkenBackground = "#000000")
+      : darkenBackground;
   darkenBackgroundLight =
-    darkenBackgroundLight.length < 7 ? (darkenBackgroundLight = '#cccccc') : darkenBackgroundLight;
+    darkenBackgroundLight.length < 7
+      ? (darkenBackgroundLight = "#cccccc")
+      : darkenBackgroundLight;
 
   console.log({ generatedColors, lightenBackground, darkenBackground });
-  generatedColors[`--neomorph-dark`] = `3px 3px 3px ${darkenBackground}, -3px -3px 3px ${lightenBackground}`;
+  generatedColors[
+    `--neomorph-dark`
+  ] = `3px 3px 3px ${darkenBackground}, -3px -3px 3px ${lightenBackground}`;
   generatedColors[`--glass-dark`] = `${darkenBackground}10`;
   generatedColors[`--glass-light`] = `${lightenBackground}10`;
   generatedColors[`--glass-border-dark`] = `1px solid ${darkenBackground}33`;
-  generatedColors[`--glass-border-light`] = `1px solid ${lightenBackgroundLight}88`;
+  generatedColors[
+    `--glass-border-light`
+  ] = `1px solid ${lightenBackgroundLight}88`;
   shadowTypes.forEach((shadowType, i) => {
     const value = i * 3;
-    generatedColors[`--glass-shadow-${shadowType}`] = `${value}px ${value}px ${value *
-      1.5}px rgba(0, 0, 0, 0.5)`;
+    generatedColors[
+      `--glass-shadow-${shadowType}`
+    ] = `${value}px ${value}px ${value * 1.5}px rgba(0, 0, 0, 0.5)`;
     generatedColors[`--glass-blur-${shadowType}`] = `blur(${i * 2 + 1}px)`;
   });
   generatedColors[
@@ -78,33 +101,38 @@ const generateColors = (theme) => {
       `--${colors[i]}-neomorph-reverse`
     ] = `inset 5px 5px 3px ${darken}, inset -5px -5px 3px ${lighten}`;
 
-    rainbowText += ` ${theme[colors[i]]} ${i}%, ${theme[colors[i]]} ${((i + 1) / colors.length) * 100}%`;
+    rainbowText += ` ${theme[colors[i]]} ${i}%, ${theme[colors[i]]} ${((i + 1) /
+      colors.length) *
+      100}%`;
     if (i === 0) {
-      reverseRainbowText += ` ${theme[colors[i]]} ${i}%, ${theme[colors[i]]} ${((i + 1) / colors.length) *
-        100}%`;
+      reverseRainbowText += ` ${theme[colors[i]]} ${i}%, ${
+        theme[colors[i]]
+      } ${((i + 1) / colors.length) * 100}%`;
     } else {
       reverseRainbowText += ` ${theme[colors[colors.length - i]]} ${i}%, ${
         theme[colors[colors.length - i]]
       } ${((i + 1) / colors.length) * 100}%`;
     }
-    generatedColors[`--${colors[i]}-gradient-${gradientTypes[4]}`] = `linear-gradient(to right, ${
-      theme[colors[i]]
-    }, ${theme[colors[i]]}00)`;
-    generatedColors[`--${colors[i]}-gradient-${gradientTypes[5]}`] = `linear-gradient(to top, ${
-      theme[colors[i]]
-    }, ${theme[colors[i]]}00)`;
-    generatedColors[`--${colors[i]}-gradient-${gradientTypes[6]}`] = `linear-gradient(to top right, ${
-      theme[colors[i]]
-    }, ${theme[colors[i]]}00)`;
-    generatedColors[`--${colors[i]}-gradient-${gradientTypes[7]}`] = `linear-gradient(${theme[colors[i]]}, ${
+    generatedColors[
+      `--${colors[i]}-gradient-${gradientTypes[4]}`
+    ] = `linear-gradient(to right, ${theme[colors[i]]}, ${theme[colors[i]]}00)`;
+    generatedColors[
+      `--${colors[i]}-gradient-${gradientTypes[5]}`
+    ] = `linear-gradient(to top, ${theme[colors[i]]}, ${theme[colors[i]]}00)`;
+    generatedColors[
+      `--${colors[i]}-gradient-${gradientTypes[6]}`
+    ] = `linear-gradient(to top right, ${theme[colors[i]]}, ${
       theme[colors[i]]
     }00)`;
+    generatedColors[
+      `--${colors[i]}-gradient-${gradientTypes[7]}`
+    ] = `linear-gradient(${theme[colors[i]]}, ${theme[colors[i]]}00)`;
     if (i == colors.length - 1) {
-      rainbowText += ')';
-      reverseRainbowText += ')';
+      rainbowText += ")";
+      reverseRainbowText += ")";
     } else {
-      rainbowText += ',';
-      reverseRainbowText += ',';
+      rainbowText += ",";
+      reverseRainbowText += ",";
     }
     if (i !== 0) {
       colorComboForward.push(`${colors[0]}-${colors[i]}`);
@@ -130,25 +158,29 @@ const generateColors = (theme) => {
   }
 
   for (let i = 0; i < colorComboForward.length; i++) {
-    generatedColors[`--${colorComboForward[i]}-gradient-${gradientTypes[0]}`] = `linear-gradient(${
-      theme[colorComboForward[i].split('-')[0]]
-    }, ${theme[colorComboForward[i].split('-')[1]]})`;
+    generatedColors[
+      `--${colorComboForward[i]}-gradient-${gradientTypes[0]}`
+    ] = `linear-gradient(${theme[colorComboForward[i].split("-")[0]]}, ${
+      theme[colorComboForward[i].split("-")[1]]
+    })`;
 
-    generatedColors[`--${colorComboForward[i]}-gradient-${gradientTypes[1]}`] = `linear-gradient(to right, ${
-      theme[colorComboForward[i].split('-')[0]]
-    }, ${theme[colorComboForward[i].split('-')[1]]})`;
+    generatedColors[
+      `--${colorComboForward[i]}-gradient-${gradientTypes[1]}`
+    ] = `linear-gradient(to right, ${
+      theme[colorComboForward[i].split("-")[0]]
+    }, ${theme[colorComboForward[i].split("-")[1]]})`;
 
     generatedColors[
       `--${colorComboForward[i]}-gradient-${gradientTypes[2]}`
-    ] = `linear-gradient(to top right, ${theme[colorComboForward[i].split('-')[0]]}, ${
-      theme[colorComboForward[i].split('-')[1]]
-    })`;
+    ] = `linear-gradient(to top right, ${
+      theme[colorComboForward[i].split("-")[0]]
+    }, ${theme[colorComboForward[i].split("-")[1]]})`;
 
     generatedColors[
       `--${colorComboForward[i]}-gradient-${gradientTypes[3]}`
-    ] = `linear-gradient(to bottom right, ${theme[colorComboForward[i].split('-')[0]]}, ${
-      theme[colorComboForward[i].split('-')[1]]
-    })`;
+    ] = `linear-gradient(to bottom right, ${
+      theme[colorComboForward[i].split("-")[0]]
+    }, ${theme[colorComboForward[i].split("-")[1]]})`;
   }
 
   generatedColors[`--rainbow`] = rainbowText;

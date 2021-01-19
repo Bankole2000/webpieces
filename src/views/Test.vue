@@ -32,7 +32,7 @@
                   style="text-shadow: var(--glass-shadow-depressed)"
                 >
                   Hi, I'm
-                  {{ $vuetify.theme.dark ? 'The Neon Coder' : 'Esan Bankole' }}
+                  {{ $vuetify.theme.dark ? "The Neon Coder" : "Esan Bankole" }}
                 </p>
                 <div
                   style="width: 90%; height: 8px; background-image: var(--rainbow); box-shadow: var(--glass-shadow-normal)"
@@ -125,7 +125,7 @@ export default {
       this.gsap.to(this.$refs.linksMorphCard, { duration: 2, opacity: 1 });
       this.gsap.to(this.$refs.titleGlassCard, { duration: 2, opacity: 1 });
       // }, 200);
-    },
+    }
   },
   mounted() {
     // let tlgears = this.gsap.timeline({
@@ -137,11 +137,19 @@ export default {
 
     this.gsap.set(this.$refs.linksMorphCard, { opacity: 0, scale: 1.2 });
     // setTimeout(() => {
-    this.gsap.to(this.$refs.titleGlassCard, { duration: 1, opacity: 1, scale: 1 }, '-=1');
+    this.gsap.to(
+      this.$refs.titleGlassCard,
+      { duration: 1, opacity: 1, scale: 1 },
+      "-=1"
+    );
 
-    this.gsap.to(this.$refs.linksMorphCard, { duration: 1, opacity: 1, scale: 1 });
+    this.gsap.to(this.$refs.linksMorphCard, {
+      duration: 1,
+      opacity: 1,
+      scale: 1
+    });
     // }, 1500);
-  },
+  }
 };
 </script>
 

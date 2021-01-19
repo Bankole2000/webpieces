@@ -1,5 +1,7 @@
 <template>
   <div class="factory-2">
+    <!-- eslint-disable -->
+
     <!-- <?xml version="1.0" encoding="utf-8"?> -->
     <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg
@@ -11485,39 +11487,58 @@ export default {
     // const tllights = this.gsap.timeline({ repeat: -1, yoyo: false, repeatDelay: 4 });
     const tlleftlane = this.gsap.timeline({ repeat: -1, yoyo: false });
     const tlrightlane = this.gsap.timeline({ repeat: -1, yoyo: false });
-    const tlnewbox = this.gsap.timeline({ repeat: -1, yoyo: false });
+    // const tlnewbox = this.gsap.timeline({ repeat: -1, yoyo: false });
 
-    const tldrone = this.gsap.timeline({ repeat: -1, yoyo: false, repeatDelay: 0.25 });
+    const tldrone = this.gsap.timeline({
+      repeat: -1,
+      yoyo: false,
+      repeatDelay: 0.25
+    });
     // tllights
     //   .to('#leftlanelight, #rightlanelight', { duration: 0.1, opacity: 0 })
     //   .to('#leftlanelight, #rightlanelight', { duration: 0.1, opacity: 1 })
     //   .to('#leftlanelight, #rightlanelight', { duration: 0.1, opacity: 0, stagger: 0.2 }, '+=3')
     //   .to('#leftlanelight, #rightlanelight', { duration: 0.1, opacity: 1 });
     tldrone
-      .set('#newbox', { duration: 0, opacity: 0 })
-      .to('#drone, #newbox', { duration: 3, x: -800, y: 360, ease: 'back.inOut' })
-      .set('#newbox', { duration: 0, opacity: 1 })
-      .to('#drone, #newbox', { duration: 2, x: 0, y: 0, ease: 'expo.inOut' })
-      .to('#drone, #newbox', { duration: 0.5, y: 30, ease: 'none' })
-      .to('#newbox', { duration: 0.5, opacity: 0 }, '-=0.5')
-      .to('#drone, #newbox', { duration: 0.5, y: 0, ease: 'back.inOut' });
+      .set("#newbox", { duration: 0, opacity: 0 })
+      .to("#drone, #newbox", {
+        duration: 3,
+        x: -800,
+        y: 360,
+        ease: "back.inOut"
+      })
+      .set("#newbox", { duration: 0, opacity: 1 })
+      .to("#drone, #newbox", { duration: 2, x: 0, y: 0, ease: "expo.inOut" })
+      .to("#drone, #newbox", { duration: 0.5, y: 30, ease: "none" })
+      .to("#newbox", { duration: 0.5, opacity: 0 }, "-=0.5")
+      .to("#drone, #newbox", { duration: 0.5, y: 0, ease: "back.inOut" });
 
     // .to('#newbox', { duration: 3, x: -400, y: 180, ease: 'expo.inOut' });
     tlleftlane
-      .set('#llbox4', { duration: 0, opacity: 1 })
-      .set('#llbox1', { duration: 0, opacity: 0 })
-      .set('#llbox2', { duration: 0, x: -3, y: 2 })
-      .to('#llbox1, #llbox2, #llbox3, #llbox4', { duration: 2, x: -47, y: 27, ease: 'none' })
-      .to('#llbox4', { duration: 2, opacity: 0 }, '-=2')
-      .to('#llbox1', { duration: 2, opacity: 1 }, '-=2');
+      .set("#llbox4", { duration: 0, opacity: 1 })
+      .set("#llbox1", { duration: 0, opacity: 0 })
+      .set("#llbox2", { duration: 0, x: -3, y: 2 })
+      .to("#llbox1, #llbox2, #llbox3, #llbox4", {
+        duration: 2,
+        x: -47,
+        y: 27,
+        ease: "none"
+      })
+      .to("#llbox4", { duration: 2, opacity: 0 }, "-=2")
+      .to("#llbox1", { duration: 2, opacity: 1 }, "-=2");
     tlrightlane
-      .set('#rlbox4', { duration: 0, opacity: 1 })
-      .set('#rlbox1', { duration: 0, opacity: 0 })
-      .set('#rlbox2', { duration: 0, x: +3, y: 2 })
-      .to('#rlbox1, #rlbox2, #rlbox3, #rlbox4', { duration: 2, x: +47, y: 27, ease: 'none' })
-      .to('#rlbox4', { duration: 2, opacity: 0 }, '-=2')
-      .to('#rlbox1', { duration: 2, opacity: 1 }, '-=2');
-  },
+      .set("#rlbox4", { duration: 0, opacity: 1 })
+      .set("#rlbox1", { duration: 0, opacity: 0 })
+      .set("#rlbox2", { duration: 0, x: +3, y: 2 })
+      .to("#rlbox1, #rlbox2, #rlbox3, #rlbox4", {
+        duration: 2,
+        x: +47,
+        y: 27,
+        ease: "none"
+      })
+      .to("#rlbox4", { duration: 2, opacity: 0 }, "-=2")
+      .to("#rlbox1", { duration: 2, opacity: 1 }, "-=2");
+  }
 };
 </script>
 

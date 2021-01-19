@@ -17,13 +17,20 @@
 
     <v-card class="rounded-xl">
       <v-card-title class="headline secondary--text">
-        <v-icon color="primary" size="32" class="mr-4">mdi-twitch</v-icon> Twitch
+        <v-icon color="primary" size="32" class="mr-4">mdi-twitch</v-icon>
+        Twitch
         <v-spacer></v-spacer>
-        <v-btn :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'" icon @click="dialog = false"
+        <v-btn
+          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+          icon
+          @click="dialog = false"
           ><v-icon>mdi-close</v-icon></v-btn
         >
       </v-card-title>
-      <div :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'" style="width: 100%; height: 2px;"></div>
+      <div
+        :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+        style="width: 100%; height: 2px;"
+      ></div>
       <v-divider></v-divider>
 
       <v-card-text>
@@ -49,13 +56,13 @@
 
 <script>
 export default {
-  name: 'TwitchModal',
+  name: "TwitchModal",
   data() {
     return {
-      dialog: false,
+      dialog: false
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

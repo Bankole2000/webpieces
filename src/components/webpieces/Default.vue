@@ -1,6 +1,10 @@
 <template>
   <v-container>
-    <v-btn x-large text :class="$vuetify.theme.dark ? 'glass-card' : 'primary-glass-card'" to="/webpieces"
+    <v-btn
+      x-large
+      text
+      :class="$vuetify.theme.dark ? 'glass-card' : 'primary-glass-card'"
+      to="/webpieces"
       ><v-icon left>mdi-arrow-left-bold</v-icon> Back to Gallery</v-btn
     >
     <v-card class="mx-auto my-6 px-0" outlined elevation="0">
@@ -25,7 +29,9 @@
       <v-expand-transition>
         <v-sheet v-if="borderAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
@@ -43,10 +49,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="borderAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="borderAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -60,11 +75,11 @@
 </template>
 
 <script>
-import Border from './Border';
+// import Border from "./Border";
 
 export default {
   components: {
-    Border,
+    // Border
   },
   data() {
     return {
@@ -85,23 +100,23 @@ export default {
     </v-alert>
   </div>
 </template>`,
-        showCode: false,
-      },
+        showCode: false
+      }
     };
   },
   methods: {
     copy(text) {
       this.$copyText(text).then(
-        (e) => {
-          this.tooltipText = 'Copied!';
+        e => {
+          this.tooltipText = "Copied!";
           console.log(`copied`, e);
         },
-        (e) => {
+        e => {
           console.log(`could not copy`, e);
         }
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

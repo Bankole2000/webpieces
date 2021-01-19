@@ -12,14 +12,22 @@
           <v-card-subtitle>Project Details & info</v-card-subtitle>
           <v-spacer></v-spacer>
           <div class="d-flex">
-            <v-btn class="mb-4 ml-4" :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            <v-btn
+              class="mb-4 ml-4"
+              :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
               ><v-icon left>mdi-github</v-icon>Github</v-btn
             >
-            <v-btn disabled class="mb-4 ml-4" :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            <v-btn
+              disabled
+              class="mb-4 ml-4"
+              :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
               ><v-icon left>mdi-open-in-new</v-icon>View Project</v-btn
             >
-            <v-btn class="mb-4 ml-4" :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
-              ><v-icon left>mdi-notebook-plus-outline</v-icon>Project Notes</v-btn
+            <v-btn
+              class="mb-4 ml-4"
+              :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+              ><v-icon left>mdi-notebook-plus-outline</v-icon>Project
+              Notes</v-btn
             >
           </div>
         </div>

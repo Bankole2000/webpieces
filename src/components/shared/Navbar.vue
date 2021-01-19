@@ -28,11 +28,18 @@
 
           <v-list-item-content>
             <v-list-item-title
-              ><p class="text-h6 my-0" :class="$vuetify.theme.dark ? 'primary--text' : 'secondary--text'">
-                {{ $vuetify.theme.dark ? '@CodingInNeon' : 'Bankole Esan' }}
+              ><p
+                class="text-h6 my-0"
+                :class="
+                  $vuetify.theme.dark ? 'primary--text' : 'secondary--text'
+                "
+              >
+                {{ $vuetify.theme.dark ? "@CodingInNeon" : "Bankole Esan" }}
               </p></v-list-item-title
             >
-            <v-list-item-subtitle class="mt-n1">Fullstack Freelance</v-list-item-subtitle>
+            <v-list-item-subtitle class="mt-n1"
+              >Fullstack Freelance</v-list-item-subtitle
+            >
           </v-list-item-content>
         </v-list-item>
 
@@ -48,8 +55,8 @@
               :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
               :class="{
                 'glass-card': $vuetify.theme.dark,
-                'morph': !$vuetify.theme.dark,
-                'primary--text': $route.path.includes(item.link),
+                morph: !$vuetify.theme.dark,
+                'primary--text': $route.path.includes(item.link)
               }"
               ><v-icon left>{{ item.icon }}</v-icon> {{ item.title }}</v-btn
             >
@@ -84,8 +91,16 @@
             <DiscordModal />
             <YoutubeModal />
           </div>
-          <div class="pa-2" :style="{ backgroundColor: $vuetify.theme.dark ? '#121212' : '' }">
-            <v-btn large :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" block>Logout</v-btn>
+          <div
+            class="pa-2"
+            :style="{ backgroundColor: $vuetify.theme.dark ? '#121212' : '' }"
+          >
+            <v-btn
+              large
+              :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+              block
+              >Logout</v-btn
+            >
           </div>
         </div>
       </template>
@@ -102,7 +117,11 @@
         @click.stop="primaryDrawer.model = !primaryDrawer.model"
         class="ml-4"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title>Banky.<span class="font-weight-black primary--text">Studio</span></v-toolbar-title>
+      <v-toolbar-title
+        >Banky.<span class="font-weight-black primary--text"
+          >Studio</span
+        ></v-toolbar-title
+      >
       <v-spacer></v-spacer>
       <!-- <div v-if="$vuetify.breakpoint.mdAndUp">
         <v-btn
@@ -168,9 +187,18 @@
         <DiscordModal />
         <YoutubeModal />
       </div>
-      <v-switch style="margin-top: 22px;" class="mx-6" v-model="$vuetify.theme.dark" primary>
+      <v-switch
+        style="margin-top: 22px;"
+        class="mx-6"
+        v-model="$vuetify.theme.dark"
+        primary
+      >
         <template v-slot:label>
-          <v-icon>{{ $vuetify.theme.dark ? 'mdi-weather-night' : 'mdi-white-balance-sunny' }}</v-icon>
+          <v-icon>{{
+            $vuetify.theme.dark
+              ? "mdi-weather-night"
+              : "mdi-white-balance-sunny"
+          }}</v-icon>
         </template>
       </v-switch>
     </v-app-bar>
@@ -187,61 +215,65 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-import Snackbar from './Snackbar.vue';
-import YoutubeModal from '../blocks/YoutubeModal.vue';
-import TwitchModal from '../blocks/TwitchModal.vue';
-import DiscordModal from '../blocks/DiscordModal';
+import { mapActions } from "vuex";
+import Snackbar from "./Snackbar.vue";
+import YoutubeModal from "../blocks/YoutubeModal.vue";
+import TwitchModal from "../blocks/TwitchModal.vue";
+import DiscordModal from "../blocks/DiscordModal";
 
 export default {
   components: {
     Snackbar,
     YoutubeModal,
     TwitchModal,
-    DiscordModal,
+    DiscordModal
   },
   data() {
     return {
       loadingTestButton: false,
-      drawers: ['Default (no property)', 'Permanent', 'Temporary'],
+      drawers: ["Default (no property)", "Permanent", "Temporary"],
       primaryDrawer: {
         model: false,
-        type: 'default (no property)',
+        type: "default (no property)",
         clipped: false,
         floating: false,
-        mini: false,
+        mini: false
       },
       footer: {
-        inset: false,
+        inset: false
       },
       items: [
-        { title: 'Studio', icon: 'mdi-web', link: '/' },
-        { title: 'Projects', icon: 'mdi-quadcopter', link: '/projects' },
-        { title: 'Web Pieces', icon: 'mdi-puzzle', link: '/webpieces' },
-        { title: 'About Me', icon: 'mdi-account', link: '/about' },
+        { title: "Studio", icon: "mdi-web", link: "/" },
+        { title: "Projects", icon: "mdi-quadcopter", link: "/projects" },
+        { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" },
+        { title: "About Me", icon: "mdi-account", link: "/about" }
       ],
       socialLinks: [
-        { name: '', link: '', color: 'info', icon: 'mdi-twitter' },
-        { name: '', link: '', color: 'info darken-2', icon: 'mdi-facebook' },
-        { name: '', link: '', color: 'success', icon: 'mdi-whatsapp' },
+        { name: "", link: "", color: "info", icon: "mdi-twitter" },
+        { name: "", link: "", color: "info darken-2", icon: "mdi-facebook" },
+        { name: "", link: "", color: "success", icon: "mdi-whatsapp" },
         // { name: '', link: '', color: 'error', icon: 'mdi-youtube' },
         // { name: '', link: '', color: 'primary', icon: 'mdi-twitch' },
-        { name: '', link: '', color: 'secondary', icon: 'mdi-github' },
+        { name: "", link: "", color: "secondary", icon: "mdi-github" }
         // { name: '', link: '', color: 'accent', icon: 'mdi-discord' },
-      ],
+      ]
     };
   },
   methods: {
-    ...mapActions(['showToast']),
+    ...mapActions(["showToast"]),
     displayToast(e) {
       this.loadingTestButton = true;
       console.log({ e });
-      this.showToast({ sclass: 'info', message: 'This is a test Snackbar', timeout: 2000 }).then(() => {
+      this.showToast({
+        sclass: "info",
+        message: "This is a test Snackbar",
+        timeout: 2000
+      }).then(() => {
         setTimeout(() => {
           this.loadingTestButton = false;
         }, 2000);
       });
-    },
+    }
   },
   mounted() {
     if (this.$vuetify.breakpoint.mdAndUp) {
@@ -249,7 +281,7 @@ export default {
         this.primaryDrawer.model = true;
       }, 2000);
     }
-  },
+  }
 };
 </script>
 

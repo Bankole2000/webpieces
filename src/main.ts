@@ -1,19 +1,25 @@
-import Vue from 'vue';
-import App from './App.vue';
-import './registerServiceWorker';
-import router from './router';
-import store from './store';
-import vuetify from './plugins/vuetify';
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { Draggable } from 'gsap/Draggable';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Vue from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import store from "./store";
+import vuetify from "./plugins/vuetify";
+import { gsap } from "gsap";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { Draggable } from "gsap/Draggable";
+import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import VueClipboard from 'vue-clipboard2';
+import VueClipboard from "vue-clipboard2";
 
-gsap.registerPlugin(CSSRulePlugin, Draggable, TextPlugin, ScrollToPlugin, ScrollTrigger);
+gsap.registerPlugin(
+  CSSRulePlugin,
+  Draggable,
+  TextPlugin,
+  ScrollToPlugin,
+  ScrollTrigger
+);
 
 Vue.mixin({
   created: function() {
@@ -21,12 +27,12 @@ Vue.mixin({
     // @ts-ignore
     this.gsap = gsap;
     /* eslint-enable */
-  },
+  }
 });
 
-import hljs from 'highlight.js';
+import hljs from "highlight.js";
 // import 'highlight.js/styles/github.css';
-import 'highlight.js/styles/kimbie.dark.css';
+import "highlight.js/styles/kimbie.dark.css";
 Vue.use(hljs.vuePlugin);
 
 // import VueHighlightJS from 'vue-highlight.js';
@@ -48,5 +54,5 @@ new Vue({
   router,
   store,
   vuetify,
-  render: (h) => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount("#app");

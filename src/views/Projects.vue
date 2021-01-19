@@ -3,7 +3,10 @@
     <div style="position: relative">
       <Factory2 v-if="$vuetify.breakpoint.mdAndUp" id="factory" />
       <Factory v-else />
-      <div v-if="$vuetify.breakpoint.mdAndUp" style="position: absolute; top: 15%; left: 0; width: 100%;">
+      <div
+        v-if="$vuetify.breakpoint.mdAndUp"
+        style="position: absolute; top: 15%; left: 0; width: 100%;"
+      >
         <v-container>
           <v-row>
             <v-col cols="12" sm="7">
@@ -16,15 +19,21 @@
                   style="width: 95%; height: 10px; background-image: var(--rainbow)"
                 ></div>
                 <v-card-text class="pb-0">
-                  <p class="text-h5 font-weight-light" style="line-height: 3rem">
-                    As I continue to learn and grow as a developer, these are the results of my endeavours so
-                    far...
+                  <p
+                    class="text-h5 font-weight-light"
+                    style="line-height: 3rem"
+                  >
+                    As I continue to learn and grow as a developer, these are
+                    the results of my endeavours so far...
                   </p>
                 </v-card-text>
                 <v-card-actions class="pt-0">
                   <v-spacer></v-spacer>
-                  <v-btn large class="primary-glass-card text-capitalize rounded-xl"
-                    ><v-icon left>mdi-information-outline</v-icon> What do you mean?</v-btn
+                  <v-btn
+                    large
+                    class="primary-glass-card text-capitalize rounded-xl"
+                    ><v-icon left>mdi-information-outline</v-icon> What do you
+                    mean?</v-btn
                   >
                 </v-card-actions>
               </v-card>
@@ -102,14 +111,14 @@
 // import projects from '@/utils/projects.json';
 // import SidewaysCard from '@/components/blocks/SidewaysCard';
 // import ProjectCard from '@/components/blocks/ProjectCard';
-import Factory2 from '@/components/animated/Factory2.vue';
-import Factory from '@/components/animated/Factory';
+import Factory2 from "@/components/animated/Factory2.vue";
+import Factory from "@/components/animated/Factory";
 // import { gsap } from 'gsap';
 // // import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 // // import { Draggable } from 'gsap/Draggable';
 // // import { TextPlugin } from 'gsap/TextPlugin';
 // // import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Factory from '@/components/animated/Factory.vue';
 
 // gsap.registerPlugin(ScrollTrigger);
@@ -122,14 +131,14 @@ export default {
     // GlassCard,
     // SidewaysCard,
     Factory2,
-    Factory,
+    Factory
     // ProjectCard,
     // Factory,
     // Factory2
   },
   data() {
     return {};
-  },
+  }
 };
 </script>
 <style scoped>

@@ -1,9 +1,15 @@
 <template>
   <div class="side-ways">
-    <v-card class="mx-auto" style="width: 100%;" v-if="$vuetify.breakpoint.mdAndUp">
+    <v-card
+      class="mx-auto"
+      style="width: 100%;"
+      v-if="$vuetify.breakpoint.mdAndUp"
+    >
       <div style="width: 100%;" class="d-flex flex-no-wrap justify-start">
         <v-avatar class="ma-0" size="192" tile>
-          <v-img :src="require(`@/assets/images/projectImages/${project.image}`)"></v-img>
+          <v-img
+            :src="require(`@/assets/images/projectImages/${project.image}`)"
+          ></v-img>
         </v-avatar>
 
         <div class="d-flex flex-column ml-4">
@@ -19,13 +25,17 @@
                   v-on="on"
                   v-bind="attrs"
                   class="px-1 mr-1"
-                  :text-color="colors[tech.split('-')[tech.split('-').length - 1]]"
+                  :text-color="
+                    colors[tech.split('-')[tech.split('-').length - 1]]
+                  "
                 >
                   <v-icon>{{ tech }}</v-icon>
                 </v-chip>
                 <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on">Top</v-btn> -->
               </template>
-              <span class="text-capitalize">{{ tech.split('-')[tech.split('-').length - 1] }}</span>
+              <span class="text-capitalize">{{
+                tech.split("-")[tech.split("-").length - 1]
+              }}</span>
             </v-tooltip>
           </v-card-text>
 
@@ -58,8 +68,12 @@
       </div>
     </v-card>
     <v-card v-else class="mb-8">
-      <v-img :src="require(`@/assets/images/projectImages/${project.image}`)"></v-img>
-      <div style="background-image: var(--rainbow); height: 2px; width: 100%;"></div>
+      <v-img
+        :src="require(`@/assets/images/projectImages/${project.image}`)"
+      ></v-img>
+      <div
+        style="background-image: var(--rainbow); height: 2px; width: 100%;"
+      ></div>
       <v-card-title>
         {{ project.name }}
       </v-card-title>
@@ -117,10 +131,12 @@
         </v-card-title>
 
         <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </v-card-text>
 
@@ -139,31 +155,31 @@
 
 <script>
 export default {
-  props: ['project'],
+  props: ["project"],
   data() {
     return {
       colors: {
-        firebase: '#FFCA28',
-        html5: '#F16529',
-        css3: '#2965f1',
-        javascript: '#F0DB4F',
-        vuejs: '#41B883',
-        bootstrap: '#602C50',
-        python: '#FFD43B',
-        sass: '#cc6699',
-        wordpress: '#00749C',
-        php: '#474A8A',
-        react: '#61DBFB',
-        nodejs: '#3C873A',
-        vuetify: '#1775d0',
-        angular: '#B52E31',
+        firebase: "#FFCA28",
+        html5: "#F16529",
+        css3: "#2965f1",
+        javascript: "#F0DB4F",
+        vuejs: "#41B883",
+        bootstrap: "#602C50",
+        python: "#FFD43B",
+        sass: "#cc6699",
+        wordpress: "#00749C",
+        php: "#474A8A",
+        react: "#61DBFB",
+        nodejs: "#3C873A",
+        vuetify: "#1775d0",
+        angular: "#B52E31"
       },
-      dialog: false,
+      dialog: false
     };
   },
   mounted() {
     console.log(this.project);
-  },
+  }
 };
 </script>
 

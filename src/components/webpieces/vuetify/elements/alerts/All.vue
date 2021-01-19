@@ -1,7 +1,11 @@
 <template>
   <v-container class="px-0">
     <p class="display-1 font-weight-light ">{{ $route.name }}</p>
-    <v-btn v-if="$vuetify.breakpoint.smAndDown" text class="mr-16 text-capitalize" to="/webpieces"
+    <v-btn
+      v-if="$vuetify.breakpoint.smAndDown"
+      text
+      class="mr-16 text-capitalize"
+      to="/webpieces"
       ><v-icon left>mdi-arrow-left-bold</v-icon> Back to Gallery</v-btn
     >
     <v-card-title v-else class="pl-0">
@@ -10,11 +14,19 @@
       >
 
       Click/tap
-      <v-btn icon :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" class="mx-2">
+      <v-btn
+        icon
+        :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+        class="mx-2"
+      >
         <v-icon>mdi-code-tags</v-icon>
       </v-btn>
       to view the code. Then click/tap
-      <v-btn icon :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" class="mx-2">
+      <v-btn
+        icon
+        :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+        class="mx-2"
+      >
         <v-icon>mdi-content-copy</v-icon>
       </v-btn>
       to copy to clipboard
@@ -41,7 +53,9 @@
       <v-expand-transition>
         <v-sheet v-if="borderAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
@@ -59,10 +73,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="borderAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="borderAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -95,7 +118,9 @@
       <v-expand-transition>
         <v-sheet v-if="coloredBorder.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -113,10 +138,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="coloredBorder.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="coloredBorder.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -149,7 +183,9 @@
       <v-expand-transition>
         <v-sheet v-if="denseAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -167,10 +203,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="denseAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="denseAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -203,8 +248,20 @@
       <v-expand-transition>
         <v-sheet v-if="dismissible.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="dismissible.window = 0">Template</v-btn>
-            <v-btn text class="white--text" rounded @click="dismissible.window = 1">Script</v-btn>
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="dismissible.window = 0"
+              >Template</v-btn
+            >
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="dismissible.window = 1"
+              >Script</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -222,13 +279,26 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window v-model="dismissible.window">
               <v-window-item>
-                <highlightjs language="html" :code="dismissible.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="dismissible.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
               <v-window-item>
-                <highlightjs language="js" class=" my-0" :code="dismissible.script"></highlightjs>
+                <highlightjs
+                  language="js"
+                  class=" my-0"
+                  :code="dismissible.script"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -261,7 +331,9 @@
       <v-expand-transition>
         <v-sheet v-if="iconAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -279,10 +351,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="iconAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="iconAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -315,7 +396,9 @@
       <v-expand-transition>
         <v-sheet v-if="outlinedAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -333,10 +416,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="outlinedAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="outlinedAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -369,7 +461,9 @@
       <v-expand-transition>
         <v-sheet v-if="prominentAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -387,10 +481,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="prominentAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="prominentAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -423,7 +526,9 @@
       <v-expand-transition>
         <v-sheet v-if="textAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -441,10 +546,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="textAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="textAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -477,8 +591,20 @@
       <v-expand-transition>
         <v-sheet v-if="transitionAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="transitionAlert.window = 0">Template</v-btn>
-            <v-btn text class="white--text" rounded @click="transitionAlert.window = 1">Script</v-btn>
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="transitionAlert.window = 0"
+              >Template</v-btn
+            >
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="transitionAlert.window = 1"
+              >Script</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -488,7 +614,9 @@
                   v-bind="attrs"
                   v-on="on"
                   @mouseleave="tooltipText = 'Copy Code'"
-                  @click="copy(transitionAlert.template + transitionAlert.script)"
+                  @click="
+                    copy(transitionAlert.template + transitionAlert.script)
+                  "
                 >
                   <v-icon>mdi-content-copy</v-icon>
                 </v-btn>
@@ -496,13 +624,26 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window v-model="transitionAlert.window">
               <v-window-item>
-                <highlightjs language="html" :code="transitionAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="transitionAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
               <v-window-item>
-                <highlightjs language="js" :code="transitionAlert.script" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="js"
+                  :code="transitionAlert.script"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -535,8 +676,20 @@
       <v-expand-transition>
         <v-sheet v-if="twitterAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="twitterAlert.window = 0">Template</v-btn>
-            <v-btn text class="white--text" rounded @click="twitterAlert.window = 1">Script</v-btn>
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="twitterAlert.window = 0"
+              >Template</v-btn
+            >
+            <v-btn
+              text
+              class="white--text"
+              rounded
+              @click="twitterAlert.window = 1"
+              >Script</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom
               ><template v-slot:activator="{ on, attrs }">
@@ -554,13 +707,26 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window v-model="twitterAlert.window">
               <v-window-item>
-                <highlightjs language="html" :code="twitterAlert.template" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="twitterAlert.template"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
               <v-window-item>
-                <highlightjs language="js" :code="twitterAlert.script" class=" my-0"></highlightjs>
+                <highlightjs
+                  language="js"
+                  :code="twitterAlert.script"
+                  class=" my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -593,7 +759,9 @@
       <v-expand-transition>
         <v-sheet v-if="typeAlert.showCode" tile>
           <v-card-title tile class="py-2 grey darken-3">
-            <v-btn text class="white--text" rounded @click="window = 0">Template</v-btn>
+            <v-btn text class="white--text" rounded @click="window = 0"
+              >Template</v-btn
+            >
             <v-spacer></v-spacer>
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
@@ -611,10 +779,19 @@
               <span>{{ tooltipText }}</span>
             </v-tooltip>
           </v-card-title>
-          <v-card max-height="300" elevation="0" tile style="overflow-y: scroll; overflow-x:auto;">
+          <v-card
+            max-height="300"
+            elevation="0"
+            tile
+            style="overflow-y: scroll; overflow-x:auto;"
+          >
             <v-window>
               <v-window-item>
-                <highlightjs language="html" :code="typeAlert.template" class="py-0 my-0"></highlightjs>
+                <highlightjs
+                  language="html"
+                  :code="typeAlert.template"
+                  class="py-0 my-0"
+                ></highlightjs>
               </v-window-item>
             </v-window>
           </v-card>
@@ -625,12 +802,20 @@
       </v-container>
     </v-card>
     <div class="d-flex">
-      <v-btn class="text-capitalize" text :disabled="!previous" :to="`/webpieces/${previous}`"
+      <v-btn
+        class="text-capitalize"
+        text
+        :disabled="!previous"
+        :to="`/webpieces/${previous}`"
         ><v-icon left>mdi-arrow-left</v-icon>Previous
         <span v-if="$vuetify.breakpoint.mdAndUp">Webpiece</span></v-btn
       >
       <v-spacer></v-spacer>
-      <v-btn class="text-capitalize" text :disabled="!next" :to="`/webpieces/${next}`"
+      <v-btn
+        class="text-capitalize"
+        text
+        :disabled="!next"
+        :to="`/webpieces/${next}`"
         >Next <span v-if="$vuetify.breakpoint.mdAndUp">Webpiece</span
         ><v-icon right>mdi-arrow-right</v-icon></v-btn
       >
@@ -639,18 +824,18 @@
 </template>
 
 <script>
-import Border from './Border';
-import ColoredBorder from './ColoredBorder';
-import DenseAlert from './Dense';
-import Dismissible from './Dismissible';
-import IconAlert from './Icon';
-import OutlinedAlert from './Outlined';
-import ProminentAlert from './Prominent';
-import TextAlert from './Text';
-import TransitionAlert from './Transition';
-import TwitterAlert from './TwitterAlert';
-import TypeAlert from './Type';
-import { mapActions } from 'vuex';
+import Border from "./Border";
+import ColoredBorder from "./ColoredBorder";
+import DenseAlert from "./Dense";
+import Dismissible from "./Dismissible";
+import IconAlert from "./Icon";
+import OutlinedAlert from "./Outlined";
+import ProminentAlert from "./Prominent";
+import TextAlert from "./Text";
+import TransitionAlert from "./Transition";
+import TwitterAlert from "./TwitterAlert";
+import TypeAlert from "./Type";
+import { mapActions } from "vuex";
 // import Prism from 'vue-highlightjs-component';
 
 export default {
@@ -665,7 +850,7 @@ export default {
     TextAlert,
     TransitionAlert,
     TwitterAlert,
-    TypeAlert,
+    TypeAlert
     // Prism,
   },
   data() {
@@ -693,7 +878,7 @@ export default {
   </div>
 </template>
 `,
-        showCode: false,
+        showCode: false
       },
       twitterAlert: {
         template: `<template>
@@ -711,7 +896,7 @@ export default {
 </template>`,
         script: `<scrpt>\n\texport default {\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\talert: true\n\t\t\t};\n\t\t}\n\t};\n</scrpt>`,
         showCode: false,
-        window: 0,
+        window: 0
       },
       transitionAlert: {
         template: `<template>
@@ -730,7 +915,7 @@ export default {
 </template>`,
         script: `<scrpt>\n\texport default {\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\talert: true\n\t\t\t};\n\t\t}\n\t};\n</scrpt>`,
         showCode: false,
-        window: 0,
+        window: 0
       },
       textAlert: {
         template: `<template>
@@ -767,7 +952,7 @@ export default {
   </div>
 </template>
 `,
-        showCode: false,
+        showCode: false
       },
       prominentAlert: {
         template: `<template>
@@ -789,7 +974,7 @@ export default {
   </div>
 </template>
 `,
-        showCode: false,
+        showCode: false
       },
       borderAlert: {
         template: `<template>
@@ -808,7 +993,7 @@ export default {
     </v-alert>
   </div>
 </template>`,
-        showCode: false,
+        showCode: false
       },
       coloredBorder: {
         template: `<template>
@@ -830,7 +1015,7 @@ export default {
   </div>
 </template>
 `,
-        showCode: false,
+        showCode: false
       },
       denseAlert: {
         template: `<template>
@@ -841,7 +1026,7 @@ export default {
     <v-alert dense outlined type="error"> I'm a dense alert with the <strong>outlined</strong> prop and a <strong>type</strong> of error </v-alert>
   </div>
 </template>`,
-        showCode: false,
+        showCode: false
       },
       dismissible: {
         template: `<template>
@@ -861,7 +1046,7 @@ export default {
 `,
         script: `<scrpt>\n\texport default {\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\talert: true\n\t\t\t};\n\t\t}};\n</scrpt>`,
         showCode: false,
-        window: 0,
+        window: 0
       },
       iconAlert: {
         template: `<template>
@@ -879,7 +1064,7 @@ export default {
   </div>
 </template>
 `,
-        showCode: false,
+        showCode: false
       },
       outlinedAlert: {
         template: `<template>
@@ -900,33 +1085,41 @@ export default {
     </v-alert>
   </div>
 </template>`,
-        showCode: false,
+        showCode: false
       },
-      tooltipText: 'Copy Code',
+      tooltipText: "Copy Code"
     };
   },
 
   methods: {
-    ...mapActions(['showToast']),
+    ...mapActions(["showToast"]),
     copy(text) {
       this.$copyText(text).then(
-        (e) => {
-          this.tooltipText = 'Copied!';
+        e => {
+          this.tooltipText = "Copied!";
           console.log(`copied`, e);
-          this.showToast({ sclass: 'success', message: 'Copied to Clipboard', timeout: 2000 });
+          this.showToast({
+            sclass: "success",
+            message: "Copied to Clipboard",
+            timeout: 2000
+          });
         },
-        (e) => {
+        e => {
           console.log(`could not copy`, e);
-          this.showToast({ sclass: 'error', message: 'Error - Could not copy', timeout: 2000 });
+          this.showToast({
+            sclass: "error",
+            message: "Error - Could not copy",
+            timeout: 2000
+          });
         }
       );
-    },
+    }
   },
   mounted() {
     const webpieceRoutes = this.$router.options.routes[1].children[0].children;
-    const currentPath = this.$route.path.replace('/webpieces/', '');
+    const currentPath = this.$route.path.replace("/webpieces/", "");
 
-    const currentPathIndex = webpieceRoutes.findIndex((route) => {
+    const currentPathIndex = webpieceRoutes.findIndex(route => {
       return route.path == currentPath;
     });
     console.log({ currentPathIndex, currentPath });
@@ -938,7 +1131,7 @@ export default {
     }
 
     console.log({ next: this.next, previous: this.previous });
-  },
+  }
 };
 </script>
 

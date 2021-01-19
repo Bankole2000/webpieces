@@ -17,13 +17,20 @@
 
     <v-card class="rounded-xl">
       <v-card-title class="headline secondary--text">
-        <v-icon color="error" size="32" class="mr-4">mdi-youtube</v-icon> YouTube
+        <v-icon color="error" size="32" class="mr-4">mdi-youtube</v-icon>
+        YouTube
         <v-spacer></v-spacer>
-        <v-btn :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'" icon @click="dialog = false"
+        <v-btn
+          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+          icon
+          @click="dialog = false"
           ><v-icon>mdi-close</v-icon></v-btn
         >
       </v-card-title>
-      <div :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'" style="width: 100%; height: 2px;"></div>
+      <div
+        :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+        style="width: 100%; height: 2px;"
+      ></div>
 
       <v-card-text>
         Thanks for you interest in my youtube channel
@@ -50,10 +57,10 @@
 export default {
   data() {
     return {
-      dialog: false,
+      dialog: false
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

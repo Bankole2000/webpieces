@@ -1,8 +1,13 @@
 <template>
   <div class="web-projects">
-    <h1 class=" display-2 font-weight-light" :class="$vuetify.breakpoint.mdAndUp ? 'mx-8' : ''">
+    <h1
+      class=" display-2 font-weight-light"
+      :class="$vuetify.breakpoint.mdAndUp ? 'mx-8' : ''"
+    >
       Web Projects
-      <small v-if="$vuetify.breakpoint.mdAndUp" class="text-h5 font-weight-light"
+      <small
+        v-if="$vuetify.breakpoint.mdAndUp"
+        class="text-h5 font-weight-light"
         >(Some things I've built)</small
       >
     </h1>
@@ -20,8 +25,14 @@
           </div> -->
       </v-col>
       <v-col cols="4" v-if="$vuetify.breakpoint.mdAndUp">
-        <div id="filter" :ref="'filter'" :class="scrollPosition ? 'sticky' : 'mt-3'">
-          <v-card :style="{ minWidth: scrollPosition ? `${elementWidth}px` : '' }">
+        <div
+          id="filter"
+          :ref="'filter'"
+          :class="scrollPosition ? 'sticky' : 'mt-3'"
+        >
+          <v-card
+            :style="{ minWidth: scrollPosition ? `${elementWidth}px` : '' }"
+          >
             <v-card-title>
               Here's a title
             </v-card-title>
@@ -30,7 +41,9 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn><v-icon left>mdi-timer-sand</v-icon> Here's a button</v-btn>
+              <v-btn
+                ><v-icon left>mdi-timer-sand</v-icon> Here's a button</v-btn
+              >
             </v-card-actions>
           </v-card>
         </div>
@@ -40,19 +53,19 @@
 </template>
 
 <script>
-import projects from '@/utils/projects.json';
-import ProjectCard from '@/components/blocks/ProjectCard';
+import projects from "@/utils/projects.json";
+import ProjectCard from "@/components/blocks/ProjectCard";
 
 export default {
   components: {
-    ProjectCard,
+    ProjectCard
   },
   data() {
     return {
       scrollPosition: false,
       elementTop: null,
       elementWidth: null,
-      projects,
+      projects
     };
   },
   methods: {
@@ -60,14 +73,16 @@ export default {
       // this.scrollPosition = window.scrollY;
       console.log({
         windowScroll: window.scrollY,
-        elementWidth: this.elementWidth,
+        elementWidth: this.elementWidth
         // elementTop: this.$refs.filter.getBoundingClientRect().top,
       });
       // this.$refs.filter.getBoundingClientRect().top < 100
       //   ? (this.scrollPosition = true)
       //   : (this.scrollPosition = false);
-      window.scrollY + 111 > 850 ? (this.scrollPosition = true) : (this.scrollPosition = false);
-    },
+      window.scrollY + 111 > 850
+        ? (this.scrollPosition = true)
+        : (this.scrollPosition = false);
+    }
   },
   mounted() {
     if (this.$vuetify.breakpoint.mdAndUp) {
@@ -75,16 +90,16 @@ export default {
       this.elementTop = this.$refs.filter.offsetTop;
       this.elementWidth = this.$refs.filter.offsetWidth;
       if (this.$vuetify.breakpoint.mdAndUp) {
-        this.gsap.from('#header', {
+        this.gsap.from("#header", {
           x: 200,
           opacity: 0,
-          duration: 1.5,
+          duration: 1.5
         });
       }
       console.log(this.$refs.filter.getBoundingClientRect().top);
-      window.addEventListener('scroll', this.updateScroll);
+      window.addEventListener("scroll", this.updateScroll);
     }
-  },
+  }
 };
 </script>
 
