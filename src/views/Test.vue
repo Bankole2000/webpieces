@@ -5,8 +5,8 @@
         dark
         :src="
           $vuetify.theme.dark
-            ? require('@/assets/images/neon-city.gif')
-            : require('@/assets/images/neon-city-day.gif')
+            ? require('@/assets/images/neoncity.gif')
+            : require('@/assets/images/neoncityday.gif')
         "
         class="d-flex align-start pt-16"
         :height="$vuetify.breakpoint.height - 72"
