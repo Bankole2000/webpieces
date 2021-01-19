@@ -26,7 +26,9 @@
                     "
                   >
                     Welcome to <br v-if="$vuetify.breakpoint.smAndDown" />
-                    <span class="primary--text"> the Studio</span>
+                    <span class="primary--text font-weight-black">
+                      the Studio</span
+                    >
                   </h1>
                 </v-card-title>
                 <div
@@ -34,13 +36,23 @@
                 ></div>
                 <v-card-text class="pb-0">
                   <p class="text-h6 font-weight-light white--text mb-0">
-                    👋 Hi, my name is
-                    <span class="primary--text font-weight-medium"
-                      >Esan Bankole</span
-                    >. Fullstack Developer with over 6 years coding experience.
+                    👋 Hi, I'm
+                    <a
+                      target="_blank"
+                      :href="
+                        !$vuetify.theme.dark
+                          ? 'www.linkedin.com/in/bankoleesan'
+                          : 'https://twitter.com/CodingInNeon'
+                      "
+                      class="primary--text font-weight-black"
+                      >{{
+                        !$vuetify.theme.dark ? "Esan Bankole" : "@CodingInNeon"
+                      }}</a
+                    >. A Fullstack Developer with over 6 years coding
+                    experience.
                     <small class="caption"
                       ><br />
-                      Also part time musician and gamer 🎸👾🎮
+                      Also part time musician + gamer 🎸👾🎮
                     </small>
                   </p>
                 </v-card-text>
@@ -62,25 +74,27 @@
                 elevation="0"
                 color="transparent"
                 class="d-flex flex-row-reverse"
-                floating
-                :class="$vuetify.breakpoint.smAndDown ? 'mb-8 mt-10' : ''"
+                style="width: 100%;"
+                :floating="$vuetify.breakpoint.mdAndUp"
+                :class="$vuetify.breakpoint.smAndDown ? 'mb-12 mt-0' : ''"
               >
                 <v-card
                   class="d-flex align-center glass-card rounded-xl py-2 px-4 subactioncard"
                 >
-                  <v-text-field
-                    hide-details
-                    prepend-icon="mdi-magnify"
-                    single-line
-                  ></v-text-field>
-
-                  <v-btn icon>
-                    <v-icon>mdi-map-marker</v-icon>
-                  </v-btn>
-
-                  <v-btn icon>
-                    <v-icon>mdi-dots-vertical</v-icon>
-                  </v-btn>
+                  <p class="text-h6 font-weight-light mb-0 text-right">
+                    {{
+                      new Date(currentTime).toLocaleString(["en-us"], {
+                        hour12: "true",
+                        year: "numeric",
+                        weekday: "long",
+                        month: "short",
+                        day: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit"
+                      })
+                    }}
+                  </p>
                 </v-card>
               </v-toolbar>
 
@@ -96,7 +110,11 @@
                   flat
                   dark
                   rounded
-                  placeholder="Search ('/' to focus, ';' to open menu)"
+                  :placeholder="
+                    $vuetify.breakpoint.mdAndDown
+                      ? 'Search Web Pieces / Pages'
+                      : 'Search (\'/\' to focus, \';\' to open menu)'
+                  "
                   solo-inverted
                 ></v-autocomplete>
                 <v-card-actions class="py-0">
@@ -190,6 +208,7 @@ export default {
   },
   data: () => ({
     drawers: ["Default (no property)", "Permanent", "Temporary"],
+    currentTime: new Date(),
     primaryDrawer: {
       model: null,
       type: "default (no property)",
@@ -346,6 +365,11 @@ export default {
     }
   },
   methods: {
+    updateTime() {
+      setInterval(() => {
+        this.currentTime = new Date();
+      }, 1000);
+    },
     showColors() {
       console.log(VuetifyColors);
       console.log(this.$vuetify);
@@ -363,6 +387,9 @@ export default {
     }
   },
   mounted() {
+    setInterval(() => {
+      this.updateTime();
+    }, 1000);
     this.gsap.from(".menu-card", {
       x: 500,
       opacity: 0,

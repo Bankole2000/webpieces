@@ -4,7 +4,8 @@
       <v-col
         cols="12"
         class="mb-4 d-flex align-stretch"
-        sm="4"
+        sm="6"
+        lg="4"
         v-for="(webpiece, i) in webpieces"
         :key="i"
       >

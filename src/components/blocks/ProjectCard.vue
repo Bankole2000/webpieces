@@ -3,7 +3,7 @@
     <v-card
       class="mx-auto"
       style="width: 100%;"
-      v-if="$vuetify.breakpoint.mdAndUp"
+      v-if="$vuetify.breakpoint.smAndUp"
     >
       <div style="width: 100%;" class="d-flex flex-no-wrap justify-start">
         <v-avatar class="ma-0" size="192" tile>
@@ -15,7 +15,7 @@
         <div class="d-flex flex-column ml-4">
           <v-card-title class="headline">{{ project.name }}</v-card-title>
 
-          <v-card-subtitle>Project Details & info</v-card-subtitle>
+          <v-card-subtitle>Project Description</v-card-subtitle>
           <v-spacer></v-spacer>
           <v-card-text class="pb-2">
             <v-tooltip top v-for="(tech, i) in project.technologies" :key="i">
@@ -77,12 +77,25 @@
       <v-card-title>
         {{ project.name }}
       </v-card-title>
+      <v-card-subtitle>Here's some text</v-card-subtitle>
       <v-card-text>
-        Here's some text
-        <v-chip class="ma-2" close color="cyan" label text-color="white">
-          <v-icon left>mdi-twitter</v-icon>
-          New Tweets
-        </v-chip>
+        <v-tooltip top v-for="(tech, i) in project.technologies" :key="i">
+          <template v-slot:activator="{ on, attrs }">
+            <v-chip
+              :color="$vuetify.theme.dark ? '#1e1e1e' : 'white'"
+              v-on="on"
+              v-bind="attrs"
+              class="px-1 mr-1"
+              :text-color="colors[tech.split('-')[tech.split('-').length - 1]]"
+            >
+              <v-icon>{{ tech }}</v-icon>
+            </v-chip>
+            <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on">Top</v-btn> -->
+          </template>
+          <span class="text-capitalize">{{
+            tech.split("-")[tech.split("-").length - 1]
+          }}</span>
+        </v-tooltip>
       </v-card-text>
 
       <v-card-actions>
@@ -126,8 +139,8 @@
           </template> -->
 
       <v-card tile>
-        <v-card-title class="headline primary lighten-2">
-          Web Piece - <span class="font-weight-black">Web piece Name</span>
+        <v-card-title class="headline primary lighten-2 font-weight-light">
+          Project - <span class="font-weight-black">{{ project.title }}</span>
         </v-card-title>
 
         <v-card-text>

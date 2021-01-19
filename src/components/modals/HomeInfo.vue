@@ -1,12 +1,12 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="dialog" width="500">
+    <v-dialog scrollable v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
         <v-btn
           v-bind="attrs"
           v-on="on"
           large
-          class="glass-card rounded-lg white--text text-capitalize"
+          class="glass-card rounded-xl white--text text-capitalize"
           ><v-icon left>mdi-help-circle-outline</v-icon> What is this
           place?</v-btn
         >
@@ -30,9 +30,30 @@
         ></div>
 
         <v-card-text class="pt-4">
-          <p class="text-h6 font-weight-light">
-            I like to think of this as my own little part of the intervebs.
+          <p class="text-h6 font-weight-medium secondary--text">
+            It's my own little part of the web. Here you can find;
           </p>
+          <v-expansion-panels accordion>
+            <v-expansion-panel v-for="(link, i) in modalLinks" :key="i">
+              <v-expansion-panel-header>
+                <p class="text-h6 font-weight-light mb-0">{{ link.title }}</p>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content class="pb-1">
+                {{ link.content }}
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    :to="link.to"
+                    block
+                    :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+                  >
+                    Go
+                    <v-icon right>mdi-arrow-right-bold</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -42,9 +63,11 @@
           <v-btn
             :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
             text
+            class="success--text text-lowercase rounded-lg"
             @click="dialog = false"
           >
-            I accept
+            <v-icon left>mdi-check</v-icon>
+            Ok, got it
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -55,7 +78,35 @@
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
+      modalLinks: [
+        {
+          to: "/about",
+          title: "Info About me",
+          content:
+            "My Skills, Experience, Certifications, Projects, Resume, etc"
+        },
+        {
+          to: "/webpieces",
+          title: "Web Pieces",
+          content: ""
+        },
+        {
+          to: "/projects",
+          title: "My Projects",
+          content: ""
+        },
+        {
+          to: "",
+          title: "My Blog",
+          content: ""
+        },
+        {
+          to: "",
+          title: "My Client Platform",
+          content: ""
+        }
+      ]
     };
   }
 };

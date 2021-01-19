@@ -16,7 +16,7 @@
       style="height: 5px; width: 100%; background-image: var(--rainbow); box-shadow: var(--glass-shadow-normal)"
     ></div>
     <v-row class="mt-8">
-      <v-col cols="12" md="8">
+      <v-col cols="12" lg="8">
         <div class="my-3" v-for="(project, i) in projects" :key="i">
           <ProjectCard :project="project" />
         </div>
@@ -24,7 +24,7 @@
             <SidewaysCard />
           </div> -->
       </v-col>
-      <v-col cols="4" v-if="$vuetify.breakpoint.mdAndUp">
+      <v-col cols="4" v-if="$vuetify.breakpoint.lgAndUp">
         <div
           id="filter"
           :ref="'filter'"
@@ -85,7 +85,7 @@ export default {
     }
   },
   mounted() {
-    if (this.$vuetify.breakpoint.mdAndUp) {
+    if (this.$vuetify.breakpoint.lgAndUp) {
       console.log(this.$refs, window.scrollY);
       this.elementTop = this.$refs.filter.offsetTop;
       this.elementWidth = this.$refs.filter.offsetWidth;

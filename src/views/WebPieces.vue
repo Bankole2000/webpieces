@@ -12,30 +12,44 @@
         </v-col>
       </v-row>
       <div
-        v-if="$vuetify.breakpoint.smAndUp"
         style="position: absolute; top: 15%; left: 0; width: 100%;"
+        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '5%' }"
       >
         <v-container>
           <v-row>
-            <v-col cols="12" sm="7">
+            <v-col
+              cols="12"
+              sm="7"
+              :offset-sm="$vuetify.breakpoint.mdAndDown ? 5 : ''"
+            >
               <v-card class="glass-panel px-8 py-6 rounded-xl" id="header">
-                <v-card-title>
-                  <p class="display-1 font-weight-light">Web Pieces</p>
+                <v-card-title
+                  :class="$vuetify.breakpoint.mdAndDown ? 'pa-0' : ''"
+                >
+                  <p
+                    class="display-1 font-weight-light"
+                    :class="$vuetify.breakpoint.mdAndDown ? 'ml-4' : ''"
+                  >
+                    Web Pieces
+                  </p>
                 </v-card-title>
                 <div
                   class="mx-4 mt-n3"
                   style="width: 95%; height: 10px; background-image: var(--rainbow)"
                 ></div>
-                <v-card-text class="pb-0">
+                <v-card-text class="pb-0" v-if="!$vuetify.breakpoint.smAndDown">
                   <p
                     class="text-h5 font-weight-light"
                     style="line-height: 3rem"
                   >
                     Welcome to the lab. Here I collaboratively deconstruct
-                    pieces of the web (for science!🕵️‍♂)
+                    pieces of the web (for science!)
                   </p>
                 </v-card-text>
-                <v-card-actions class="pt-0">
+                <v-card-actions
+                  v-if="!$vuetify.breakpoint.smAndDown"
+                  class="pt-0"
+                >
                   <v-spacer></v-spacer>
                   <v-btn
                     large
@@ -50,19 +64,14 @@
         </v-container>
       </div>
     </div>
+    <!-- v-if="$vuetify.breakpoint.smAndUp" -->
     <div
       id="headerTrigger"
-      v-if="$vuetify.breakpoint.smAndUp"
-      class="mt-n15"
+      :class="$vuetify.breakpoint.lgAndUp ? 'mt-n14' : 'mt-n3'"
       style="height: 10px; width: 100%; background-image: var(--primary-accent-gradient-horizontal); box-shadow: var(--glass-shadow-normal)"
     ></div>
     <v-container class="mt-8">
-      <v-tabs
-        :grow="$vuetify.breakpoint.mdAndUp"
-        class="mb-8"
-        :center-active="$vuetify.breakpoint.mdAndUp"
-        show-arrows
-      >
+      <v-tabs grow class="mb-8" show-arrows>
         <v-tab to="/webpieces" exact>Gallery</v-tab>
         <v-tab to="/webpieces/add">Add A WebPiece</v-tab>
         <v-tab to="/webpieces/queue">Request Queue</v-tab>

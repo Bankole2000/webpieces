@@ -1,7 +1,8 @@
 <template>
   <!-- <div class="add-wepiece-form"> -->
   <v-row>
-    <v-col cols="12" sm="6" offset-md="3" class="mb-0 pb-0">
+    <v-col cols="12" sm="6" class="mb-0 pb-0">
+      <p>Basic Webpiece Info</p>
       <v-text-field
         v-model="username"
         prepend-inner-icon="mdi-account"
@@ -27,10 +28,12 @@
         hint="How would you best describe this webpiece?"
         solo
       ></v-textarea>
+    </v-col>
+    <v-col cols="12" md="6" class="mt-0">
       <p>Any Visuals available?</p>
       <v-radio-group v-model="isImage" row>
-        <v-radio label="Upload an Image/Screenshot" :value="true"></v-radio>
-        <v-radio label="I have a URL to the image" :value="false"></v-radio>
+        <v-radio label="Upload Image/Screenshot" :value="true"></v-radio>
+        <v-radio label="URL to the image" :value="false"></v-radio>
       </v-radio-group>
       <v-scroll-y-transition mode="out-in">
         <div
@@ -64,8 +67,6 @@
           ></v-file-input>
         </div>
       </v-scroll-y-transition>
-    </v-col>
-    <v-col cols="12" sm="6" offset-md="3" class="mt-0 pt-0">
       <div class="subheading" v-if="imageUrl">Image Preview</div>
 
       <!-- :gradient="`to top right, ${color.value}EE, ${color.value}00`" -->
@@ -87,8 +88,33 @@
         hint="Which tech would you like this to be built with? (select one or multiple)"
         multiple
       ></v-select>
-      <div class="subheading mb-2">How can we contact you?</div>
+      <div class="subheading mb-2">
+        How can we contact you? (at least one multiple allowed)
+      </div>
+      <v-row class="pa-0">
+        <v-checkbox label="twitter" v-model="hasTwitter" class="mx-2">
+          <!-- <template v-slot:label>
+            <p class="mb-0"><v-icon>mdi-twitter</v-icon> Twitter</p>
+          </template> -->
+        </v-checkbox>
+        <v-checkbox label="facebook" v-model="hasFacebook" class="mx-2">
+          <!-- <template v-slot:label>
+            <p class="mb-0"><v-icon>mdi-facebook</v-icon> Facebook</p>
+          </template> -->
+        </v-checkbox>
+        <v-checkbox label="github" v-model="hasGithub" class="mx-2">
+          <!-- <template v-slot:label>
+            <p class="mb-0"><v-icon>mdi-github</v-icon> Github</p>
+          </template> -->
+        </v-checkbox>
+        <v-checkbox label="email" v-model="hasEmail" class="mx-2">
+          <!-- <template v-slot:label>
+            <p class="mb-0"><v-icon>mdi-email</v-icon> Email</p>
+          </template> -->
+        </v-checkbox>
+      </v-row>
       <v-text-field
+        v-if="hasTwitter"
         prepend-inner-icon="mdi-twitter"
         auto-grow
         v-model="twitterhandle"
@@ -97,6 +123,7 @@
         solo
       ></v-text-field>
       <v-text-field
+        v-if="hasFacebook"
         prepend-inner-icon="mdi-facebook"
         auto-grow
         v-model="facebookhandle"
@@ -106,6 +133,7 @@
         solo
       ></v-text-field>
       <v-text-field
+        v-if="hasGithub"
         prepend-inner-icon="mdi-github"
         auto-grow
         v-model="githubhandle"
@@ -115,6 +143,7 @@
         solo
       ></v-text-field>
       <v-text-field
+        v-if="hasEmail"
         prepend-inner-icon="mdi-email"
         auto-grow
         v-model="email"
@@ -133,6 +162,10 @@ export default {
   data() {
     return {
       username: "",
+      hasTwitter: true,
+      hasFacebook: false,
+      hasEmail: false,
+      hasGithub: false,
       email: "",
       title: "",
       description: "",

@@ -4,21 +4,28 @@
       <Factory2 v-if="$vuetify.breakpoint.mdAndUp" id="factory" />
       <Factory v-else />
       <div
-        v-if="$vuetify.breakpoint.mdAndUp"
         style="position: absolute; top: 15%; left: 0; width: 100%;"
+        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '5%' }"
       >
         <v-container>
           <v-row>
             <v-col cols="12" sm="7">
               <v-card class="glass-panel px-8 py-6 rounded-xl" id="header">
-                <v-card-title>
-                  <p class="display-1 font-weight-light">Projects</p>
+                <v-card-title
+                  :class="$vuetify.breakpoint.mdAndDown ? 'pa-0' : ''"
+                >
+                  <p
+                    class="display-1 font-weight-light"
+                    :class="$vuetify.breakpoint.mdAndDown ? 'ml-4' : ''"
+                  >
+                    Projects
+                  </p>
                 </v-card-title>
                 <div
                   class="mx-4 mt-n3"
                   style="width: 95%; height: 10px; background-image: var(--rainbow)"
                 ></div>
-                <v-card-text class="pb-0">
+                <v-card-text v-if="$vuetify.breakpoint.lgAndUp" class="pb-0">
                   <p
                     class="text-h5 font-weight-light"
                     style="line-height: 3rem"
@@ -27,7 +34,7 @@
                     the results of my endeavours so far...
                   </p>
                 </v-card-text>
-                <v-card-actions class="pt-0">
+                <v-card-actions v-if="$vuetify.breakpoint.lgOnly" class="pt-0">
                   <v-spacer></v-spacer>
                   <v-btn
                     large
@@ -47,12 +54,7 @@
       style="z-index: 1000; background-image: var(--primary-accent-gradient-horizontal); width: 100%; height: 10px; box-shadow: var(--glass-shadow-normal); margin-top: -7px;"
     ></div>
     <v-container class="mt-8">
-      <v-tabs
-        :grow="$vuetify.breakpoint.mdAndUp"
-        class="mb-8"
-        :center-active="$vuetify.breakpoint.mdAndUp"
-        show-arrows
-      >
+      <v-tabs grow class="mb-8" center-active show-arrows>
         <v-tab to="/projects" exact>Web Projects</v-tab>
         <v-tab to="/projects/technologies">Technologies</v-tab>
         <v-tab to="/projects/myprocess">My Process</v-tab>
