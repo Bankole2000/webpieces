@@ -13,13 +13,18 @@
       >
         <v-container
           class="fill-height"
-          :class="$vuetify.breakpoint.mdAndUp ? 'px-16 py-8' : 'pa-4'"
+          :class="$vuetify.breakpoint.lgAndUp ? 'px-16 py-8' : 'py-8 px-4'"
         >
           <v-row class="d-flex align-start" style="justify-content: flex-start">
             <v-col cols="12" sm="6">
               <v-card class="glass-card rounded-xl pa-6">
                 <v-card-title>
-                  <h1 class="display-1 font-weight-light white--text">
+                  <h1
+                    class="font-weight-light white--text"
+                    :class="
+                      $vuetify.breakpoint.lgAndUp ? 'display-1' : 'text-h5'
+                    "
+                  >
                     Welcome to <br v-if="$vuetify.breakpoint.smAndDown" />
                     <span class="primary--text"> the Studio</span>
                   </h1>
@@ -33,7 +38,10 @@
                     <span class="primary--text font-weight-medium"
                       >Esan Bankole</span
                     >. Fullstack Developer with over 6 years coding experience.
-                    <small> Also a part time musician and gamer. </small>
+                    <small class="caption"
+                      ><br />
+                      Also part time musician and gamer 🎸👾🎮
+                    </small>
                   </p>
                 </v-card-text>
                 <v-card-actions>
@@ -55,6 +63,7 @@
                 color="transparent"
                 class="d-flex flex-row-reverse"
                 floating
+                :class="$vuetify.breakpoint.smAndDown ? 'mb-8 mt-10' : ''"
               >
                 <v-card
                   class="d-flex align-center glass-card rounded-xl py-2 px-4 subactioncard"
@@ -79,6 +88,7 @@
                 <v-autocomplete
                   v-model="select"
                   :loading="loading"
+                  prepend-inner-icon="mdi-magnify"
                   :items="autoitems"
                   :search-input.sync="search"
                   cache-items
@@ -98,6 +108,8 @@
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn
                         large
+                        :href="link.link"
+                        target="_blank"
                         icon
                         class="glass-card mx-2 subactioncard"
                         :class="`${link.class}--text`"
@@ -123,11 +135,11 @@
                 :class="`${item.color}-glass-card`"
               >
                 <div
-                  :class="$vuetify.breakpoint.mdAndUp ? 'pr-8' : 'pr-4'"
+                  :class="$vuetify.breakpoint.lgAndUp ? 'pr-8' : 'pr-4'"
                   class="d-flex flex-no-wrap align-center justify-space-between"
                 >
                   <v-avatar
-                    v-if="$vuetify.breakpoint.mdAndUp"
+                    v-if="$vuetify.breakpoint.lgAndUp"
                     class="ma-3 pl-4"
                     size="125"
                     rounded="xl"
@@ -290,35 +302,35 @@ export default {
     ],
     otherLinks: [
       {
-        tooltipText: "The Studio Blog",
-        link: "",
-        class: "primary",
-        icon: "mdi-post"
-      },
-      {
         tooltipText: "Call me",
-        link: "",
+        link: "tel:+2348069166906",
         class: "warning",
         icon: "mdi-phone"
       },
       {
         tooltipText: "Send me an Email",
-        link: "",
+        link: "mailto:techybanky@gmail.com?subject=👋Hey&body=Hi",
         class: "info",
         icon: "mdi-email"
       },
       {
-        tooltipText: "Style Guide",
-        link: "",
-        class: "success",
-        icon: "mdi-palette"
+        tooltipText: "The Studio Blog",
+        link: "https://blog.banky.studio",
+        class: "primary",
+        icon: "mdi-post"
       },
-      {
-        tooltipText: "Slack Group",
-        link: "",
-        class: "accent",
-        icon: "mdi-slack"
-      },
+      // {
+      //   tooltipText: "Style Guide",
+      //   link: "",
+      //   class: "success",
+      //   icon: "mdi-palette"
+      // },
+      // {
+      //   tooltipText: "Slack Group",
+      //   link: "",
+      //   class: "accent",
+      //   icon: "mdi-slack"
+      // },
       {
         tooltipText: `What's up with me`,
         link: "",
@@ -343,7 +355,7 @@ export default {
       this.loading = true;
       // Simulated ajax query
       setTimeout(() => {
-        this.autoitems = this.states.filter(e => {
+        this.autoitems = this.states.filter((e) => {
           return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
         });
         this.loading = false;

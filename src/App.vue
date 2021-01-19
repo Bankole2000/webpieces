@@ -15,7 +15,7 @@ import Vue from "vue";
 // import VuetifyColors from "vuetify/lib/util/colors";
 /* eslint-disable */
 // @ts-ignore
-import { generateColors } from './utils/customColors';
+import { generateColors } from "./utils/customColors";
 /* eslint-enable */
 import Navbar from "./components/shared/Navbar.vue";
 
@@ -35,6 +35,15 @@ export default Vue.extend({
       const generatedColors = generateColors(this.$vuetify.theme.currentTheme);
       return generatedColors;
     }
+  },
+  mounted() {
+    console.log({
+      breakpoint: this.$vuetify.breakpoint,
+      sm: this.$vuetify.breakpoint.smOnly,
+      xs: this.$vuetify.breakpoint.xsOnly,
+      md: this.$vuetify.breakpoint.mdOnly,
+      lg: this.$vuetify.breakpoint.lgOnly
+    });
   }
 });
 </script>

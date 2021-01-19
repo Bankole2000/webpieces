@@ -399,12 +399,6 @@ export default {
   },
   computed: {},
   mounted() {
-    console.log({
-      sm: this.$vuetify.breakpoint.smOnly,
-      xs: this.$vuetify.breakpoint.xsOnly,
-      md: this.$vuetify.breakpoint.mdOnly,
-      lg: this.$vuetify.breakpoint.lgOnly
-    });
     // let tlgears = this.gsap.timeline({
     //   repeat: -1,
     //   yoyo: true,
