@@ -26,7 +26,7 @@
             <v-col class="text-center" cols="12">
               <div
                 ref="linksMorphCard"
-                :class="$vuetify.breakpoint.smAndUp ? 'mx-auto' : 'mx-2'"
+                :class="$vuetify.breakpoint.smAndUp ? 'mx-auto' : 'mx-4'"
                 class="glass-card rounded-xl"
                 style="max-width: 500px;"
               >
@@ -71,6 +71,7 @@
                   >
                   <v-menu
                     class="rounded-xl"
+                    :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
                     transition="slide-x-transition"
                     bottom
                     left
@@ -120,6 +121,7 @@
                           </v-list-item-action>
                           <v-list-item-subtitle>{{ navLink.title }}</v-list-item-subtitle> -->
                           <v-btn
+                            block
                             class="ma-2 rounded-lg"
                             text
                             :to="item.link"
@@ -212,102 +214,11 @@
                     </v-tooltip>
                   </div>
                 </v-card-text>
-                <!-- <v-card-actions
-                  class="pa-4 rounded-b-xl"
-                  :style="{ backgroundColor: $vuetify.theme.dark ? '#121212aa' : '#efefefaa' }"
-                >
-                  <v-spacer></v-spacer>
-                  <v-btn text :class="$vuetify.theme.dark ? 'glass-card' : 'morph secondary--text'"
-                    >Start A Project</v-btn
-                  >
-                  <v-btn text :class="$vuetify.theme.dark ? 'glass-card' : 'morph secondary--text'"
-                    >Hire me</v-btn
-                  >
-                </v-card-actions> -->
               </div>
             </v-col>
           </v-row>
-          <!-- <v-row align="center" justify="center">
-            <v-col class="text-center" cols="12">
-              <div
-                class="mx-auto pa-4"
-                :class="$vuetify.theme.dark ? 'glass-card' : 'glass-card'"
-                style="width: 70%;"
-              >
-                <p
-                  class="display-2 mb-0"
-                  :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-                  style="text-shadow: var(--glass-shadow-depressed)"
-                >
-                  Hi, I'm
-                  {{ $vuetify.theme.dark ? 'The Neon Coder' : 'Esan Bankole' }}
-                </p>
-                <div
-                  style="width: 90%; height: 8px; background-image: var(--rainbow); box-shadow: var(--glass-shadow-normal)"
-                  class="mx-auto"
-                ></div>
-              </div>
-             
-            </v-col>
-            <v-col class="text-center" cols="12" md="6">
-              <v-card
-                elevation="6"
-                :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-                class="rounded-lg d-flex justify-space-around align-center pa-4 ma-4"
-              >
-                <v-btn
-                  :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-                  class="mx-2"
-                  fab
-                  large
-                  :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-                >
-                  <v-icon color="error" x-large>mdi-youtube</v-icon>
-                </v-btn>
-                <v-btn
-                  :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-                  class="mx-2"
-                  fab
-                  large
-                  :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-                >
-                  <v-icon color="info" x-large>mdi-twitter</v-icon>
-                </v-btn>
-                <v-btn
-                  :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-                  class="mx-2"
-                  fab
-                  large
-                  :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-                >
-                  <v-icon color="primary" x-large>mdi-xml</v-icon>
-                </v-btn>
-                <v-btn
-                  @click="animateStuff()"
-                  :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-                  class="mx-2"
-                  fab
-                  large
-                  :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-                >
-                  <v-icon color="secondary" x-large>mdi-github</v-icon>
-                </v-btn>
-              </v-card>
-            </v-col>
-          </v-row> -->
         </div>
       </v-img>
-      <!-- <v-row style="max-width: 100vw;" class="mr-0">
-        <v-col cols="12" sm="6" class="pr-0 ma-auto">
-          <Phone2 />
-        </v-col>
-        <v-col cols="12" sm="6">
-          <Phone />
-        </v-col>
-        <v-col cols="12" sm="6" class="pr-0 ma-auto">
-          <Factory />
-        </v-col>
-      </v-row> -->
     </v-card>
   </div>
 </template>
@@ -327,10 +238,18 @@ export default {
   data() {
     return {
       navItems: [
-        { title: "Studio", icon: "mdi-web", link: "/" },
-        { title: "Projects", icon: "mdi-quadcopter", link: "/projects" },
-        { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" },
-        { title: "About Me", icon: "mdi-account", link: "/about" }
+        // { title: "Studio", icon: "mdi-web", link: "/" },
+        { title: "Skills", icon: "mdi-account-hard-hat", link: "/" },
+        { title: "Experience", icon: "mdi-briefcase", link: "/" },
+        { title: "Certs", icon: "mdi-seal", link: "/" },
+        { title: "Resume", icon: "mdi-download", link: "/" },
+        {
+          title: "Projects",
+          icon: "mdi-package-variant-closed",
+          link: "/projects"
+        }
+        // { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" }
+        // { title: "About Me", icon: "mdi-account", link: "/about" }
       ],
       colors: {
         firebase: "#FFCA28",
@@ -420,4 +339,103 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+/* "technologies": [
+      "mdi-firebase",
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-bootstrap",
+      "mdi-language-python",
+      "mdi-sass",
+      "mdi-wordpress",
+      "mdi-language-php",
+      "mdi-react",
+      "mdi-nodejs",
+      "mdi-microsoft-windows",
+      "mdi-ubuntu",
+      "mdi-apple"
+    ], */
+.morph {
+  box-shadow: 5px 5px 5px #dadada, -5px -5px 5px #ffffff !important;
+}
+
+.glass-card {
+  transition: all 0.3s;
+  border-top: 1px solid #ffffff88;
+  border-left: 1px solid #ffffff88;
+  backdrop-filter: blur(3px);
+  /* border-radius: 15px; */
+  box-shadow: 3px 3px 4.5px rgba(0, 0, 0, 0.5);
+  background: #25252510 !important;
+}
+
+.glass-card[disabled] {
+  box-shadow: none;
+  border: none;
+}
+
+.glass-panel {
+  transition: all 0.3s;
+  border-top: 1px solid #ffffff88;
+  border-left: 1px solid #ffffff88;
+  backdrop-filter: blur(3px);
+  /* border-radius: 15px; */
+  box-shadow: 3px 3px 4.5px rgba(0, 0, 0, 0.5);
+  background: #25252510 !important;
+}
+
+.morph:hover {
+  box-shadow: inset 5px 5px 5px #dadada, inset -5px -5px 5px #ffffff !important;
+}
+
+.morph-dark {
+  box-shadow: 3px 3px 3px #000000, -3px -3px 3px #252525 !important;
+}
+
+.morph-dark:hover {
+  box-shadow: inset 3px 5px 5px #000000, inset -3px -5px 5px #252525 !important;
+}
+
+.rainbow {
+  background-image: linear-gradient(
+    to right,
+    #101010 0%,
+    #101010 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
+}
+
+.rainbow-dark {
+  background-image: linear-gradient(
+    to right,
+    #efefef 0%,
+    #efefef 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
+}
+</style>

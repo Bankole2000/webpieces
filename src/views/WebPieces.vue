@@ -13,7 +13,7 @@
       </v-row>
       <div
         style="position: absolute; top: 15%; left: 0; width: 100%;"
-        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '5%' }"
+        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '0%' }"
       >
         <v-container>
           <v-row>
@@ -73,7 +73,7 @@
     <v-container class="mt-8">
       <v-tabs grow class="mb-8" show-arrows>
         <v-tab to="/webpieces" exact>Gallery</v-tab>
-        <v-tab to="/webpieces/add">Add A WebPiece</v-tab>
+        <v-tab to="/webpieces/add">Add WebPiece</v-tab>
         <v-tab to="/webpieces/queue">Request Queue</v-tab>
       </v-tabs>
       <transition name="router-anim">

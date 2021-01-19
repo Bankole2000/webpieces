@@ -6,50 +6,27 @@
     "githubAvailable": true,
     "projectUrl": "https://vuematch.netlify.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A memory matching game built around popular games and tv shows",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs",
-      "mdi-angular"
+      "mdi-vuetify"
     ],
     "objectives": []
   },
   {
-    "name": "Pluralsight Landing Page UI",
+    "name": "Pluralsight Login UI",
     "image": "psclone.jpg.webp",
     "githubUrl": "https://github.com/bankole2000/psloginclone",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/psloginclone",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A simple login page UI clone of the pluralsight website. Built with html and css",
     "longDescription": "",
-    "technologies": [
-      "mdi-firebase",
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
-    ],
+    "technologies": ["mdi-language-html5", "mdi-language-css3"],
     "objectives": []
   },
   {
@@ -59,22 +36,14 @@
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/alc4.0strategy",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A study tracking app with ordered links to pluralsight courses",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
+
+      "mdi-bootstrap"
     ],
     "objectives": []
   },
@@ -85,22 +54,13 @@
     "githubAvailable": true,
     "projectUrl": "https://smoothies-a3bd6.firebaseapp.com/",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A simple CRUD app for managing drink and cocktail recipes",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
+      "mdi-firebase"
     ],
     "objectives": []
   },
@@ -111,22 +71,12 @@
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/netflix",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "Simple UI Netflix landing page UI clone. Built with HTML and CSS",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
+      "mdi-language-javascript"
     ],
     "objectives": []
   },
@@ -137,22 +87,15 @@
     "githubAvailable": true,
     "projectUrl": "https://pmui.netlify.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A project management UI to demonstrate the beatify of vuetify",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-vuejs",
       "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
+      "mdi-firebase"
     ],
     "objectives": []
   },
@@ -163,22 +106,14 @@
     "githubAvailable": true,
     "projectUrl": "https://earth-friends.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A geolocation based chat app built using the Google maps API and Firebase.",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs"
+      "mdi-firebase"
     ],
     "objectives": []
   },
@@ -189,25 +124,13 @@
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "",
+    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
     "longDescription": "",
     "technologies": [
-      "mdi-firebase",
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-bootstrap",
-      "mdi-language-python",
-      "mdi-sass",
-      "mdi-wordpress",
-      "mdi-language-php",
-      "mdi-react",
-      "mdi-nodejs",
-      "mdi-microsoft-windows",
-      "mdi-ubuntu",
-      "mdi-apple"
+      "mdi-firebase"
     ],
     "objectives": []
   }

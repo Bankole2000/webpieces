@@ -38,7 +38,12 @@
               <v-expansion-panel-header>
                 <p class="text-h6 font-weight-light mb-0">{{ link.title }}</p>
               </v-expansion-panel-header>
-              <v-expansion-panel-content class="pb-1">
+              <v-expansion-panel-content class="pb-0">
+                <div
+                  class="mb-2"
+                  :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+                  style="width: 100%; height: 2px;"
+                ></div>
                 {{ link.content }}
                 <v-card-actions>
                   <v-spacer></v-spacer>

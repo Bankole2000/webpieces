@@ -15,9 +15,9 @@
         <div class="d-flex flex-column ml-4">
           <v-card-title class="headline">{{ project.name }}</v-card-title>
 
-          <v-card-subtitle>Project Description</v-card-subtitle>
+          <v-card-subtitle>{{ project.shortDescription }}</v-card-subtitle>
           <v-spacer></v-spacer>
-          <v-card-text class="pb-2">
+          <v-card-text class="pb-1">
             <v-tooltip top v-for="(tech, i) in project.technologies" :key="i">
               <template v-slot:activator="{ on, attrs }">
                 <v-chip
@@ -77,8 +77,8 @@
       <v-card-title>
         {{ project.name }}
       </v-card-title>
-      <v-card-subtitle>Here's some text</v-card-subtitle>
-      <v-card-text>
+      <v-card-subtitle>{{ project.shortDescription }}</v-card-subtitle>
+      <v-card-text class="pb-1">
         <v-tooltip top v-for="(tech, i) in project.technologies" :key="i">
           <template v-slot:activator="{ on, attrs }">
             <v-chip
@@ -138,10 +138,14 @@
             </v-btn>
           </template> -->
 
-      <v-card tile>
-        <v-card-title class="headline primary lighten-2 font-weight-light">
-          Project - <span class="font-weight-black">{{ project.title }}</span>
+      <v-card class="rounded-lg">
+        <v-card-title class="headline font-weight-light">
+          <span class="font-weight-black">{{ project.name }}</span>
         </v-card-title>
+        <div
+          :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+          style="width: 100%; height: 2px;"
+        ></div>
 
         <v-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -157,7 +161,11 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
+          <v-btn
+            :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            text
+            @click="dialog = false"
+          >
             I accept
           </v-btn>
         </v-card-actions>
@@ -196,4 +204,103 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+/* "technologies": [
+      "mdi-firebase",
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-bootstrap",
+      "mdi-language-python",
+      "mdi-sass",
+      "mdi-wordpress",
+      "mdi-language-php",
+      "mdi-react",
+      "mdi-nodejs",
+      "mdi-microsoft-windows",
+      "mdi-ubuntu",
+      "mdi-apple"
+    ], */
+.morph {
+  box-shadow: 5px 5px 5px #dadada, -5px -5px 5px #ffffff !important;
+}
+
+.glass-card {
+  transition: all 0.3s;
+  border-top: 1px solid #ffffff88;
+  border-left: 1px solid #ffffff88;
+  backdrop-filter: blur(3px);
+  /* border-radius: 15px; */
+  box-shadow: 3px 3px 4.5px rgba(0, 0, 0, 0.5);
+  background: #25252510 !important;
+}
+
+.glass-card[disabled] {
+  box-shadow: none;
+  border: none;
+}
+
+.glass-panel {
+  transition: all 0.3s;
+  border-top: 1px solid #ffffff88;
+  border-left: 1px solid #ffffff88;
+  backdrop-filter: blur(3px);
+  /* border-radius: 15px; */
+  box-shadow: 3px 3px 4.5px rgba(0, 0, 0, 0.5);
+  background: #25252510 !important;
+}
+
+.morph:hover {
+  box-shadow: inset 5px 5px 5px #dadada, inset -5px -5px 5px #ffffff !important;
+}
+
+.morph-dark {
+  box-shadow: 3px 3px 3px #000000, -3px -3px 3px #252525 !important;
+}
+
+.morph-dark:hover {
+  box-shadow: inset 3px 5px 5px #000000, inset -3px -5px 5px #252525 !important;
+}
+
+.rainbow {
+  background-image: linear-gradient(
+    to right,
+    #101010 0%,
+    #101010 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
+}
+
+.rainbow-dark {
+  background-image: linear-gradient(
+    to right,
+    #efefef 0%,
+    #efefef 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
+}
+</style>

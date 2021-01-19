@@ -5,7 +5,7 @@
       <Factory v-else />
       <div
         style="position: absolute; top: 15%; left: 0; width: 100%;"
-        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '5%' }"
+        :style="{ top: $vuetify.breakpoint.lgAndUp ? '15%' : '0%' }"
       >
         <v-container>
           <v-row>

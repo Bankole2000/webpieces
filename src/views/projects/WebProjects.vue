@@ -17,7 +17,7 @@
     ></div>
     <v-row class="mt-8">
       <v-col cols="12" lg="8">
-        <div class="my-3" v-for="(project, i) in projects" :key="i">
+        <div class="my-3 mb-5" v-for="(project, i) in projects" :key="i">
           <ProjectCard :project="project" />
         </div>
         <!-- <div v-for="n in 6" class="my-3" :key="n">
