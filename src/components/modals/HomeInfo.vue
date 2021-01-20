@@ -30,8 +30,9 @@
         ></div>
 
         <v-card-text class="pt-4">
-          <p class="text-h6 font-weight-medium secondary--text">
-            It's my own little part of the web. Here you can find;
+          <p class="text-h6 font-weight-light secondary--text">
+            I like to think of it as own little corner of the web. Here's what
+            you can find on here :-
           </p>
           <v-expansion-panels accordion>
             <v-expansion-panel v-for="(link, i) in modalLinks" :key="i">
@@ -88,27 +89,32 @@ export default {
         {
           to: "/about",
           title: "Info About me",
+          icon: "mdi-card-account-details",
           content:
             "My Skills, Experience, Certifications, Projects, Resume, etc"
         },
         {
           to: "/webpieces",
           title: "Web Pieces",
+          icon: "mdi-puzzle",
           content: ""
         },
         {
           to: "/projects",
+          icon: "mdi-briefcase",
           title: "My Projects",
           content: ""
         },
         {
-          to: "",
+          to: "/blog",
           title: "My Blog",
+          icon: "mdi-notebook-edit-outline",
           content: ""
         },
         {
-          to: "",
+          to: "/clients",
           title: "My Client Platform",
+          icon: "mdi-handshake",
           content: ""
         }
       ]

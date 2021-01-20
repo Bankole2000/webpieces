@@ -80,8 +80,12 @@
           </template>
         </link-prevue>
         <v-card v-else class="glass-card pa-4" style="width: 100%;">
-          <p>
-            Status: <span class="accent--text">Still Setting things up</span>
+          <p class="mb-2">
+            Status:
+            <span
+              :class="$vuetify.theme.dark ? 'warning--text' : 'primary--text'"
+              >Still setting things up</span
+            >
           </p>
           <v-progress-linear
             color="primary"
@@ -89,6 +93,48 @@
             rounded
             height="6"
           ></v-progress-linear>
+          <p class="mt-4 mb-0">
+            Sadly, the discord server isn't quite ready yet,
+            <span v-if="$vuetify.breakpoint.mdAndUp"
+              >but I'm working on it tirelessly, trust me.</span
+            >
+            <br />
+            <br />
+            {{
+              $vuetify.breakpoint.mdAndUp
+                ? "If you'd like to be notified when it's up, just fill "
+                : "Fill in "
+            }}your details below, and you'll get an invite right in your inbox
+            once the server is ready.
+          </p>
+
+          <v-text-field
+            label="Your name"
+            placeholder="JohnDoe99"
+            v-model.trim="name"
+            :success="isNotEmpty(name)"
+            hide-details
+            class="mt-2"
+          ></v-text-field>
+          <v-text-field
+            label="Your email"
+            placeholder="your@email.com"
+            v-model.trim="email"
+            :success="isEmail(email)"
+            class="mt-2"
+            hide-details
+          ></v-text-field>
+          <v-btn
+            class="mt-2 text-capitalize"
+            :disabled="!validData"
+            @click="checkData()"
+            :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            block
+            ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
+              !validData ? "mdi-alert" : "mdi-check"
+            }}</v-icon
+            >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
+          </v-btn>
         </v-card>
       </v-card-text>
 
@@ -111,6 +157,7 @@
 
 <script>
 import LinkPrevue from "link-prevue";
+import { isEmail, isNotEmpty } from "../../utils/validator";
 export default {
   name: "DiscordModal",
   components: {
@@ -119,11 +166,35 @@ export default {
   data() {
     return {
       dialog: false,
-      link: "https://discord.gg/rzx6Ruc"
-      // link: null,
+      // link: "https://discord.gg/rzx6Ruc"
+      link: null,
+      name: "",
+      email: "",
+      isNotEmpty,
+      isEmail
     };
   },
-  methods: {}
+  computed: {
+    validData() {
+      return isNotEmpty(this.name) && isEmail(this.email);
+    }
+  },
+  methods: {
+    checkData() {
+      console.log({
+        name: this.name,
+        email: this.email,
+        isNotEmpty: isNotEmpty(this.name),
+        isEmail: isEmail(this.email)
+      });
+    }
+  },
+  mounted() {
+    console.log({
+      isNotEmpty: isNotEmpty(" "),
+      isEmail: isEmail("techybanky@gmail.com")
+    });
+  }
 };
 </script>
 

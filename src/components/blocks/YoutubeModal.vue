@@ -32,8 +32,111 @@
         style="width: 100%; height: 2px;"
       ></div>
 
-      <v-card-text>
-        Thanks for you interest in my youtube channel
+      <v-card-text class="pt-4 d-flex flex-column justify-center align-center">
+        <p class="text-h6 font-weight-light" v-if="!$vuetify.theme.dark">
+          🙏 Thanks for your interest in the youtube channel
+        </p>
+        <p class="text-h6 font-weight-light" v-if="$vuetify.theme.dark">
+          🎥 Let's learn and grow together 🐱‍💻
+        </p>
+        <!-- :onButtonClick="method" cardWidth="px or %"  showButton="boolean"-->
+        <link-prevue v-if="link" :url="link">
+          <template slot="loading">
+            <!-- set your custom loading -->
+            <v-progress-linear
+              color="primary"
+              indeterminate
+              rounded
+              height="6"
+            ></v-progress-linear>
+          </template>
+          <template slot-scope="props">
+            <v-card class="mx-auto" max-width="344">
+              <v-img :src="props.img" height="200px" :alt="props.title"></v-img>
+              <div
+                :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+                style="width: 100%; height: 2px;"
+              ></div>
+
+              <v-card-title>
+                {{ props.title }}
+              </v-card-title>
+
+              <v-card-subtitle>
+                {{ props.description }}
+              </v-card-subtitle>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  block
+                  :href="props.url"
+                  target="_blank"
+                  :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+                >
+                  <v-icon left>mdi-open-in-new</v-icon> Go
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </link-prevue>
+        <v-card v-else class="glass-card pa-4" style="width: 100%;">
+          <p class="mb-2">
+            Status:
+            <span
+              :class="$vuetify.theme.dark ? 'warning--text' : 'primary--text'"
+              >Still setting things up</span
+            >
+          </p>
+          <v-progress-linear
+            color="primary"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+          <p class="mt-4 mb-0">
+            Sadly, the Youtube channel isn't quite ready yet,
+            <span v-if="$vuetify.breakpoint.mdAndUp"
+              >but I'm on it. It's really just a gear thing.</span
+            >
+            <br />
+            <br />
+            {{
+              $vuetify.breakpoint.mdAndUp
+                ? "If you'd like to be notified when it's up, just fill "
+                : "Fill in "
+            }}your details below, and you'll get a personal notification right
+            in your inbox once the Youtube channel is ready.
+          </p>
+
+          <v-text-field
+            label="Your name"
+            placeholder="JohnDoe99"
+            v-model.trim="name"
+            :success="isNotEmpty(name)"
+            hide-details
+            class="mt-2"
+          ></v-text-field>
+          <v-text-field
+            label="Your email"
+            placeholder="your@email.com"
+            v-model.trim="email"
+            :success="isEmail(email)"
+            class="mt-2"
+            hide-details
+          ></v-text-field>
+          <v-btn
+            class="mt-2 text-capitalize"
+            :disabled="!validData"
+            @click="checkData()"
+            :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+            block
+            ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
+              !validData ? "mdi-alert" : "mdi-check"
+            }}</v-icon
+            >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
+          </v-btn>
+        </v-card>
       </v-card-text>
 
       <v-divider></v-divider>
@@ -41,11 +144,11 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
-          class="rounded-lg"
-          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+          class="rounded-lg error--text"
+          :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
           @click="dialog = false"
         >
-          I accept
+          <v-icon left>mdi-close</v-icon> Close
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -54,13 +157,40 @@
 </template>
 
 <script>
+import LinkPrevue from "link-prevue";
+import { isEmail, isNotEmpty } from "../../utils/validator";
+
 export default {
+  components: {
+    LinkPrevue
+  },
+  name: "YoutubeModal",
   data() {
     return {
-      dialog: false
+      dialog: false,
+      // link: "https://youtube.com/traversymedia",
+      link: null,
+      name: "",
+      email: "",
+      isNotEmpty,
+      isEmail
     };
   },
-  methods: {}
+  computed: {
+    validData() {
+      return isNotEmpty(this.name) && isEmail(this.email);
+    }
+  },
+  methods: {
+    checkData() {
+      console.log({
+        name: this.name,
+        email: this.email,
+        isNotEmpty: isNotEmpty(this.name),
+        isEmail: isEmail(this.email)
+      });
+    }
+  }
 };
 </script>
 

@@ -53,6 +53,21 @@
                     </template>
                     <span>Github</span></v-tooltip
                   >
+                  <v-tooltip top>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        to="/linkedin"
+                        target="_blank"
+                        v-bind="attrs"
+                        v-on="on"
+                        x-large
+                        text
+                        icon
+                        class="mt-4 ml-n4"
+                        ><v-icon color="secondary">mdi-linkedin</v-icon></v-btn
+                      ></template
+                    ><span>LinkedIn</span></v-tooltip
+                  >
                   <v-spacer></v-spacer>
                   <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
@@ -69,7 +84,11 @@
                       ></template
                     ><span>Coders Rank</span></v-tooltip
                   >
+
                   <v-menu
+                    v-model="aboutMeMenu"
+                    :close-on-click="false"
+                    :close-on-content-click="false"
                     class="rounded-xl"
                     :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
                     transition="slide-x-transition"
@@ -87,7 +106,7 @@
                             icon
                             class="ma-4 ml-0"
                             ><v-icon color="secondary"
-                              >mdi-dots-vertical</v-icon
+                              >mdi-information-outline</v-icon
                             ></v-btn
                           ></template
                         ><span>Menu</span></v-tooltip
@@ -100,6 +119,7 @@
                         About me <v-spacer></v-spacer>
                         <v-btn
                           icon
+                          @click="aboutMeMenu = false"
                           :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
                           ><v-icon>mdi-close</v-icon></v-btn
                         >
@@ -237,6 +257,7 @@ export default {
   },
   data() {
     return {
+      aboutMeMenu: false,
       navItems: [
         // { title: "Studio", icon: "mdi-web", link: "/" },
         { title: "Skills", icon: "mdi-account-hard-hat", link: "/" },

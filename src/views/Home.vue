@@ -20,7 +20,7 @@
               <v-card class="glass-card rounded-xl pa-6">
                 <v-card-title>
                   <h1
-                    class="font-weight-light white--text"
+                    class="font-weight-light secondary--text"
                     :class="
                       $vuetify.breakpoint.lgAndUp ? 'display-1' : 'text-h5'
                     "
@@ -35,7 +35,7 @@
                   style="background-image: var(--rainbow); height: 5px; width 100%;"
                 ></div>
                 <v-card-text class="pb-0">
-                  <p class="text-h6 font-weight-light white--text mb-0">
+                  <p class="text-h6 font-weight-light secondary--text mb-0">
                     👋 Hi, I'm
                     <a
                       target="_blank"
@@ -46,7 +46,7 @@
                       "
                       class="primary--text font-weight-black"
                       >{{
-                        !$vuetify.theme.dark ? "Esan Bankole" : "@CodingInNeon"
+                        !$vuetify.theme.dark ? "Bankole Esan" : "@CodingInNeon"
                       }}</a
                     >. A Fullstack Developer with over 6 years coding
                     experience.
@@ -226,7 +226,7 @@ export default {
         src: "webpiece.svg",
         title: "Web Pieces",
         link: "/webpieces",
-        artist: `Search Webpieces or add a webpiece you're curious about`
+        artist: `Browse Webpieces or add a webpiece you're curious about`
       },
       {
         color: "info",

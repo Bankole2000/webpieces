@@ -93,6 +93,36 @@ const routes: Array<RouteConfig> = [
     path: "/history",
     name: "History",
     component: Test
+  },
+  {
+    path: "/clients",
+    beforeEnter() {
+      location.href = "https://projects.banky.studio";
+    }
+  },
+  {
+    path: "/blog",
+    beforeEnter() {
+      location.href = "https://blog.banky.studio";
+    }
+  },
+  {
+    path: "/linkedin",
+    beforeEnter() {
+      location.href = "https://www.linkedin.com/in/bankoleesan";
+    }
+  },
+  {
+    path: "/resume",
+    beforeEnter() {
+      location.href = "https://bankole2000.github.io/portfolio/resume.pdf";
+    }
+  },
+  {
+    path: "/sourcerer",
+    beforeEnter() {
+      location.href = "https://sourcerer.io/bankole2000";
+    }
   }
   // {
   //   path: '/about',

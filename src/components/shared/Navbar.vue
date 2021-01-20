@@ -55,7 +55,7 @@
               :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
               :class="{
                 'glass-card': $vuetify.theme.dark,
-                morph: !$vuetify.theme.dark,
+                'morph': !$vuetify.theme.dark,
                 'primary--text': $route.path.includes(item.link)
               }"
               ><v-icon left>{{ item.icon }}</v-icon> {{ item.title }}</v-btn
@@ -99,8 +99,12 @@
               large
               :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
               block
-              >Logout</v-btn
+              to="/clients"
+              target="_blank"
             >
+              <v-icon left>mdi-login-variant</v-icon>
+              Client Login
+            </v-btn>
           </div>
         </div>
       </template>
