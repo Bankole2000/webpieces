@@ -22,11 +22,17 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: {
+      title: "Home"
+    }
   },
   {
     path: "/webpieces",
     component: Webpieces,
+    meta: {
+      title: "Web pieces"
+    },
     children: [
       {
         path: "",
@@ -35,28 +41,43 @@ const routes: Array<RouteConfig> = [
           {
             path: "",
             name: "Web Pieces",
-            component: GalleryList
+            component: GalleryList,
+            meta: {
+              title: "Web pieces"
+            }
           },
           {
             path: "vanilla/splitscreen",
             name: "Split Screen Hover Effect",
-            component: SplitScreen
+            component: SplitScreen,
+            meta: {
+              title: "Web piece - SplitScreen"
+            }
           },
           {
             path: "vuetify/alerts",
 
             name: "Vuetify Alerts",
-            component: VuetifyAlerts
+            component: VuetifyAlerts,
+            meta: {
+              title: "Web piece - Vuetify Alerts"
+            }
           }
         ]
       },
       {
         path: "add",
-        component: RequestPiece
+        component: RequestPiece,
+        meta: {
+          title: "Add A Web piece"
+        }
       },
       {
         path: "queue",
-        component: Queue
+        component: Queue,
+        meta: {
+          title: "Web piece requests"
+        }
       }
     ]
   },
@@ -67,27 +88,39 @@ const routes: Array<RouteConfig> = [
       {
         path: "",
         name: "Projects",
-        component: WebProjects
+        component: WebProjects,
+        meta: {
+          title: "Projects"
+        }
       },
       {
         path: "technologies",
-        component: Technologies
+        component: Technologies,
+        meta: {
+          title: "Technologies"
+        }
       },
       {
         path: "myprocess",
-        component: MyProcess
+        component: MyProcess,
+        meta: {
+          title: "My Process"
+        }
       }
     ]
   },
   {
     path: "/test",
     name: "Test",
-    component: SplitScreen
+    component: Test
   },
   {
     path: "/about",
     name: "About Me",
-    component: About
+    component: About,
+    meta: {
+      title: "About Me"
+    }
   },
   {
     path: "/history",
@@ -114,6 +147,24 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/resume",
+    beforeEnter() {
+      location.href = "https://bankole2000.github.io/portfolio/resume.pdf";
+    }
+  },
+  {
+    path: "/github",
+    beforeEnter() {
+      location.href = "https://github.com/Bankole2000";
+    }
+  },
+  {
+    path: "/github",
+    beforeEnter() {
+      location.href = "https://github.com/Bankole2000";
+    }
+  },
+  {
+    path: "/hire",
     beforeEnter() {
       location.href = "https://bankole2000.github.io/portfolio/resume.pdf";
     }

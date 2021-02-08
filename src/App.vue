@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar :style="cssProps" />
-    <v-main :style="cssProps">
+    <v-main :style="cssProps" style="margin-top: -18px;">
       <transition name="router-anim">
         <router-view></router-view>
       </transition>
@@ -36,14 +36,28 @@ export default Vue.extend({
       return generatedColors;
     }
   },
+  watch: {
+    $route(to) {
+      document.title = `Banky Studio - ${to.meta.title ? to.meta.title : ""}`;
+      const link = document.querySelector("[rel='icon']");
+      if (link) {
+        link.setAttribute("href", "img/icons/nightprofile.jpg.webp");
+        console.log(link);
+      }
+    }
+  },
   mounted() {
-    console.log({
-      breakpoint: this.$vuetify.breakpoint,
-      sm: this.$vuetify.breakpoint.smOnly,
-      xs: this.$vuetify.breakpoint.xsOnly,
-      md: this.$vuetify.breakpoint.mdOnly,
-      lg: this.$vuetify.breakpoint.lgOnly
-    });
+    // console.log({
+    //   breakpoint: this.$vuetify.breakpoint,
+    //   sm: this.$vuetify.breakpoint.smOnly,
+    //   xs: this.$vuetify.breakpoint.xsOnly,
+    //   md: this.$vuetify.breakpoint.mdOnly,
+    //   lg: this.$vuetify.breakpoint.lgOnly
+    // });
+    // console.log({ colors: this.$vuetify.theme });
+  },
+  beforeCreate() {
+    this.$vuetify.theme.dark = true;
   }
 });
 </script>

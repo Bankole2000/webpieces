@@ -117,6 +117,7 @@
     >
       <v-app-bar-nav-icon
         :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+        id="menuIcon"
         v-if="primaryDrawer.type !== 'permanent'"
         @click.stop="primaryDrawer.model = !primaryDrawer.model"
         class="ml-4"
@@ -212,8 +213,97 @@
       absolute
       app
     >
-      <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
+      <div class="d-flex" style="width: 100%; align-items: center;">
+        <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
+        <v-spacer></v-spacer>
+        <a
+          class="mb-0 mr-4"
+          style="cursor: pointer; text-decoration: none"
+          @click="colorMenu = true"
+        >
+          Try out different colors 🎨
+        </a>
+      </div>
     </v-footer>
+    <v-dialog v-model="colorMenu" max-width="500">
+      <v-card class="rounded-xl">
+        <v-card-title>
+          Pick your preferred color
+          <v-spacer></v-spacer>
+          <v-btn
+            :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+            icon
+            @click="colorMenu = false"
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-card-title>
+        <div
+          :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+          style="width: 100%; height: 2px;"
+        ></div>
+        <v-card-text class="pa-4">
+          <v-radio-group
+            v-model="preferredColor"
+            @change="changeColorScheme($event)"
+            row
+          >
+            <v-radio hide-details value="pink">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.primary"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+            <v-radio label="purple" value="purple">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.purple"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+            <v-radio label="green" value="green">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.green"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+            <v-radio label="blue" value="blue">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.blue"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+            <v-radio label="orange" value="orange">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.orange"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+            <v-radio label="red" value="red">
+              <template v-slot:label>
+                <v-icon :color="defaultColorScheme.light.red"
+                  >mdi-invert-colors</v-icon
+                >
+              </template>
+            </v-radio>
+          </v-radio-group>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer> </v-spacer>
+          <v-btn
+            text
+            class="rounded-lg error--text morph"
+            @click="colorMenu = false"
+            ><v-icon left>mdi-close</v-icon> Close</v-btn
+          >
+          <!-- :class="$vuetify.theme.dark ? 'glass-card' : 'morph'" -->
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <Snackbar />
   </div>
 </template>
@@ -225,6 +315,13 @@ import YoutubeModal from "../blocks/YoutubeModal.vue";
 import TwitchModal from "../blocks/TwitchModal.vue";
 import DiscordModal from "../blocks/DiscordModal";
 
+document.addEventListener("keydown", (e) => {
+  if (e.key == ";") {
+    document.querySelector("#menuIcon").click();
+    // document.querySelector("#sideNav").focus();
+  }
+});
+
 export default {
   components: {
     Snackbar,
@@ -234,7 +331,36 @@ export default {
   },
   data() {
     return {
+      colorMenu: false,
       loadingTestButton: false,
+      defaultColorScheme: {
+        light: {
+          accent: "#9c27b0",
+          primary: "#e91e63",
+          error: "#FF0000",
+          warning: "#FFB300",
+          success: "#4CAF50",
+          info: "#2196F3",
+          purple: "#d500f9",
+          green: "#00c853",
+          blue: "#00b0ff",
+          orange: "#ef6c00",
+          red: "#ff0000"
+        },
+        dark: {
+          accent: "#9c27b0",
+          primary: "#e91e63",
+          error: "#FF0000",
+          warning: "#FFB300",
+          success: "#4CAF50",
+          info: "#2196F3",
+          purple: "#d500f9",
+          green: "#00FF00",
+          blue: "#00b0ff",
+          orange: "#fb8c00",
+          red: "#ff0000"
+        }
+      },
       drawers: ["Default (no property)", "Permanent", "Temporary"],
       primaryDrawer: {
         model: false,
@@ -246,6 +372,7 @@ export default {
       footer: {
         inset: false
       },
+      preferredColor: "pink",
       items: [
         { title: "Studio", icon: "mdi-web", link: "/" },
         { title: "Projects", icon: "mdi-quadcopter", link: "/projects" },
@@ -253,9 +380,9 @@ export default {
         { title: "About Me", icon: "mdi-account", link: "/about" }
       ],
       socialLinks: [
-        { name: "", link: "", color: "info", icon: "mdi-twitter" },
-        { name: "", link: "", color: "info darken-2", icon: "mdi-facebook" },
-        { name: "", link: "", color: "success", icon: "mdi-whatsapp" },
+        { name: "", link: "", color: "#2196f3", icon: "mdi-twitter" },
+        { name: "", link: "", color: "#0064ba", icon: "mdi-facebook" },
+        { name: "", link: "", color: "#52b155", icon: "mdi-whatsapp" },
         // { name: '', link: '', color: 'error', icon: 'mdi-youtube' },
         // { name: '', link: '', color: 'primary', icon: 'mdi-twitch' },
         { name: "", link: "", color: "secondary", icon: "mdi-github" }
@@ -277,6 +404,81 @@ export default {
           this.loadingTestButton = false;
         }, 2000);
       });
+    },
+    changeColorScheme(e) {
+      console.log({ e });
+      if (e == "pink") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+      }
+      if (e == "purple") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.purple;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.purple;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+      }
+      if (e == "green") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.green;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.green;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+      }
+      if (e == "blue") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.blue;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.blue;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.primary;
+      }
+      if (e == "orange") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.orange;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.orange;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+      }
+      if (e == "red") {
+        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.red;
+        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.red;
+        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+      }
     }
   },
   mounted() {
@@ -492,5 +694,44 @@ export default {
 
 .error-morph:hover {
   box-shadow: var(--error-neomorph-reverse) !important;
+}
+.rainbow {
+  background-image: linear-gradient(
+    to right,
+    #101010 0%,
+    #101010 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
+}
+
+.rainbow-dark {
+  background-image: linear-gradient(
+    to right,
+    #efefef 0%,
+    #efefef 14.2857%,
+    #ff0000 1%,
+    #ff0000 28.5714%,
+    #ffb300 2%,
+    #ffb300 42.8571%,
+    #4caf50 3%,
+    #4caf50 57.1429%,
+    #2196f3 4%,
+    #2196f3 71.4286%,
+    #e91e63 5%,
+    #e91e63 85.7143%,
+    #9c27b0 6%,
+    #9c27b0 100%
+  );
 }
 </style>

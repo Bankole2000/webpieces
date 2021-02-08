@@ -26,9 +26,14 @@
           Tell me about it, let's see what we can do.
         </p>
       </v-row>
+    </v-container>
+    <fieldset
+      style="padding: 20px; border-radius: 15px; border: 2px solid var(--primary)"
+    >
+      <legend style="padding: 0 10px;">Request a Webpiece</legend>
 
       <add-webpiece></add-webpiece>
-    </v-container>
+    </fieldset>
   </div>
 </template>
 

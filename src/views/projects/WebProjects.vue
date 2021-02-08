@@ -65,17 +65,17 @@ export default {
       scrollPosition: false,
       elementTop: null,
       elementWidth: null,
-      projects
+      projects: []
     };
   },
   methods: {
     updateScroll() {
       // this.scrollPosition = window.scrollY;
-      console.log({
-        windowScroll: window.scrollY,
-        elementWidth: this.elementWidth
-        // elementTop: this.$refs.filter.getBoundingClientRect().top,
-      });
+      // console.log({
+      //   windowScroll: window.scrollY,
+      //   elementWidth: this.elementWidth
+      //   // elementTop: this.$refs.filter.getBoundingClientRect().top,
+      // });
       // this.$refs.filter.getBoundingClientRect().top < 100
       //   ? (this.scrollPosition = true)
       //   : (this.scrollPosition = false);
@@ -85,6 +85,7 @@ export default {
     }
   },
   mounted() {
+    this.projects = projects;
     if (this.$vuetify.breakpoint.lgAndUp) {
       console.log(this.$refs, window.scrollY);
       this.elementTop = this.$refs.filter.offsetTop;

@@ -33,12 +33,10 @@
       ></div>
 
       <v-card-text class="pt-4 d-flex flex-column justify-center align-center">
-        <p class="text-h6 font-weight-light" v-if="!$vuetify.theme.dark">
-          🙏 Thanks for your interest in the youtube channel
+        <p class="text-h6 font-weight-light">
+          🙏 Thanks for your interest in the Youtube channel
         </p>
-        <p class="text-h6 font-weight-light" v-if="$vuetify.theme.dark">
-          🎥 Let's learn and grow together 🐱‍💻
-        </p>
+
         <!-- :onButtonClick="method" cardWidth="px or %"  showButton="boolean"-->
         <link-prevue v-if="link" :url="link">
           <template slot="loading">
@@ -94,48 +92,62 @@
             rounded
             height="6"
           ></v-progress-linear>
-          <p class="mt-4 mb-0">
-            Sadly, the Youtube channel isn't quite ready yet,
-            <span v-if="$vuetify.breakpoint.mdAndUp"
-              >but I'm on it. It's really just a gear thing.</span
+          <p
+            class="mt-3 mb-0"
+            style="cursor: pointer;"
+            @click="moreDetails = !moreDetails"
+          >
+            {{ moreDetails ? "Less" : "More" }} Details
+            <v-icon
+              >mdi-{{ moreDetails ? "chevron-up" : "chevron-down" }}</v-icon
             >
-            <br />
-            <br />
-            {{
-              $vuetify.breakpoint.mdAndUp
-                ? "If you'd like to be notified when it's up, just fill "
-                : "Fill in "
-            }}your details below, and you'll get a personal notification right
-            in your inbox once the Youtube channel is ready.
           </p>
+          <v-expand-transition>
+            <div v-show="moreDetails">
+              <p class="mt-2 mb-0">
+                Sadly, the Youtube channel isn't quite ready yet,
+                <span v-if="$vuetify.breakpoint.mdAndUp"
+                  >but I'm on it. It's really just a gear thing.</span
+                >
+                <br />
+                <br />
+                {{
+                  $vuetify.breakpoint.mdAndUp
+                    ? "If you'd like to be notified when it's up, just fill "
+                    : "Fill in "
+                }}your details below, and you'll get a personal notification
+                right in your inbox once the Youtube channel is ready.
+              </p>
 
-          <v-text-field
-            label="Your name"
-            placeholder="JohnDoe99"
-            v-model.trim="name"
-            :success="isNotEmpty(name)"
-            hide-details
-            class="mt-2"
-          ></v-text-field>
-          <v-text-field
-            label="Your email"
-            placeholder="your@email.com"
-            v-model.trim="email"
-            :success="isEmail(email)"
-            class="mt-2"
-            hide-details
-          ></v-text-field>
-          <v-btn
-            class="mt-2 text-capitalize"
-            :disabled="!validData"
-            @click="checkData()"
-            :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
-            block
-            ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
-              !validData ? "mdi-alert" : "mdi-check"
-            }}</v-icon
-            >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
-          </v-btn>
+              <v-text-field
+                label="Your name"
+                placeholder="JohnDoe99"
+                v-model.trim="name"
+                :success="isNotEmpty(name)"
+                hide-details
+                class="mt-2"
+              ></v-text-field>
+              <v-text-field
+                label="Your email"
+                placeholder="your@email.com"
+                v-model.trim="email"
+                :success="isEmail(email)"
+                class="mt-2"
+                hide-details
+              ></v-text-field>
+              <v-btn
+                class="mt-2 text-capitalize"
+                :disabled="!validData"
+                @click="checkData()"
+                :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+                block
+                ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
+                  !validData ? "mdi-alert" : "mdi-check"
+                }}</v-icon
+                >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
+              </v-btn>
+            </div>
+          </v-expand-transition>
         </v-card>
       </v-card-text>
 
@@ -167,6 +179,7 @@ export default {
   name: "YoutubeModal",
   data() {
     return {
+      moreDetails: false,
       dialog: false,
       // link: "https://youtube.com/traversymedia",
       link: null,

@@ -99,21 +99,25 @@
               </v-toolbar>
 
               <v-card class="rounded-xl menu-card glass-card px-2 py-4">
+                <!-- :search-input.sync="search" -->
                 <v-autocomplete
                   v-model="select"
                   :loading="loading"
+                  id="homeSearch"
                   prepend-inner-icon="mdi-magnify"
-                  :items="autoitems"
-                  :search-input.sync="search"
+                  :items="searchTerms"
+                  :item-value="searchTerms.route"
+                  :item-text="searchTerms.name"
                   cache-items
                   class="mx-4"
                   flat
                   dark
                   rounded
+                  @change="gotoResult"
                   :placeholder="
                     $vuetify.breakpoint.mdAndDown
                       ? 'Search Web Pieces / Pages'
-                      : 'Search (\'/\' to focus, \';\' to open menu)'
+                      : 'Search (\'/\' to focus, \';\' to toggle menu)'
                   "
                   solo-inverted
                 ></v-autocomplete>
@@ -197,14 +201,22 @@
 <script>
 import HomeInfo from "@/components/modals/HomeInfo.vue";
 import VuetifyColors from "vuetify/lib/util/colors";
-// import GlassCard from '@/components/blocks/GlassCard';
-// import Phone1 from '@/components/animated/Phone1';
+
+document.addEventListener("keydown", (e) => {
+  // console.log(window.location);
+
+  if (e.key == "/") {
+    if (window.location.pathname == "/") {
+      e.preventDefault();
+      // console.log(menuItems);
+      document.querySelector("#homeSearch").focus();
+    }
+  }
+});
 
 export default {
   components: {
     HomeInfo
-    // GlassCard,
-    // Phone1,
   },
   data: () => ({
     drawers: ["Default (no property)", "Permanent", "Temporary"],
@@ -238,11 +250,11 @@ export default {
       },
       {
         color: "accent",
-        icon: "mdi-music-box",
-        src: "music.svg",
-        title: "Music",
-        linke: "/music",
-        artist: "So... I also do this on the side, apparently"
+        icon: "mdi-account-circle",
+        src: "about.svg",
+        title: "About Me",
+        linke: "/about",
+        artist: "View info about me. Stack, skills, experience, my resume etc."
       },
       {
         color: "success",
@@ -250,74 +262,51 @@ export default {
         src: "client.svg",
         title: "Clients",
         link: "/clients",
-        artist: "Click here to go to the client area"
+        artist: "Current/previous clients, click here to access the client area"
       }
     ],
-    // Autocomplete stuff
     loading: false,
     autoitems: [],
     search: null,
     select: null,
-    states: [
-      "Alabama",
-      "Alaska",
-      "American Samoa",
-      "Arizona",
-      "Arkansas",
-      "California",
-      "Colorado",
-      "Connecticut",
-      "Delaware",
-      "District of Columbia",
-      "Federated States of Micronesia",
-      "Florida",
-      "Georgia",
-      "Guam",
-      "Hawaii",
-      "Idaho",
-      "Illinois",
-      "Indiana",
-      "Iowa",
-      "Kansas",
-      "Kentucky",
-      "Louisiana",
-      "Maine",
-      "Marshall Islands",
-      "Maryland",
-      "Massachusetts",
-      "Michigan",
-      "Minnesota",
-      "Mississippi",
-      "Missouri",
-      "Montana",
-      "Nebraska",
-      "Nevada",
-      "New Hampshire",
-      "New Jersey",
-      "New Mexico",
-      "New York",
-      "North Carolina",
-      "North Dakota",
-      "Northern Mariana Islands",
-      "Ohio",
-      "Oklahoma",
-      "Oregon",
-      "Palau",
-      "Pennsylvania",
-      "Puerto Rico",
-      "Rhode Island",
-      "South Carolina",
-      "South Dakota",
-      "Tennessee",
-      "Texas",
-      "Utah",
-      "Vermont",
-      "Virgin Island",
-      "Virginia",
-      "Washington",
-      "West Virginia",
-      "Wisconsin",
-      "Wyoming"
+    searchTerms: [
+      {
+        value: "/webpieces",
+        text: "Webpieces"
+      },
+      {
+        value: "/webpieces/add",
+        text: "Webpieces - Add a webpiece"
+      },
+      {
+        value: "/webpieces/queue",
+        text: "Webpieces - Request queue"
+      },
+      {
+        value: "/webpieces/vuetify/alerts",
+        text: "Webpieces - Vuetify Alerts"
+      },
+      {
+        value: "/webpieces/vanilla/splitscreen",
+        text: "Webpieces - Vanilla Splitscreen"
+      },
+
+      {
+        value: "/projects",
+        text: "Projects - My Web Projects"
+      },
+      {
+        value: "/projects/technologies",
+        text: "Projects - Technologies"
+      },
+      {
+        value: "/projects/myprocess",
+        text: "Projects - My Process"
+      },
+      {
+        value: "/about",
+        text: "About Me"
+      }
     ],
     otherLinks: [
       {
@@ -335,21 +324,9 @@ export default {
       {
         tooltipText: "The Studio Blog",
         link: "https://blog.banky.studio",
-        class: "primary",
+        class: "accent",
         icon: "mdi-post"
       },
-      // {
-      //   tooltipText: "Style Guide",
-      //   link: "",
-      //   class: "success",
-      //   icon: "mdi-palette"
-      // },
-      // {
-      //   tooltipText: "Slack Group",
-      //   link: "",
-      //   class: "accent",
-      //   icon: "mdi-slack"
-      // },
       {
         tooltipText: `What's up with me`,
         link: "",
@@ -358,13 +335,12 @@ export default {
       }
     ]
   }),
-  // For Autocomplete
-  watch: {
-    search(val) {
-      val && val !== this.select && this.querySelections(val);
-    }
-  },
+
+  watch: {},
   methods: {
+    gotoResult(e) {
+      this.$router.push(e);
+    },
     updateTime() {
       setInterval(() => {
         this.currentTime = new Date();
@@ -373,20 +349,12 @@ export default {
     showColors() {
       console.log(VuetifyColors);
       console.log(this.$vuetify);
-    },
-    // Autocomplete methods
-    querySelections(v) {
-      this.loading = true;
-      // Simulated ajax query
-      setTimeout(() => {
-        this.autoitems = this.states.filter((e) => {
-          return (e || "").toLowerCase().indexOf((v || "").toLowerCase()) > -1;
-        });
-        this.loading = false;
-      }, 500);
     }
   },
   mounted() {
+    // document.addEventListener("DOMContentLoaded", (e) => {
+    //   // console.log("ready");
+    // });
     setInterval(() => {
       this.updateTime();
     }, 1000);

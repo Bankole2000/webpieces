@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <v-card tile :color="$vuetify.theme.dark ? '#121212' : '#FFFFFF'">
+    <v-card tile flat :color="$vuetify.theme.dark ? '#121212' : '#FFFFFF'">
       <!-- :height="$vuetify.breakpoint.smAndUp ? $vuetify.breakpoint.height - 72 : 'full'" -->
       <v-img
         dark
@@ -10,7 +10,7 @@
             : require('@/assets/images/neoncityday.gif')
         "
         class="d-flex align-start "
-        :height="$vuetify.breakpoint.height - 108"
+        :height="$vuetify.breakpoint.height - 78"
         :gradient="
           `to top, ${$vuetify.theme.dark ? '#121212' : '#FFFFFF'}FF -2%, ${
             $vuetify.theme.themes.light.secondary
@@ -145,6 +145,9 @@
                             class="ma-2 rounded-lg"
                             text
                             :to="item.link"
+                            :target="
+                              ['/resume'].includes(item.link) ? '_blank' : ''
+                            "
                             color="secondary"
                             exact
                             :class="
@@ -263,11 +266,22 @@ export default {
         { title: "Skills", icon: "mdi-account-hard-hat", link: "/" },
         { title: "Experience", icon: "mdi-briefcase", link: "/" },
         { title: "Certs", icon: "mdi-seal", link: "/" },
-        { title: "Resume", icon: "mdi-download", link: "/" },
+        { title: "Resume", icon: "mdi-download", link: "/resume" },
+        { title: "Coders Rank", icon: "mdi-code-tags", link: "/coderank" },
+        {
+          title: "Sourcerer",
+          icon: "mdi-code-not-equal-variant",
+          link: "/sourcerer"
+        },
         {
           title: "Projects",
           icon: "mdi-package-variant-closed",
           link: "/projects"
+        },
+        {
+          title: "Shenanigans",
+          icon: "mdi-party-popper",
+          link: "/shenanigans"
         }
         // { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" }
         // { title: "About Me", icon: "mdi-account", link: "/about" }

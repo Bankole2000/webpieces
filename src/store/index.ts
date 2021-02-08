@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+/* eslint-disable */
+// @ts-ignore
+import {config} from '../utils/config.js';
+/* eslint-enable */
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -32,8 +35,39 @@ export default new Vuex.Store({
     showToast({ commit }, { sclass, message, timeout = 2000 }) {
       return new Promise(resolve => {
         commit("showToast", { sclass, message, timeout });
-        resolve();
+        resolve(true);
       });
+    }, 
+    async getWebpieceRequests ({commit}){
+      const res = await fetch(`${config.serverURL}/webpieces`)
+      const data = await res.json();
+      return data
+    },
+    async uploadWebpieceRequestImage ({commit}, {uploadedImage}) {
+      const formData = new FormData();
+      console.log({uploadedImage})
+      formData.append('webpieceImage', uploadedImage);
+      console.log(formData.get('webpieceImage'))
+      const reqOptions = {
+        method: 'POST', 
+        body: formData
+      }
+      const res = await fetch(`${config.serverURL}/webpieces/images`, reqOptions)
+      const data = await res.json();
+      return data;
+    },
+    async postWebpieceRequest({commit}, webpieceData){
+      const res = await fetch(`${config.serverURL}/webpieces`, {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+        }, 
+        body: JSON.stringify(webpieceData)
+      })
+      
+      const data = await res.json();
+      console.log({data})
+      return(data)
     }
   },
   getters: {

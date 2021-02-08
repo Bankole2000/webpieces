@@ -37,7 +37,14 @@
           <v-expansion-panels accordion>
             <v-expansion-panel v-for="(link, i) in modalLinks" :key="i">
               <v-expansion-panel-header>
-                <p class="text-h6 font-weight-light mb-0">{{ link.title }}</p>
+                <template v-slot:default="{ open }">
+                  <p class="text-h6 font-weight-light mb-0">
+                    <v-icon class="mb-1" :class="open ? 'primary--text' : ''">{{
+                      link.icon
+                    }}</v-icon>
+                    {{ link.title }}
+                  </p>
+                </template>
               </v-expansion-panel-header>
               <v-expansion-panel-content class="pb-0">
                 <div
@@ -50,6 +57,9 @@
                   <v-spacer></v-spacer>
                   <v-btn
                     :to="link.to"
+                    :target="
+                      ['/blog', '/clients'].includes(link.to) ? '_blank' : ''
+                    "
                     block
                     :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
                   >
@@ -97,26 +107,37 @@ export default {
           to: "/webpieces",
           title: "Web Pieces",
           icon: "mdi-puzzle",
-          content: ""
+          content:
+            "A collaboratively maintained collection of web components and pieces of web interfaces. Also the name of my upcoming Youtube tutorial series where I code these pieces from scratch"
         },
         {
           to: "/projects",
           icon: "mdi-briefcase",
           title: "My Projects",
-          content: ""
+          content:
+            "Overview and details of some projects I've done/I'm currently working on."
         },
         {
           to: "/blog",
           title: "My Blog",
           icon: "mdi-notebook-edit-outline",
-          content: ""
+          content:
+            "A personal blog I keep for writing about coding, webdev, music, gaming, some social stuff, and my experiences/interests in general"
         },
         {
           to: "/clients",
           title: "My Client Platform",
           icon: "mdi-handshake",
-          content: ""
+          content:
+            "A Leantime Agile dev platform where I maintain client projects"
         }
+        // {
+        //   to: "/hire",
+        //   title: "Hire Me 💼🙋‍♂️",
+        //   icon: "mdi-account-hard-hat",
+        //   content:
+        //     "I'm currently actively looking for Remote fulltime/partime and freelance work"
+        // }
       ]
     };
   }

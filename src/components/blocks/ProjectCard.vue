@@ -6,13 +6,16 @@
       v-if="$vuetify.breakpoint.smAndUp"
     >
       <div style="width: 100%;" class="d-flex flex-no-wrap justify-start">
-        <v-avatar class="ma-0" size="192" tile>
+        <!-- <v-avatar class="ma-0" size="192" tile> -->
+        <div style="flex: 2;">
           <v-img
+            :aspect-ratio="1864 / 1400"
             :src="require(`@/assets/images/projectImages/${project.image}`)"
           ></v-img>
-        </v-avatar>
+        </div>
+        <!-- </v-avatar> -->
 
-        <div class="d-flex flex-column ml-4">
+        <div style="flex: 3" class="d-flex flex-column ml-4">
           <v-card-title class="headline">{{ project.name }}</v-card-title>
 
           <v-card-subtitle>{{ project.shortDescription }}</v-card-subtitle>
@@ -64,11 +67,12 @@
             >
           </div>
         </div>
-        <div class="d-flex flex-column"></div>
+        <!-- <div class="d-flex flex-column"></div> -->
       </div>
     </v-card>
     <v-card v-else class="mb-8">
       <v-img
+        :aspect-ratio="1864 / 1400"
         :src="require(`@/assets/images/projectImages/${project.image}`)"
       ></v-img>
       <div
@@ -194,7 +198,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.project);
+    // console.log(this.project);
   }
 };
 </script>

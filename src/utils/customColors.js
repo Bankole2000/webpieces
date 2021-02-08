@@ -1,6 +1,6 @@
 import { LightenDarkenColor } from "./darken";
 
-const generateColors = theme => {
+const generateColors = (theme) => {
   const colors = [
     "secondary",
     "error",
@@ -55,7 +55,7 @@ const generateColors = theme => {
       ? (darkenBackgroundLight = "#cccccc")
       : darkenBackgroundLight;
 
-  console.log({ generatedColors, lightenBackground, darkenBackground });
+  // console.log({ generatedColors, lightenBackground, darkenBackground });
   generatedColors[
     `--neomorph-dark`
   ] = `3px 3px 3px ${darkenBackground}, -3px -3px 3px ${lightenBackground}`;
