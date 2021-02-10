@@ -118,34 +118,64 @@
                 }}your details below, and you'll get a personal notification
                 right in your inbox once the Youtube channel is ready.
               </p>
+              <div v-if="!sent">
+                <v-text-field
+                  label="Your name"
+                  placeholder="JohnDoe99"
+                  v-model.trim="name"
+                  :success="isNotEmpty(name)"
+                  hide-details
+                  class="mt-2"
+                ></v-text-field>
+                <v-text-field
+                  label="Your email"
+                  placeholder="your@email.com"
+                  v-model.trim="email"
+                  :success="isEmail(email)"
+                  class="mt-2"
+                  hide-details
+                ></v-text-field>
+                <v-btn
+                  class="mt-2 text-capitalize"
+                  :disabled="!validData || sending"
+                  @click="sendData()"
+                  :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+                  block
+                  ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
+                    !validData ? "mdi-alert" : "mdi-check"
+                  }}</v-icon
+                  >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
+                </v-btn>
+              </div>
+              <v-alert
+                v-else
+                transition="scroll-y-reverse-transition"
+                class="mt-4"
+                prominent
+                text
+                type="success"
+              >
+                <v-row align="center">
+                  <v-col class="grow"
+                    >Your Request has been Sent. Thanks. I'll be sure to keep
+                    you updated.</v-col
+                  >
+                  <v-col class="shrink">
+                    <v-btn @click="resetForm" icon
+                      ><v-icon>mdi-restore</v-icon></v-btn
+                    >
+                  </v-col>
+                </v-row>
+              </v-alert>
 
-              <v-text-field
-                label="Your name"
-                placeholder="JohnDoe99"
-                v-model.trim="name"
-                :success="isNotEmpty(name)"
-                hide-details
-                class="mt-2"
-              ></v-text-field>
-              <v-text-field
-                label="Your email"
-                placeholder="your@email.com"
-                v-model.trim="email"
-                :success="isEmail(email)"
-                class="mt-2"
-                hide-details
-              ></v-text-field>
-              <v-btn
-                class="mt-2 text-capitalize"
-                :disabled="!validData"
-                @click="checkData()"
-                :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
-                block
-                ><v-icon :color="!validData ? 'warning' : 'success'" left>{{
-                  !validData ? "mdi-alert" : "mdi-check"
-                }}</v-icon
-                >{{ !validData ? "Invalid name / email" : "Keep me Updated" }}
-              </v-btn>
+              <v-overlay :absolute="true" :value="sending">
+                <v-progress-circular
+                  :size="70"
+                  :width="7"
+                  color="primary"
+                  indeterminate
+                ></v-progress-circular>
+              </v-overlay>
             </div>
           </v-expand-transition>
         </v-card>
@@ -171,6 +201,7 @@
 <script>
 import LinkPrevue from "link-prevue";
 import { isEmail, isNotEmpty } from "../../utils/validator";
+import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -180,9 +211,14 @@ export default {
   data() {
     return {
       moreDetails: false,
+      isDark: null,
+      color: null,
+      sending: false,
+      sent: false,
       dialog: false,
       // link: "https://youtube.com/traversymedia",
       link: null,
+      type: "youtube",
       name: "",
       email: "",
       isNotEmpty,
@@ -195,13 +231,43 @@ export default {
     }
   },
   methods: {
-    checkData() {
-      console.log({
-        name: this.name,
-        email: this.email,
-        isNotEmpty: isNotEmpty(this.name),
-        isEmail: isEmail(this.email)
-      });
+    ...mapActions(["postUpdateRequest", "showToast"]),
+    resetForm() {
+      this.sent = !this.sent;
+      this.name = "";
+      this.email = "";
+    },
+    sendData() {
+      if (isNotEmpty(this.name) && isEmail(this.email)) {
+        this.sending = true;
+        this.isDark = this.$vuetify.theme.dark;
+        this.color = this.isDark
+          ? this.$vuetify.theme.themes.dark.primary
+          : this.$vuetify.theme.themes.light.primary;
+        this.postUpdateRequest(this.$data).then((result) => {
+          console.log({ result });
+          if (result.success) {
+            this.showToast({
+              sclass: "success",
+              message: `<span class="success--text" style="font-weight: bold; ">Success: </span>👍 Cool, I'll keep you updated`,
+              timeout: 3000
+            });
+          } else {
+            this.showToast({
+              sclass: "primary",
+              message: `<span class="primary--text" style="font-weight: bold;">info: </span>✌ ${result.message}`,
+              timeout: 3000
+            });
+          }
+          this.sending = false;
+          this.sent = true;
+        });
+      } else {
+        this.showToast({
+          sclass: "error",
+          message: `<span style="font-weight: bold; color: var(--error);">Error: <span>Incomplete Information`
+        });
+      }
     }
   }
 };

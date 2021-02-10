@@ -32,7 +32,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    showToast({ commit }, { sclass, message, timeout = 2000 }) {
+    showToast({ commit }, { sclass, message, timeout = 3000 }) {
       return new Promise(resolve => {
         commit("showToast", { sclass, message, timeout });
         resolve(true);
@@ -40,6 +40,18 @@ export default new Vuex.Store({
     }, 
     async getWebpieceRequests ({commit}){
       const res = await fetch(`${config.serverURL}/webpieces`)
+      const data = await res.json();
+      return data
+    },
+    async postUpdateRequest ({commit}, {name, email, type, color, isDark, link}){
+      console.log({name, email, type, color, isDark, link})
+      const res = await fetch(`${config.serverURL}/updates`, {
+        method: 'POST', 
+        headers: {
+          "Content-type": "application/json", 
+        },
+        body: JSON.stringify({name, email, type, color, isDark, link})
+      })
       const data = await res.json();
       return data
     },

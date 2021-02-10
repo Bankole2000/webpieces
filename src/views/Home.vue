@@ -44,7 +44,7 @@
                           ? 'www.linkedin.com/in/bankoleesan'
                           : 'https://twitter.com/CodingInNeon'
                       "
-                      class="primary--text font-weight-black"
+                      class="secondary--text font-weight-medium"
                       >{{
                         !$vuetify.theme.dark ? "Bankole Esan" : "@CodingInNeon"
                       }}</a
