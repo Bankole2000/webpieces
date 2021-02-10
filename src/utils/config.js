@@ -1,4 +1,4 @@
-const isLocal = process.env.NODE_ENV == "development" ? true : false;
+const isLocal = false;
 const remote = {
   apiUrl: "https://webpieces.banky.studio",
   appUrl: "",
