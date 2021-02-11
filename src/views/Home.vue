@@ -181,6 +181,7 @@
                   </div>
                   <v-btn
                     :to="item.link"
+                    :target="['/clients'].includes(item.link) ? '_blank' : ''"
                     x-large
                     class="rounded-xl"
                     :class="$vuetify.theme.dark ? 'glass-card' : 'glass-card'"
@@ -253,7 +254,7 @@ export default {
         icon: "mdi-account-circle",
         src: "about.svg",
         title: "About Me",
-        linke: "/about",
+        link: "/about",
         artist: "View info about me. Stack, skills, experience, my resume etc."
       },
       {
