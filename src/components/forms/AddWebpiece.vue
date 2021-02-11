@@ -216,7 +216,9 @@ function initialState() {
     requestUrl: "",
     isImage: true,
     imageUrl: null,
+    imagePath: null,
     imageFullsizedUrl: null,
+    imageFullsizedPath: null,
     uploadedImage: null,
     selectedTechnologies: "",
     technologies: [
@@ -265,6 +267,7 @@ export default {
     },
     submitWebpieceRequest(e) {
       this.sending = true;
+      // Check basic Detials
       if (!this.username || !this.description || !this.title) {
         this.showToast({
           sclass: "error",
@@ -274,6 +277,7 @@ export default {
         this.sending = false;
         return false;
       }
+      // check contact info
       if (
         !this.githubhandle &&
         !this.twitterhandle &&
@@ -288,8 +292,10 @@ export default {
         this.sending = false;
         return false;
       }
+      // if is not uploaded image
       if (!this.isImage) {
-        if (!this.uploadedImage) {
+        if (!this.imageUrl) {
+          // check for Image Url
           this.showToast({
             sclass: "error",
             message: `<span style="color: var(--error); font-weight: bold;">Error:</span> Please add an image Url`,
@@ -317,7 +323,8 @@ export default {
           this.sending = false;
         });
       } else {
-        if (!this.imageUrl) {
+        if (!this.uploadedImage) {
+          // check for Uploaded Image
           this.showToast({
             sclass: "error",
             message: `<span style="color: var(--error); font-weight: bold;">Error:</span> Please select/upload an image`,
@@ -327,13 +334,20 @@ export default {
 
           return false;
         }
-        // console.log({ uploadedImage: this.uploadedImage });
+
         this.uploadWebpieceRequestImage({
           uploadedImage: this.uploadedImage
         }).then((response) => {
-          const { imageFullsizedUrl, imageUrl } = response;
+          const {
+            imageFullsizedUrl,
+            imageUrl,
+            imagePath,
+            imageFullsizedPath
+          } = response;
           this.imageFullsizedUrl = imageFullsizedUrl;
+          this.imageFullsizedPath = imageFullsizedPath;
           this.imageUrl = imageUrl;
+          this.imagePath = imagePath;
           this.postWebpieceRequest(this.$data).then((response) => {
             if (response.success) {
               this.showToast({

@@ -20,7 +20,8 @@ export default new Vuex.Store({
         info: "mdi-information"
       },
       icon: ""
-    }
+    }, 
+    webpieceRequests: [],
   },
   mutations: {
     showToast(state: any, payload) {
@@ -29,7 +30,15 @@ export default new Vuex.Store({
       }
       state.toast.icon = state.toast.icons[payload.sclass];
       state.toast.show = true;
-    }
+    },
+    getWebpieceRequests(state, payload){
+      state.webpieceRequests = payload
+    }, 
+    deleteWebpieceRequest(state, payload){
+      const requestIndex = state.webpieceRequests.map((request:any) => request.id ).indexOf(payload.id);
+      console.log({requestIndex});
+      state.webpieceRequests.splice(requestIndex,1);    
+    },
   },
   actions: {
     showToast({ commit }, { sclass, message, timeout = 3000 }) {
@@ -38,9 +47,23 @@ export default new Vuex.Store({
         resolve(true);
       });
     }, 
+    async deleteWebpieceRequest({commit}, webpieceData){
+      const res = await fetch(`${config.serverURL}/webpieces/${webpieceData.id}`, {
+        method: 'DELETE', 
+        headers: {
+          "Content-type": "application/json",
+        }, 
+        body: JSON.stringify(webpieceData)
+      })
+      const data = res.json();
+
+      commit('deleteWebpieceRequest', {id: webpieceData.id})
+      return data;
+    },
     async getWebpieceRequests ({commit}){
       const res = await fetch(`${config.serverURL}/webpieces`)
       const data = await res.json();
+      commit('getWebpieceRequests', data.result.rows);
       return data
     },
     async postUpdateRequest ({commit}, {name, email, type, color, isDark, link}){
@@ -85,6 +108,9 @@ export default new Vuex.Store({
   getters: {
     toast(state) {
       return state.toast;
+    },
+    webpieceRequests(state){
+      return state.webpieceRequests;
     }
   },
   modules: {}

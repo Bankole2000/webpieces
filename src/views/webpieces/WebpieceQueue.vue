@@ -14,6 +14,31 @@
       style="height: 5px; width: 100%; background-image: var(--rainbow); box-shadow: var(--glass-shadow-normal)"
     ></div>
     <v-container>
+      <v-row
+        v-if="webpieceRequests.length < 1"
+        style="height: 240px"
+        class="fill-height"
+        align-content="center"
+        justify="center"
+      >
+        <v-col cols="6" v-if="fetching">
+          <p class="text-center">Fetching Webpiece Requests</p>
+          <v-progress-linear
+            color="deep-purple accent-4"
+            indeterminate
+            rounded
+            height="6"
+          ></v-progress-linear>
+        </v-col>
+        <v-col v-else cols="6" style="d-flex justify-center">
+          <p class="text-center">No Webpiece Requests Found</p>
+          <div style="width: 100%; display: flex; justify-content: center;">
+            <v-btn to="/webpieces/add"
+              ><v-icon left>mdi-puzzle</v-icon> Request a webpiece</v-btn
+            >
+          </div>
+        </v-col>
+      </v-row>
       <v-row>
         <v-col
           v-for="(request, i) in webpieceRequests"
@@ -21,7 +46,10 @@
           cols="12"
           sm="4"
         >
-          <WebpieceRequestCard :webpieceRequest="request" />
+          <WebpieceRequestCard
+            :webpieceRequest="request"
+            @deleteById="deleteRequest($event)"
+          />
         </v-col>
       </v-row>
     </v-container>
@@ -29,7 +57,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import WebpieceRequestCard from "../../components/blocks/RequestCard";
 export default {
   components: {
@@ -37,16 +65,35 @@ export default {
   },
   data() {
     return {
-      webpieceRequests: null
+      // webpieceRequests: null,
+      fetching: true
     };
   },
   methods: {
-    ...mapActions(["getWebpieceRequests"])
+    ...mapActions([
+      "getWebpieceRequests",
+      "deleteWebpieceRequest",
+      "showToast"
+    ]),
+    deleteRequest(e) {
+      console.log({ e });
+      this.deleteWebpieceRequest(e).then((data) => {
+        console.log({ data });
+      });
+      this.showToast({
+        sclass: "success",
+        message: `<span class="font-weight-bold success--text">Success: </span>Webpiece Request Deleted`
+      });
+    }
+  },
+  computed: {
+    ...mapGetters(["webpieceRequests"])
   },
   mounted() {
     this.getWebpieceRequests().then((data) => {
       console.log(data);
-      this.webpieceRequests = data.result.rows;
+      this.fetching = false;
+      // this.webpieceRequests = data.result.rows;
     });
   }
 };

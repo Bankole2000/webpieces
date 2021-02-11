@@ -18,6 +18,7 @@
       <v-list-item-action>
         <v-btn
           icon
+          @click="$emit('deleteById', webpieceRequest)"
           class="error--text"
           :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
           ><v-icon>mdi-close</v-icon></v-btn
@@ -97,6 +98,12 @@ export default {
   computed: {
     userContactDetails() {
       return JSON.parse(this.webpieceRequest.userContactDetails);
+    }
+  },
+  methods: {
+    deleteRequest(id) {
+      console.log({ id });
+      this.$emit;
     }
   }
 };
