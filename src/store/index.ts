@@ -34,6 +34,14 @@ export default new Vuex.Store({
     getWebpieceRequests(state, payload){
       state.webpieceRequests = payload
     }, 
+    updateWebpieceRequest(state, payload){
+      const webpiece = state.webpieceRequests.find((webpieceRequest: any) => {
+        return webpieceRequest.id == payload.id
+      });
+      console.log({webpiece})
+      webpiece.upvotes = payload.upvotes
+
+    },
     deleteWebpieceRequest(state, payload){
       const requestIndex = state.webpieceRequests.map((request:any) => request.id ).indexOf(payload.id);
       console.log({requestIndex});
@@ -63,7 +71,25 @@ export default new Vuex.Store({
     async getWebpieceRequests ({commit}){
       const res = await fetch(`${config.serverURL}/webpieces`)
       const data = await res.json();
+      if(data.result.rows.length > 0){
+        data.result.rows.forEach((webpieceRequest: any) => {
+          webpieceRequest.upvotes = JSON.parse(webpieceRequest.upvotes)
+        });
+      }
       commit('getWebpieceRequests', data.result.rows);
+      return data
+    },
+    async updateWebpieceRequest({commit}, payload){
+      console.log({payload})
+      const res = await fetch(`${config.serverURL}/webpieces/${payload.id}`, {
+        method: 'PATCH', 
+        headers: {
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify(payload)
+      })
+      const data = res.json();
+      commit('updateWebpieceRequest', payload)
       return data
     },
     async postUpdateRequest ({commit}, {name, email, type, color, isDark, link}){

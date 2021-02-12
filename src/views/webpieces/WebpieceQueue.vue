@@ -43,6 +43,8 @@
         <v-col
           v-for="(request, i) in webpieceRequests"
           :key="i"
+          class="d-flex"
+          style="align-self: stretch"
           cols="12"
           sm="4"
         >
