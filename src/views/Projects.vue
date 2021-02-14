@@ -36,12 +36,7 @@
                 </v-card-text>
                 <v-card-actions v-if="$vuetify.breakpoint.lgOnly" class="pt-0">
                   <v-spacer></v-spacer>
-                  <v-btn
-                    large
-                    class="primary-glass-card text-capitalize rounded-xl"
-                    ><v-icon left>mdi-information-outline</v-icon> What do you
-                    mean?</v-btn
-                  >
+                  <ProjectsInfo />
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -115,6 +110,7 @@
 // import ProjectCard from '@/components/blocks/ProjectCard';
 import Factory2 from "@/components/animated/Factory2.vue";
 import Factory from "@/components/animated/Factory";
+import ProjectsInfo from "@/components/modals/ProjectsInfo";
 // import { gsap } from 'gsap';
 // // import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 // // import { Draggable } from 'gsap/Draggable';
@@ -133,7 +129,8 @@ export default {
     // GlassCard,
     // SidewaysCard,
     Factory2,
-    Factory
+    Factory,
+    ProjectsInfo
     // ProjectCard,
     // Factory,
     // Factory2

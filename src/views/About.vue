@@ -69,7 +69,7 @@
                     ><span>LinkedIn</span></v-tooltip
                   >
                   <v-spacer></v-spacer>
-                  <v-tooltip top>
+                  <!-- <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn
                         href="https://profile.codersrank.io/user/bankole2000"
@@ -83,7 +83,7 @@
                         ><v-icon color="secondary">mdi-code-tags</v-icon></v-btn
                       ></template
                     ><span>Coders Rank</span></v-tooltip
-                  >
+                  > -->
 
                   <v-menu
                     v-model="aboutMeMenu"
@@ -105,7 +105,10 @@
                             text
                             icon
                             class="ma-4 ml-0"
-                            ><v-icon color="secondary"
+                            ><v-icon
+                              :color="
+                                $vuetify.theme.dark ? 'primary' : 'accent'
+                              "
                               >mdi-information-outline</v-icon
                             ></v-btn
                           ></template
@@ -132,6 +135,18 @@
                       ></div>
 
                       <v-list>
+                        <v-list-item>
+                          <Certs />
+                        </v-list-item>
+                        <v-list-item>
+                          <Skills />
+                        </v-list-item>
+                        <v-list-item>
+                          <Experience />
+                        </v-list-item>
+                        <v-list-item>
+                          <Shenanigans />
+                        </v-list-item>
                         <v-list-item
                           v-for="(item, index) in navItems"
                           :key="index"
@@ -146,7 +161,9 @@
                             text
                             :to="item.link"
                             :target="
-                              ['/resume'].includes(item.link) ? '_blank' : ''
+                              ['/resume', '/codersrank'].includes(item.link)
+                                ? '_blank'
+                                : ''
                             "
                             color="secondary"
                             exact
@@ -154,7 +171,8 @@
                               $vuetify.theme.dark ? 'glass-card' : 'morph'
                             "
                             ><v-icon left>{{ item.icon }}</v-icon>
-                            {{ item.title }}</v-btn
+                            {{ item.title }}
+                            <v-icon right>mdi-open-in-new</v-icon></v-btn
                           >
                           <!-- :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'" -->
                         </v-list-item>
@@ -247,13 +265,22 @@
 </template>
 
 <script>
+import Certs from "@/components/modals/Certs";
+import Skills from "@/components/modals/Skills";
+import Experience from "@/components/modals/Experience";
+import Shenanigans from "@/components/modals/Shenanigans";
 // import Laptop from '@/components/animated/Laptop1.vue';
 // import Phone from '@/components/animated/Phone1';
 // import Factory from '@/components/animated/Factory.vue';
 // import Phone2 from '@/components/animated/Phone2.vue';
 export default {
   components: {
+    Certs,
+    Skills,
+    Experience,
+    Shenanigans
     // Laptop,
+
     // Phone,
     // Factory,
     // Phone2,
@@ -263,26 +290,20 @@ export default {
       aboutMeMenu: false,
       navItems: [
         // { title: "Studio", icon: "mdi-web", link: "/" },
-        { title: "Skills", icon: "mdi-account-hard-hat", link: "/" },
-        { title: "Experience", icon: "mdi-briefcase", link: "/" },
-        { title: "Certs", icon: "mdi-seal", link: "/" },
+
         { title: "Resume", icon: "mdi-download", link: "/resume" },
-        { title: "Coders Rank", icon: "mdi-code-tags", link: "/coderank" },
+        { title: "Coders Rank", icon: "mdi-code-tags", link: "/codersrank" },
         {
           title: "Sourcerer",
           icon: "mdi-code-not-equal-variant",
           link: "/sourcerer"
-        },
-        {
-          title: "Projects",
-          icon: "mdi-package-variant-closed",
-          link: "/projects"
-        },
-        {
-          title: "Shenanigans",
-          icon: "mdi-party-popper",
-          link: "/shenanigans"
         }
+        // {
+        //   title: "Projects",
+        //   icon: "mdi-package-variant-closed",
+        //   link: "/projects"
+        // }
+
         // { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" }
         // { title: "About Me", icon: "mdi-account", link: "/about" }
       ],

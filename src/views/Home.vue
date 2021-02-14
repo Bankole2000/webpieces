@@ -203,11 +203,11 @@
 import HomeInfo from "@/components/modals/HomeInfo.vue";
 import VuetifyColors from "vuetify/lib/util/colors";
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keypress", (e) => {
   // console.log(window.location);
-
+  console.log({ e, location: window.location.pathname });
   if (e.key == "/") {
-    if (window.location.pathname == "/") {
+    if (window.location.hash == "#/") {
       e.preventDefault();
       // console.log(menuItems);
       document.querySelector("#homeSearch").focus();

@@ -152,9 +152,9 @@ const routes: Array<RouteConfig> = [
     }
   },
   {
-    path: "/github",
+    path: "/codersrank",
     beforeEnter() {
-      location.href = "https://github.com/Bankole2000";
+      location.href = "https://profile.codersrank.io/user/bankole2000";
     }
   },
   {

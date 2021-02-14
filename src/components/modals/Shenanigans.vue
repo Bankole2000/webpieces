@@ -9,15 +9,15 @@
         v-on="on"
         large
         :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
-        ><v-icon left>mdi-account-hard-hat</v-icon> Skills</v-btn
+        ><v-icon left>mdi-party-popper</v-icon> Shenanigans</v-btn
       >
     </template>
 
     <v-card class="rounded-xl">
       <v-card-title class="headline">
-        <v-icon color="primary" class="mr-4">mdi-account-hard-hat</v-icon>
+        <v-icon color="primary" class="mr-4">mdi-party-popper</v-icon>
 
-        My Skills
+        Shenanigans
         <v-spacer></v-spacer>
         <v-btn
           :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"

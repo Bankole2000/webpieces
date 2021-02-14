@@ -128,54 +128,6 @@
         ></v-toolbar-title
       >
       <v-spacer></v-spacer>
-      <!-- <div v-if="$vuetify.breakpoint.mdAndUp">
-        <v-btn
-          class="mr-2 primary primary-morph"
-          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          outlined
-          tile
-          >primary</v-btn
-        >
-        <v-btn
-          class="mr-2 secondary secondary-morph"
-          :class="$vuetify.theme.dark ? 'morph-dark primary--text' : 'morph white--text'"
-          tile
-          to="/about"
-          >secondary</v-btn
-        >
-        <v-btn
-          to="/"
-          tile
-          class="mr-3 accent accent-morph"
-          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >accent</v-btn
-        >
-        <v-btn
-          to="/test"
-          tile
-          class="mr-3 error error-morph"
-          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >error</v-btn
-        >
-        <v-btn tile class="mr-3 info info-morph" :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >info</v-btn
-        >
-        <v-btn tile class="mr-3 success success-morph" :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >success</v-btn
-        >
-        <v-btn tile class="mr-3 warning warning-morph" :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >warning</v-btn
-        >
-        <v-btn
-          tile
-          class="mr-3"
-          @click="displayToast($event)"
-          :loading="loadingTestButton"
-          :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
-          :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
-          >test</v-btn
-        >
-      </div> -->
 
       <v-spacer></v-spacer>
       <div v-if="$vuetify.breakpoint.mdAndUp">
@@ -183,6 +135,12 @@
           v-for="(link, index) in socialLinks"
           :key="index"
           icon
+          :href="link.link"
+          :target="
+            ['twitter', 'facebook', 'github'].includes(link.name)
+              ? '_blank'
+              : ''
+          "
           :color="link.color"
           class="mx-2"
           :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
@@ -380,12 +338,32 @@ export default {
         { title: "About Me", icon: "mdi-account", link: "/about" }
       ],
       socialLinks: [
-        { name: "", link: "", color: "#2196f3", icon: "mdi-twitter" },
-        { name: "", link: "", color: "#0064ba", icon: "mdi-facebook" },
-        { name: "", link: "", color: "#52b155", icon: "mdi-whatsapp" },
+        {
+          name: "twitter",
+          link: "https://twitter.com/CodingInNeon",
+          color: "#2196f3",
+          icon: "mdi-twitter"
+        },
+        {
+          name: "facebook",
+          link: "https://web.facebook.com/esan.bankole/",
+          color: "#0064ba",
+          icon: "mdi-facebook"
+        },
+        {
+          name: "whatsapp",
+          link: "https://wa.me/+2348069166906",
+          color: "#52b155",
+          icon: "mdi-whatsapp"
+        },
         // { name: '', link: '', color: 'error', icon: 'mdi-youtube' },
         // { name: '', link: '', color: 'primary', icon: 'mdi-twitch' },
-        { name: "", link: "", color: "secondary", icon: "mdi-github" }
+        {
+          name: "github",
+          link: "https://github.com/bankole2000",
+          color: "secondary",
+          icon: "mdi-github"
+        }
         // { name: '', link: '', color: 'accent', icon: 'mdi-discord' },
       ]
     };

@@ -51,12 +51,7 @@
                   class="pt-0"
                 >
                   <v-spacer></v-spacer>
-                  <v-btn
-                    large
-                    class="text-capitalize primary-glass-card rounded-xl"
-                    ><v-icon left>mdi-information-outline</v-icon> What do you
-                    mean?</v-btn
-                  >
+                  <WebpiecesInfo />
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -87,11 +82,13 @@
 import VuetifyColors from "vuetify/lib/util/colors";
 // import GlassCard from '@/components/blocks/GlassCard';
 import Phone1 from "@/components/animated/Phone1";
+import WebpiecesInfo from "@/components/modals/WebpiecesInfo";
 
 export default {
   components: {
     // GlassCard,
-    Phone1
+    Phone1,
+    WebpiecesInfo
   },
   data: () => ({
     drawers: ["Default (no property)", "Permanent", "Temporary"],
