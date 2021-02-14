@@ -82,6 +82,12 @@
               :key="index"
               icon
               large
+              :href="link.link"
+              :target="
+                ['twitter', 'facebook', 'github'].includes(link.name)
+                  ? '_blank'
+                  : ''
+              "
               :color="link.color"
               class="ma-2"
               :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
