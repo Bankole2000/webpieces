@@ -122,20 +122,6 @@
                   solo-inverted
                 ></v-autocomplete>
                 <v-card-actions class="py-0">
-                  <v-tooltip top>
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-btn
-                        large
-                        v-on="on"
-                        @click="supdialog = true"
-                        class="glass-card mx-2 subactioncard"
-                        icon
-                        v-bind="attrs"
-                        ><v-icon>mdi-help</v-icon></v-btn
-                      >
-                    </template>
-                    <span>What's up with me lately?</span>
-                  </v-tooltip>
                   <v-tooltip
                     v-for="(link, index) in otherLinks"
                     :key="index"
@@ -155,6 +141,20 @@
                       >
                     </template>
                     <span>{{ link.tooltipText }}</span>
+                  </v-tooltip>
+                  <v-tooltip top>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        large
+                        v-on="on"
+                        @click="supdialog = true"
+                        class="glass-card mx-2 subactioncard"
+                        icon
+                        v-bind="attrs"
+                        ><v-icon>mdi-help</v-icon></v-btn
+                      >
+                    </template>
+                    <span>What's up with me lately?</span>
                   </v-tooltip>
                 </v-card-actions>
               </v-card>
