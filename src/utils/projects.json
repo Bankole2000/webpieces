@@ -2,6 +2,8 @@
   {
     "name": "Fandom Memory Match",
     "image": "vuematch.png.webp",
+    "client": "Self (Personal Project)",
+
     "githubUrl": "https://github.com/Bankole2000/vue-match",
     "githubAvailable": true,
     "projectUrl": "https://vuematch.netlify.app/",
@@ -20,6 +22,8 @@
   {
     "name": "Pluralsight Login UI",
     "image": "psloginclone.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/bankole2000/psloginclone",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/psloginclone",
@@ -32,17 +36,19 @@
   {
     "name": "Node JWT Demo",
     "image": "nodejwt.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/alc4.0strategy",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/alc4.0strategy",
     "projectUrlAvailable": true,
-    "shortDescription": "A study tracking app with ordered links to pluralsight courses",
+    "shortDescription": "A simple nodejs app built to practice JSON web tokens (JWT) and user authentication",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-
+      "mdi-nodejs",
       "mdi-bootstrap"
     ],
     "objectives": []
@@ -50,11 +56,13 @@
   {
     "name": "Banky's Smoothies",
     "image": "smoothies.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/vue-smoothies",
     "githubAvailable": true,
     "projectUrl": "https://smoothies-a3bd6.firebaseapp.com/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD app for managing cocktail recipes",
+    "shortDescription": "A simple practice CRUD app for managing cocktail recipes. Built with materialize css and firebase",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -67,6 +75,8 @@
   {
     "name": "Netflix Landing Page UI",
     "image": "netflix.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/netflix",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/netflix",
@@ -83,6 +93,8 @@
   {
     "name": "Project App UI",
     "image": "pmuinew.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/pm_ui",
     "githubAvailable": true,
     "projectUrl": "https://pmui.netlify.app/",
@@ -102,6 +114,8 @@
   {
     "name": "Earth Friends",
     "image": "earthfriends.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/earth-friends",
     "githubAvailable": true,
     "projectUrl": "https://earth-friends.web.app/",
@@ -120,11 +134,13 @@
   {
     "name": "Tutorial Request App",
     "image": "fbcloud.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A simple project to practice Firebase cloud functions.",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -137,16 +153,19 @@
   {
     "name": "ALC 4.0 Strategy",
     "image": "alc4.0strategy.png.webp",
+    "client": "Self (Personal Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A study guidance and tracking app with ordered lists and links to pluralsight courses",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
+      "mdi-bootstrap",
       "mdi-firebase"
     ],
     "objectives": []
@@ -154,28 +173,34 @@
   {
     "name": "Banky Studio",
     "image": "banystudio.png.webp",
+    "client": "Self (Personal Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "My Current portfolio site, and I LOVE it!!! 😍",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-firebase"
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs"
     ],
     "objectives": []
   },
   {
     "name": "Dev Meetups",
     "image": "devmeetups.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A ",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -188,6 +213,8 @@
   {
     "name": "First Angular App",
     "image": "firstngapp.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -198,13 +225,16 @@
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-firebase"
+      "mdi-firebase",
+      "mdi-angular"
     ],
     "objectives": []
   },
   {
     "name": "Firebase Chat",
     "image": "friendlychat.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -222,6 +252,8 @@
   {
     "name": "Github Finder",
     "image": "githubfinder.png.webp",
+    "client": "Self (Learning Project)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -239,6 +271,8 @@
   {
     "name": "Jojo Ride",
     "image": "jojoride.png.webp",
+    "client": "Personal Client (Freelance)",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -256,28 +290,33 @@
   {
     "name": "Primal Aero Website",
     "image": "primalaero.png.webp",
+    "client": "The Primal Aero Company",
+
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://primalaero.com",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "Company website built for publicity and online Presence",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
-      "mdi-firebase"
+      "mdi-firebase",
+      "mdi-wordpress"
     ],
     "objectives": []
   },
   {
     "name": "Booking Engine",
     "image": "primalaerobooking.png.webp",
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "client": "The Primal Aero Company",
+
+    "githubUrl": "https://github.com/Bankole2000/flightbooking",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
-    "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "projectUrl": null,
+    "projectUrlAvailable": false,
+    "shortDescription": "A Booking Engine allowing users to book flights with an airline via the web",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -288,19 +327,21 @@
     "objectives": []
   },
   {
-    "name": "Old Portfolio",
+    "name": "My Old Portfolio site",
     "image": "portfolio.png.webp",
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "client": "Self (Personal Project)",
+
+    "githubUrl": "https://github.com/Bankole2000/portfolio",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://bankole2000.github.io/portfolio",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "My First Portfolio site. Still my baby and I'll never forget you🥰",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-firebase"
+      "mdi-sass",
+      "mdi-language-javascript"
     ],
     "objectives": []
   }

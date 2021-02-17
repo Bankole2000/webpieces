@@ -92,7 +92,7 @@
             }}</span>
             <v-icon right>mdi-open-in-new</v-icon>
           </v-btn>
-          <v-btn
+          <!-- <v-btn
             :disabled="!webpieceRequest.websiteUrl"
             :href="webpieceRequest.websiteUrl"
           >
@@ -101,7 +101,7 @@
               webpieceRequest.websiteUrl ? "View Site" : "Unavailable"
             }}</span>
             <v-icon right>mdi-open-in-new</v-icon>
-          </v-btn>
+          </v-btn> -->
         </div>
         <p class="mt-2 mb-0">
           Contact

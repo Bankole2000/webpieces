@@ -130,7 +130,12 @@
         >
       </v-card-actions>
     </v-card>
-    <v-dialog v-model="dialog" max-width="500" scrollable>
+    <v-dialog
+      :fullscreen="$vuetify.breakpoint.smAndDown"
+      v-model="dialog"
+      max-width="500"
+      scrollable
+    >
       <!-- <template v-slot:activator="{ on, attrs }">
             <v-btn
               class="ml-2 mb-2"
@@ -142,17 +147,65 @@
             </v-btn>
           </template> -->
 
-      <v-card class="rounded-lg">
-        <v-card-title class="headline font-weight-light">
-          <span class="font-weight-black">{{ project.name }}</span>
-        </v-card-title>
+      <v-card
+        :tile="$vuetify.breakpoint.smAndDown"
+        :class="$vuetify.breakpoint.smAndDown ? '' : 'rounded-lg'"
+      >
+        <v-img
+          :height="$vuetify.breakpoint.smAndDown ? 0 : 250"
+          class="align-end"
+          style="position: relative"
+          :gradient="
+            `to top, ${$vuetify.theme.dark ? '#121212FF' : '#F5F5F5FF'}, ${
+              $vuetify.theme.dark ? '#12121200' : '#F5F5F500'
+            }`
+          "
+          :src="require(`@/assets/images/projectImages/${project.image}`)"
+        >
+          <v-btn
+            text
+            @click="dialog = false"
+            large
+            icon
+            style="position: absolute; top: 10px; right: 10px;"
+            ><v-icon>mdi-close-circle</v-icon></v-btn
+          >
+          <v-card-title class="headline font-weight-light">
+            <span class="font-weight-black">{{ project.name }}</span>
+          </v-card-title></v-img
+        >
         <div
           :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
           style="width: 100%; height: 2px;"
         ></div>
 
-        <v-card-text>
-          Project long description
+        <v-card-text class="px-4 pt-4" style="max-height: 60%; ">
+          <p class="ma-0 mb-2">
+            <strong>Project Url: </strong><a>{{ project.projectUrl }}</a>
+          </p>
+          <p class="ma-0 mb-2">
+            <strong>Github Url: </strong><a>{{ project.githubUrl }}</a>
+          </p>
+          <p class="ma-0 mb-2"><strong>Status: </strong>Not yet deployed</p>
+          <p class="ma-0 mb-2">
+            <strong>Client: </strong>Self (Personal Project)
+          </p>
+          <p class="ma-0 mb-2">
+            <strong>Description: </strong>Not yet deployed
+          </p>
+          <p class="ma-0 mb-2">
+            <strong>Requirements: </strong>Not yet deployed
+          </p>
+          <p class="ma-0"><strong>Learning Points: </strong>Not yet deployed</p>
+          <div class="ma-0 mb-2">
+            <ul>
+              <li>Firebase Cloud Firestore</li>
+            </ul>
+          </div>
+          <p class="ma-0 mb-2"><strong>Challenges: </strong>Not yet deployed</p>
+          <p class="ma-0 mb-2">
+            <strong>Useful Or Related Resources: </strong>Not yet deployed
+          </p>
           {{ project.longDescription }}
         </v-card-text>
 

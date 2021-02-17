@@ -122,6 +122,20 @@
                   solo-inverted
                 ></v-autocomplete>
                 <v-card-actions class="py-0">
+                  <v-tooltip top>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        large
+                        v-on="on"
+                        @click="supdialog = true"
+                        class="glass-card mx-2 subactioncard"
+                        icon
+                        v-bind="attrs"
+                        ><v-icon>mdi-help</v-icon></v-btn
+                      >
+                    </template>
+                    <span>What's up with me lately?</span>
+                  </v-tooltip>
                   <v-tooltip
                     v-for="(link, index) in otherLinks"
                     :key="index"
@@ -142,12 +156,6 @@
                     </template>
                     <span>{{ link.tooltipText }}</span>
                   </v-tooltip>
-                  <!-- <v-btn large icon class="glass-card mx-2 subactioncard"><v-icon>mdi-email</v-icon></v-btn>
-                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
-                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
-                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
-                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn>
-                  <v-btn large icon class="glass-card mx-2  subactioncard"><v-icon>mdi-email</v-icon></v-btn> -->
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -196,6 +204,105 @@
         </v-container>
       </v-img>
     </v-card>
+    <v-dialog
+      scrollable
+      :fullscreen="$vuetify.breakpoint.smAndDown"
+      v-model="supdialog"
+      max-width="500"
+    >
+      <v-card
+        :tile="$vuetify.breakpoint.smAndDown"
+        :class="$vuetify.breakpoint.smAndDown ? '' : 'rounded-xl'"
+      >
+        <v-card-title class="headline">
+          <v-icon color="primary" class="mr-4">mdi-help</v-icon>
+
+          What I'm up to to lately
+          <v-spacer></v-spacer>
+          <v-btn
+            :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
+            icon
+            @click="supdialog = false"
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-card-title>
+        <div
+          :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
+          style="width: 100%; height: 2px;"
+        ></div>
+        <v-card-text
+          class="py-0 pl-0"
+          :style="{ maxHeight: $vuetify.breakpoint.mdAndUp ? '390px' : '' }"
+        >
+          <v-timeline align-top dense>
+            <v-timeline-item
+              v-for="(item, i) in currently"
+              :key="i"
+              :icon="item.icon"
+              class="pb-2"
+              fill-dot
+            >
+              <div class="pb-0 mt-n2">
+                <!-- <h2 class="headline font-weight-light mb-0 primary--text">
+                  Currently watching
+                </h2> -->
+                <v-expansion-panels flat>
+                  <v-expansion-panel class="pl-0">
+                    <v-expansion-panel-header class="pl-0">
+                      <h2
+                        class="headline font-weight-light mb-0"
+                        :class="
+                          $vuetify.theme.dark
+                            ? 'secondary--text'
+                            : 'primary--text'
+                        "
+                      >
+                        {{ item.title }}
+                      </h2></v-expansion-panel-header
+                    >
+                    <v-expansion-panel-content class="pl-0 contently">
+                      <div class="ma-0 pa-0" v-if="item.list">
+                        <div
+                          class="ma-0 mb-4 pa-0"
+                          v-for="(listItem, j) in item.list"
+                          :key="j"
+                        >
+                          <h2 class="ma-0 mb-2 pa-0 font-weight-light">
+                            {{ j + 1 }}. {{ listItem.title }}
+                          </h2>
+                          <v-img
+                            v-if="listItem.image"
+                            :src="
+                              require(`@/assets/images/projectImages/${listItem.image}`)
+                            "
+                          />
+
+                          <div
+                            class="ma-0 mt-1 pa-0 caption"
+                            v-html="listItem.description"
+                          >
+                            <!-- {{ listItem.description }} -->
+                          </div>
+                        </div>
+                      </div>
+                      <div v-if="item.comment" v-html="item.comment"></div>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </div>
+            </v-timeline-item>
+          </v-timeline>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="green darken-1" text @click="supdialog = false">
+            Agree
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -220,6 +327,138 @@ export default {
     HomeInfo
   },
   data: () => ({
+    supdialog: false,
+    currently: [
+      {
+        title: "Currently Working on",
+        icon: "mdi-hammer-screwdriver",
+        list: [
+          {
+            title: "An 'Airbnb-like' App",
+            image: "djangorealestate.png.webp",
+            description:
+              "A personal web app project to help address the looming housing crisis, both locally, and (if possible), internationally"
+          },
+          {
+            title: "Webpieces",
+            image: "webpieces.webp",
+            description:
+              "Prepping the Youtube, Twitch, and Discord for the Webpieces series"
+          }
+        ],
+        comment: ""
+      },
+      {
+        title: "Currently Learning",
+        icon: "mdi-brain",
+        list: [
+          {
+            title: "React",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          },
+          {
+            title: "Docker",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          },
+          {
+            title: "Digital Art && Drawing",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          }
+        ]
+      },
+      {
+        title: "Currently Reading",
+        icon: "mdi-book-open-page-variant",
+        list: [
+          {
+            title: "Realms of Runeterra",
+            image: "runeterra.webp",
+            description: "League of Legends lore - super interesting."
+          }
+        ]
+      },
+      {
+        title: "Currently Watching",
+        icon: "mdi-television-classic",
+        comment: "<p>I'm not watching anything right now. No time for TV 😓</p>"
+      },
+      {
+        title: "Currencly Playing",
+        icon: "mdi-google-controller",
+        list: [
+          {
+            title: "League of Legends",
+            image: "league.webp",
+            description: ""
+          },
+          {
+            title: "Valorant",
+            image: "valorant.webp",
+            description: ""
+          },
+          {
+            title: "Genshin Impact",
+            image: "genshin.webp",
+            description: ""
+          }
+        ],
+        comment: ""
+      },
+      {
+        title: "Current Wishlist",
+        icon: "mdi-cart-variant",
+        list: [
+          {
+            title: "",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          }
+        ]
+      },
+      {
+        title: "Current Hopes",
+        icon: "mdi-cart-variant",
+        list: [
+          {
+            title: "",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          }
+        ]
+      },
+      {
+        title: "Current Dreams",
+        icon: "mdi-cart-variant",
+        list: [
+          {
+            title: "",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          }
+        ]
+      },
+      {
+        title: "Current Fears",
+        icon: "mdi-cart-variant",
+        list: [
+          {
+            title: "",
+            image: "",
+            description: "",
+            links: [{ url: "", text: "" }]
+          }
+        ]
+      }
+    ],
     drawers: ["Default (no property)", "Permanent", "Temporary"],
     currentTime: new Date(),
     primaryDrawer: {
@@ -327,13 +566,13 @@ export default {
         link: "https://blog.banky.studio",
         class: "accent",
         icon: "mdi-post"
-      },
-      {
-        tooltipText: `What's up with me`,
-        link: "",
-        class: "secondary",
-        icon: "mdi-help"
       }
+      // {
+      //   tooltipText: `What's up with me`,
+      //   link: "sup",
+      //   class: "secondary",
+      //   icon: "mdi-help"
+      // }
     ]
   }),
 
@@ -374,3 +613,9 @@ export default {
   }
 };
 </script>
+<style>
+.contently .v-expansion-panel-content__wrap {
+  padding-left: 0px !important;
+  padding-bottom: 0px !important;
+}
+</style>

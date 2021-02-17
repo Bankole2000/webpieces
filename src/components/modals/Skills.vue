@@ -1,5 +1,10 @@
 <template>
-  <v-dialog v-model="dialog" width="500">
+  <v-dialog
+    :fullscreen="$vuetify.breakpoint.smAndDown"
+    v-model="dialog"
+    scrollable
+    width="500"
+  >
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         v-bind="attrs"
@@ -13,7 +18,10 @@
       >
     </template>
 
-    <v-card class="rounded-xl">
+    <v-card
+      :tile="$vuetify.breakpoint.smAndDown"
+      :class="$vuetify.breakpoint.smAndDown ? '' : 'rounded-lg'"
+    >
       <v-card-title class="headline">
         <v-icon color="primary" class="mr-4">mdi-account-hard-hat</v-icon>
 
@@ -31,14 +39,61 @@
         style="width: 100%; height: 2px;"
       ></div>
 
-      <v-card-text class="pt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+      <v-card-text
+        class="pr-4 py-0 pl-0"
+        :style="{ maxHeight: $vuetify.breakpoint.mdAndUp ? '390px' : '' }"
+      >
+        <v-timeline align-top dense>
+          <v-timeline-item
+            v-for="(item, i) in skills"
+            :key="i"
+            :icon="item.icon"
+            class="pb-2"
+            fill-dot
+          >
+            <div class="pb-0 mt-n2">
+              <!-- <h2 class="headline font-weight-light mb-0 primary--text">
+                  Currently watching
+                </h2> -->
+              <v-expansion-panels flat>
+                <v-expansion-panel class="pl-0">
+                  <v-expansion-panel-header class="pl-0">
+                    <h2
+                      class="headline font-weight-light mb-0"
+                      :class="
+                        $vuetify.theme.dark
+                          ? 'secondary--text'
+                          : 'primary--text'
+                      "
+                    >
+                      {{ item.title }}
+                    </h2></v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content class="pl-0 contently">
+                    <div class="ma-0 pa-0" v-if="item.list">
+                      <div
+                        class="mb-4 pa-0 d-flex align-center"
+                        v-for="(listItem, j) in item.list"
+                        :key="j"
+                      >
+                        <v-icon>{{ listItem.icon }}</v-icon>
+                        <h2 class="ma-0 ml-4 pa-0 font-weight-light">
+                          {{ listItem.title }}
+                        </h2>
+                        <!-- <v-img :src="require('@/assets/images/about.svg')" /> -->
+
+                        <!-- <p class="ma-0 mt-1 pa-0">
+                          {{ listItem.description }}
+                        </p> -->
+                      </div>
+                      <div v-if="item.comment">{{ item.comment }}</div>
+                    </div>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+          </v-timeline-item>
+        </v-timeline>
       </v-card-text>
 
       <v-divider></v-divider>
@@ -64,7 +119,151 @@
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
+      skills: [
+        {
+          title: "Programming Languages",
+          icon: "mdi-book-open-page-variant",
+          list: [
+            {
+              title: "PHP",
+              name: "php",
+              icon: "mdi-language-php"
+            },
+            {
+              title: "Javascript - ES6",
+              name: "js",
+              icon: "mdi-language-javascript"
+            },
+            {
+              title: "Typescript",
+              name: "ts",
+              icon: "mdi-language-typescript"
+            },
+            {
+              title: "Python",
+              name: "python",
+              icon: "mdi-language-python"
+            }
+          ]
+        },
+        {
+          title: "Front End",
+          icon: "mdi-responsive",
+          list: [
+            {
+              title: "HTML 5",
+              name: "html",
+              icon: "mdi-language-html5"
+            },
+            {
+              title: "CSS 3",
+              name: "css",
+              icon: "mdi-language-css3"
+            },
+            {
+              title: "Javascript - ES6",
+              name: "js",
+              icon: "mdi-language-javascript"
+            },
+            {
+              title: "BootStrap",
+              name: "bootstrap",
+              icon: "mdi-bootstrap"
+            },
+            {
+              title: "Materialize CSS",
+              name: "materialize",
+              icon: "mdi-material-design"
+            },
+            {
+              title: "Sass",
+              name: "sass",
+              icon: "mdi-sass"
+            },
+            {
+              title: "Vue JS",
+              name: "vuejs",
+              icon: "mdi-vuejs"
+            },
+            {
+              title: "Vuetify",
+              name: "vuetify",
+              icon: "mdi-vuetify"
+            },
+            {
+              title: "Angular + Angular Material",
+              name: "angular",
+              icon: "mdi-angular"
+            },
+            {
+              title: "React",
+              name: "react",
+              icon: "mdi-react"
+            },
+            {
+              title: "Material UI",
+              name: "materialUi",
+              icon: "mdi-material-ui"
+            }
+          ],
+          comment: ""
+        },
+        {
+          title: "Back End",
+          icon: "mdi-api",
+          list: [
+            {
+              title: "Node + Express",
+              name: "node",
+              icon: "mdi-nodejs"
+            },
+            {
+              title: "Symfony",
+              name: "symfony",
+              icon: "mdi-symfony"
+            },
+            {
+              title: "PHP",
+              name: "php",
+              icon: "mdi-language-php"
+            },
+            {
+              title: "Django",
+              name: "django",
+              icon: "mdi-language-python"
+            },
+            {
+              title: "Flask",
+              name: "flask",
+              icon: "mdi-language-python"
+            }
+          ],
+          comment: ""
+        },
+
+        {
+          title: "Databases",
+          icon: "mdi-database"
+        },
+        {
+          title: "Hosting Platforms",
+          icon: "mdi-server"
+        },
+        {
+          title: "Version Control",
+          icon: "mdi-vector-selection"
+        },
+        {
+          title: "Content Management",
+          icon: "mdi-folder-cog"
+        },
+        {
+          title: "Graphic Design",
+
+          icon: "mdi-palette"
+        }
+      ]
     };
   }
 };

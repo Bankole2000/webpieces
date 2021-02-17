@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" width="500">
+  <v-dialog scrollable v-model="dialog" width="500">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         v-bind="attrs"
@@ -28,14 +28,37 @@
         style="width: 100%; height: 2px;"
       ></div>
 
-      <v-card-text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+      <v-card-text class="py-4 px-5" style="max-height: 300px;">
+        <p class="pa-0 ma-0">
+          When it comes to <strong>webdevelopment</strong> and
+          <strong>programming in general</strong>, there is
+          <strong><em>A LOT</em></strong> to learn - Principles, concepts,
+          languages, frameworks, tools, technologies, workflows... the list goes
+          on and on <strong><em>and is still growing.</em></strong>
+        </p>
+        <br />
+        <p class="ma-0 mt-n2">
+          This was one of the biggest challenges for me when I first started
+          learning HTML, all the way back in the late 2000s
+        </p>
+        <v-btn
+          block
+          x-large
+          :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
+          ><v-icon left>mdi-account-plus</v-icon> Hire me</v-btn
+        >
+        <p class="ma-0">
+          Thanks for reading this... here's a random cat for you 😅
+        </p>
+        <v-img
+          :src="
+            `https://cataas.com/cat/cute/says/thank you?size=60&color=${$vuetify.theme.themes.dark.primary}`
+          "
+          max-width="80%"
+          class="mx-auto mt-4"
+          contain
+          alt=""
+        />
       </v-card-text>
 
       <v-divider></v-divider>
