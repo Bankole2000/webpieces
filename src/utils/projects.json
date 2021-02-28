@@ -38,9 +38,9 @@
     "image": "nodejwt.png.webp",
     "client": "Self (Learning Project)",
 
-    "githubUrl": "https://github.com/Bankole2000/alc4.0strategy",
+    "githubUrl": "https://github.com/Bankole2000/nodejwt",
     "githubAvailable": true,
-    "projectUrl": "https://bankole2000.github.io/alc4.0strategy",
+    "projectUrl": "https://nodejwt.banky.studio/",
     "projectUrlAvailable": true,
     "shortDescription": "A simple nodejs app built to practice JSON web tokens (JWT) and user authentication",
     "longDescription": "",
@@ -155,9 +155,9 @@
     "image": "alc4.0strategy.png.webp",
     "client": "Self (Personal Project)",
 
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "githubUrl": "https://github.com/Bankole2000/alc4.0strategy",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://bankole2000.github.io/alc4.0strategy/",
     "projectUrlAvailable": true,
     "shortDescription": "A study guidance and tracking app with ordered lists and links to pluralsight courses",
     "longDescription": "",
@@ -175,9 +175,9 @@
     "image": "banystudio.png.webp",
     "client": "Self (Personal Project)",
 
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "githubUrl": "https://github.com/Bankole2000/webpieces",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://bankole2000.github.io/webpieces/",
     "projectUrlAvailable": true,
     "shortDescription": "My Current portfolio site, and I LOVE it!!! 😍",
     "longDescription": "",
@@ -196,11 +196,11 @@
     "image": "devmeetups.png.webp",
     "client": "Self (Learning Project)",
 
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "githubUrl": "https://github.com/Bankole2000/vuedevmeetups",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://bankole2000.github.io/vuedevmeetups",
     "projectUrlAvailable": true,
-    "shortDescription": "A ",
+    "shortDescription": "A meetup organizing app for devs",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -217,9 +217,9 @@
 
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://firstngapp-5ef69.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A simple X and O game to learn the basics of angular",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -234,12 +234,12 @@
     "name": "Firebase Chat",
     "image": "friendlychat.png.webp",
     "client": "Self (Learning Project)",
-
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    
+    "githubUrl": "https://github.com/Bankole2000/firebase-codelabs",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://friendlychat-d11f1.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A simple chat app to practice Firebase code labs",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -254,11 +254,11 @@
     "image": "githubfinder.png.webp",
     "client": "Self (Learning Project)",
 
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
+    "githubUrl": "https://github.com/Bankole2000/githubfinder",
     "githubAvailable": true,
-    "projectUrl": "https://fbcloud1337.web.app/",
+    "projectUrl": "https://bankole2000.github.io/githubfinder/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "A simple web app to find github users using the github api",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -277,7 +277,7 @@
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A simple CRUD project to practice Firebase cloud functions.",
+    "shortDescription": "Sample UI for ride-sharing web app",
     "longDescription": "",
     "technologies": [
       "mdi-language-html5",
@@ -292,8 +292,8 @@
     "image": "primalaero.png.webp",
     "client": "The Primal Aero Company",
 
-    "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
-    "githubAvailable": true,
+    "githubUrl": null,
+    "githubAvailable": false,
     "projectUrl": "https://primalaero.com",
     "projectUrlAvailable": true,
     "shortDescription": "Company website built for publicity and online Presence",
