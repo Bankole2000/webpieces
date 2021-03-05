@@ -1,5 +1,25 @@
 [
   {
+    "name": "Lumin Skin Shop",
+    "image": "luminskin.webp",
+    "client": "Coding Challenge",
+
+    "githubUrl": "https://github.com/Bankole2000/luminskin",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/luminskin/",
+    "projectUrlAvailable": true,
+    "shortDescription": "A coding challenge as part of the hiring process for pangaea.com",
+    "longDescription": "",
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Fandom Memory Match",
     "image": "vuematch.png.webp",
     "client": "Self (Personal Project)",
@@ -192,6 +212,46 @@
     "objectives": []
   },
   {
+    "name": "Cosgrove Tech",
+    "image": "cosgroveTech.webp",
+    "client": "Cosgrove (Freelance Project)",
+
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://cosgrovetech.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Freelance Project for the Cosgrove Real Estate company",
+    "longDescription": "",
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-wordpress"
+    ],
+    "objectives": []
+  },
+  
+ 
+  {
+    "name": "Style Guide Sample",
+    "image": "styleguide.webp",
+    "client": "Self (Personal Project)",
+
+    "githubUrl": "https://github.com/Bankole2000/webpieces",
+    "githubAvailable": true,
+    "projectUrl": "https://styleguide.banky.studio",
+    "projectUrlAvailable": true,
+    "shortDescription": "Sample Style guide built with Catalog and React",
+    "longDescription": "",
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-react",
+      "mdi-nodejs"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Dev Meetups",
     "image": "devmeetups.png.webp",
     "client": "Self (Learning Project)",
@@ -341,6 +401,24 @@
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-sass",
+      "mdi-language-javascript"
+    ],
+    "objectives": []
+  }, 
+  {
+    "name": "Stuff to do",
+    "image": "stuffToDo.webp",
+    "client": "Self (Personal Project)",
+
+    "githubUrl": "https://github.com/Bankole2000/stuff-to-do",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/stuff-to-do/",
+    "projectUrlAvailable": true,
+    "shortDescription": "A simple to do list app. With filters and LocalStorage",
+    "longDescription": "",
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
       "mdi-language-javascript"
     ],
     "objectives": []
