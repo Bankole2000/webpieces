@@ -15,6 +15,7 @@ import Gallery from "@/views/webpieces/Gallery.vue";
 import GalleryList from "@/views/webpieces/GalleryList.vue";
 import Queue from "@/views/webpieces/WebpieceQueue.vue";
 import Test from "../views/Test.vue";
+import Music from "../views/Music.vue";
 
 Vue.use(VueRouter);
 
@@ -120,6 +121,14 @@ const routes: Array<RouteConfig> = [
     component: About,
     meta: {
       title: "About Me"
+    }
+  },
+  {
+    path: "/music",
+    name: "Music",
+    component: Music,
+    meta: {
+      title: "Coding Music"
     }
   },
   {

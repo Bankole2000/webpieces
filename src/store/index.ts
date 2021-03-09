@@ -22,6 +22,10 @@ export default new Vuex.Store({
       icon: ""
     }, 
     webpieceRequests: [],
+    musicPlayer: {
+      show: false,
+      isPlaying: false,
+    }
   },
   mutations: {
     showToast(state: any, payload) {
@@ -40,13 +44,15 @@ export default new Vuex.Store({
       });
       console.log({webpiece})
       webpiece.upvotes = payload.upvotes
-
     },
     deleteWebpieceRequest(state, payload){
       const requestIndex = state.webpieceRequests.map((request:any) => request.id ).indexOf(payload.id);
       console.log({requestIndex});
       state.webpieceRequests.splice(requestIndex,1);    
     },
+    toggleMusicPlayer({musicPlayer}, payload){
+      musicPlayer.show = payload;
+    }
   },
   actions: {
     showToast({ commit }, { sclass, message, timeout = 3000 }) {
@@ -129,6 +135,10 @@ export default new Vuex.Store({
       const data = await res.json();
       console.log({data})
       return(data)
+    }, 
+    toggleMusicPlayer({commit}, payload){
+      console.log({payload})
+      commit('toggleMusicPlayer', payload)
     }
   },
   getters: {
@@ -137,6 +147,9 @@ export default new Vuex.Store({
     },
     webpieceRequests(state){
       return state.webpieceRequests;
+    }, 
+    musicPlayer(state){
+      return state.musicPlayer;
     }
   },
   modules: {}

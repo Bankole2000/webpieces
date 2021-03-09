@@ -18,13 +18,15 @@ import Vue from "vue";
 import { generateColors } from "./utils/customColors";
 /* eslint-enable */
 import Navbar from "./components/shared/Navbar.vue";
+// import MusicFooter from "./components/shared/MusicFooter.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
     // HelloWorld,
-    Navbar
+    Navbar,
+    // MusicFooter,
   },
 
   data: () => ({
@@ -34,7 +36,7 @@ export default Vue.extend({
     cssProps() {
       const generatedColors = generateColors(this.$vuetify.theme.currentTheme);
       return generatedColors;
-    }
+    },
   },
   watch: {
     $route(to) {
@@ -44,7 +46,7 @@ export default Vue.extend({
         link.setAttribute("href", "img/icons/nightprofile.jpg.webp");
         console.log(link);
       }
-    }
+    },
   },
   mounted() {
     console.log(process.env);
@@ -59,7 +61,7 @@ export default Vue.extend({
   },
   beforeCreate() {
     this.$vuetify.theme.dark = true;
-  }
+  },
 });
 </script>
 <style>

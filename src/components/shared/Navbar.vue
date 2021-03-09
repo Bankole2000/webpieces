@@ -55,8 +55,8 @@
               :color="$vuetify.theme.dark ? '#121212' : '#f5f5f5'"
               :class="{
                 'glass-card': $vuetify.theme.dark,
-                'morph': !$vuetify.theme.dark,
-                'primary--text': $route.path.includes(item.link)
+                morph: !$vuetify.theme.dark,
+                'primary--text': $route.path.includes(item.link),
               }"
               ><v-icon left>{{ item.icon }}</v-icon> {{ item.title }}</v-btn
             >
@@ -172,6 +172,7 @@
       </v-switch>
     </v-app-bar>
     <v-footer
+      v-if="!musicPlayer.show"
       :inset="true"
       :style="{ backgroundColor: $vuetify.theme.dark ? '#12121260' : '#FFF' }"
       absolute
@@ -183,12 +184,20 @@
         <a
           class="mb-0 mr-4"
           style="cursor: pointer; text-decoration: none"
+          @click="toggleMusicPlayer(true)"
+        >
+          Music {{ $vuetify.breakpoint.mdAndUp ? "Player" : "" }} 🎵
+        </a>
+        <a
+          class="mb-0 mr-4"
+          style="cursor: pointer; text-decoration: none"
           @click="colorMenu = true"
         >
-          Try out different colors 🎨
+          {{ $vuetify.breakpoint.mdAndUp ? "Try out different" : "" }} colors 🎨
         </a>
       </div>
     </v-footer>
+    <MusicFooter />
     <v-dialog v-model="colorMenu" max-width="500">
       <v-card class="rounded-xl">
         <v-card-title>
@@ -273,11 +282,12 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import Snackbar from "./Snackbar.vue";
 import YoutubeModal from "../blocks/YoutubeModal.vue";
 import TwitchModal from "../blocks/TwitchModal.vue";
 import DiscordModal from "../blocks/DiscordModal";
+import MusicFooter from "./MusicFooter";
 
 document.addEventListener("keydown", (e) => {
   if (e.key == ";") {
@@ -291,7 +301,8 @@ export default {
     Snackbar,
     YoutubeModal,
     TwitchModal,
-    DiscordModal
+    DiscordModal,
+    MusicFooter,
   },
   data() {
     return {
@@ -309,7 +320,7 @@ export default {
           green: "#00c853",
           blue: "#00b0ff",
           orange: "#ef6c00",
-          red: "#ff0000"
+          red: "#ff0000",
         },
         dark: {
           accent: "#9c27b0",
@@ -322,8 +333,8 @@ export default {
           green: "#00FF00",
           blue: "#00b0ff",
           orange: "#fb8c00",
-          red: "#ff0000"
-        }
+          red: "#ff0000",
+        },
       },
       drawers: ["Default (no property)", "Permanent", "Temporary"],
       primaryDrawer: {
@@ -331,36 +342,37 @@ export default {
         type: "default (no property)",
         clipped: false,
         floating: false,
-        mini: false
+        mini: false,
       },
       footer: {
-        inset: false
+        inset: false,
       },
       preferredColor: "pink",
       items: [
         { title: "Studio", icon: "mdi-web", link: "/" },
         { title: "Projects", icon: "mdi-quadcopter", link: "/projects" },
         { title: "Web Pieces", icon: "mdi-puzzle", link: "/webpieces" },
-        { title: "About Me", icon: "mdi-account", link: "/about" }
+        { title: "About Me", icon: "mdi-account", link: "/about" },
+        { title: "Music", icon: "mdi-music", link: "/music" },
       ],
       socialLinks: [
         {
           name: "twitter",
           link: "https://twitter.com/CodingInNeon",
           color: "#2196f3",
-          icon: "mdi-twitter"
+          icon: "mdi-twitter",
         },
         {
           name: "facebook",
           link: "https://web.facebook.com/esan.bankole/",
           color: "#0064ba",
-          icon: "mdi-facebook"
+          icon: "mdi-facebook",
         },
         {
           name: "whatsapp",
           link: "https://wa.me/+2348069166906",
           color: "#52b155",
-          icon: "mdi-whatsapp"
+          icon: "mdi-whatsapp",
         },
         // { name: '', link: '', color: 'error', icon: 'mdi-youtube' },
         // { name: '', link: '', color: 'primary', icon: 'mdi-twitch' },
@@ -368,21 +380,21 @@ export default {
           name: "github",
           link: "https://github.com/bankole2000",
           color: "secondary",
-          icon: "mdi-github"
-        }
+          icon: "mdi-github",
+        },
         // { name: '', link: '', color: 'accent', icon: 'mdi-discord' },
-      ]
+      ],
     };
   },
   methods: {
-    ...mapActions(["showToast"]),
+    ...mapActions(["showToast", "toggleMusicPlayer"]),
     displayToast(e) {
       this.loadingTestButton = true;
       console.log({ e });
       this.showToast({
         sclass: "info",
         message: "This is a test Snackbar",
-        timeout: 2000
+        timeout: 2000,
       }).then(() => {
         setTimeout(() => {
           this.loadingTestButton = false;
@@ -463,7 +475,10 @@ export default {
         this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
         this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
       }
-    }
+    },
+  },
+  computed: {
+    ...mapGetters(["musicPlayer"]),
   },
   mounted() {
     if (this.$vuetify.breakpoint.mdAndUp) {
@@ -471,7 +486,11 @@ export default {
         this.primaryDrawer.model = true;
       }, 2000);
     }
-  }
+
+    setTimeout(() => {
+      this.toggleMusicPlayer(true);
+    }, 5000);
+  },
 };
 </script>
 
