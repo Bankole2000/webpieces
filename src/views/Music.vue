@@ -30,15 +30,7 @@
                     class="primary"
                     style="border: 3px solid var(--primary);"
                   >
-                    <img
-                      width="200"
-                      :src="
-                        $vuetify.theme.dark
-                          ? require('@/assets/images/nightprofile.jpg.webp')
-                          : require('@/assets/images/dayprofile.jpg.webp')
-                      "
-                      alt=""
-                    />
+                    <img width="200" :src="currentSong.cover" alt="" />
                   </v-avatar>
                 </v-card-text>
               </v-card>
@@ -136,11 +128,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       expand2: true,
     };
+  },
+  computed: {
+    ...mapGetters(["currentSong"]),
   },
   mounted() {
     if (this.$vuetify.breakpoint.mdAndUp) {

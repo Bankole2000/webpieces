@@ -38,6 +38,7 @@ export default Vue.extend({
       return generatedColors;
     },
   },
+
   watch: {
     $route(to) {
       document.title = `Banky Studio - ${to.meta.title ? to.meta.title : ""}`;
@@ -49,7 +50,6 @@ export default Vue.extend({
     },
   },
   mounted() {
-    console.log(process.env);
     // console.log({
     //   breakpoint: this.$vuetify.breakpoint,
     //   sm: this.$vuetify.breakpoint.smOnly,

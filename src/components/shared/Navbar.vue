@@ -489,7 +489,7 @@ export default {
 
     setTimeout(() => {
       this.toggleMusicPlayer(true);
-    }, 5000);
+    }, 1000);
   },
 };
 </script>

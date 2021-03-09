@@ -23,9 +23,11 @@ export default new Vuex.Store({
     }, 
     webpieceRequests: [],
     musicPlayer: {
-      show: false,
+      show: true,
       isPlaying: false,
-    }
+    }, 
+    currentPlaylist: null,
+    currentSong: null,
   },
   mutations: {
     showToast(state: any, payload) {
@@ -52,6 +54,15 @@ export default new Vuex.Store({
     },
     toggleMusicPlayer({musicPlayer}, payload){
       musicPlayer.show = payload;
+    }, 
+    toggleIsPlaying(state, payload){
+      state.musicPlayer.isPlaying = payload
+    },
+    setCurrentPlaylist(state, payload){
+      state.currentPlaylist = payload;
+    }, 
+    setCurrentSong(state, payload){
+      state.currentSong = payload;
     }
   },
   actions: {
@@ -139,6 +150,15 @@ export default new Vuex.Store({
     toggleMusicPlayer({commit}, payload){
       console.log({payload})
       commit('toggleMusicPlayer', payload)
+    },
+    toggleIsPlaying({commit}, payload){
+      commit('toggleIsPlaying', payload);
+    },
+    async setCurrentPlaylist({commit}, payload){
+      commit('setCurrentPlaylist', payload)
+    }, 
+    async setCurrentSong({commit}, payload){
+      commit('setCurrentSong', payload);
     }
   },
   getters: {
@@ -150,6 +170,12 @@ export default new Vuex.Store({
     }, 
     musicPlayer(state){
       return state.musicPlayer;
+    }, 
+    currentPlaylist(state){
+      return state.currentPlaylist;
+    }, 
+    currentSong(state){
+      return state.currentSong;
     }
   },
   modules: {}
