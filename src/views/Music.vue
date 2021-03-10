@@ -161,10 +161,14 @@
                 v-if="!$vuetify.breakpoint.smAndDown"
                 style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;"
               >
-                <h3 class="text-center display-1 font-weight-medium">
+                <h3
+                  class="text-center secondary--text display-1 font-weight-medium"
+                >
                   {{ currentSong.name }}
                 </h3>
-                <h3 class="text-center display-1 font-weight-light">
+                <h3
+                  class="text-center secondary--text display-1 font-weight-light"
+                >
                   {{ currentSong.artist }}
                 </h3>
                 <div style="width: 100%;">
@@ -174,7 +178,7 @@
                     v-model="volume"
                     prepend-icon="mdi-volume-high"
                     append-icon="mdi-playlist-music"
-                    @click:append="expand2 = !expand2"
+                    @click:append="showPlaylist"
                   ></v-slider>
                 </div>
 
@@ -196,10 +200,14 @@
                 </div>
               </div>
               <div v-else class="mt-6">
-                <h4 class="text-center text-h5 font-weight-medium">
+                <h4
+                  class="text-center secondary--text text-h5 font-weight-medium"
+                >
                   {{ currentSong.name }}
                 </h4>
-                <h4 class="text-center text-h5 font-weight-light">
+                <h4
+                  class="text-center secondary--text text-h5 font-weight-light"
+                >
                   {{ currentSong.artist }}
                 </h4>
                 <div style="width: 80%;" class="mx-auto mt-4">
@@ -208,6 +216,8 @@
                     :max="100"
                     v-model="volume"
                     prepend-icon="mdi-volume-high"
+                    append-icon="mdi-playlist-music"
+                    @click:append="showPlaylist"
                   ></v-slider>
                 </div>
               </div>
@@ -414,6 +424,11 @@ export default {
     playSong(song, index) {
       console.log({ song, index });
     },
+    showPlaylist() {
+      if (this.$vuetify.breakpoint.lgAndUp) {
+        this.expand2 = !this.expand2;
+      }
+    },
   },
   computed: {
     ...mapGetters([
@@ -433,13 +448,13 @@ export default {
     },
   },
   mounted() {
-    if (this.$vuetify.breakpoint.mdAndUp) {
+    if (this.$vuetify.breakpoint.lgAndUp) {
       setTimeout(() => {
         this.expand2 = true;
-        if (!this.musicPlayer.show) {
-          this.toggleMusicPlayer(true);
-        }
       }, 500);
+    }
+    if (!this.musicPlayer.show) {
+      this.toggleMusicPlayer(true);
     }
   },
 };
