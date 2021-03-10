@@ -28,6 +28,10 @@ export default new Vuex.Store({
     }, 
     currentPlaylist: null,
     currentSong: null,
+    currentSongTime: {
+      currentTime: 0, 
+      duration: 1,
+    }
   },
   mutations: {
     showToast(state: any, payload) {
@@ -63,6 +67,9 @@ export default new Vuex.Store({
     }, 
     setCurrentSong(state, payload){
       state.currentSong = payload;
+    }, 
+    updateCurrentSongTime(state, payload){
+      state.currentSongTime = {...payload};
     }
   },
   actions: {
@@ -176,6 +183,9 @@ export default new Vuex.Store({
     }, 
     currentSong(state){
       return state.currentSong;
+    }, 
+    currentSongTime(state){
+      return state.currentSongTime;
     }
   },
   modules: {}

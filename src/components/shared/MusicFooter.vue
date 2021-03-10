@@ -40,10 +40,10 @@
                 }}</v-list-item-subtitle>
               </v-list-item-content>
 
-              <v-spacer></v-spacer>
+              <!-- <v-spacer></v-spacer> -->
 
               <v-list-item-icon>
-                <v-btn icon>
+                <v-btn @click="playPrevSong" icon>
                   <v-icon>mdi-rewind</v-icon>
                 </v-btn>
               </v-list-item-icon>
@@ -62,13 +62,20 @@
                 class="ml-0"
                 :class="{ 'mr-3': $vuetify.breakpoint.mdAndUp }"
               >
-                <v-btn icon>
+                <v-btn @click="playNextSong" icon>
                   <v-icon>mdi-fast-forward</v-icon>
+                </v-btn>
+              </v-list-item-icon>
+
+              <v-spacer></v-spacer>
+              <v-list-item-icon>
+                <v-btn icon @click="$emit('showColorModal', true)">
+                  <v-icon size="32">mdi-palette</v-icon>
                 </v-btn>
               </v-list-item-icon>
               <v-list-item-icon>
                 <v-btn icon @click="toggleMusicPlayer(false)">
-                  <v-icon>mdi-menu-down</v-icon>
+                  <v-icon size="32">mdi-menu-down</v-icon>
                 </v-btn>
               </v-list-item-icon>
             </v-list-item>
@@ -113,14 +120,13 @@ export default {
       const { currentTime, duration } = e.target;
       this.currentTime = currentTime;
       this.duration = duration;
+      this.$store.commit("updateCurrentSongTime", { currentTime, duration });
     },
     playCurrentSong() {
       if (!this.musicPlayer.isPlaying) {
-        this.songReady = false;
         const playPromise = this.$refs.audioPlayer.play();
         if (playPromise !== undefined) {
           playPromise.then(() => {
-            this.songReady = true;
             this.$refs.audioPlayer.play();
             this.toggleIsPlaying(true);
           });
@@ -132,18 +138,49 @@ export default {
     },
     handleSongEnded(e) {
       console.log({ e });
-      this.toggleIsPlaying(false);
+      this.playNextSong();
+    },
+    async playPrevSong() {
+      await this.$refs.audioPlayer.pause();
+      this.currentTime = 0;
+      console.log(this.currentPlaylist);
+      if (this.songIndex > 0) {
+        this.songIndex -= 1;
+      } else {
+        this.songIndex = this.currentPlaylist.length - 1;
+      }
+      this.setCurrentSong(this.currentPlaylist[this.songIndex]).then(() => {
+        if (this.musicPlayer.isPlaying) {
+          this.toggleIsPlaying(false);
+          this.playCurrentSong();
+        }
+      });
+    },
+    async playNextSong() {
+      await this.$refs.audioPlayer.pause();
+      this.currentTime = 0;
+      console.log(this.currentPlaylist);
+      if (this.songIndex < this.currentPlaylist.length - 1) {
+        this.songIndex += 1;
+      } else {
+        this.songIndex = 0;
+      }
+      this.setCurrentSong(this.currentPlaylist[this.songIndex]).then(() => {
+        if (this.musicPlayer.isPlaying) {
+          this.toggleIsPlaying(false);
+          this.playCurrentSong();
+        }
+      });
     },
   },
   computed: {
     ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"]),
   },
-  // mounted() {},
   created() {
     const playlist = allSongs();
     console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {
-      this.setCurrentSong(playlist[2]);
+      this.setCurrentSong(playlist[this.songIndex]);
       console.log(this.currentSong);
       console.log(this.currentPlaylist);
     });

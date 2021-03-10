@@ -197,7 +197,7 @@
         </a>
       </div>
     </v-footer>
-    <MusicFooter />
+    <MusicFooter @showColorModal="colorMenu = true" />
     <v-dialog v-model="colorMenu" max-width="500">
       <v-card class="rounded-xl">
         <v-card-title>
