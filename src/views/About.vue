@@ -201,7 +201,7 @@
                       width="200"
                       :src="
                         $vuetify.theme.dark
-                          ? require('@/assets/images/nightprofile.jpg.webp')
+                          ? require('@/assets/images/nightprofile.jpg')
                           : require('@/assets/images/dayprofile.jpg.webp')
                       "
                       alt=""

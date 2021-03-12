@@ -44,7 +44,8 @@ export default Vue.extend({
       document.title = `Banky Studio - ${to.meta.title ? to.meta.title : ""}`;
       const link = document.querySelector("[rel='icon']");
       if (link) {
-        link.setAttribute("href", "img/icons/nightprofile.jpg.webp");
+        // link.setAttribute("href", "img/icons/nightprofile.jpg.webp");
+        link.setAttribute("href", "img/icons/nightprofile.jpg");
         console.log(link);
       }
     },
