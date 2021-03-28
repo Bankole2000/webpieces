@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-slide-y-reverse-transition>
-      <v-footer v-if="musicPlayer.show" padless app inset style="z-index: 5;">
+      <v-footer v-if="musicPlayer.show" padless app inset style="z-index: 5">
         <v-card flat tile width="100%">
           <v-slider
             :value="currentTime"
@@ -25,7 +25,7 @@
           ><v-icon>mdi-cancel</v-icon></v-btn
         > -->
           <v-list>
-            <v-list-item>
+            <v-list-item v-if="currentSong">
               <v-list-item-avatar>
                 <v-img
                   class="music-image"
@@ -94,12 +94,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 import allSongs from "../../utils/songs";
 export default {
   data() {
     return {
-      songIndex: 0,
       songReady: false,
       currentTime: 0,
       duration: 1,
@@ -112,6 +111,7 @@ export default {
       "setCurrentPlaylist",
       "setCurrentSong",
     ]),
+    ...mapMutations(["setMusicPlayer", "setSongIndex"]),
     setProgress(e) {
       console.log({ e });
       this.$refs.audioPlayer.currentTime = e;
@@ -144,12 +144,14 @@ export default {
       await this.$refs.audioPlayer.pause();
       this.currentTime = 0;
       console.log(this.currentPlaylist);
-      if (this.songIndex > 0) {
-        this.songIndex -= 1;
+      if (this.musicPlayer.songIndex > 0) {
+        this.setSongIndex(this.musicPlayer.songIndex - 1);
       } else {
-        this.songIndex = this.currentPlaylist.length - 1;
+        this.setSongIndex(this.currentPlaylist.length - 1);
       }
-      this.setCurrentSong(this.currentPlaylist[this.songIndex]).then(() => {
+      this.setCurrentSong(
+        this.currentPlaylist[this.musicPlayer.songIndex]
+      ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
           this.playCurrentSong();
@@ -160,12 +162,14 @@ export default {
       await this.$refs.audioPlayer.pause();
       this.currentTime = 0;
       console.log(this.currentPlaylist);
-      if (this.songIndex < this.currentPlaylist.length - 1) {
-        this.songIndex += 1;
+      if (this.musicPlayer.songIndex < this.currentPlaylist.length - 1) {
+        this.setSongIndex(this.musicPlayer.songIndex + 1);
       } else {
-        this.songIndex = 0;
+        this.setSongIndex(0);
       }
-      this.setCurrentSong(this.currentPlaylist[this.songIndex]).then(() => {
+      this.setCurrentSong(
+        this.currentPlaylist[this.musicPlayer.songIndex]
+      ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
           this.playCurrentSong();
@@ -176,13 +180,16 @@ export default {
   computed: {
     ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"]),
   },
+  mounted() {
+    console.log(this.$refs);
+    this.setMusicPlayer(this.$refs.audioPlayer);
+  },
+
   created() {
     const playlist = allSongs();
     console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {
-      this.setCurrentSong(playlist[this.songIndex]);
-      console.log(this.currentSong);
-      console.log(this.currentPlaylist);
+      this.setCurrentSong(playlist[this.musicPlayer.songIndex]);
     });
   },
 };

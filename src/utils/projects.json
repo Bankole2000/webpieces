@@ -1,9 +1,33 @@
 [
   {
+    "name": "Little Book Store",
+    "image": "bookstore.webp",
+    "client": "Vue JS Nigeria talk",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/vuetifydesigntips",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/vuetifydesigntips",
+    "projectUrlAvailable": true,
+    "shortDescription": "A small project to demonstrate some design tips with vuetify",
+    "longDescription": "",
+    "backStory":"",
+    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify"],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Lumin Skin Shop",
     "image": "luminskin.webp",
     "client": "Coding Challenge",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/luminskin",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/luminskin/",
@@ -23,7 +47,8 @@
     "name": "Fandom Memory Match",
     "image": "vuematch.png.webp",
     "client": "Self (Personal Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/vue-match",
     "githubAvailable": true,
     "projectUrl": "https://vuematch.netlify.app/",
@@ -43,7 +68,8 @@
     "name": "Pluralsight Login UI",
     "image": "psloginclone.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/bankole2000/psloginclone",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/psloginclone",
@@ -57,7 +83,8 @@
     "name": "Node JWT Demo",
     "image": "nodejwt.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/nodejwt",
     "githubAvailable": true,
     "projectUrl": "https://nodejwt.banky.studio/",
@@ -77,7 +104,8 @@
     "name": "Banky's Smoothies",
     "image": "smoothies.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/vue-smoothies",
     "githubAvailable": true,
     "projectUrl": "https://smoothies-a3bd6.firebaseapp.com/",
@@ -96,7 +124,8 @@
     "name": "Netflix Landing Page UI",
     "image": "netflix.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/netflix",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/netflix",
@@ -114,7 +143,8 @@
     "name": "Project App UI",
     "image": "pmuinew.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/pm_ui",
     "githubAvailable": true,
     "projectUrl": "https://pmui.netlify.app/",
@@ -135,7 +165,8 @@
     "name": "Earth Friends",
     "image": "earthfriends.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/earth-friends",
     "githubAvailable": true,
     "projectUrl": "https://earth-friends.web.app/",
@@ -155,7 +186,8 @@
     "name": "Tutorial Request App",
     "image": "fbcloud.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -174,7 +206,8 @@
     "name": "ALC 4.0 Strategy",
     "image": "alc4.0strategy.png.webp",
     "client": "Self (Personal Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/alc4.0strategy",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/alc4.0strategy/",
@@ -194,7 +227,8 @@
     "name": "Banky Studio",
     "image": "banystudio.png.webp",
     "client": "Self (Personal Project)",
-
+    "status": "In Development",
+    "statusColor": "purple",
     "githubUrl": "https://github.com/Bankole2000/webpieces",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/webpieces/",
@@ -215,7 +249,8 @@
     "name": "Cosgrove Tech",
     "image": "cosgroveTech.webp",
     "client": "Cosgrove (Freelance Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": null,
     "githubAvailable": false,
     "projectUrl": "https://cosgrovetech.com",
@@ -235,7 +270,8 @@
     "name": "Style Guide Sample",
     "image": "styleguide.webp",
     "client": "Self (Personal Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/webpieces",
     "githubAvailable": true,
     "projectUrl": "https://styleguide.banky.studio",
@@ -255,7 +291,8 @@
     "name": "Dev Meetups",
     "image": "devmeetups.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/vuedevmeetups",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/vuedevmeetups",
@@ -274,7 +311,8 @@
     "name": "First Angular App",
     "image": "firstngapp.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://firstngapp-5ef69.web.app/",
@@ -294,7 +332,8 @@
     "name": "Firebase Chat",
     "image": "friendlychat.png.webp",
     "client": "Self (Learning Project)",
-    
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/firebase-codelabs",
     "githubAvailable": true,
     "projectUrl": "https://friendlychat-d11f1.web.app/",
@@ -313,7 +352,8 @@
     "name": "Github Finder",
     "image": "githubfinder.png.webp",
     "client": "Self (Learning Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/githubfinder",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/githubfinder/",
@@ -332,7 +372,8 @@
     "name": "Jojo Ride",
     "image": "jojoride.png.webp",
     "client": "Personal Client (Freelance)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
     "projectUrl": "https://fbcloud1337.web.app/",
@@ -351,7 +392,8 @@
     "name": "Primal Aero Website",
     "image": "primalaero.png.webp",
     "client": "The Primal Aero Company",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": null,
     "githubAvailable": false,
     "projectUrl": "https://primalaero.com",
@@ -371,7 +413,8 @@
     "name": "Booking Engine",
     "image": "primalaerobooking.png.webp",
     "client": "The Primal Aero Company",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/flightbooking",
     "githubAvailable": true,
     "projectUrl": null,
@@ -390,7 +433,8 @@
     "name": "My Old Portfolio site",
     "image": "portfolio.png.webp",
     "client": "Self (Personal Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/portfolio",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/portfolio",
@@ -409,7 +453,8 @@
     "name": "Stuff to do",
     "image": "stuffToDo.webp",
     "client": "Self (Personal Project)",
-
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/stuff-to-do",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/stuff-to-do/",

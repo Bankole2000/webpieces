@@ -2,12 +2,12 @@
   <div class="side-ways">
     <v-card
       class="mx-auto"
-      style="width: 100%;"
+      style="width: 100%"
       v-if="$vuetify.breakpoint.smAndUp"
     >
-      <div style="width: 100%;" class="d-flex flex-no-wrap justify-start">
+      <div style="width: 100%" class="d-flex flex-no-wrap justify-start">
         <!-- <v-avatar class="ma-0" size="192" tile> -->
-        <div style="flex: 2;">
+        <div style="flex: 2">
           <v-img
             :aspect-ratio="1864 / 1400"
             :src="require(`@/assets/images/projectImages/${project.image}`)"
@@ -18,7 +18,15 @@
         <div style="flex: 3" class="d-flex flex-column ml-4">
           <v-card-title class="headline">{{ project.name }}</v-card-title>
 
-          <v-card-subtitle>{{ project.shortDescription }}</v-card-subtitle>
+          <v-card-subtitle class="pb-1">{{
+            project.shortDescription
+          }}</v-card-subtitle>
+          <v-card-subtitle class="py-0"
+            ><strong>Status: </strong
+            ><span :class="`${project.statusColor}--text`">{{
+              project.status
+            }}</span></v-card-subtitle
+          >
           <v-spacer></v-spacer>
           <v-card-text class="pb-1">
             <v-tooltip top v-for="(tech, i) in project.technologies" :key="i">
@@ -76,7 +84,7 @@
         :src="require(`@/assets/images/projectImages/${project.image}`)"
       ></v-img>
       <div
-        style="background-image: var(--rainbow); height: 2px; width: 100%;"
+        style="background-image: var(--rainbow); height: 2px; width: 100%"
       ></div>
       <v-card-title>
         {{ project.name }}
@@ -155,11 +163,9 @@
           :height="$vuetify.breakpoint.smAndDown ? 0 : 250"
           class="align-end"
           style="position: relative"
-          :gradient="
-            `to top, ${$vuetify.theme.dark ? '#121212FF' : '#F5F5F5FF'}, ${
-              $vuetify.theme.dark ? '#12121200' : '#F5F5F500'
-            }`
-          "
+          :gradient="`to top, ${
+            $vuetify.theme.dark ? '#121212FF' : '#F5F5F5FF'
+          }, ${$vuetify.theme.dark ? '#12121200' : '#F5F5F500'}`"
           :src="require(`@/assets/images/projectImages/${project.image}`)"
         >
           <v-btn
@@ -167,7 +173,7 @@
             @click="dialog = false"
             large
             icon
-            style="position: absolute; top: 10px; right: 10px;"
+            style="position: absolute; top: 10px; right: 10px"
             ><v-icon>mdi-close-circle</v-icon></v-btn
           >
           <v-card-title class="headline font-weight-light">
@@ -176,10 +182,10 @@
         >
         <div
           :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-          style="width: 100%; height: 2px;"
+          style="width: 100%; height: 2px"
         ></div>
 
-        <v-card-text class="px-4 pt-4" style="max-height: 60%; ">
+        <v-card-text class="px-4 pt-4" style="max-height: 60%">
           <p class="ma-0 mb-2">
             <strong>Project Url: </strong><a>{{ project.projectUrl }}</a>
           </p>
@@ -245,14 +251,14 @@ export default {
         react: "#61DBFB",
         nodejs: "#3C873A",
         vuetify: "#1775d0",
-        angular: "#B52E31"
+        angular: "#B52E31",
       },
-      dialog: false
+      dialog: false,
     };
   },
   mounted() {
     // console.log(this.project);
-  }
+  },
 };
 </script>
 

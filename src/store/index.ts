@@ -25,6 +25,8 @@ export default new Vuex.Store({
     musicPlayer: {
       show: true,
       isPlaying: false,
+      ref: null,
+      songIndex: 0,
     }, 
     currentPlaylist: null,
     currentSong: null,
@@ -70,6 +72,13 @@ export default new Vuex.Store({
     }, 
     updateCurrentSongTime(state, payload){
       state.currentSongTime = {...payload};
+    }, 
+    setMusicPlayer(state, payload){
+      console.log({payload})
+      state.musicPlayer.ref = payload
+    },
+    setSongIndex(state, payload){
+      state.musicPlayer.songIndex = payload;
     }
   },
   actions: {

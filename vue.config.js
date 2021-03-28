@@ -5,7 +5,7 @@ module.exports = {
       args[0].title = "Banky Studio";
       return args;
     });
-  },
+  },  
   publicPath: process.env.NODE_ENV === "production" ? "/webpieces/" : "/"
   // publicPath: '',
   // baseUrl: '/projects/vue/webpieces/dist/',
