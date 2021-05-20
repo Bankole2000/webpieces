@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar :style="cssProps" />
-    <v-main :style="cssProps" style="margin-top: -18px;">
+    <v-main :style="cssProps" style="margin-top: -18px">
       <transition name="router-anim">
         <router-view></router-view>
       </transition>
@@ -103,14 +103,14 @@ export default Vue.extend({
 }
 
 *::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 *::-webkit-scrollbar-track {
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 20px;
+  background-color: rgb(255, 0, 157);
+  /* border-radius: 20px; */
   border: transparent;
 }
 /* body::-webkit-scrollbar {

@@ -60,7 +60,7 @@
               ><v-icon left>mdi-github</v-icon>Github</v-btn
             >
             <v-btn
-              :disabled="!project.projectUrl"
+              :disabled="!project.projectUrlAvailable"
               :href="project.projectUrl"
               target="_blank"
               class="mb-4 ml-4"
@@ -121,7 +121,7 @@
           ><v-icon>mdi-github</v-icon></v-btn
         >
         <v-btn
-          :disabled="!project.projectUrl"
+          :disabled="!project.projectUrlAvailable"
           :href="project.projectUrl"
           target="_blank"
           icon
@@ -192,21 +192,40 @@
           <p class="ma-0 mb-2">
             <strong>Github Url: </strong><a>{{ project.githubUrl }}</a>
           </p>
-          <p class="ma-0 mb-2"><strong>Status: </strong>Not yet deployed</p>
           <p class="ma-0 mb-2">
-            <strong>Client: </strong>Self (Personal Project)
+            <strong>Status: </strong
+            ><span :class="`${project.statusColor}--text`">{{
+              project.status
+            }}</span>
           </p>
+          <p class="ma-0 mb-2"><strong>Client: </strong>{{ project.client }}</p>
           <p class="ma-0 mb-2">
-            <strong>Description: </strong>Not yet deployed
+            <strong>Description: </strong>{{ project.shortDescription }}
           </p>
-          <p class="ma-0 mb-2">
+          <!-- <p class="ma-0 mb-2">
             <strong>Requirements: </strong>Not yet deployed
-          </p>
-          <p class="ma-0"><strong>Learning Points: </strong>Not yet deployed</p>
-          <div class="ma-0 mb-2">
-            <ul>
-              <li>Firebase Cloud Firestore</li>
-            </ul>
+          </p> -->
+          <p class="ma-0"><strong>Technologies Used: </strong></p>
+          <div
+            class="ma-0 mb-2"
+            v-if="project.techUsed.length == project.technologies.length"
+          >
+            <v-chip
+              class="ma-2"
+              v-for="(tech, i) in project.techUsed"
+              :key="i"
+              label
+              :color="
+                colors[
+                  project.technologies[i].split('-')[
+                    project.technologies[i].split('-').length - 1
+                  ]
+                ]
+              "
+            >
+              <v-icon left>{{ project.technologies[i] }}</v-icon>
+              {{ tech }}
+            </v-chip>
           </div>
           <p class="ma-0 mb-2"><strong>Challenges: </strong>Not yet deployed</p>
           <p class="ma-0 mb-2">
@@ -223,8 +242,8 @@
             :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
             text
             @click="dialog = false"
-          >
-            I accept
+            ><v-icon left>mdi-check</v-icon>
+            Okay
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -252,6 +271,7 @@ export default {
         nodejs: "#3C873A",
         vuetify: "#1775d0",
         angular: "#B52E31",
+        graphql: "#da0093",
       },
       dialog: false,
     };

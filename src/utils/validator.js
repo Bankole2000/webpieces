@@ -1,7 +1,6 @@
 const emailRegex = /^[a-z]+(_|\.)?[a-z0-9]*@[a-z]+\.[a-z]{2,}$/i;
 const alphaNumRegex = /^[a-z0-9]+$/i;
 const userNameRegex = /^[a-z0-9_]+$/i;
-
 const validStringRegex = /([^\s])/;
 
 module.exports.isEmail = (emailLike) => {
