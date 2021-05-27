@@ -26,13 +26,13 @@
         </v-card-title>
         <div
           :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-          style="width: 100%; height: 2px;"
+          style="width: 100%; height: 2px"
         ></div>
 
         <v-card-text class="pt-4">
           <p class="text-h6 font-weight-light secondary--text">
-            I like to think of it as own little corner of the web. Here's what
-            you can find on here :-
+            I like to think of it as my own little corner of the web. Here's
+            what you can find on here :-
           </p>
           <v-expansion-panels accordion>
             <v-expansion-panel v-for="(link, i) in modalLinks" :key="i">
@@ -50,7 +50,7 @@
                 <div
                   class="mb-2"
                   :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-                  style="width: 100%; height: 2px;"
+                  style="width: 100%; height: 2px"
                 ></div>
                 {{ link.content }}
                 <v-card-actions>
@@ -101,36 +101,36 @@ export default {
           title: "Info About me",
           icon: "mdi-card-account-details",
           content:
-            "My Skills, Experience, Certifications, Projects, Resume, etc"
+            "My Skills, Experience, Certifications, Projects, Resume, etc",
         },
         {
           to: "/webpieces",
           title: "Web Pieces",
           icon: "mdi-puzzle",
           content:
-            "A collaboratively maintained collection of web components and pieces of web interfaces. Also the name of my upcoming Youtube tutorial series where I code these pieces from scratch"
+            "A collaboratively maintained collection of web components and pieces of web interfaces. Also the name of my upcoming Youtube tutorial series where I code these pieces from scratch",
         },
         {
           to: "/projects",
           icon: "mdi-briefcase",
           title: "My Projects",
           content:
-            "Overview and details of some projects I've done/I'm currently working on."
+            "Overview and details of some projects I've done/I'm currently working on.",
         },
         {
           to: "/blog",
           title: "My Blog",
           icon: "mdi-notebook-edit-outline",
           content:
-            "A personal blog I keep for writing about coding, webdev, music, gaming, some social stuff, and my experiences/interests in general"
+            "A personal blog I keep for writing about coding, webdev, music, gaming, some social stuff, and my experiences/interests in general",
         },
         {
           to: "/clients",
           title: "My Client Platform",
           icon: "mdi-handshake",
           content:
-            "A Leantime Agile dev platform where I maintain client projects"
-        }
+            "A Leantime Agile dev platform where I maintain client projects",
+        },
         // {
         //   to: "/hire",
         //   title: "Hire Me 💼🙋‍♂️",
@@ -138,9 +138,9 @@ export default {
         //   content:
         //     "I'm currently actively looking for Remote fulltime/partime and freelance work"
         // }
-      ]
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped>

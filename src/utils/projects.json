@@ -1,5 +1,87 @@
 [
   {
+    "name": "HubFindr",
+    "image": "hubFindr.png.webp",
+    "client": "Buy Coins Africa",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/hubFindr",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/hubFindr",
+    "projectUrlAvailable": true,
+    "shortDescription": "Find Github users - Mini project for the buy coins africa front end role coding challenge",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Cribby API Playground",
+    "image": "cribbyapi.webp",
+    "client": "The World Needs this",
+    "status": "In Development",
+    "statusColor": "purple",
+    "githubUrl": "https://github.com/Bankole2000/cribbyapi",
+    "githubAvailable": true,
+    "projectUrl": "https://cribba-api.herokuapp.com/graphql",
+    "projectUrlAvailable": true,
+    "shortDescription": "GraphQL API for a large project I'm building collaboratively",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "Javascript",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-javascript",
+      "mdi-nodejs",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Fandom Memory Match",
+    "image": "vuematch.png.webp",
+    "client": "Self (Personal Project)",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/vue-match",
+    "githubAvailable": true,
+    "projectUrl": "https://vuematch.netlify.app/",
+    "projectUrlAvailable": true,
+    "shortDescription": "A memory matching game built around popular games and tv shows",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": [
+      ""
+    ]
+  },
+  {
     "name": "Little Book Store",
     "image": "bookstore.webp",
     "client": "Vue JS Nigeria talk",
@@ -11,8 +93,14 @@
     "projectUrlAvailable": true,
     "shortDescription": "A small project to demonstrate some design tips with vuetify",
     "longDescription": "",
-    "backStory":"",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify"],
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -34,8 +122,14 @@
     "projectUrlAvailable": true,
     "shortDescription": "Out of my love for vuetify, I built my own copy of the vuetify docs from scratch",
     "longDescription": "",
-    "backStory":"",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify"],
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -57,35 +151,20 @@
     "projectUrlAvailable": true,
     "shortDescription": "A music player mini-project to practice some react js concepts",
     "longDescription": "",
-    "backStory":"",
-    "techUsed": ["HTML", "CSS", "Javascript", "React JS", "Sass"],
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React JS",
+      "Sass"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-react",
       "mdi-sass"
-    ],
-    "objectives": []
-  },
-  {
-    "name": "Cribby API Playground",
-    "image": "cribbyapi.webp",
-    "client": "The World Needs this",
-    "status": "In Development",
-    "statusColor": "purple",
-    "githubUrl": "https://github.com/Bankole2000/cribbyapi",
-    "githubAvailable": true,
-    "projectUrl": "https://cribba-api.herokuapp.com/graphql",
-    "projectUrlAvailable": true,
-    "shortDescription": "GraphQL API for a large project I'm building collaboratively",
-    "longDescription": "",
-    "backStory":"",
-    "techUsed": ["Javascript", "Node JS", "GraphQl"],
-    "technologies": [
-      "mdi-language-javascript",
-      "mdi-nodejs", 
-      "mdi-graphql"
     ],
     "objectives": []
   },
@@ -101,8 +180,13 @@
     "projectUrlAvailable": true,
     "shortDescription": "A small side project to help at my job (specifically to document and filter IATA Codes)",
     "longDescription": "",
-    "backStory":"",
-    "techUsed": ["HTML", "CSS", "Javascript", "Bootstrap"],
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -123,38 +207,23 @@
     "projectUrlAvailable": true,
     "shortDescription": "A coding challenge as part of the hiring process for pangaea.com",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify", "GraphQL"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify",
+      "GraphQL"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-vuejs",
-      "mdi-vuetify", 
+      "mdi-vuetify",
       "mdi-graphql"
     ],
     "objectives": []
-  },
-  {
-    "name": "Fandom Memory Match",
-    "image": "vuematch.png.webp",
-    "client": "Self (Personal Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/vue-match",
-    "githubAvailable": true,
-    "projectUrl": "https://vuematch.netlify.app/",
-    "projectUrlAvailable": true,
-    "shortDescription": "A memory matching game built around popular games and tv shows",
-    "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify"],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify"
-    ],
-    "objectives": [""]
   },
   {
     "name": "Pluralsight Login UI",
@@ -168,8 +237,14 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple login page UI clone of the pluralsight website. Built with html and css",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS"],
-    "technologies": ["mdi-language-html5", "mdi-language-css3"],
+    "techUsed": [
+      "HTML",
+      "CSS"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3"
+    ],
     "objectives": []
   },
   {
@@ -184,7 +259,13 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple nodejs app built to practice JSON web tokens (JWT) and user authentication",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Node JS", "Bootstrap"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Node JS",
+      "Bootstrap"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -206,7 +287,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple practice CRUD app for managing cocktail recipes. Built with materialize css and firebase",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -227,7 +313,11 @@
     "projectUrlAvailable": true,
     "shortDescription": "Simple UI Netflix landing page UI clone.",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -247,7 +337,14 @@
     "projectUrlAvailable": true,
     "shortDescription": "A project management UI to demonstrate the beatify of vuetify",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -270,7 +367,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A geolocation based chat app built using the Google maps API and Firebase.",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -291,7 +393,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple project to practice Firebase cloud functions.",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript","Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -312,7 +419,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A study guidance and tracking app with ordered lists and links to pluralsight courses",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Bootstrap"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -323,7 +435,7 @@
   },
   {
     "name": "Banky Studio",
-    "image": "banystudio.png.webp",
+    "image": "webpieces.png.webp",
     "client": "Self (Personal Project)",
     "status": "In Development",
     "statusColor": "purple",
@@ -333,7 +445,14 @@
     "projectUrlAvailable": true,
     "shortDescription": "My Current portfolio site, and I LOVE it!!! 😍",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vue JS", "Vuetify", "Node JS"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify",
+      "Node JS"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -356,7 +475,11 @@
     "projectUrlAvailable": true,
     "shortDescription": "Freelance Project for the Cosgrove Real Estate company",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Wordpress"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Wordpress"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -364,8 +487,6 @@
     ],
     "objectives": []
   },
-  
- 
   {
     "name": "Style Guide Sample",
     "image": "styleguide.webp",
@@ -378,7 +499,13 @@
     "projectUrlAvailable": true,
     "shortDescription": "Sample Style guide built with Catalog and React",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "React JS", "Node JS"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React JS",
+      "Node JS"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -400,7 +527,13 @@
     "projectUrlAvailable": false,
     "shortDescription": "A meetup organizing app for devs",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Vuetify", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vuetify",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -422,7 +555,13 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple X and O game to learn the basics of angular",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Angular", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Angular",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -444,7 +583,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple chat app to practice Firebase code labs",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -465,7 +609,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple web app to find github users using the github api",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -486,7 +635,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "Sample UI for ride-sharing web app",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -507,7 +661,13 @@
     "projectUrlAvailable": true,
     "shortDescription": "Company website built for publicity and online Presence",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase", "Wordpress"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase",
+      "Wordpress"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -529,7 +689,12 @@
     "projectUrlAvailable": false,
     "shortDescription": "A Booking Engine allowing users to book flights with an airline via the web",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript", "Firebase"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Firebase"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -550,7 +715,12 @@
     "projectUrlAvailable": true,
     "shortDescription": "My First Portfolio site. Still my baby and I'll never forget you🥰",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Sass", "Javascript"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Sass",
+      "Javascript"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
@@ -558,7 +728,7 @@
       "mdi-language-javascript"
     ],
     "objectives": []
-  }, 
+  },
   {
     "name": "Stuff to do",
     "image": "stuffToDo.webp",
@@ -571,7 +741,11 @@
     "projectUrlAvailable": true,
     "shortDescription": "A simple to do list app. With filters and LocalStorage",
     "longDescription": "",
-    "techUsed": ["HTML", "CSS", "Javascript"],
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",

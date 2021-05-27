@@ -25,10 +25,13 @@
       </v-card-title>
       <div
         :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-        style="width: 100%; height: 2px;"
+        style="width: 100%; height: 2px"
       ></div>
 
-      <v-card-text class="py-4 px-5" style="max-height: 300px;">
+      <v-card-text class="py-4 px-5" style="max-height: 300px">
+        <v-alert type="info"
+          >This Website itself is still under development</v-alert
+        >
         <p class="pa-0 ma-0">
           When it comes to <strong>webdevelopment</strong> and
           <strong>programming in general</strong>, there is
@@ -39,21 +42,33 @@
         <br />
         <p class="ma-0 mt-n2">
           This was one of the biggest challenges for me when I first started
-          learning HTML, all the way back in the late 2000s
+          learning HTML, all the way back in the late 2000s.
         </p>
-        <v-btn
+        <p class="ma-0 mt-1">
+          Nevertheless, I've continued to grow and keep learning all these
+          years. As well as trying to build things.
+        </p>
+        <br class="mt-2" />
+        <p>
+          The projects you see in the list below are only a small portion of
+          what the whole learning/building process has been for me, but I hope
+          you, dear viewer/reader, find them satisfactory enough to demonstrate
+          not only my skills and capabilites, but also my passion for the craft
+          (and for learning), and also my ability to deliver on whatever your
+          particular needs might be.
+        </p>
+
+        <!-- <v-btn
           block
           x-large
           :class="$vuetify.theme.dark ? 'glass-card' : 'morph'"
           ><v-icon left>mdi-account-plus</v-icon> Hire me</v-btn
-        >
+        > -->
         <p class="ma-0">
           Thanks for reading this... here's a random cat for you 😅
         </p>
         <v-img
-          :src="
-            `https://cataas.com/cat/cute/says/thank you?size=60&color=${$vuetify.theme.themes.dark.primary}`
-          "
+          :src="`https://cataas.com/cat/cute/says/thank you?size=60&color=${$vuetify.theme.themes.dark.primary}`"
           max-width="80%"
           class="mx-auto mt-4"
           contain
@@ -84,9 +99,9 @@
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-  }
+  },
 };
 </script>
 

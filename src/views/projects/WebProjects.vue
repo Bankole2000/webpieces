@@ -22,16 +22,18 @@
     ></div>
     <v-row class="mt-8 mb-10">
       <v-col cols="12" lg="8">
-        <div
-          class="my-3 mb-5"
-          v-for="(project, i) in filteredProjects"
-          :key="i"
-        >
-          <ProjectCard :project="project" />
-        </div>
-        <!-- <div v-for="n in 6" class="my-3" :key="n">
+        <v-scroll-x-transition group>
+          <div
+            class="my-3 mb-5"
+            v-for="(project, i) in filteredProjects"
+            :key="i"
+          >
+            <ProjectCard :project="project" />
+          </div>
+          <!-- <div v-for="n in 6" class="my-3" :key="n">
             <SidewaysCard />
           </div> -->
+        </v-scroll-x-transition>
       </v-col>
       <v-col cols="4" v-if="$vuetify.breakpoint.lgAndUp">
         <div

@@ -9,13 +9,11 @@
             ? require('@/assets/images/neoncity.gif')
             : require('@/assets/images/neoncityday.gif')
         "
-        class="d-flex align-start "
+        class="d-flex align-start"
         :height="$vuetify.breakpoint.height - 78"
-        :gradient="
-          `to top, ${$vuetify.theme.dark ? '#121212' : '#FFFFFF'}FF -2%, ${
-            $vuetify.theme.themes.light.secondary
-          }00`
-        "
+        :gradient="`to top, ${
+          $vuetify.theme.dark ? '#121212' : '#FFFFFF'
+        }FF -2%, ${$vuetify.theme.themes.light.secondary}00`"
       >
         <!-- gradient="to top right, rgba(100,115,201,.5), rgba(25,32,72,.5)" -->
         <div
@@ -28,13 +26,13 @@
                 ref="linksMorphCard"
                 :class="$vuetify.breakpoint.smAndUp ? 'mx-auto' : 'mx-4'"
                 class="glass-card rounded-xl"
-                style="max-width: 500px;"
+                style="max-width: 500px"
               >
                 <!-- <v-card-title> </v-card-title> -->
                 <div
                   class="d-flex align-start"
                   :style="{
-                    minHeight: $vuetify.breakpoint.mdAndUp ? '200px' : '180px'
+                    minHeight: $vuetify.breakpoint.mdAndUp ? '200px' : '180px',
                   }"
                 >
                   <v-tooltip top>
@@ -131,7 +129,7 @@
                         :class="
                           $vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'
                         "
-                        style="width: 100%; height: 2px;"
+                        style="width: 100%; height: 2px"
                       ></div>
 
                       <v-list>
@@ -182,20 +180,24 @@
                 </div>
                 <!-- <v-divider></v-divider> -->
                 <div
-                  style="background-image: var(--rainbow); height: 3px; width: 100%;"
+                  style="
+                    background-image: var(--rainbow);
+                    height: 3px;
+                    width: 100%;
+                  "
                 ></div>
                 <v-card-text
                   class="rounded-b-xl pb-8"
                   :style="{
                     backgroundColor: $vuetify.theme.dark
                       ? '#121212AA'
-                      : '#FFFFFFAA'
+                      : '#FFFFFFAA',
                   }"
                 >
                   <v-avatar
                     size="150"
                     class="primary"
-                    style="border: 3px solid var(--primary); margin-top: -95px;"
+                    style="border: 3px solid var(--primary); margin-top: -95px"
                   >
                     <img
                       width="200"
@@ -278,7 +280,7 @@ export default {
     Certs,
     Skills,
     Experience,
-    Shenanigans
+    Shenanigans,
     // Laptop,
 
     // Phone,
@@ -296,8 +298,8 @@ export default {
         {
           title: "Sourcerer",
           icon: "mdi-code-not-equal-variant",
-          link: "/sourcerer"
-        }
+          link: "/sourcerer",
+        },
         // {
         //   title: "Projects",
         //   icon: "mdi-package-variant-closed",
@@ -326,7 +328,8 @@ export default {
         typescript: "#007acc",
         docker: "#0db7ed",
         bash: "#540D6E",
-        ui: "#3d80f7"
+        ui: "#3d80f7",
+        graphql: "#da0093",
       },
       skills: [
         "mdi-language-html5",
@@ -342,14 +345,14 @@ export default {
         "mdi-vuetify",
         "mdi-react",
         "mdi-angular",
-
+        "mdi-graphql",
         "mdi-nodejs",
         "mdi-firebase",
-        "mdi-wordpress"
+        "mdi-wordpress",
         // 'mdi-docker',
         // 'mdi-bash',
         // 'mdi-material-ui',
-      ]
+      ],
     };
   },
   methods: {
@@ -370,7 +373,7 @@ export default {
       }
 
       return tech;
-    }
+    },
   },
   computed: {},
   mounted() {
@@ -388,10 +391,10 @@ export default {
     this.gsap.to(this.$refs.linksMorphCard, {
       duration: 1,
       opacity: 1,
-      scale: 1
+      scale: 1,
     });
     // }, 1500);
-  }
+  },
 };
 </script>
 
