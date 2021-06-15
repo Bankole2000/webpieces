@@ -1,5 +1,38 @@
 [
   {
+    "name": "Shrtnr",
+    "image": "bcurlshortener.png.webp",
+    "client": "Buy Coins Africa",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/bcurlshortener",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/bcurlshortener",
+    "projectUrlAvailable": true,
+    "shortDescription": "A Simple URL Shortener - Mini project from buycoins africa backend role coding interview",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
     "name": "HubFindr",
     "image": "hubFindr.png.webp",
     "client": "Buy Coins Africa",

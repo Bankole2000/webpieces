@@ -3,23 +3,18 @@
     <v-slide-y-reverse-transition>
       <v-footer v-if="musicPlayer.show" padless app inset style="z-index: 5">
         <v-card flat tile width="100%">
-          <v-slider
-            :value="currentTime"
-            height="0"
-            @change="setProgress"
-            hide-details
-            :loading="!songReady"
-            :min="0"
-            :max="duration"
-            class="mx-0"
-          ></v-slider>
-          <!-- <v-progress-linear
-          :value="50"
-          class="my-0 pb-2"
-          height="6"
-          @click="showValue"
-        ></v-progress-linear> -->
-
+          <div class="music-slider">
+            <v-slider
+              :value="currentTime"
+              height="0"
+              @change="setProgress"
+              hide-details
+              :loading="!songReady"
+              :min="0"
+              :max="duration"
+              class="mx-0"
+            ></v-slider>
+          </div>
           <!-- Here's the card
         <v-btn @click="toggleMusicPlayer(false)"
           ><v-icon>mdi-cancel</v-icon></v-btn
@@ -214,5 +209,9 @@ export default {
   to {
     transform: rotate(360deg);
   }
+}
+
+.music-slider:hover {
+  cursor: pointer;
 }
 </style>

@@ -109,8 +109,8 @@ export default Vue.extend({
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 0, 157);
-  /* border-radius: 20px; */
+  background-color: #e91e63;
+  border-radius: 10px;
   border: transparent;
 }
 /* body::-webkit-scrollbar {

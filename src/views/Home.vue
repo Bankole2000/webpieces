@@ -68,13 +68,13 @@
               cols="12"
               sm="6"
               class="d-flex flex-column justify-space-between"
-              style="align-self: stretch;"
+              style="align-self: stretch"
             >
               <v-toolbar
                 elevation="0"
                 color="transparent"
                 class="d-flex flex-row-reverse"
-                style="width: 100%;"
+                style="width: 100%"
                 :floating="$vuetify.breakpoint.mdAndUp"
                 :class="$vuetify.breakpoint.smAndDown ? 'mb-12 mt-0' : ''"
               >
@@ -91,7 +91,7 @@
                         day: "numeric",
                         hour: "2-digit",
                         minute: "2-digit",
-                        second: "2-digit"
+                        second: "2-digit",
                       })
                     }}
                   </p>
@@ -228,7 +228,7 @@
         </v-card-title>
         <div
           :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-          style="width: 100%; height: 2px;"
+          style="width: 100%; height: 2px"
         ></div>
         <v-card-text
           class="py-0 pl-0"
@@ -324,7 +324,7 @@ document.addEventListener("keypress", (e) => {
 
 export default {
   components: {
-    HomeInfo
+    HomeInfo,
   },
   data: () => ({
     supdialog: false,
@@ -337,16 +337,16 @@ export default {
             title: "An 'Airbnb-like' App",
             image: "djangorealestate.png.webp",
             description:
-              "A personal web app project to help address the looming housing crisis, both locally, and (if possible), internationally"
+              "A personal web app project to help address the looming housing crisis, both locally, and (if possible), internationally",
           },
           {
             title: "Webpieces",
             image: "webpieces.webp",
             description:
-              "Prepping the Youtube, Twitch, and Discord for the Webpieces series"
-          }
+              "Prepping the Youtube, Twitch, and Discord for the Webpieces series",
+          },
         ],
-        comment: ""
+        comment: "",
       },
       {
         title: "Currently Learning",
@@ -356,21 +356,21 @@ export default {
             title: "React",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
+            links: [{ url: "", text: "" }],
           },
           {
             title: "Docker",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
+            links: [{ url: "", text: "" }],
           },
           {
             title: "Digital Art && Drawing",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
-          }
-        ]
+            links: [{ url: "", text: "" }],
+          },
+        ],
       },
       {
         title: "Currently Reading",
@@ -379,14 +379,15 @@ export default {
           {
             title: "Realms of Runeterra",
             image: "runeterra.webp",
-            description: "League of Legends lore - super interesting."
-          }
-        ]
+            description: "League of Legends lore - super interesting.",
+          },
+        ],
       },
       {
         title: "Currently Watching",
         icon: "mdi-television-classic",
-        comment: "<p>I'm not watching anything right now. No time for TV 😓</p>"
+        comment:
+          "<p>I'm not watching anything right now. No time for TV 😓</p>",
       },
       {
         title: "Currencly Playing",
@@ -395,20 +396,20 @@ export default {
           {
             title: "League of Legends",
             image: "league.webp",
-            description: ""
+            description: "",
           },
           {
             title: "Valorant",
             image: "valorant.webp",
-            description: ""
+            description: "",
           },
           {
             title: "Genshin Impact",
             image: "genshin.webp",
-            description: ""
-          }
+            description: "",
+          },
         ],
-        comment: ""
+        comment: "",
       },
       {
         title: "Current Wishlist",
@@ -418,9 +419,9 @@ export default {
             title: "",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
-          }
-        ]
+            links: [{ url: "", text: "" }],
+          },
+        ],
       },
       {
         title: "Current Hopes",
@@ -430,9 +431,9 @@ export default {
             title: "",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
-          }
-        ]
+            links: [{ url: "", text: "" }],
+          },
+        ],
       },
       {
         title: "Current Dreams",
@@ -442,9 +443,9 @@ export default {
             title: "",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
-          }
-        ]
+            links: [{ url: "", text: "" }],
+          },
+        ],
       },
       {
         title: "Current Fears",
@@ -454,10 +455,10 @@ export default {
             title: "",
             image: "",
             description: "",
-            links: [{ url: "", text: "" }]
-          }
-        ]
-      }
+            links: [{ url: "", text: "" }],
+          },
+        ],
+      },
     ],
     drawers: ["Default (no property)", "Permanent", "Temporary"],
     currentTime: new Date(),
@@ -466,10 +467,10 @@ export default {
       type: "default (no property)",
       clipped: false,
       floating: false,
-      mini: false
+      mini: false,
     },
     footer: {
-      inset: false
+      inset: false,
     },
     items: [
       {
@@ -478,7 +479,7 @@ export default {
         src: "webpiece.svg",
         title: "Web Pieces",
         link: "/webpieces",
-        artist: `Browse Webpieces or add a webpiece you're curious about`
+        artist: `Browse Webpieces or add a webpiece you're curious about`,
       },
       {
         color: "info",
@@ -486,7 +487,7 @@ export default {
         src: "needhelp.svg",
         title: "Projects",
         link: "/projects",
-        artist: `View some of my work. Interested in building together?`
+        artist: `View some of my work. Interested in building together?`,
       },
       {
         color: "accent",
@@ -494,7 +495,7 @@ export default {
         src: "about.svg",
         title: "About Me",
         link: "/about",
-        artist: "View info about me. Stack, skills, experience, my resume etc."
+        artist: "View info about me. Stack, skills, experience, my resume etc.",
       },
       {
         color: "success",
@@ -502,8 +503,9 @@ export default {
         src: "client.svg",
         title: "Clients",
         link: "/clients",
-        artist: "Current/previous clients, click here to access the client area"
-      }
+        artist:
+          "Current/previous clients, click here to access the client area",
+      },
     ],
     loading: false,
     autoitems: [],
@@ -512,68 +514,68 @@ export default {
     searchTerms: [
       {
         value: "/webpieces",
-        text: "Webpieces"
+        text: "Webpieces",
       },
       {
         value: "/webpieces/add",
-        text: "Webpieces - Add a webpiece"
+        text: "Webpieces - Add a webpiece",
       },
       {
         value: "/webpieces/queue",
-        text: "Webpieces - Request queue"
+        text: "Webpieces - Request queue",
       },
       {
         value: "/webpieces/vuetify/alerts",
-        text: "Webpieces - Vuetify Alerts"
+        text: "Webpieces - Vuetify Alerts",
       },
       {
         value: "/webpieces/vanilla/splitscreen",
-        text: "Webpieces - Vanilla Splitscreen"
+        text: "Webpieces - Vanilla Splitscreen",
       },
 
       {
         value: "/projects",
-        text: "Projects - My Web Projects"
+        text: "Projects - My Web Projects",
       },
       {
         value: "/projects/technologies",
-        text: "Projects - Technologies"
+        text: "Projects - Technologies",
       },
       {
         value: "/projects/myprocess",
-        text: "Projects - My Process"
+        text: "Projects - My Process",
       },
       {
         value: "/about",
-        text: "About Me"
-      }
+        text: "About Me",
+      },
     ],
     otherLinks: [
       {
         tooltipText: "Call me",
         link: "tel:+2348069166906",
         class: "warning",
-        icon: "mdi-phone"
+        icon: "mdi-phone",
       },
       {
         tooltipText: "Send me an Email",
         link: "mailto:techybanky@gmail.com?subject=👋Hey&body=Hi",
         class: "info",
-        icon: "mdi-email"
+        icon: "mdi-email",
       },
       {
         tooltipText: "The Studio Blog",
         link: "https://blog.banky.studio",
         class: "accent",
-        icon: "mdi-post"
-      }
+        icon: "mdi-post",
+      },
       // {
       //   tooltipText: `What's up with me`,
       //   link: "sup",
       //   class: "secondary",
       //   icon: "mdi-help"
       // }
-    ]
+    ],
   }),
 
   watch: {},
@@ -589,7 +591,7 @@ export default {
     showColors() {
       console.log(VuetifyColors);
       console.log(this.$vuetify);
-    }
+    },
   },
   mounted() {
     // document.addEventListener("DOMContentLoaded", (e) => {
@@ -602,15 +604,15 @@ export default {
       x: 500,
       opacity: 0,
       duration: 0.75,
-      stagger: 0.25
+      stagger: 0.25,
     });
     this.gsap.from(".subactioncard", {
       x: 500,
       opacity: 0,
       duration: 1,
-      stagger: 0.15
+      stagger: 0.15,
     });
-  }
+  },
 };
 </script>
 <style>
