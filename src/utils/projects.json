@@ -1,7 +1,42 @@
 [
   {
+    "name": "GeoCities",
+    "image": "geocities.png.webp",
+    "imagelight": "geocitieslight.png.webp",
+    "client": "Self (Passion Project)",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/geo-cities",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/geo-cities",
+    "projectUrlAvailable": true,
+    "shortDescription": "Searchable World Map Data of countries, states and cities",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Shrtnr",
     "image": "bcurlshortener.png.webp",
+    "imagelight": "shrtnrlight.png",
     "client": "Buy Coins Africa",
     "status": "Finished - Deployed",
     "statusColor": "green",

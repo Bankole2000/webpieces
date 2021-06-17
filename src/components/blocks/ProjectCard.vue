@@ -10,7 +10,11 @@
         <div style="flex: 2">
           <v-img
             :aspect-ratio="1864 / 1400"
-            :src="require(`@/assets/images/projectImages/${project.image}`)"
+            :src="
+              !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
+                ? require(`@/assets/images/projectImages/${project.imagelight}`)
+                : require(`@/assets/images/projectImages/${project.image}`)
+            "
           ></v-img>
         </div>
         <!-- </v-avatar> -->
@@ -81,7 +85,11 @@
     <v-card v-else class="mb-8">
       <v-img
         :aspect-ratio="1864 / 1400"
-        :src="require(`@/assets/images/projectImages/${project.image}`)"
+        :src="
+          !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
+            ? require(`@/assets/images/projectImages/${project.imagelight}`)
+            : require(`@/assets/images/projectImages/${project.image}`)
+        "
       ></v-img>
       <div
         style="background-image: var(--rainbow); height: 2px; width: 100%"
@@ -166,7 +174,11 @@
           :gradient="`to top, ${
             $vuetify.theme.dark ? '#121212FF' : '#F5F5F5FF'
           }, ${$vuetify.theme.dark ? '#12121200' : '#F5F5F500'}`"
-          :src="require(`@/assets/images/projectImages/${project.image}`)"
+          :src="
+            !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
+              ? require(`@/assets/images/projectImages/${project.imagelight}`)
+              : require(`@/assets/images/projectImages/${project.image}`)
+          "
         >
           <v-btn
             text
