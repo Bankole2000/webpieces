@@ -1,5 +1,35 @@
 [
   {
+    "name": "Tinubu Advocates Website",
+    "image": "tag1.png.webp",
+    "imagelight": "tag.png.webp",
+    "client": "Tinubu Advocates Group",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://tinubuadvocates.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Campaign website for a client (no political affiliation)",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap",
+      "PHP"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-bootstrap",
+      "mdi-language-php"
+    ],
+    "objectives": []
+  },
+  {
     "name": "GeoCities",
     "image": "geocities.png.webp",
     "imagelight": "geocitieslight.png.webp",
