@@ -12,7 +12,9 @@
             :aspect-ratio="1864 / 1400"
             :src="
               !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
-                ? require(`@/assets/images/projectImages/${project.imagelight}`)
+                ? require(`@/assets/images/projectImages/${
+                    project.imagelight ? project.imagelight : project.image
+                  }`)
                 : require(`@/assets/images/projectImages/${project.image}`)
             "
           ></v-img>
@@ -87,7 +89,9 @@
         :aspect-ratio="1864 / 1400"
         :src="
           !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
-            ? require(`@/assets/images/projectImages/${project.imagelight}`)
+            ? require(`@/assets/images/projectImages/${
+                project.imagelight ? project.imagelight : project.image
+              }`)
             : require(`@/assets/images/projectImages/${project.image}`)
         "
       ></v-img>
@@ -176,7 +180,9 @@
           }, ${$vuetify.theme.dark ? '#12121200' : '#F5F5F500'}`"
           :src="
             !$vuetify.theme.dark && (project.name == 'GeoCities' || 'Shrtnr')
-              ? require(`@/assets/images/projectImages/${project.imagelight}`)
+              ? require(`@/assets/images/projectImages/${
+                  project.imagelight ? project.imagelight : project.image
+                }`)
               : require(`@/assets/images/projectImages/${project.image}`)
           "
         >
