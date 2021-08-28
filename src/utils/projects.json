@@ -1,5 +1,35 @@
 [
   {
+    "name": "NodTransfer Web App",
+    "image": "nodtransferdark.png.webp",
+    "imagelight": "nodtransferlight.png.webp",
+    "client": "NodTransfer",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://nodtransfer.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Fintech app for Money transfers within and outside Africa",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Political Campaign Website",
     "image": "tag1.png.webp",
     "imagelight": "tag.png.webp",
