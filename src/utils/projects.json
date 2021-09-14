@@ -30,8 +30,44 @@
     "objectives": []
   },
   {
+    "name": "TQL Demo: Wallet App",
+    "image": "tqlwalletlight.png.webp",
+    "imagelight": "tqlwalletdark.png.webp",
+    "client": "TQL Assignment",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/tqlwallet",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/tqlwallet",
+    "projectUrlAvailable": true,
+    "shortDescription": "Demo App for Personal Finance Management + Tracking",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-database",
+      "mdi-cached"
+    ],
+    "objectives": []
+  },
+  {
     "name": "Political Campaign Website",
-    "image": "tag1.png.webp",
+    "image": "tag.png.webp",
     "imagelight": "tag.png.webp",
     "client": "Tinubu Advocates Group",
     "status": "Finished - Deployed",

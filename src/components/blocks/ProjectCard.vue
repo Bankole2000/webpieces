@@ -290,6 +290,8 @@ export default {
         vuetify: "#1775d0",
         angular: "#B52E31",
         graphql: "#da0093",
+        database: "#2965f1",
+        cached: "#B52E31",
       },
       dialog: false,
     };

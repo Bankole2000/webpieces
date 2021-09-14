@@ -4,6 +4,7 @@
       <v-btn
         v-bind="attrs"
         v-on="on"
+        v-if="false"
         large
         class="primary-glass-card rounded-xl text-capitalize px-2"
         ><v-icon left>mdi-help-circle-outline</v-icon> What do you mean?</v-btn
@@ -25,7 +26,7 @@
       </v-card-title>
       <div
         :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-        style="width: 100%; height: 2px;"
+        style="width: 100%; height: 2px"
       ></div>
 
       <v-card-text>
@@ -61,9 +62,9 @@
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-  }
+  },
 };
 </script>
 

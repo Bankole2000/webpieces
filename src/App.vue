@@ -61,7 +61,7 @@ export default Vue.extend({
     // console.log({ colors: this.$vuetify.theme });
   },
   beforeCreate() {
-    this.$vuetify.theme.dark = false;
+    this.$vuetify.theme.dark = true;
   },
 });
 </script>
