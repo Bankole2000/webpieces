@@ -66,6 +66,68 @@
     "objectives": []
   },
   {
+    "name": "Nodens UI",
+    "image": "nodens.png.webp",
+    "client": "Nodens Inc",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/nodens-ui",
+    "githubAvailable": true,
+    "projectUrl": "https://nodensinc.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Simple Website for the company I currently work for (Nov 2021)",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": [
+      ""
+    ]
+  },
+  {
+    "name": "Do-erz",
+    "image": "spoke-todo.png.webp",
+    "client": "Spoke AI",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": "https://github.com/Bankole2000/spoke-todo-frontend",
+    "githubAvailable": true,
+    "projectUrl": "https://spoke-todo-frontend.vercel.app/",
+    "projectUrlAvailable": true,
+    "shortDescription": "Simple Todo List app coding challenge for the Front End role at Spoke.ai",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React",
+      "Material UI",
+      "Node JS"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-react",
+      "mdi-material-ui",
+      "mdi-nodejs"
+    ],
+    "objectives": [
+      ""
+    ]
+  },
+  {
     "name": "Political Campaign Website",
     "image": "tag.png.webp",
     "imagelight": "tag.png.webp",

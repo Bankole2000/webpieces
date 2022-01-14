@@ -32,7 +32,11 @@
                   </h1>
                 </v-card-title>
                 <div
-                  style="background-image: var(--rainbow); height: 5px; width 100%;"
+                  style="
+                    background-image: var(--rainbow);
+                    height: 5px;
+                    width: 100%;
+                  "
                 ></div>
                 <v-card-text class="pb-0">
                   <p class="text-h6 font-weight-light secondary--text mb-0">
@@ -79,7 +83,15 @@
                 :class="$vuetify.breakpoint.smAndDown ? 'mb-12 mt-0' : ''"
               >
                 <v-card
-                  class="d-flex align-center glass-card rounded-xl py-2 px-4 subactioncard"
+                  class="
+                    d-flex
+                    align-center
+                    glass-card
+                    rounded-xl
+                    py-2
+                    px-4
+                    subactioncard
+                  "
                 >
                   <p class="text-h6 font-weight-light mb-0 text-right">
                     {{
@@ -280,9 +292,7 @@
                           <div
                             class="ma-0 mt-1 pa-0 caption"
                             v-html="listItem.description"
-                          >
-                            <!-- {{ listItem.description }} -->
-                          </div>
+                          ></div>
                         </div>
                       </div>
                       <div v-if="item.comment" v-html="item.comment"></div>
@@ -393,6 +403,11 @@ export default {
         title: "Currencly Playing",
         icon: "mdi-google-controller",
         list: [
+          {
+            title: "Terraria",
+            image: "terraria.jpg",
+            description: "",
+          },
           {
             title: "League of Legends",
             image: "league.webp",
@@ -564,10 +579,10 @@ export default {
         icon: "mdi-email",
       },
       {
-        tooltipText: "The Studio Blog",
-        link: "https://blog.banky.studio",
+        tooltipText: "Book a Meeting with me",
+        link: "https://calendly.com/banky2000/30min",
         class: "accent",
-        icon: "mdi-post",
+        icon: "mdi-calendar",
       },
       // {
       //   tooltipText: `What's up with me`,

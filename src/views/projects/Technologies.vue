@@ -10,12 +10,17 @@
       >
     </h1>
     <div
-      class=" mt-8"
-      style="height: 5px; width: 100%; background-image: var(--rainbow); box-shadow: var(--glass-shadow-normal)"
+      class="mt-8"
+      style="
+        height: 5px;
+        width: 100%;
+        background-image: var(--rainbow);
+        box-shadow: var(--glass-shadow-normal);
+      "
     ></div>
     <v-card class="my-4">
       <v-card-title class="indigo white--text headline">
-        User Directory
+        Tech Directory
       </v-card-title>
       <v-row class="pa-4" justify="space-between">
         <v-col
@@ -35,10 +40,9 @@
           >
             <template v-slot:prepend="{ item, active }">
               <v-icon :color="active ? 'accent' : ''">{{ item.icon }}</v-icon>
-              <!-- {{ active }} -->
             </template>
           </v-treeview>
-          <v-treeview
+          <!-- <v-treeview
             :active.sync="active"
             :items="items"
             :load-children="fetchUsers"
@@ -52,7 +56,7 @@
               <v-icon v-if="!item.children">mdi-account</v-icon>
               {{ active }}
             </template>
-          </v-treeview>
+          </v-treeview> -->
         </v-col>
 
         <v-divider vertical></v-divider>
@@ -66,14 +70,17 @@
             <div
               v-if="!selectedTech"
               class="title grey--text text--lighten-1 font-weight-light"
-              style="align-self: center; justify-content: center; width: 100%;"
+              style="align-self: center; justify-content: center; width: 100%"
             >
               Select a Technology
             </div>
-            <!-- <div v-else class="d-flex align-center"> -->
-            <v-card flat v-else class="ma-auto text-center" style="width: 80%;">
-              <!-- <v-card-title class="primary lighten-2">
-              </v-card-title> -->
+
+            <v-card
+              flat
+              v-else
+              class="mx-auto my-16 text-center"
+              style="width: 80%"
+            >
               <v-card-text class="pt-4">
                 <v-avatar tile size="180" class="ma-4">
                   <v-img
@@ -95,7 +102,6 @@
               </v-card-text>
               Technology Selected {{ selectedTech }}
             </v-card>
-            <!-- </div> -->
           </v-scroll-y-transition>
         </v-col>
       </v-row>
@@ -103,17 +109,7 @@
   </div>
 </template>
 
-<script>
-const avatars = [
-  "?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban",
-  "?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun",
-  "?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtVNeck&eyeType=Surprised&eyebrowType=Angry&facialHairColor=Blonde&facialHairType=Blank&hairColor=Blonde&hatColor=PastelOrange&mouthType=Smile&skinColor=Black&topType=LongHairNotTooLong",
-  "?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=Overall&eyeType=Close&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&graphicType=Pizza&hairColor=Black&hatColor=PastelBlue&mouthType=Serious&skinColor=Light&topType=LongHairBigHair",
-  "?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Gray01&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=Default&facialHairColor=Red&facialHairType=Blank&graphicType=Selena&hairColor=Red&hatColor=Blue02&mouthType=Twinkle&skinColor=Pale&topType=LongHairCurly"
-];
-
-const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+<script lang="js">
 export default {
   data: () => ({
     activeTech: [],
@@ -131,9 +127,9 @@ export default {
           {
             id: 2,
             name: "My Laptop",
-            icon: "mdi-laptop-windows",
+            icon: "mdi-laptop",
             image: "zbook.png",
-            children: []
+            children: [],
           },
           {
             id: 23,
@@ -143,20 +139,21 @@ export default {
               {
                 id: 24,
                 name: "VS Code",
-                icon: "mdi-microsoft-visual-studio-code"
+                icon: "mdi-microsoft-visual-studio-code",
               },
               {
                 id: 25,
-                name: "Cmder",
-                icon: "mdi-console"
+                name: "Windows Terminal",
+                icon: "mdi-console",
               },
               {
                 id: 26,
-                name: ""
-              }
-            ]
-          }
-        ]
+                name: "Adobe Suite",
+                icon: "mdi-file-pdf-box",
+              },
+            ],
+          },
+        ],
       },
       {
         id: 3,
@@ -172,26 +169,26 @@ export default {
                 id: 28,
                 name: "HTML",
                 icon: "mdi-language-html5",
-                image: "html.svg"
+                image: "html.svg",
               },
               {
                 id: 29,
                 name: "CSS",
                 icon: "mdi-language-css3",
-                image: "css.svg"
+                image: "css.svg",
               },
               {
                 id: 30,
                 name: "Javascript (ES6)",
                 icon: "mdi-language-javascript",
-                image: "es6.svg"
+                image: "es6.svg",
               },
               {
                 id: 31,
                 name: "SASS",
-                icon: "mdi-sass"
-              }
-            ]
+                icon: "mdi-sass",
+              },
+            ],
           },
           {
             id: 4,
@@ -202,21 +199,21 @@ export default {
                 id: 5,
                 name: "Vue Js",
                 icon: "mdi-vuejs",
-                image: "vuejs.svg"
+                image: "vuejs.svg",
               },
               {
                 id: 6,
                 name: "Angular 2",
                 icon: "mdi-angular",
-                image: "angular.svg"
+                image: "angular.svg",
               },
               {
                 id: 7,
                 name: "React",
                 icon: "mdi-react",
-                image: "react.svg"
-              }
-            ]
+                image: "react.svg",
+              },
+            ],
           },
           {
             id: 8,
@@ -227,45 +224,45 @@ export default {
                 id: 9,
                 name: "Vuetify",
                 icon: "mdi-vuetify",
-                image: "vuetify.svg"
+                image: "vuetify.svg",
               },
               {
                 id: 10,
                 name: "Angular Material",
                 icon: "mdi-material-design",
-                image: "angularmaterial.png"
+                image: "angularmaterial.png",
               },
               {
                 id: 11,
                 name: "JQuery",
-                icon: "mdi-jquery"
+                icon: "mdi-jquery",
               },
               {
                 id: 12,
                 name: "Material UI",
-                icon: "mdi-material-ui"
+                icon: "mdi-material-ui",
               },
               {
                 id: 13,
                 name: "Materialize CSS",
                 icon: "mdi-note",
-                image: "materialize.svg"
+                image: "materialize.svg",
               },
               {
                 id: 14,
                 name: "Bootstrap",
                 icon: "mdi-bootstrap",
-                image: "bootstrap.svg"
+                image: "bootstrap.svg",
               },
               {
                 id: 15,
                 name: "GSAP",
                 icon: "mdi-animation-play",
-                image: "greensock.png"
-              }
-            ]
-          }
-        ]
+                image: "greensock.png",
+              },
+            ],
+          },
+        ],
       },
       {
         id: 16,
@@ -276,42 +273,54 @@ export default {
             id: 17,
             name: "Node js",
             icon: "mdi-nodejs",
-            image: "nodejs.svg"
+            image: "nodejs.svg",
           },
           {
             id: 18,
             name: "PHP",
             icon: "mdi-language-php",
-            image: "php.svg"
+            image: "php.svg",
           },
 
           {
             id: 19,
             name: "MySQL",
             icon: "mdi-database-search",
-            image: "mysql.svg"
+            image: "mysql.svg",
           },
           {
             id: 20,
             name: "Firebase",
             icon: "mdi-firebase",
-            image: "firebase.svg"
+            image: "firebase.svg",
           },
           {
             id: 21,
             name: "Sequelize",
             icon: "mdi-cube",
-            image: "sequelize.svg"
+            image: "sequelize.svg",
+          },
+          {
+            id: 24,
+            name: "prisma",
+            icon: "mdi-pyramid",
+            image: "prisma.svg",
+          },
+          {
+            id: 23,
+            name: "Docker",
+            icon: "mdi-docker",
+            image: "docker.svg",
           },
           {
             id: 22,
             name: "Symfony",
             icon: "mdi-symfony",
-            image: "symfony.png"
-          }
-        ]
-      }
-    ]
+            image: "symfony.png",
+          },
+        ],
+      },
+    ],
   }),
 
   computed: {
@@ -319,8 +328,8 @@ export default {
       return [
         {
           name: "Users",
-          children: this.users
-        }
+          children: this.users,
+        },
       ];
     },
     selectedTech() {
@@ -333,32 +342,18 @@ export default {
 
       const id = this.active[0];
 
-      return this.users.find(user => user.id === id);
-    }
+      return this.users.find((user) => user.id === id);
+    },
   },
 
   watch: {
     selected: "randomAvatar",
-    selectedTech: function() {
+    selectedTech: function () {
       console.log(this.activeTech[0]);
-    }
+    },
   },
 
-  methods: {
-    async fetchUsers(item) {
-      // Remove in 6 months and say
-      // you've made optimizations! :)
-      await pause(1500);
-
-      return fetch("https://jsonplaceholder.typicode.com/users")
-        .then(res => res.json())
-        .then(json => item.children.push(...json))
-        .catch(err => console.warn(err));
-    },
-    randomAvatar() {
-      this.avatar = avatars[Math.floor(Math.random() * avatars.length)];
-    }
-  }
+  methods: {},
 };
 </script>
 

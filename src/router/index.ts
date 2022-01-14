@@ -181,7 +181,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/sourcerer",
     beforeEnter() {
-      location.href = "https://sourcerer.io/bankole2000";
+      location.href = "http://sourcerer.io/bankole2000";
     }
   }
   // {

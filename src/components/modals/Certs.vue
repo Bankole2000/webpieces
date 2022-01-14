@@ -28,17 +28,20 @@
       </v-card-title>
       <div
         :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-        style="width: 100%; height: 2px;"
+        style="width: 100%; height: 2px"
       ></div>
 
-      <v-card-text class="pt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+      <v-card-text class="pa-4">
+        <v-alert text type="info"
+          ><strong>Coming Soon</strong>. Working on adding them here. You can
+          still
+          <a
+            class="secondary--text"
+            href="https://www.linkedin.com/in/bankoleesan/"
+            >view on LinkedIn</a
+          >
+          if you wish.</v-alert
+        >
       </v-card-text>
 
       <v-divider></v-divider>
@@ -64,9 +67,9 @@
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-  }
+  },
 };
 </script>
 
