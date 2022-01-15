@@ -108,8 +108,8 @@
               to="/clients"
               target="_blank"
             >
-              <v-icon left>mdi-login-variant</v-icon>
-              Client Login
+              <v-icon left>mdi-calendar-check</v-icon>
+              Book a Meeting
             </v-btn>
           </div>
         </div>
@@ -157,7 +157,7 @@
         <YoutubeModal />
       </div>
       <v-switch
-        style="margin-top: 22px;"
+        style="margin-top: 22px"
         class="mx-6"
         v-model="$vuetify.theme.dark"
         primary
@@ -178,7 +178,7 @@
       absolute
       app
     >
-      <div class="d-flex" style="width: 100%; align-items: center;">
+      <div class="d-flex" style="width: 100%; align-items: center">
         <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
         <v-spacer></v-spacer>
         <a
@@ -212,7 +212,7 @@
         </v-card-title>
         <div
           :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-          style="width: 100%; height: 2px;"
+          style="width: 100%; height: 2px"
         ></div>
         <v-card-text class="pa-4">
           <v-radio-group
@@ -404,76 +404,136 @@ export default {
     changeColorScheme(e) {
       console.log({ e });
       if (e == "pink") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.primary;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.primary;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.info;
       }
       if (e == "purple") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.purple;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.purple;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.primary;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.primary;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.purple;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.purple;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.info;
       }
       if (e == "green") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.green;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.green;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.primary;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.primary;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.green;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.green;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.info;
       }
       if (e == "blue") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.blue;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.blue;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.primary;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.blue;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.blue;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.primary;
       }
       if (e == "orange") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.orange;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.orange;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.primary;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.primary;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.orange;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.orange;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.primary;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.primary;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.info;
       }
       if (e == "red") {
-        this.$vuetify.theme.themes.dark.primary = this.defaultColorScheme.dark.red;
-        this.$vuetify.theme.themes.light.primary = this.defaultColorScheme.light.red;
-        this.$vuetify.theme.themes.dark.accent = this.defaultColorScheme.dark.accent;
-        this.$vuetify.theme.themes.light.accent = this.defaultColorScheme.light.accent;
-        this.$vuetify.theme.themes.dark.warning = this.defaultColorScheme.dark.warning;
-        this.$vuetify.theme.themes.light.warning = this.defaultColorScheme.light.warning;
-        this.$vuetify.theme.themes.dark.success = this.defaultColorScheme.dark.success;
-        this.$vuetify.theme.themes.light.success = this.defaultColorScheme.light.success;
-        this.$vuetify.theme.themes.dark.info = this.defaultColorScheme.dark.info;
-        this.$vuetify.theme.themes.light.info = this.defaultColorScheme.light.info;
+        this.$vuetify.theme.themes.dark.primary =
+          this.defaultColorScheme.dark.red;
+        this.$vuetify.theme.themes.light.primary =
+          this.defaultColorScheme.light.red;
+        this.$vuetify.theme.themes.dark.accent =
+          this.defaultColorScheme.dark.accent;
+        this.$vuetify.theme.themes.light.accent =
+          this.defaultColorScheme.light.accent;
+        this.$vuetify.theme.themes.dark.warning =
+          this.defaultColorScheme.dark.warning;
+        this.$vuetify.theme.themes.light.warning =
+          this.defaultColorScheme.light.warning;
+        this.$vuetify.theme.themes.dark.success =
+          this.defaultColorScheme.dark.success;
+        this.$vuetify.theme.themes.light.success =
+          this.defaultColorScheme.light.success;
+        this.$vuetify.theme.themes.dark.info =
+          this.defaultColorScheme.dark.info;
+        this.$vuetify.theme.themes.light.info =
+          this.defaultColorScheme.light.info;
       }
     },
   },

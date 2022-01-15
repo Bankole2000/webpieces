@@ -5,6 +5,9 @@
     <v-btn color="primary" class="white--text" @click="changePrimaryColor()"
       >Change Primary Color</v-btn
     >
+    <v-card width="100">
+      <v-img :src="require('@/assets/images/nightprofile.jpg.webp')"></v-img>
+    </v-card>
   </div>
 </template>
 
@@ -21,11 +24,11 @@ export default {
       // this.$vuetify.theme.currentTheme.primary = "#00FF00";
 
       console.log({ primaryColor: this.$vuetify.theme.currentTheme.primary });
-    }
+    },
   },
   mounted() {
     console.log("Test");
-  }
+  },
 };
 </script>
 

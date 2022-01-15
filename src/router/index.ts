@@ -139,13 +139,15 @@ const routes: Array<RouteConfig> = [
   {
     path: "/clients",
     beforeEnter() {
-      location.href = "https://projects.banky.studio";
+      // location.href = "https://projects.banky.studio";
+      location.href = "https://calendly.com/banky2000/30min"
     }
   },
   {
     path: "/blog",
     beforeEnter() {
-      location.href = "https://blog.banky.studio";
+      // location.href = "https://blog.banky.studio";
+      location.href = "https://discord.gg/zHYwHGTA75";
     }
   },
   {

@@ -519,7 +519,8 @@ export default {
         title: "Clients",
         link: "/clients",
         artist:
-          "Current/previous clients, click here to access the client area",
+          // "Current/previous clients, click here to access the client area",
+          "Current/previous clients, click here to book a meeting with me.",
       },
     ],
     loading: false,
