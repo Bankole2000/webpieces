@@ -1,7 +1,7 @@
 [
   {
     "name": "NodTransfer Web App",
-    "image": "nodtransferdark.png.webp",
+    "image": "nodtransferlight.png.webp",
     "imagelight": "nodtransferlight.png.webp",
     "client": "NodTransfer",
     "status": "Finished - Deployed",
@@ -28,6 +28,67 @@
       "mdi-vuetify"
     ],
     "objectives": []
+  },
+  {
+    "name": "NodBank Web App",
+    "image": "nodbank.png.webp",
+    "imagelight": "nodbank.png.webp",
+    "client": "Nodens Incorporated",
+    "status": "In Development",
+    "statusColor": "purple",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://nodbank.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Fintech app for Personal Finance",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": []
+  },
+  
+  {
+    "name": "Nodens UI",
+    "image": "nodensnew.png.webp",
+    "client": "Nodens Inc",
+    "status": "In Development",
+    "statusColor": "purple",
+    "githubUrl": "https://github.com/Bankole2000/nodens-ui",
+    "githubAvailable": true,
+    "projectUrl": "https://nodensinc.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Simple Website for the company I currently work for (Nov 2021)",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": [
+      ""
+    ]
   },
   {
     "name": "TQL Demo: Wallet App",
@@ -65,36 +126,7 @@
     ],
     "objectives": []
   },
-  {
-    "name": "Nodens UI",
-    "image": "nodens.png.webp",
-    "client": "Nodens Inc",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/nodens-ui",
-    "githubAvailable": true,
-    "projectUrl": "https://nodensinc.com",
-    "projectUrlAvailable": true,
-    "shortDescription": "Simple Website for the company I currently work for (Nov 2021)",
-    "longDescription": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Vue JS",
-      "Vuetify"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify"
-    ],
-    "objectives": [
-      ""
-    ]
-  },
+
   {
     "name": "Do-erz",
     "image": "spoke-todo.png.webp",
@@ -127,36 +159,7 @@
       ""
     ]
   },
-  {
-    "name": "Political Campaign Website",
-    "image": "tag.png.webp",
-    "imagelight": "tag.png.webp",
-    "client": "Tinubu Advocates Group",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": null,
-    "githubAvailable": false,
-    "projectUrl": "https://tinubuadvocates.com",
-    "projectUrlAvailable": true,
-    "shortDescription": "Campaign website for a client (no political affiliation)",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Bootstrap",
-      "PHP"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-bootstrap",
-      "mdi-language-php"
-    ],
-    "objectives": []
-  },
+  
   {
     "name": "GeoCities",
     "image": "geocities.png.webp",
@@ -710,6 +713,36 @@
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-wordpress"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Political Campaign Website",
+    "image": "tag.png.webp",
+    "imagelight": "tag.png.webp",
+    "client": "Tinubu Advocates Group",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://tinubuadvocates.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Campaign website for a client (no political affiliation)",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Bootstrap",
+      "PHP"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-bootstrap",
+      "mdi-language-php"
     ],
     "objectives": []
   },

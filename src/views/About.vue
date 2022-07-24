@@ -317,12 +317,14 @@
                     class="text-h6 secondary--text font-weight-light"
                   >
                     Fullstack Developer
-                    <a
+                    <!-- <a
                       href="https://primalaero.com"
                       class="text-decoration-none"
                       target="_blank"
                       >@PrimalAero</a
-                    >
+                    > -->
+                    <!-- <v-icon>mdi-language-typescript</v-icon> -->
+                    
                   </p>
                   <div :class="$vuetify.breakpoint.mdAndUp ? 'mx-12' : 'mx-2'">
                     <v-tooltip top v-for="(tech, i) in skills" :key="i">
@@ -403,6 +405,7 @@ export default {
         html5: "#F16529",
         css3: "#2965f1",
         javascript: "#F0DB4F",
+        // typescript: "#61DBFB",
         vuejs: "#41B883",
         bootstrap: "#602C50",
         python: "#FFD43B",
@@ -426,7 +429,7 @@ export default {
         // 'mdi-sass',
         // 'mdi-bootstrap',
         "mdi-language-javascript",
-        // 'mdi-language-typescript',
+        'mdi-language-typescript',
         "mdi-language-php",
         "mdi-database",
         "mdi-language-python",

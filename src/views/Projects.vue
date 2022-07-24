@@ -34,7 +34,7 @@
                     class="text-h5 font-weight-light"
                     style="line-height: 3rem"
                   >
-                    As I continue to learn and grow as a developer, these are
+                    As I continue to learn and grow as a developer, these are some of
                     the results of my endeavours so far...
                   </p>
                 </v-card-text>
