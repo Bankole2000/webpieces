@@ -8,6 +8,8 @@
     <v-card width="100">
       <v-img :src="require('@/assets/images/nightprofile.jpg.webp')"></v-img>
     </v-card>
+    <!-- <v-img :src="require('@/assets/studio.jpg')"></v-img> -->
+    <v-img :src="require('@/assets/webstudio.gif')" width="200"></v-img>
   </div>
 </template>
 
