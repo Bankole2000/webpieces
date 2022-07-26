@@ -11,13 +11,23 @@
         v-bind="attrs"
         v-on="on"
       >
-        <v-icon size="32">mdi-discord</v-icon>
+        <v-img
+          max-width="32px"
+          contain
+          :src="require('@/assets/images/techImages/discord.svg')"
+        ></v-img>
       </v-btn>
     </template>
 
     <v-card class="rounded-xl">
       <v-card-title class="headline">
-        <v-icon color="#9c27b0" class="mr-4">mdi-discord</v-icon> Discord
+        <v-img
+          max-width="32px"
+          contain
+          class="mr-4"
+          :src="require('@/assets/images/techImages/discord.svg')"
+        ></v-img>
+        Discord
         <v-spacer></v-spacer>
         <v-btn
           :class="$vuetify.theme.dark ? 'morph-dark' : 'morph'"
@@ -28,7 +38,7 @@
       </v-card-title>
       <div
         :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-        style="width: 100%; height: 2px;"
+        style="width: 100%; height: 2px"
       ></div>
 
       <v-card-text class="pt-4 d-flex flex-column justify-center align-center">
@@ -54,7 +64,7 @@
               <v-img :src="props.img" height="200px" :alt="props.title"></v-img>
               <div
                 :class="$vuetify.theme.dark ? 'rainbow-dark' : 'rainbow'"
-                style="width: 100%; height: 2px;"
+                style="width: 100%; height: 2px"
               ></div>
 
               <v-card-title>
@@ -79,7 +89,7 @@
             </v-card>
           </template>
         </link-prevue>
-        <v-card v-else class="glass-card pa-4" style="width: 100%;">
+        <v-card v-else class="glass-card pa-4" style="width: 100%">
           <p class="mb-2">
             Status:
             <span
@@ -95,7 +105,7 @@
           ></v-progress-linear>
           <p
             class="mt-3 mb-0"
-            style="cursor: pointer;"
+            style="cursor: pointer"
             @click="moreDetails = !moreDetails"
           >
             {{ moreDetails ? "Less" : "More" }} Details
@@ -206,7 +216,7 @@ import { mapActions } from "vuex";
 export default {
   name: "DiscordModal",
   components: {
-    LinkPrevue
+    LinkPrevue,
   },
   data() {
     return {
@@ -222,13 +232,13 @@ export default {
       name: "",
       email: "",
       isNotEmpty,
-      isEmail
+      isEmail,
     };
   },
   computed: {
     validData() {
       return isNotEmpty(this.name) && isEmail(this.email);
-    }
+    },
   },
   methods: {
     ...mapActions(["postUpdateRequest", "showToast"]),
@@ -250,13 +260,13 @@ export default {
             this.showToast({
               sclass: "success",
               message: `<span class="success--text" style="font-weight: bold; ">Success: </span>👍 Cool, I'll keep you updated`,
-              timeout: 3000
+              timeout: 3000,
             });
           } else {
             this.showToast({
               sclass: "primary",
               message: `<span class="primary--text" style="font-weight: bold;">info: </span>✌ ${result.message}`,
-              timeout: 3000
+              timeout: 3000,
             });
           }
           this.sending = false;
@@ -265,17 +275,17 @@ export default {
       } else {
         this.showToast({
           sclass: "error",
-          message: `<span style="font-weight: bold; color: var(--error);">Error: <span>Incomplete Information`
+          message: `<span style="font-weight: bold; color: var(--error);">Error: <span>Incomplete Information`,
         });
       }
-    }
+    },
   },
   mounted() {
     // console.log({
     //   isNotEmpty: isNotEmpty(" "),
     //   isEmail: isEmail("techybanky@gmail.com")
     // });
-  }
+  },
 };
 </script>
 

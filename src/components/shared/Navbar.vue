@@ -16,11 +16,11 @@
       <v-list dense nav class="py-0 my-0">
         <!-- :style="{ backgroundColor: $vuetify.theme.dark ? '#12121260' : '' }" -->
         <v-list-item two-line class="my-0">
-          <v-list-item-avatar>
+          <v-list-item-avatar size="50">
             <img
               :src="
                 $vuetify.theme.dark
-                  ? require('@/assets/images/nightprofile.jpg')
+                  ? require('@/assets/blackneon.jpg')
                   : require('@/assets/images/dayprofile.jpg.webp')
               "
             />

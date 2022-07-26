@@ -292,7 +292,7 @@
                       width="200"
                       :src="
                         $vuetify.theme.dark
-                          ? require('@/assets/images/nightprofile.jpg')
+                          ? require('@/assets/blackneon.jpg')
                           : require('@/assets/images/dayprofile.jpg.webp')
                       "
                       alt=""
@@ -324,7 +324,6 @@
                       >@PrimalAero</a
                     > -->
                     <!-- <v-icon>mdi-language-typescript</v-icon> -->
-                    
                   </p>
                   <div :class="$vuetify.breakpoint.mdAndUp ? 'mx-12' : 'mx-2'">
                     <v-tooltip top v-for="(tech, i) in skills" :key="i">
@@ -429,7 +428,7 @@ export default {
         // 'mdi-sass',
         // 'mdi-bootstrap',
         "mdi-language-javascript",
-        'mdi-language-typescript',
+        "mdi-language-typescript",
         "mdi-language-php",
         "mdi-database",
         "mdi-language-python",
