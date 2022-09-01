@@ -16,7 +16,7 @@ import GalleryList from "@/views/webpieces/GalleryList.vue";
 import Queue from "@/views/webpieces/WebpieceQueue.vue";
 import Test from "../views/Test.vue";
 import Music from "../views/Music.vue";
-
+import Wishlist from "../views/Wishlist.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -27,6 +27,11 @@ const routes: Array<RouteConfig> = [
     meta: {
       title: "Home"
     }
+  },
+  {
+    path: "/wishlist",
+    name: "Wishlist",
+    component: Wishlist
   },
   {
     path: "/webpieces",
