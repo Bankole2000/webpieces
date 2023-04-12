@@ -48,9 +48,9 @@ export default {
         {
           title: "Mic Stand",
           longDesc:
-            "I've been using my old laptop for a while now, and it's starting to show it's age. I'd really appreciate a new one, so I can continue doing what I love.",
+            "I have a lot of work to do, and I need a mic stand to keep my work going, both for meetings and calls, or for recordings as well.",
           shortDesc:
-            "I'd really appreciate a new laptop, so I can continue to do what I love.",
+            "A mic stand to help with meetings and recordings would be really nice.",
           link: "https://www.jumia.com.ng/generic-desktop-microphone-stand-upgraded-adjustable-table-mic-stand-90071064.html",
           image: "microphone.jpg.webp",
           gift: "a Desktop Microphone Stand",
