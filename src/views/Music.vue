@@ -45,7 +45,9 @@
                   width="250"
                   class="music-image"
                   :class="musicPlayer.isPlaying ? 'playing' : ''"
-                  :src="currentSong.cover"
+                  :src="
+                    require(`@/assets/images/playlists/${currentPlaylist.key}/${currentSong.cover}`)
+                  "
                   alt=""
                 />
               </v-avatar>
@@ -217,12 +219,18 @@
               style="max-height: 340px; overflow-y: scroll; overflow-x: hidden"
               class="px-0 py-0"
             >
-              <v-item-group v-model="selectedPlaylist">
+              <v-item-group mandatory v-model="selectedPlaylist">
                 <v-container>
                   <v-row>
-                    <v-col v-for="(item, n) in items" :key="n" cols="12" md="6">
+                    <v-col
+                      v-for="(item, n) in playlists"
+                      :key="n"
+                      cols="12"
+                      md="6"
+                    >
                       <v-item
                         class="rounded-xl"
+                        :value="item.key"
                         v-slot:default="{ active, toggle }"
                       >
                         <v-slide-x-reverse-transition>
@@ -233,15 +241,16 @@
                             dark
                             height="145"
                             width="145"
-                            @click="changePlaylist(toggle, item, n, active)"
+                            @click="toggle"
                           >
+                            <!-- @click="changePlaylist(toggle, item, n, active)" -->
                             <v-img
                               height="145"
                               class="rounded-xl"
-                              width="145"
+                              width="auto"
                               gradient="to top, #282828CC, #28282800"
                               :src="
-                                `https://cdn.vuetifyjs.com/images/${item.src}`
+                                require(`@/assets/images/playlists/${item.image}`)
                               "
                             >
                               <div
@@ -300,7 +309,7 @@
               show-arrows
             >
               <v-slide-item
-                v-for="(song, n) in currentPlaylist"
+                v-for="(song, n) in currentPlaylist.songs"
                 :key="n"
                 v-slot:default="{ active, toggle }"
               >
@@ -328,7 +337,11 @@
                       size="125"
                       tile
                     >
-                      <v-img :src="song.cover"></v-img>
+                      <v-img
+                        :src="
+                          require(`@/assets/images/playlists/${currentPlaylist.key}/${song.cover}`)
+                        "
+                      ></v-img>
                     </v-avatar>
                     <div style="width: 100%">
                       <v-card-title
@@ -396,10 +409,18 @@
       </div>
       <v-list>
         <v-list-item-group v-model="selectedPlaylist">
-          <v-list-item v-for="({ name, src }, i) in items" :key="i" link>
+          <v-list-item
+            v-for="({ name, key, image }, i) in playlists"
+            :key="i"
+            :value="key"
+            link
+          >
             <v-list-item-icon>
               <v-avatar>
-                <img :src="`https://cdn.vuetifyjs.com/images/${src}`" alt="" />
+                <img
+                  :src="require(`@/assets/images/playlists/${image}`)"
+                  :alt="name"
+                />
               </v-avatar>
             </v-list-item-icon>
 
@@ -444,8 +465,8 @@ export default {
           name: "Classical",
           src: "backgrounds/md2.jpg"
         }
-      ],
-      selectedPlaylist: null
+      ]
+      // selectedPlaylist: null
     };
   },
   methods: {
@@ -460,10 +481,6 @@ export default {
       console.log(this.musicPlayer.ref.muted);
       this.muteKey += 1;
     },
-    changePlaylist(...args) {
-      console.log({ args });
-      this.selectedPlaylist = args[2];
-    },
     ...mapMutations(["setSongIndex"]),
     formatAsTime(time) {
       return `${Math.floor(time / 60)} : ${("0" + Math.floor(time % 60)).slice(
@@ -471,9 +488,7 @@ export default {
       )}`;
     },
     setVolume(e) {
-      console.log({ e });
       this.musicPlayer.ref.volume = e / 100;
-      console.log({ volume: this.musicPlayer.ref.volume });
     },
     playCurrentSong() {
       console.log({ musicPlayer: this.musicPlayer });
@@ -519,14 +534,14 @@ export default {
     },
     playNextSong() {
       console.log({ index: this.musicPlayer.songIndex + 1 });
-      if (this.musicPlayer.songIndex < this.currentPlaylist.length - 1) {
+      if (this.musicPlayer.songIndex < this.currentPlaylist.songs.length - 1) {
         this.setSongIndex(this.musicPlayer.songIndex + 1);
       } else {
         this.setSongIndex(0);
       }
 
       this.setCurrentSong(
-        this.currentPlaylist[this.musicPlayer.songIndex]
+        this.currentPlaylist.songs[this.musicPlayer.songIndex]
       ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
@@ -539,10 +554,10 @@ export default {
       if (this.musicPlayer.songIndex > 0) {
         this.setSongIndex(this.musicPlayer.songIndex - 1);
       } else {
-        this.setSongIndex(this.currentPlaylist.length - 1);
+        this.setSongIndex(this.currentPlaylist.songs.length - 1);
       }
       this.setCurrentSong(
-        this.currentPlaylist[this.musicPlayer.songIndex]
+        this.currentPlaylist.songs[this.musicPlayer.songIndex]
       ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
@@ -569,13 +584,35 @@ export default {
       "currentSong",
       "currentPlaylist",
       "musicPlayer",
-      "currentSongTime"
-    ])
+      "currentSongTime",
+      "playlists"
+    ]),
+    selectedPlaylist: {
+      get() {
+        return this.currentPlaylist.key;
+      },
+      set(val) {
+        console.log({ val });
+        // await this.setCurrentPlaylist();
+        if (val !== this.currentPlaylist.key) {
+          if (this.musicPlayer.isPlaying) {
+            this.toggleIsPlaying(false);
+          }
+          const playlist = this.$store.state.playlists[val];
+          // console.log(getPlaylists());
+          console.log({ playlist });
+          this.setCurrentPlaylist(playlist).then(() => {
+            this.setCurrentSong(playlist.songs[0]);
+            this.playCurrentSong();
+          });
+        }
+      }
+    }
   },
   watch: {
     currentSong: function(newValue) {
       console.log(newValue);
-      const songListIds = this.currentPlaylist.map(song => song.id);
+      const songListIds = this.currentPlaylist.songs.map(song => song.id);
       const songIndex = songListIds.indexOf(newValue.id);
       console.log(songIndex);
       this.model = songIndex;

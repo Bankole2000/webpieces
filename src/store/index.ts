@@ -22,7 +22,7 @@ export default new Vuex.Store({
       icon: ""
     },
     webpieceRequests: [],
-    playlists: [],
+    playlists: {},
     musicPlayer: {
       show: true,
       isPlaying: false,
@@ -215,7 +215,12 @@ export default new Vuex.Store({
       return state.currentSongTime;
     },
     playlists(state) {
-      return state.playlists;
+      const playlists = [];
+      for (const item in state.playlists) {
+        const { image, key, name} = state.playlists[item];
+        playlists.push({image, key, name});
+      }
+      return playlists;
     }
   },
   modules: {}

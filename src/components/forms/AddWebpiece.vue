@@ -189,6 +189,26 @@
         </v-row>
       </v-alert>
     </v-col>
+    <v-dialog v-model="notTakingDialog" persistent max-width="600px">
+      <v-card>
+        <v-card-title>
+          <v-icon color="warning" class="mr-4">mdi-alert</v-icon>
+          <span class="headline warning--text">&nbsp; Error</span>
+        </v-card-title>
+        <v-card-text>
+          <p class="subtitle-1 mv-2">
+            Thanks for your request! However, I'm currently not taking Webpiece requests at this time.
+          </p>
+          <p>
+            If it's really urgent, consider reaching out to me by email, phone, or any of my socials. Thanks again 🙏
+          </p>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-btn block @click="notTakingDialog = false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-row>
   <!-- </div> -->
 </template>
@@ -200,6 +220,8 @@ import { mapActions } from "vuex";
 function initialState() {
   return {
     sending: false,
+    notTakingDialog: false,
+    notTaking: true,
     sent: false,
     username: "",
     hasTwitter: true,
@@ -266,7 +288,11 @@ export default {
       }
     },
     submitWebpieceRequest(e) {
-      this.sending = true;
+      // this.sending = true;
+      if (this.notTaking) {
+        this.notTakingDialog = true;
+        return;
+      }
       // Check basic Detials
       if (!this.username || !this.description || !this.title) {
         this.showToast({

@@ -92,11 +92,14 @@ export default {
     ...mapGetters(["webpieceRequests"])
   },
   mounted() {
-    this.getWebpieceRequests().then((data) => {
-      console.log(data);
+    setTimeout(() => {
       this.fetching = false;
-      // this.webpieceRequests = data.result.rows;
-    });
+    }, 2000);
+    // this.getWebpieceRequests().then((data) => {
+    //   console.log(data);
+    //   this.fetching = false;
+    //   // this.webpieceRequests = data.result.rows;
+    // });
   }
 };
 </script>

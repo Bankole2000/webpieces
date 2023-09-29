@@ -148,10 +148,10 @@ export default {
       if (this.musicPlayer.songIndex > 0) {
         this.setSongIndex(this.musicPlayer.songIndex - 1);
       } else {
-        this.setSongIndex(this.currentPlaylist.length - 1);
+        this.setSongIndex(this.currentPlaylist.songs.length - 1);
       }
       this.setCurrentSong(
-        this.currentPlaylist[this.musicPlayer.songIndex]
+        this.currentPlaylist.song[this.musicPlayer.songIndex]
       ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
@@ -163,13 +163,13 @@ export default {
       await this.$refs.audioPlayer.pause();
       this.currentTime = 0;
       console.log(this.currentPlaylist);
-      if (this.musicPlayer.songIndex < this.currentPlaylist.length - 1) {
+      if (this.musicPlayer.songIndex < this.currentPlaylist.songs.length - 1) {
         this.setSongIndex(this.musicPlayer.songIndex + 1);
       } else {
         this.setSongIndex(0);
       }
       this.setCurrentSong(
-        this.currentPlaylist[this.musicPlayer.songIndex]
+        this.currentPlaylist.songs[this.musicPlayer.songIndex]
       ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
@@ -189,7 +189,7 @@ export default {
   async created() {
     const playlists = getPlaylists();
     await this.setPlaylists(playlists);
-    const playlist = playlists['ambience'].songs;
+    const playlist = playlists['ambience'];
     // console.log(getPlaylists());
     console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {

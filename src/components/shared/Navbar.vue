@@ -379,10 +379,10 @@ export default {
           icon: "mdi-twitter"
         },
         {
-          name: "facebook",
-          link: "https://web.facebook.com/esan.bankole/",
-          color: "#0064ba",
-          icon: "mdi-facebook"
+          name: "email",
+          link: "mailto:techybanky@gmail.com",
+          color: "orange",
+          icon: "mdi-email"
         },
         {
           name: "whatsapp",

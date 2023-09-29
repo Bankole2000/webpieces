@@ -266,6 +266,16 @@ export default {
               name: "sqlite",
               icon: "mdi-feather",
             },
+            {
+              title: "Redis",
+              name: "redis",
+              icon: "mdi-cached",
+            },
+            {
+              title: "Neo4J",
+              name: "neo4j",
+              icon: "mdi-share-variant",
+            },
           ],
         },
         {

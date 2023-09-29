@@ -3,16 +3,6 @@
   "key": "ambience",
   "songs": [
     {
-      "name": "Keep Going",
-      "cover":
-        "chillhop1.jpg",
-      "artist": "Swørn",
-      "audio": "keep_going.mp3",
-      "color": ["#CD607D", "#c94043"],
-      "id": "bc99ffdf-120a-4b32-9c2a-3b52733a480f",
-      "active": false
-    },
-    {
       "name": "Reflection",
       "cover":
         "chillhop1.jpg",
@@ -20,6 +10,16 @@
       "audio": "reflection.mp3",
       "color": ["#CD607D", "#c94043"],
       "id": "0e70db98-052e-40b0-9403-0f5a384e742d",
+      "active": false
+    },
+    {
+      "name": "Keep Going",
+      "cover":
+        "chillhop1.jpg",
+      "artist": "Swørn",
+      "audio": "keep_going.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "bc99ffdf-120a-4b32-9c2a-3b52733a480f",
       "active": false
     },
     {
