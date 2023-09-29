@@ -25,7 +25,7 @@ export default Vue.extend({
 
   components: {
     // HelloWorld,
-    Navbar,
+    Navbar
     // MusicFooter,
   },
 
@@ -36,7 +36,7 @@ export default Vue.extend({
     cssProps() {
       const generatedColors = generateColors(this.$vuetify.theme.currentTheme);
       return generatedColors;
-    },
+    }
   },
 
   watch: {
@@ -48,7 +48,7 @@ export default Vue.extend({
         link.setAttribute("href", "img/icons/nightprofile.jpg");
         console.log(link);
       }
-    },
+    }
   },
   mounted() {
     // console.log({
@@ -62,7 +62,7 @@ export default Vue.extend({
   },
   beforeCreate() {
     this.$vuetify.theme.dark = true;
-  },
+  }
 });
 </script>
 <style>

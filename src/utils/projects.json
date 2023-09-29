@@ -1,4 +1,32 @@
-[
+[ 
+  {
+    "name": "CardTonic Platform",
+    "image": "cardtonic.com.png.webp",
+    "imagelight": "cardtonic.com.png.webp",
+    "client": "The Tonic Technologies Limited",
+    "status": "In Development",
+    "statusColor": "purple",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://cardtonic.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Fintech platform for purchase and sales of giftcards",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "Javascript",
+      "Node JS",
+      "MongoDB",
+      "Redis"
+    ],
+    "technologies": [
+      "mdi-language-javascript",
+      "mdi-nodejs",
+      "mdi-database",
+      "mdi-cached"
+    ],
+    "objectives": []
+  },
   {
     "name": "NodTransfer Web App",
     "image": "nodtransferlight.png.webp",
@@ -59,49 +87,44 @@
     ],
     "objectives": []
   },
-  
   {
-    "name": "Nodens UI",
-    "image": "nodensnew.png.webp",
-    "client": "Nodens Inc",
-    "status": "In Development",
-    "statusColor": "purple",
-    "githubUrl": "https://github.com/Bankole2000/nodens-ui",
-    "githubAvailable": true,
-    "projectUrl": "https://nodensinc.com",
+    "name": "Karamajong Consulting",
+    "image": "karamajongconsulting.com.png.webp",
+    "imagelight": "karamajongconsulting.com.png.webp",
+    "client": "Karamajong Consulting Limited",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://karamajongconsulting.com",
     "projectUrlAvailable": true,
-    "shortDescription": "Simple Website for the company I currently work for (Nov 2021)",
+    "shortDescription": "Website and blog for a pan-african business consultancy firm",
     "longDescription": "",
+    "backStory": "",
     "techUsed": [
       "HTML",
       "CSS",
-      "Javascript",
-      "Vue JS",
-      "Vuetify"
+      "Wordpress"
     ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify"
+      "mdi-wordpress"
     ],
-    "objectives": [
-      ""
-    ]
+    "objectives": []
   },
   {
-    "name": "TQL Demo: Wallet App",
-    "image": "tqlwalletlight.png.webp",
-    "imagelight": "tqlwalletdark.png.webp",
-    "client": "TQL Assignment",
+    "name": "Timi Keys Live",
+    "image": "timikeys.live.png.webp",
+    "imagelight": "timikeys.live.png.webp",
+    "client": "Timi Keys",
     "status": "Finished - Deployed",
     "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/tqlwallet",
-    "githubAvailable": true,
-    "projectUrl": "https://bankole2000.github.io/tqlwallet",
+    "githubUrl": null,
+    "githubAvailable": false,
+    "projectUrl": "https://timikeys.live",
     "projectUrlAvailable": true,
-    "shortDescription": "Demo App for Personal Finance Management + Tracking",
+    "shortDescription": "Special request Web app for musician (@timikeys_ on instagram) to take live song requests",
     "longDescription": "",
     "backStory": "",
     "techUsed": [
@@ -111,8 +134,7 @@
       "Vue",
       "Vuetify",
       "Node JS",
-      "PostgreSQL",
-      "Redis"
+      "PostgreSQL"
     ],
     "technologies": [
       "mdi-language-html5",
@@ -121,162 +143,36 @@
       "mdi-vuejs",
       "mdi-vuetify",
       "mdi-nodejs",
-      "mdi-database",
-      "mdi-cached"
+      "mdi-database"
     ],
     "objectives": []
   },
-
   {
-    "name": "Do-erz",
-    "image": "spoke-todo.png.webp",
-    "client": "Spoke AI",
+    "name": "React Music Player",
+    "image": "reactmusic.webp",
+    "client": "Self (Learning Project)",
     "status": "Finished - Deployed",
     "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/spoke-todo-frontend",
+    "githubUrl": "https://github.com/Bankole2000/react-music-player",
     "githubAvailable": true,
-    "projectUrl": "https://spoke-todo-frontend.vercel.app/",
+    "projectUrl": "http://react-music-player-seven.vercel.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "Simple Todo List app coding challenge for the Front End role at Spoke.ai",
+    "shortDescription": "A music player mini-project to practice some react js concepts",
     "longDescription": "",
+    "backStory": "",
     "techUsed": [
       "HTML",
       "CSS",
       "Javascript",
-      "React",
-      "Material UI",
-      "Node JS"
+      "React JS",
+      "Sass"
     ],
     "technologies": [
       "mdi-language-html5",
       "mdi-language-css3",
       "mdi-language-javascript",
       "mdi-react",
-      "mdi-material-ui",
-      "mdi-nodejs"
-    ],
-    "objectives": [
-      ""
-    ]
-  },
-  
-  {
-    "name": "GeoCities",
-    "image": "geocities.png.webp",
-    "imagelight": "geocitieslight.png.webp",
-    "client": "Self (Passion Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/geo-cities",
-    "githubAvailable": true,
-    "projectUrl": "https://bankole2000.github.io/geo-cities",
-    "projectUrlAvailable": true,
-    "shortDescription": "Searchable World Map Data of countries, states and cities",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Vue",
-      "Vuetify",
-      "Node JS",
-      "GraphQL"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-nodejs",
-      "mdi-graphql"
-    ],
-    "objectives": []
-  },
-  {
-    "name": "Shrtnr",
-    "image": "bcurlshortener.png.webp",
-    "imagelight": "shrtnrlight.png",
-    "client": "Buy Coins Africa",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/bcurlshortener",
-    "githubAvailable": true,
-    "projectUrl": "https://bankole2000.github.io/bcurlshortener",
-    "projectUrlAvailable": true,
-    "shortDescription": "A Simple URL Shortener - Mini project from buycoins africa backend role coding interview",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Vue",
-      "Vuetify",
-      "Node JS",
-      "GraphQL"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-vuejs",
-      "mdi-vuetify",
-      "mdi-nodejs",
-      "mdi-graphql"
-    ],
-    "objectives": []
-  },
-  {
-    "name": "HubFindr",
-    "image": "hubFindr.png.webp",
-    "client": "Buy Coins Africa",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/hubFindr",
-    "githubAvailable": true,
-    "projectUrl": "https://bankole2000.github.io/hubFindr",
-    "projectUrlAvailable": true,
-    "shortDescription": "Find Github users - Mini project for the buy coins africa front end role coding challenge",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "GraphQL"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-graphql"
-    ],
-    "objectives": []
-  },
-  {
-    "name": "Cribby API Playground",
-    "image": "cribbyapi.webp",
-    "client": "The World Needs this",
-    "status": "In Development",
-    "statusColor": "purple",
-    "githubUrl": "https://github.com/Bankole2000/cribbyapi",
-    "githubAvailable": true,
-    "projectUrl": "https://cribba-api.herokuapp.com/graphql",
-    "projectUrlAvailable": true,
-    "shortDescription": "GraphQL API for a large project I'm building collaboratively",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "Javascript",
-      "Node JS",
-      "GraphQL"
-    ],
-    "technologies": [
-      "mdi-language-javascript",
-      "mdi-nodejs",
-      "mdi-graphql"
+      "mdi-sass"
     ],
     "objectives": []
   },
@@ -290,7 +186,7 @@
     "githubAvailable": true,
     "projectUrl": "https://vuematch.netlify.app/",
     "projectUrlAvailable": true,
-    "shortDescription": "A memory matching game built around popular games and tv shows",
+    "shortDescription": "A memory matching game built around popular video games and tv shows",
     "longDescription": "",
     "techUsed": [
       "HTML",
@@ -369,45 +265,16 @@
     "objectives": []
   },
   {
-    "name": "React Music Player",
-    "image": "reactmusic.webp",
-    "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
-    "githubUrl": "https://github.com/Bankole2000/react-music-player",
-    "githubAvailable": true,
-    "projectUrl": "http://react-music-player-seven.vercel.app/",
-    "projectUrlAvailable": true,
-    "shortDescription": "A music player mini-project to practice some react js concepts",
-    "longDescription": "",
-    "backStory": "",
-    "techUsed": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "React JS",
-      "Sass"
-    ],
-    "technologies": [
-      "mdi-language-html5",
-      "mdi-language-css3",
-      "mdi-language-javascript",
-      "mdi-react",
-      "mdi-sass"
-    ],
-    "objectives": []
-  },
-  {
     "name": "AirIMP Dictionary",
     "image": "airimp.webp",
     "client": "Primal Aero",
-    "status": "In Development",
-    "statusColor": "purple",
+    "status": "Finished - Deployed (Unmaintained)",
+    "statusColor": "orange",
     "githubUrl": "https://github.com/Bankole2000/airimp-dictionary",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/airimp-dictionary",
     "projectUrlAvailable": true,
-    "shortDescription": "A small side project to help at my job (specifically to document and filter IATA Codes)",
+    "shortDescription": "A small side project to help at a previous job (specifically to document and filter IATA Codes)",
     "longDescription": "",
     "backStory": "",
     "techUsed": [
@@ -434,7 +301,7 @@
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/luminskin/",
     "projectUrlAvailable": true,
-    "shortDescription": "A coding challenge as part of the hiring process for pangaea.com",
+    "shortDescription": "A coding challenge to demonstrate e-commerce with global currencies and exchange rates",
     "longDescription": "",
     "techUsed": [
       "HTML",
@@ -450,6 +317,224 @@
       "mdi-language-javascript",
       "mdi-vuejs",
       "mdi-vuetify",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Nodens UI",
+    "image": "nodens.png.webp",
+    "client": "Nodens Inc",
+    "status": "Finished - Deployed (abandoned by client)",
+    "statusColor": "red",
+    "githubUrl": "https://github.com/Bankole2000/nodens-ui",
+    "githubAvailable": true,
+    "projectUrl": "https://nodensinc.com",
+    "projectUrlAvailable": true,
+    "shortDescription": "Simple Website for the company I worked for.",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue JS",
+      "Vuetify"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify"
+    ],
+    "objectives": [
+      ""
+    ]
+  },
+  {
+    "name": "Demo Wallet App",
+    "image": "tqlwalletlight.png.webp",
+    "imagelight": "tqlwalletdark.png.webp",
+    "client": "TQL Assignment",
+    "status": "Finished - Deployed (defunct by backend host paywall)",
+    "statusColor": "red",
+    "githubUrl": "https://github.com/Bankole2000/tqlwallet",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/tqlwallet",
+    "projectUrlAvailable": true,
+    "shortDescription": "Demo App for Personal Finance Management + Tracking",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-database",
+      "mdi-cached"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Do-erz",
+    "image": "spoke-todo.png.webp",
+    "client": "Spoke AI",
+    "status": "Finished - Deployed (defunct by backend host paywall)",
+    "statusColor": "red",
+    "githubUrl": "https://github.com/Bankole2000/spoke-todo-frontend",
+    "githubAvailable": true,
+    "projectUrl": "https://spoke-todo-frontend.vercel.app/",
+    "projectUrlAvailable": true,
+    "shortDescription": "Simple Todo List app coding challenge for the Front End role at Spoke.ai",
+    "longDescription": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React",
+      "Material UI",
+      "Node JS"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-react",
+      "mdi-material-ui",
+      "mdi-nodejs"
+    ],
+    "objectives": [
+      ""
+    ]
+  },
+  {
+    "name": "GeoCities",
+    "image": "geocities.png.webp",
+    "imagelight": "geocitieslight.png.webp",
+    "client": "Self (Passion Project)",
+    "status": "Finished - Deployed (defunct by backend host paywall)",
+    "statusColor": "red",
+    "githubUrl": "https://github.com/Bankole2000/geo-cities",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/geo-cities",
+    "projectUrlAvailable": true,
+    "shortDescription": "Searchable World Map Data of countries, states and cities",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Shrtnr",
+    "image": "bcurlshortener.png.webp",
+    "imagelight": "shrtnrlight.png",
+    "client": "Buy Coins Africa",
+    "status": "Finished - Deployed (defunct by backend host paywall)",
+    "statusColor": "red",
+    "githubUrl": "https://github.com/Bankole2000/bcurlshortener",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/bcurlshortener",
+    "projectUrlAvailable": true,
+    "shortDescription": "A Simple URL Shortener - Mini project from buycoins africa backend role coding interview",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Vue",
+      "Vuetify",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-vuejs",
+      "mdi-vuetify",
+      "mdi-nodejs",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "HubFindr",
+    "image": "hubFindr.png.webp",
+    "client": "Buy Coins Africa",
+    "status": "Finished - Deployed (Unmaintained)",
+    "statusColor": "orange",
+    "githubUrl": "https://github.com/Bankole2000/hubFindr",
+    "githubAvailable": true,
+    "projectUrl": "https://bankole2000.github.io/hubFindr",
+    "projectUrlAvailable": true,
+    "shortDescription": "Find Github users - Mini project for the buy coins africa front end role coding challenge",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-html5",
+      "mdi-language-css3",
+      "mdi-language-javascript",
+      "mdi-graphql"
+    ],
+    "objectives": []
+  },
+  {
+    "name": "Cribby API Playground",
+    "image": "cribbyapi.webp",
+    "client": "The World Needs this",
+    "status": "In Development",
+    "statusColor": "purple",
+    "githubUrl": "https://github.com/Bankole2000/cribbyapi",
+    "githubAvailable": true,
+    "projectUrl": "https://cribbyapi-production.up.railway.app/graphql",
+    "projectUrlAvailable": false,
+    "shortDescription": "GraphQL API for a large project I'm building collaboratively",
+    "longDescription": "",
+    "backStory": "",
+    "techUsed": [
+      "Javascript",
+      "Node JS",
+      "GraphQL"
+    ],
+    "technologies": [
+      "mdi-language-javascript",
+      "mdi-nodejs",
       "mdi-graphql"
     ],
     "objectives": []
@@ -480,8 +565,8 @@
     "name": "Node JWT Demo",
     "image": "nodejwt.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Deployed (Defunct)",
+    "statusColor": "red",
     "githubUrl": "https://github.com/Bankole2000/nodejwt",
     "githubAvailable": true,
     "projectUrl": "https://nodejwt.banky.studio/",
@@ -508,8 +593,8 @@
     "name": "Banky's Smoothies",
     "image": "smoothies.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Deployed (Unmaintained)",
+    "statusColor": "orange",
     "githubUrl": "https://github.com/Bankole2000/vue-smoothies",
     "githubAvailable": true,
     "projectUrl": "https://smoothies-a3bd6.firebaseapp.com/",
@@ -534,7 +619,7 @@
     "name": "Netflix Landing Page UI",
     "image": "netflix.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
+    "status": "Finished - Deployed (Unmaintained)",
     "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/netflix",
     "githubAvailable": true,
@@ -558,7 +643,7 @@
     "name": "Project App UI",
     "image": "pmuinew.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
+    "status": "Finished - Deployed (Unmaintained)",
     "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/pm_ui",
     "githubAvailable": true,
@@ -588,7 +673,7 @@
     "name": "Earth Friends",
     "image": "earthfriends.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
+    "status": "Finished - Deployed (Unmaintained)",
     "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/earth-friends",
     "githubAvailable": true,
@@ -614,7 +699,7 @@
     "name": "Tutorial Request App",
     "image": "fbcloud.png.webp",
     "client": "Self (Learning Project)",
-    "status": "Finished - Deployed",
+    "status": "Finished - Deployed (Unmaintained)",
     "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/fbcloud-practice",
     "githubAvailable": true,
@@ -666,8 +751,8 @@
     "name": "Banky Studio",
     "image": "webpieces.png.webp",
     "client": "Self (Personal Project)",
-    "status": "In Development",
-    "statusColor": "purple",
+    "status": "Finished - Deployed",
+    "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/webpieces",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/webpieces/",
@@ -696,8 +781,8 @@
     "name": "Cosgrove Tech",
     "image": "cosgroveTech.webp",
     "client": "Cosgrove (Freelance Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Defunct - Unmaintained by client",
+    "statusColor": "red",
     "githubUrl": null,
     "githubAvailable": false,
     "projectUrl": "https://cosgrovetech.com",
@@ -721,8 +806,8 @@
     "image": "tag.png.webp",
     "imagelight": "tag.png.webp",
     "client": "Tinubu Advocates Group",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Deployed. Taken down by client",
+    "statusColor": "red",
     "githubUrl": null,
     "githubAvailable": false,
     "projectUrl": "https://tinubuadvocates.com",
@@ -750,12 +835,12 @@
     "name": "Style Guide Sample",
     "image": "styleguide.webp",
     "client": "Self (Personal Project)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Not deployed",
+    "statusColor": "orange",
     "githubUrl": "https://github.com/Bankole2000/webpieces",
     "githubAvailable": true,
     "projectUrl": "https://styleguide.banky.studio",
-    "projectUrlAvailable": true,
+    "projectUrlAvailable": false,
     "shortDescription": "Sample Style guide built with Catalog and React",
     "longDescription": "",
     "techUsed": [
@@ -777,9 +862,9 @@
   {
     "name": "Dev Meetups",
     "image": "devmeetups.png.webp",
-    "client": "Self (Learning Project)",
-    "status": "In Development",
-    "statusColor": "purple",
+    "client": "Self (Practice Project)",
+    "status": "Finished - Not deployed",
+    "statusColor": "orange",
     "githubUrl": "https://github.com/Bankole2000/vuedevmeetups",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/vuedevmeetups",
@@ -886,8 +971,8 @@
     "name": "Jojo Ride",
     "image": "jojoride.png.webp",
     "client": "Personal Client (Freelance)",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Abandoned by the client",
+    "statusColor": "red",
     "githubUrl": "https://github.com/Bankole2000/jojoride",
     "githubAvailable": true,
     "projectUrl": "https://bankole2000.github.io/jojoride",
@@ -912,8 +997,8 @@
     "name": "Primal Aero Website",
     "image": "primalaero.png.webp",
     "client": "The Primal Aero Company",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Deployed. Unmaintained by client",
+    "statusColor": "red",
     "githubUrl": null,
     "githubAvailable": false,
     "projectUrl": "https://primalaero.com",
@@ -940,8 +1025,8 @@
     "name": "Booking Engine",
     "image": "primalaerobooking.png.webp",
     "client": "The Primal Aero Company",
-    "status": "Finished - Deployed",
-    "statusColor": "green",
+    "status": "Finished - Not deployed. Status Unknown",
+    "statusColor": "red",
     "githubUrl": "https://github.com/Bankole2000/flightbooking",
     "githubAvailable": true,
     "projectUrl": null,
@@ -966,7 +1051,7 @@
     "name": "My Old Portfolio site",
     "image": "portfolio.png.webp",
     "client": "Self (Personal Project)",
-    "status": "Finished - Deployed",
+    "status": "Finished - Deployed (Unmaintained)",
     "statusColor": "green",
     "githubUrl": "https://github.com/Bankole2000/portfolio",
     "githubAvailable": true,

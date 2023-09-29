@@ -3,7 +3,7 @@
     :style="{
       'background-image': $vuetify.theme.dark
         ? 'url(' + require('@/assets/images/bluecity.gif') + ')'
-        : 'url(' + require('@/assets/images/neoncityday.gif') + ')',
+        : 'url(' + require('@/assets/images/neoncityday.gif') + ')'
     }"
     style="
       display: flex;
@@ -32,7 +32,7 @@
             <v-card-text
               style="display: flex; justify-content: space-around"
               :style="{
-                flexDirection: $vuetify.breakpoint.smAndDown ? 'column' : 'row',
+                flexDirection: $vuetify.breakpoint.smAndDown ? 'column' : 'row'
               }"
             >
               <v-avatar
@@ -195,7 +195,7 @@
         </v-col>
         <v-expand-x-transition>
           <v-card
-            v-if="$vuetify.breakpoint.mdAndUp"
+            v-if="$vuetify.breakpoint.lgAndUp"
             v-show="showPlaylist"
             width="344"
             class="ma-3 rounded-xl primary-glass-card"
@@ -240,7 +240,9 @@
                               class="rounded-xl"
                               width="145"
                               gradient="to top, #282828CC, #28282800"
-                              :src="`https://cdn.vuetifyjs.com/images/${item.src}`"
+                              :src="
+                                `https://cdn.vuetifyjs.com/images/${item.src}`
+                              "
                             >
                               <div
                                 style="height: 100%"
@@ -267,7 +269,7 @@
                                       : 'font-weight-light'
                                   "
                                 >
-                                  Playlist {{ n }}
+                                  {{ item.name }}
                                 </p>
                               </div>
                             </v-img>
@@ -311,11 +313,11 @@
                     primary: currentSong.id == song.id,
                     'darken-1': $vuetify.theme.dark,
                     'lighten-2': !$vuetify.theme.dark,
-                    'glass-card': $vuetify.breakpoint.mdAndUp,
+                    'glass-card': $vuetify.breakpoint.mdAndUp
                   }"
                   :style="{
                     transform: active ? 'scale(1.1)' : 'scale(1)',
-                    transition: 'all 0.2s ease-out',
+                    transition: 'all 0.2s ease-out'
                   }"
                   :width="$vuetify.breakpoint.mdAndUp ? 340 : ''"
                 >
@@ -370,6 +372,44 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-navigation-drawer
+      app
+      temporary
+      class="primary-glass-card"
+      v-model="showPlaylist"
+      v-if="!$vuetify.breakpoint.lgAndUp"
+      right
+    >
+      <div>
+        <v-card-title>
+          <v-icon class="mr-4">mdi-playlist-music</v-icon>
+          <span>Playlists</span>
+          <v-spacer></v-spacer>
+          <v-btn @click="togglePlaylist" icon
+            ><v-icon>mdi-arrow-right-circle</v-icon></v-btn
+          >
+        </v-card-title>
+        <div
+          class="mx-0"
+          style="width: 100%; height: 3px; background-image: var(--rainbow)"
+        ></div>
+      </div>
+      <v-list>
+        <v-list-item-group v-model="selectedPlaylist">
+          <v-list-item v-for="({ name, src }, i) in items" :key="i" link>
+            <v-list-item-icon>
+              <v-avatar>
+                <img :src="`https://cdn.vuetifyjs.com/images/${src}`" alt="" />
+              </v-avatar>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ name }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
   </div>
 </template>
 
@@ -385,22 +425,27 @@ export default {
       volume: 25,
       items: [
         {
-          src: "backgrounds/bg.jpg",
+          name: "For Coding",
+          src: "backgrounds/bg.jpg"
         },
         {
-          src: "backgrounds/md.jpg",
+          name: "My Music",
+          src: "backgrounds/md.jpg"
         },
         {
-          src: "backgrounds/bg-2.jpg",
+          name: "Rock Songs",
+          src: "backgrounds/bg-2.jpg"
         },
         {
-          src: "backgrounds/md2.jpg",
+          name: "Genshin",
+          src: "backgrounds/md2.jpg"
         },
         {
-          src: "backgrounds/md2.jpg",
-        },
+          name: "Classical",
+          src: "backgrounds/md2.jpg"
+        }
       ],
-      selectedPlaylist: null,
+      selectedPlaylist: null
     };
   },
   methods: {
@@ -408,7 +453,7 @@ export default {
       "toggleMusicPlayer",
       "toggleIsPlaying",
       "setCurrentPlaylist",
-      "setCurrentSong",
+      "setCurrentSong"
     ]),
     toggleMute() {
       this.musicPlayer.ref.muted = !this.musicPlayer.ref.muted;
@@ -506,48 +551,49 @@ export default {
       });
     },
     togglePlaylist() {
-      if (this.$vuetify.breakpoint.lgAndUp) {
-        if (this.showPlaylist) {
-          this.showPlaylistItems = false;
-          setTimeout(() => {
-            this.showPlaylist = false;
-          }, 200);
-        } else {
-          this.showPlaylist = true;
-          setTimeout(() => {
-            this.showPlaylistItems = true;
-          }, 200);
-        }
+      if (this.showPlaylist) {
+        this.showPlaylistItems = false;
+        setTimeout(() => {
+          this.showPlaylist = false;
+        }, 200);
+      } else {
+        this.showPlaylist = true;
+        setTimeout(() => {
+          this.showPlaylistItems = true;
+        }, 200);
       }
-    },
+    }
   },
   computed: {
     ...mapGetters([
       "currentSong",
       "currentPlaylist",
       "musicPlayer",
-      "currentSongTime",
-    ]),
+      "currentSongTime"
+    ])
   },
   watch: {
-    currentSong: function (newValue) {
+    currentSong: function(newValue) {
       console.log(newValue);
-      const songListIds = this.currentPlaylist.map((song) => song.id);
+      const songListIds = this.currentPlaylist.map(song => song.id);
       const songIndex = songListIds.indexOf(newValue.id);
       console.log(songIndex);
       this.model = songIndex;
-    },
+    }
   },
   mounted() {
     if (this.$vuetify.breakpoint.lgAndUp) {
       setTimeout(() => {
-        this.togglePlaylist();
+        this.showPlaylist = true;
+        setTimeout(() => {
+          this.showPlaylistItems = true;
+        }, 200);
       }, 1000);
     }
     if (!this.musicPlayer.show) {
       this.toggleMusicPlayer(true);
     }
-  },
+  }
 };
 </script>
 

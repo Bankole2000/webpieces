@@ -304,7 +304,7 @@
                       $vuetify.theme.dark ? 'primary--text' : 'secondary--text'
                     "
                   >
-                    {{ $vuetify.theme.dark ? "@CodingInNeon" : "Bankole Esan" }}
+                    {{ $vuetify.theme.dark ? "@TheNeonCoder" : "Bankole Esan" }}
                   </p>
                   <!-- <p
                     class="text-h6 font-weight-light"

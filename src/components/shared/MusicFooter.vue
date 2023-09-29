@@ -79,7 +79,11 @@
       </v-footer>
     </v-slide-y-reverse-transition>
     <audio
-      :src="currentSong ? currentSong.audio : ''"
+      :src="
+        currentSong
+          ? require(`@/assets/audio/${currentPlaylist.key}/${currentSong.audio}`)
+          : ''
+      "
       @loadeddata="songReady = true"
       @timeupdate="updateSongTime"
       @ended="handleSongEnded"
@@ -91,12 +95,13 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from "vuex";
 import allSongs from "../../utils/songs";
+import getPlaylists from "../../utils/playlists";
 export default {
   data() {
     return {
       songReady: false,
       currentTime: 0,
-      duration: 1,
+      duration: 1
     };
   },
   methods: {
@@ -105,6 +110,7 @@ export default {
       "toggleIsPlaying",
       "setCurrentPlaylist",
       "setCurrentSong",
+      "setPlaylists"
     ]),
     ...mapMutations(["setMusicPlayer", "setSongIndex"]),
     setProgress(e) {
@@ -170,23 +176,26 @@ export default {
           this.playCurrentSong();
         }
       });
-    },
+    }
   },
   computed: {
-    ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"]),
+    ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"])
   },
   mounted() {
     console.log(this.$refs);
     this.setMusicPlayer(this.$refs.audioPlayer);
   },
 
-  created() {
-    const playlist = allSongs();
+  async created() {
+    const playlists = getPlaylists();
+    await this.setPlaylists(playlists);
+    const playlist = playlists['ambience'].songs;
+    // console.log(getPlaylists());
     console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {
-      this.setCurrentSong(playlist[this.musicPlayer.songIndex]);
+      this.setCurrentSong(playlist.songs[this.musicPlayer.songIndex]);
     });
-  },
+  }
 };
 </script>
 

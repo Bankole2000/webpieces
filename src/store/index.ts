@@ -22,6 +22,7 @@ export default new Vuex.Store({
       icon: ""
     },
     webpieceRequests: [],
+    playlists: [],
     musicPlayer: {
       show: true,
       isPlaying: false,
@@ -81,6 +82,9 @@ export default new Vuex.Store({
     },
     setSongIndex(state, payload) {
       state.musicPlayer.songIndex = payload;
+    },
+    setPlaylists(state, payload) {
+      state.playlists = payload;
     }
   },
   actions: {
@@ -186,6 +190,9 @@ export default new Vuex.Store({
     },
     async setCurrentSong({ commit }, payload) {
       commit("setCurrentSong", payload);
+    },
+    async setPlaylists({ commit }, payload) {
+      commit("setPlaylists", payload);
     }
   },
   getters: {
@@ -206,6 +213,9 @@ export default new Vuex.Store({
     },
     currentSongTime(state) {
       return state.currentSongTime;
+    },
+    playlists(state) {
+      return state.playlists;
     }
   },
   modules: {}
