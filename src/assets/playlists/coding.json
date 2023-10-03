@@ -39,15 +39,6 @@
       "active": false
     },
     {
-      "name": "Of Busy City Days",
-      "cover": "urban.jpg",
-      "artist": "Chillhop",
-      "audio": "of_busy_city_days.ogg",
-      "color": ["#CD607D", "#c94043"],
-      "id": "21207675-0660-426e-b151-5feef6ba62b7",
-      "active": false
-    },
-    {
       "name": "Foreverlasing",
       "cover": "futuristic.webp",
       "artist": "Frumhere & Justnormal",
@@ -57,12 +48,12 @@
       "active": false
     },
     {
-      "name": "AI Jazz Assist",
-      "cover": "futuristic.webp",
-      "artist": "chillhop",
-      "audio": "ai_assist.ogg",
+      "name": "Morning Radio",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "morning_radio.ogg",
       "color": ["#CD607D", "#c94043"],
-      "id": "80b258b0-2fdc-4dd2-9fed-939158fc6ce8",
+      "id": "2ed1587b-5ccb-4901-962a-b06a4c57255b",
       "active": false
     },
     {
@@ -75,12 +66,39 @@
       "active": false
     },
     {
-      "name": "Come Back",
-      "cover": "sunset.jpg",
-      "artist": "Tom Misch",
-      "audio": "comeback.mp3",
+      "name": "Of Busy City Days",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "of_busy_city_days.ogg",
       "color": ["#CD607D", "#c94043"],
-      "id": "9b2f004f-660b-4cbe-9483-1295884e4545",
+      "id": "21207675-0660-426e-b151-5feef6ba62b7",
+      "active": false
+    },
+    {
+      "name": "Haze",
+      "cover": "sunset.jpg",
+      "artist": "G Mills & Kyle McEvoy",
+      "audio": "haze.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "8fefaa72-3675-46f2-83da-0939979553a8",
+      "active": false
+    },
+    {
+      "name": "Home from Work",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "home_after_work.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "3a2dcd58-120f-4fa0-bfb9-201ed566629a",
+      "active": false
+    },
+    {
+      "name": "AI Jazz Assist",
+      "cover": "futuristic.webp",
+      "artist": "chillhop",
+      "audio": "ai_assist.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "80b258b0-2fdc-4dd2-9fed-939158fc6ce8",
       "active": false
     },
     {
@@ -120,24 +138,6 @@
       "active": false
     },
     {
-      "name": "Morning Radio",
-      "cover": "urban.jpg",
-      "artist": "Chillhop",
-      "audio": "morning_radio.ogg",
-      "color": ["#CD607D", "#c94043"],
-      "id": "2ed1587b-5ccb-4901-962a-b06a4c57255b",
-      "active": false
-    },
-    {
-      "name": "Home from Work",
-      "cover": "urban.jpg",
-      "artist": "Chillhop",
-      "audio": "home_after_work.ogg",
-      "color": ["#CD607D", "#c94043"],
-      "id": "3a2dcd58-120f-4fa0-bfb9-201ed566629a",
-      "active": false
-    },
-    {
       "name": "Forest of Light",
       "cover": "forest_of_light.jpg",
       "artist": "Chillhop",
@@ -174,22 +174,21 @@
       "active": false
     },
     {
+      "name": "Come Back",
+      "cover": "sunset.jpg",
+      "artist": "Tom Misch",
+      "audio": "comeback.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "9b2f004f-660b-4cbe-9483-1295884e4545",
+      "active": false
+    },
+    {
       "name": "Boys Basement Base",
       "cover": "urban.jpg",
       "artist": "Chillhop",
       "audio": "boys_basement.ogg",
       "color": ["#CD607D", "#c94043"],
       "id": "115efa02-3b75-4041-bebc-86fcd9783c48",
-      "active": false
-    },
-
-    {
-      "name": "Haze",
-      "cover": "sunset.jpg",
-      "artist": "G Mills & Kyle McEvoy",
-      "audio": "haze.mp3",
-      "color": ["#CD607D", "#c94043"],
-      "id": "8fefaa72-3675-46f2-83da-0939979553a8",
       "active": false
     },
     {

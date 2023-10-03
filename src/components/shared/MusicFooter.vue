@@ -152,7 +152,7 @@ export default {
         this.setSongIndex(this.currentPlaylist.songs.length - 1);
       }
       this.setCurrentSong(
-        this.currentPlaylist.song[this.musicPlayer.songIndex]
+        this.currentPlaylist.songs[this.musicPlayer.songIndex]
       ).then(() => {
         if (this.musicPlayer.isPlaying) {
           this.toggleIsPlaying(false);
