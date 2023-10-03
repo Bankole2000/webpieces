@@ -25,7 +25,18 @@
                 <v-img
                   class="music-image"
                   :class="musicPlayer.isPlaying ? 'playing' : ''"
-                  :src="currentSong.cover"
+                  :src="
+                    !isLoadingPlaylist
+                      ? require(`@/assets/images/playlists/${
+                          currentPlaylist.key
+                        }/${
+                          $vuetify.theme.dark && currentSong.coverDark
+                            ? currentSong.coverDark
+                            : currentSong.cover
+                        }`)
+                      : require(`@/assets/images/disc.webp`)
+                  "
+                  :lazy-src="require(`@/assets/images/disc.webp`)"
                 ></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
@@ -38,7 +49,7 @@
               <!-- <v-spacer></v-spacer> -->
 
               <v-list-item-icon>
-                <v-btn @click="playPrevSong" icon>
+                <v-btn @click="playPrevSong" icon :disabled="!songReadyState">
                   <v-icon>mdi-rewind</v-icon>
                 </v-btn>
               </v-list-item-icon>
@@ -46,7 +57,12 @@
               <v-list-item-icon
                 :class="{ 'mx-5': $vuetify.breakpoint.mdAndUp, 'mx-2': true }"
               >
-                <v-btn @click="playCurrentSong" icon>
+                <v-btn
+                  @click="playCurrentSong"
+                  icon
+                  :loading="!songReadyState"
+                  :disabled="!songReadyState"
+                >
                   <v-icon size="35">{{
                     musicPlayer.isPlaying ? "mdi-pause" : "mdi-play"
                   }}</v-icon>
@@ -57,7 +73,7 @@
                 class="ml-0"
                 :class="{ 'mr-3': $vuetify.breakpoint.mdAndUp }"
               >
-                <v-btn @click="playNextSong" icon>
+                <v-btn @click="playNextSong" icon :disabled="!songReadyState">
                   <v-icon>mdi-fast-forward</v-icon>
                 </v-btn>
               </v-list-item-icon>
@@ -100,7 +116,6 @@ import getPlaylists from "../../utils/playlists";
 export default {
   data() {
     return {
-      songReady: false,
       currentTime: 0,
       duration: 1
     };
@@ -115,7 +130,7 @@ export default {
     ]),
     ...mapMutations(["setMusicPlayer", "setSongIndex"]),
     setProgress(e) {
-      console.log({ e });
+      // console.log({ e });
       this.$refs.audioPlayer.currentTime = e;
     },
     updateSongTime(e) {
@@ -145,7 +160,7 @@ export default {
     async playPrevSong() {
       await this.$refs.audioPlayer.pause();
       this.currentTime = 0;
-      console.log(this.currentPlaylist);
+      // console.log(this.currentPlaylist);
       if (this.musicPlayer.songIndex > 0) {
         this.setSongIndex(this.musicPlayer.songIndex - 1);
       } else {
@@ -163,7 +178,7 @@ export default {
     async playNextSong() {
       await this.$refs.audioPlayer.pause();
       this.currentTime = 0;
-      console.log(this.currentPlaylist);
+      // console.log(this.currentPlaylist);
       if (this.musicPlayer.songIndex < this.currentPlaylist.songs.length - 1) {
         this.setSongIndex(this.musicPlayer.songIndex + 1);
       } else {
@@ -180,31 +195,45 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"]),
+    ...mapGetters([
+      "musicPlayer",
+      "currentSong",
+      "currentPlaylist",
+      "songReadyState",
+      "isLoadingPlaylist"
+    ]),
     playListIncludesSong() {
       if (!this.currentPlaylist || !this.currentSong) return false;
       const songNames = this.currentPlaylist.songs.map(x => x.name);
       if (!songNames.includes(this.currentSong.name)) return false;
       return true;
+    },
+    songReady: {
+      get() {
+        return this.songReadyState;
+      },
+      set(val) {
+        this.$store.commit("setSongReadyState", val);
+      }
     }
   },
   mounted() {
-    console.log(this.$refs);
+    // console.log(this.$refs);
     this.setMusicPlayer(this.$refs.audioPlayer);
   },
 
   async created() {
-    console.log({ query: this.$route.query });
+    // console.log({ query: this.$route.query });
     const selectedPlaylist = this.$route.query.playlist;
     const playlists = getPlaylists();
     await this.setPlaylists(playlists);
-    console.log(Object.keys(playlists));
+    // console.log(Object.keys(playlists));
 
     const playlist = Object.keys(playlists).includes(selectedPlaylist)
       ? playlists[selectedPlaylist]
       : playlists["ambience"];
     // console.log(getPlaylists());
-    console.log({ playlist });
+    // console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {
       this.setCurrentSong(playlist.songs[this.musicPlayer.songIndex]);
     });

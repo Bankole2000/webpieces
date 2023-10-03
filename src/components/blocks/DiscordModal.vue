@@ -255,7 +255,7 @@ export default {
           ? this.$vuetify.theme.themes.dark.primary
           : this.$vuetify.theme.themes.light.primary;
         this.postUpdateRequest(this.$data).then((result) => {
-          console.log({ result });
+          
           if (result.success) {
             this.showToast({
               sclass: "success",

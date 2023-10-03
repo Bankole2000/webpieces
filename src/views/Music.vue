@@ -119,19 +119,31 @@
                   class="player-controls"
                   style="display: flex; width: 100%; justify-content: center"
                 >
-                  <v-btn class="pa-8 glass-card" @click="playPrevSong" icon>
+                  <v-btn
+                    class="pa-8 glass-card"
+                    @click="playPrevSong"
+                    icon
+                    :disabled="!songReadyState"
+                  >
                     <v-icon size="32">mdi-rewind</v-icon>
                   </v-btn>
                   <v-btn
                     class="pa-8 mx-8 glass-card"
                     @click="playCurrentSong"
                     icon
+                    :disabled="!songReadyState"
+                    :loading="!songReadyState"
                   >
                     <v-icon size="48">{{
                       musicPlayer.isPlaying ? "mdi-pause" : "mdi-play"
                     }}</v-icon>
                   </v-btn>
-                  <v-btn class="pa-8 glass-card" @click="playNextSong" icon>
+                  <v-btn
+                    class="pa-8 glass-card"
+                    @click="playNextSong"
+                    icon
+                    :disabled="!songReadyState"
+                  >
                     <v-icon size="32">mdi-fast-forward</v-icon>
                   </v-btn>
                 </div>
@@ -423,7 +435,16 @@
                           $vuetify.breakpoint.mdAndDown ? 'px-2 pb-2' : 'px-4'
                         "
                       >
-                        <v-btn @click.stop="playSong(song, n)" block>
+                        <v-btn
+                          @click.stop="playSong(song, n)"
+                          block
+                          :loading="
+                            !songReadyState && currentSong.id == song.id
+                          "
+                          :disabled="
+                            !songReadyState && currentSong.id == song.id
+                          "
+                        >
                           {{
                             currentSong.id == song.id && musicPlayer.isPlaying
                               ? "Playing"
@@ -524,7 +545,6 @@ export default {
     return {
       muteKey: 0,
       showPlaylist: false,
-      loadingPlaylist: false,
       showPlaylistItems: false,
       model: 1,
       volume: 25,
@@ -562,7 +582,6 @@ export default {
     ]),
     toggleMute() {
       this.musicPlayer.ref.muted = !this.musicPlayer.ref.muted;
-      console.log(this.musicPlayer.ref.muted);
       this.muteKey += 1;
     },
     ...mapMutations(["setSongIndex"]),
@@ -575,7 +594,6 @@ export default {
       this.musicPlayer.ref.volume = e / 100;
     },
     playCurrentSong() {
-      console.log({ musicPlayer: this.musicPlayer });
       if (this.musicPlayer.isPlaying) {
         this.musicPlayer.ref.pause();
         this.toggleIsPlaying(false);
@@ -590,7 +608,7 @@ export default {
       }
     },
     playSong(song, index) {
-      console.log({ song, index, player: this.musicPlayer.ref });
+      // console.log({ song, index, player: this.musicPlayer.ref });
 
       if (this.currentSong.id == song.id && this.musicPlayer.isPlaying) {
         this.musicPlayer.ref.pause();
@@ -617,7 +635,7 @@ export default {
       });
     },
     playNextSong() {
-      console.log({ index: this.musicPlayer.songIndex + 1 });
+      // console.log({ index: this.musicPlayer.songIndex + 1 });
       if (this.musicPlayer.songIndex < this.currentPlaylist.songs.length - 1) {
         this.setSongIndex(this.musicPlayer.songIndex + 1);
       } else {
@@ -634,7 +652,7 @@ export default {
       });
     },
     playPrevSong() {
-      console.log({ index: this.musicPlayer.songIndex - 1 });
+      // console.log({ index: this.musicPlayer.songIndex - 1 });
       if (this.musicPlayer.songIndex > 0) {
         this.setSongIndex(this.musicPlayer.songIndex - 1);
       } else {
@@ -650,7 +668,7 @@ export default {
       });
     },
     updateSongTime(e) {
-      console.log({ e });
+      // console.log({ e });
     },
     togglePlaylist() {
       if (this.showPlaylist) {
@@ -672,14 +690,16 @@ export default {
       "currentPlaylist",
       "musicPlayer",
       "currentSongTime",
-      "playlists"
+      "playlists",
+      "songReadyState",
+      "isLoadingPlaylist"
     ]),
     selectedPlaylist: {
       get() {
         return this.currentPlaylist.key;
       },
       set(val) {
-        console.log({ val });
+        // console.log({ val });
         // await this.setCurrentPlaylist();
         if (val !== this.currentPlaylist.key) {
           if (this.musicPlayer.isPlaying) {
@@ -687,7 +707,7 @@ export default {
           }
           const playlist = this.$store.state.playlists[val];
           // console.log(getPlaylists());
-          console.log({ playlist });
+          // console.log({ playlist });
           this.loadingPlaylist = true;
           this.setCurrentPlaylist(playlist).then(async () => {
             this.setSongIndex(0);
@@ -696,6 +716,14 @@ export default {
             this.playCurrentSong();
           });
         }
+      }
+    },
+    loadingPlaylist: {
+      get() {
+        return this.isLoadingPlaylist;
+      },
+      set(val) {
+        this.$store.commit("setLoadingPlaylist", val);
       }
     },
     songTimeValue: {
@@ -708,17 +736,17 @@ export default {
       set(val) {
         const duration = this.currentSongTime.duration;
         const currentTime = (val / 100) * duration;
-        console.log("value set");
+        // console.log("value set");
         this.musicPlayer.ref.currentTime = currentTime;
       }
     }
   },
   watch: {
     currentSong: function(newValue) {
-      console.log(newValue);
+      // console.log(newValue);
       const songListIds = this.currentPlaylist.songs.map(song => song.id);
       const songIndex = songListIds.indexOf(newValue.id);
-      console.log(songIndex);
+      // console.log(songIndex);
       this.model = songIndex;
     }
   },

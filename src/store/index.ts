@@ -29,6 +29,8 @@ export default new Vuex.Store({
       ref: null,
       songIndex: 0
     },
+    songReady: false,
+    loadingPlaylist: false,
     currentPlaylist: null,
     currentSong: null,
     currentSongTime: {
@@ -46,6 +48,9 @@ export default new Vuex.Store({
     },
     getWebpieceRequests(state, payload) {
       state.webpieceRequests = payload;
+    },
+    setSongReadyState(state, payload) {
+      state.songReady = payload;
     },
     updateWebpieceRequest(state, payload) {
       const webpiece = state.webpieceRequests.find((webpieceRequest: any) => {
@@ -85,6 +90,9 @@ export default new Vuex.Store({
     },
     setPlaylists(state, payload) {
       state.playlists = payload;
+    },
+    setLoadingPlaylist(state, payload) {
+      state.loadingPlaylist = payload;
     }
   },
   actions: {
@@ -214,11 +222,17 @@ export default new Vuex.Store({
     currentSongTime(state) {
       return state.currentSongTime;
     },
+    songReadyState(state) {
+      return state.songReady;
+    },
+    isLoadingPlaylist(state) {
+      return state.loadingPlaylist;
+    },
     playlists(state) {
       const playlists = [];
       for (const item in state.playlists) {
-        const { image, key, name} = state.playlists[item];
-        playlists.push({image, key, name});
+        const { image, key, name } = state.playlists[item];
+        playlists.push({ image, key, name });
       }
       return playlists;
     }
