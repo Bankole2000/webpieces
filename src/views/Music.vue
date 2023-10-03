@@ -19,16 +19,13 @@
     >
       <v-row>
         <v-col>
+          <!-- Large Music Player -->
           <v-card
             class="rounded-xl glass-card"
             :class="
               $vuetify.breakpoint.smAndDown ? 'px-0 pt-0' : 'px-8 pt-8 pb-6'
             "
           >
-            <!-- <v-card-title>
-              Now Playing
-            </v-card-title> -->
-
             <v-card-text
               style="display: flex; justify-content: space-around"
               :style="{
@@ -46,7 +43,15 @@
                   class="music-image"
                   :class="musicPlayer.isPlaying ? 'playing' : ''"
                   :src="
-                    require(`@/assets/images/playlists/${currentPlaylist.key}/${currentSong.cover}`)
+                    !loadingPlaylist
+                      ? require(`@/assets/images/playlists/${
+                          currentPlaylist.key
+                        }/${
+                          $vuetify.theme.dark && currentSong.coverDark
+                            ? currentSong.coverDark
+                            : currentSong.cover
+                        }`)
+                      : require(`@/assets/images/disc.webp`)
                   "
                   alt=""
                 />
@@ -68,7 +73,11 @@
                 <h3
                   class="text-center secondary--text display-1 font-weight-light"
                 >
-                  {{ currentSong.artist }}
+                  {{
+                    $vuetify.theme.dark && currentSong.artistDark
+                      ? currentSong.artistDark
+                      : currentSong.artist
+                  }}
                 </h3>
                 <div style="width: 100%">
                   <v-slider
@@ -136,7 +145,11 @@
                 <h4
                   class="text-center secondary--text text-h5 font-weight-light"
                 >
-                  {{ currentSong.artist }}
+                  {{
+                    $vuetify.theme.dark && currentSong.artistDark
+                      ? currentSong.artistDark
+                      : currentSong.artist
+                  }}
                 </h4>
                 <div style="width: 80%" class="mx-auto mt-4">
                   <v-slider
@@ -180,12 +193,10 @@
               }}</span>
               <v-progress-linear
                 stream
-                style="width: 80%"
+                style="width: 80%; cursor: pointer;"
                 rounded
                 :min="0"
-                :value="
-                  (currentSongTime.currentTime / currentSongTime.duration) * 100
-                "
+                v-model="songTimeValue"
                 color="primary"
                 height="25"
               ></v-progress-linear>
@@ -195,6 +206,7 @@
             </v-card-actions>
           </v-card>
         </v-col>
+        <!-- Playlist Sidebar -->
         <v-expand-x-transition>
           <v-card
             v-if="$vuetify.breakpoint.lgAndUp"
@@ -228,6 +240,7 @@
                       cols="12"
                       md="6"
                     >
+                      <!-- Playlist Sidebar Item -->
                       <v-item
                         class="rounded-xl"
                         :value="item.key"
@@ -252,7 +265,20 @@
                               :src="
                                 require(`@/assets/images/playlists/${item.image}`)
                               "
+                              :lazy-src="require(`@/assets/images/disc.webp`)"
                             >
+                              <template v-slot:placeholder>
+                                <v-row
+                                  class="fill-height ma-0"
+                                  align="center"
+                                  justify="center"
+                                >
+                                  <v-progress-circular
+                                    indeterminate
+                                    color="primary"
+                                  ></v-progress-circular>
+                                </v-row>
+                              </template>
                               <div
                                 style="height: 100%"
                                 class="d-flex flex-column"
@@ -262,7 +288,7 @@
                                   <v-btn icon x-large
                                     ><v-icon
                                       size="48"
-                                      :color="active ? 'white' : ''"
+                                      :color="active ? 'success lighten-2' : ''"
                                       >mdi-play{{
                                         active ? "" : "-outline"
                                       }}</v-icon
@@ -271,14 +297,24 @@
                                 </div>
                                 <v-spacer></v-spacer>
                                 <p
-                                  class="my-0 pb-2 text-h6 align-self-center"
+                                  class="my-0 text-h6 align-self-center"
                                   :class="
                                     active
-                                      ? 'font-weight-black white--text'
-                                      : 'font-weight-light'
+                                      ? 'font-weight-black white--text pb-0'
+                                      : 'font-weight-light pb-2'
                                   "
                                 >
                                   {{ item.name }}
+                                </p>
+                                <p
+                                  v-if="active"
+                                  class="text-center success--text text--lighten-3 caption mb-0 mt-n1"
+                                >
+                                  {{
+                                    musicPlayer.isPlaying
+                                      ? "Now Playing..."
+                                      : "Paused"
+                                  }}
                                 </p>
                               </div>
                             </v-img>
@@ -297,7 +333,9 @@
     <v-container fluid v-if="currentSong">
       <v-row>
         <v-col cols="12" class="px-0 pt-0">
+          <!-- Playlist Slider -->
           <v-sheet
+            v-if="!loadingPlaylist"
             class="mx-auto"
             elevation="0"
             style="background: transparent"
@@ -313,7 +351,7 @@
                 :key="n"
                 v-slot:default="{ active, toggle }"
               >
-                <!-- :color="currentSong.id == song.id ? 'primary' : ''" -->
+                <!-- Playlist items slider card -->
                 <v-card
                   :ripple="false"
                   @click="toggle"
@@ -339,9 +377,29 @@
                     >
                       <v-img
                         :src="
-                          require(`@/assets/images/playlists/${currentPlaylist.key}/${song.cover}`)
+                          require(`@/assets/images/playlists/${
+                            currentPlaylist.key
+                          }/${
+                            $vuetify.theme.dark && song.coverDark
+                              ? song.coverDark
+                              : song.cover
+                          }`)
                         "
-                      ></v-img>
+                        :lazy-src="require(`@/assets/images/disc.webp`)"
+                      >
+                        <template v-slot:placeholder>
+                          <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                          >
+                            <v-progress-circular
+                              indeterminate
+                              color="grey lighten-5"
+                            ></v-progress-circular>
+                          </v-row>
+                        </template>
+                      </v-img>
                     </v-avatar>
                     <div style="width: 100%">
                       <v-card-title
@@ -353,7 +411,11 @@
                       <v-card-subtitle
                         :class="$vuetify.breakpoint.mdAndDown ? 'pa-2' : ''"
                         class="caption font-weight-normal"
-                        v-text="song.artist"
+                        v-text="
+                          $vuetify.theme.dark && song.artistDark
+                            ? song.artistDark
+                            : song.artist
+                        "
                       ></v-card-subtitle>
                       <v-spacer></v-spacer>
                       <div
@@ -382,9 +444,26 @@
               </v-slide-item>
             </v-slide-group>
           </v-sheet>
+          <v-sheet
+            v-else
+            class="mx-auto"
+            elevation="0"
+            style="background: transparent"
+          >
+            <div class="px-16 text-center">
+              <p class="title">Loading Playlist</p>
+              <v-progress-linear
+                color="secondary"
+                indeterminate
+                rounded
+                height="6"
+              ></v-progress-linear>
+            </div>
+          </v-sheet>
         </v-col>
       </v-row>
     </v-container>
+    <!-- Mobile Playlist Navbar -->
     <v-navigation-drawer
       app
       temporary
@@ -426,6 +505,10 @@
 
             <v-list-item-content>
               <v-list-item-title>{{ name }}</v-list-item-title>
+              <v-list-item-subtitle
+                v-if="currentPlaylist.key === key && musicPlayer.isPlaying"
+                >Now playing...</v-list-item-subtitle
+              >
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -441,6 +524,7 @@ export default {
     return {
       muteKey: 0,
       showPlaylist: false,
+      loadingPlaylist: false,
       showPlaylistItems: false,
       model: 1,
       volume: 25,
@@ -565,6 +649,9 @@ export default {
         }
       });
     },
+    updateSongTime(e) {
+      console.log({ e });
+    },
     togglePlaylist() {
       if (this.showPlaylist) {
         this.showPlaylistItems = false;
@@ -601,11 +688,28 @@ export default {
           const playlist = this.$store.state.playlists[val];
           // console.log(getPlaylists());
           console.log({ playlist });
-          this.setCurrentPlaylist(playlist).then(() => {
-            this.setCurrentSong(playlist.songs[0]);
+          this.loadingPlaylist = true;
+          this.setCurrentPlaylist(playlist).then(async () => {
+            this.setSongIndex(0);
+            await this.setCurrentSong(playlist.songs[0]);
+            this.loadingPlaylist = false;
             this.playCurrentSong();
           });
         }
+      }
+    },
+    songTimeValue: {
+      get() {
+        return (
+          (this.currentSongTime.currentTime / this.currentSongTime.duration) *
+          100
+        );
+      },
+      set(val) {
+        const duration = this.currentSongTime.duration;
+        const currentTime = (val / 100) * duration;
+        console.log("value set");
+        this.musicPlayer.ref.currentTime = currentTime;
       }
     }
   },

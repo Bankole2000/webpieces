@@ -128,22 +128,22 @@ export default {
             {
               title: "PHP",
               name: "php",
-              icon: "mdi-language-php",
+              icon: "mdi-language-php"
             },
             {
               title: "Javascript - ES6",
               name: "js",
-              icon: "mdi-language-javascript",
+              icon: "mdi-language-javascript"
             },
             {
               title: "Typescript",
               name: "ts",
-              icon: "mdi-language-typescript",
+              icon: "mdi-language-typescript"
             },
             {
               title: "Python",
               name: "python",
-              icon: "mdi-language-python",
+              icon: "mdi-language-python"
             },
           ],
         },
@@ -154,60 +154,60 @@ export default {
             {
               title: "HTML 5",
               name: "html",
-              icon: "mdi-language-html5",
+              icon: "mdi-language-html5"
             },
             {
               title: "CSS 3",
               name: "css",
-              icon: "mdi-language-css3",
+              icon: "mdi-language-css3"
             },
             {
               title: "Javascript - ES6",
               name: "js",
-              icon: "mdi-language-javascript",
+              icon: "mdi-language-javascript"
             },
             {
               title: "BootStrap",
               name: "bootstrap",
-              icon: "mdi-bootstrap",
+              icon: "mdi-bootstrap"
             },
             {
               title: "Materialize CSS",
               name: "materialize",
-              icon: "mdi-material-design",
+              icon: "mdi-material-design"
             },
             {
               title: "Sass",
               name: "sass",
-              icon: "mdi-sass",
+              icon: "mdi-sass"
             },
             {
               title: "Vue JS",
               name: "vuejs",
-              icon: "mdi-vuejs",
+              icon: "mdi-vuejs"
             },
             {
               title: "Vuetify",
               name: "vuetify",
-              icon: "mdi-vuetify",
+              icon: "mdi-vuetify"
             },
             {
               title: "Angular + Angular Material",
               name: "angular",
-              icon: "mdi-angular",
+              icon: "mdi-angular"
             },
             {
               title: "React",
               name: "react",
-              icon: "mdi-react",
+              icon: "mdi-react"
             },
             {
               title: "Material UI",
               name: "materialUi",
-              icon: "mdi-material-ui",
+              icon: "mdi-material-ui"
             },
           ],
-          comment: "",
+          comment: ""
         },
         {
           title: "Back End",
@@ -216,27 +216,27 @@ export default {
             {
               title: "Node + Express",
               name: "node",
-              icon: "mdi-nodejs",
+              icon: "mdi-nodejs"
             },
             {
               title: "Symfony",
               name: "symfony",
-              icon: "mdi-symfony",
+              icon: "mdi-symfony"
             },
             {
               title: "PHP",
               name: "php",
-              icon: "mdi-language-php",
+              icon: "mdi-language-php"
             },
             {
               title: "Django",
               name: "django",
-              icon: "mdi-language-python",
+              icon: "mdi-language-python"
             },
             {
               title: "Flask",
               name: "flask",
-              icon: "mdi-language-python",
+              icon: "mdi-language-python"
             },
           ],
           comment: "",
@@ -249,32 +249,32 @@ export default {
             {
               title: "MySQL",
               name: "mysql",
-              icon: "mdi-database-search",
+              icon: "mdi-database-search"
             },
             {
               title: "PostgreSQL",
               name: "postgresql",
-              icon: "mdi-elephant",
+              icon: "mdi-elephant"
             },
             {
               title: "MongoDB",
               name: "mongodb",
-              icon: "mdi-file-document-multiple",
+              icon: "mdi-file-document-multiple"
             },
             {
               title: "SQLite",
               name: "sqlite",
-              icon: "mdi-feather",
+              icon: "mdi-feather"
             },
             {
               title: "Redis",
               name: "redis",
-              icon: "mdi-cached",
+              icon: "mdi-cached"
             },
             {
               title: "Neo4J",
               name: "neo4j",
-              icon: "mdi-share-variant",
+              icon: "mdi-share-variant"
             },
           ],
         },
@@ -285,27 +285,27 @@ export default {
             {
               title: "Heroku",
               name: "heroku",
-              icon: "mdi-server-network",
+              icon: "mdi-server-network"
             },
             {
               title: "Vercel",
               name: "vercel",
-              icon: "mdi-triangle",
+              icon: "mdi-triangle"
             },
             {
               title: "Netlify",
               name: "netlify",
-              icon: "mdi-share-variant",
+              icon: "mdi-share-variant"
             },
             {
               title: "Firebase",
               name: "firebase",
-              icon: "mdi-firebase",
+              icon: "mdi-firebase"
             },
             {
               title: "C Panel",
               name: "c-panel",
-              icon: "mdi-nas",
+              icon: "mdi-nas"
             },
           ],
         },
@@ -316,27 +316,27 @@ export default {
             {
               title: "Git",
               name: "git",
-              icon: "mdi-git",
+              icon: "mdi-git"
             },
             {
               title: "GitHub",
               name: "github",
-              icon: "mdi-github",
+              icon: "mdi-github"
             },
             {
               title: "Bitbucket",
               name: "bitbucket",
-              icon: "mdi-bitbucket",
+              icon: "mdi-bitbucket"
             },
             {
               title: "GitLab",
               name: "gitlab",
-              icon: "mdi-gitlab",
+              icon: "mdi-gitlab"
             },
             {
               title: "Docker",
               name: "Docker",
-              icon: "mdi-docker",
+              icon: "mdi-docker"
             },
           ],
         },
@@ -348,13 +348,13 @@ export default {
             {
               title: "Keystone JS",
               name: "keystone js",
-              icon: "mdi-alpha-k-box",
+              icon: "mdi-alpha-k-box"
             },
           ],
         },
         {
           title: "Graphic Design",
-          icon: "mdi-palette",
+          icon: "mdi-palette"
         },
       ],
     };

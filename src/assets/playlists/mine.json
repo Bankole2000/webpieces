@@ -3,65 +3,72 @@
   "key": "mine",
   "songs": [
     {
-      "name": "Reflection",
-      "cover":
-        "chillhop1.jpg",
-      "artist": "Swørn",
-      "audio": "reflection.mp3",
+      "name": "Imagine you and me",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "imagine_you_and_me.mp3",
       "color": ["#CD607D", "#c94043"],
       "id": "0e70db98-052e-40b0-9403-0f5a384e742d",
       "active": false
     },
     {
-      "name": "Keep Going",
-      "cover":
-        "chillhop1.jpg",
-      "artist": "Swørn",
-      "audio": "keep_going.mp3",
-      "color": ["#CD607D", "#c94043"],
-      "id": "bc99ffdf-120a-4b32-9c2a-3b52733a480f",
-      "active": false
-    },
-    {
-      "name": "Daylight",
-      "cover":
-        "chillhop2.jpg",
-      "artist": "Aiguille",
-      "audio": "daylight.mp3",
-      "color": ["#EF8EA9", "#ab417f"],
-      "id": "d016cddb-36ee-4185-98f1-95714c35bfeb",
-      "active": false
-    },
-    {
-      "name": "Beaver Creek",
-      "cover":
-        "chillhop3.jpg",
-      "artist": "Aso, Middle School, Aviino",
-      "audio": "beaver_creek.mp3",
+      "name": "S'ilekun",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "silekun.mp3",
       "color": ["#205950", "#2ab3bf"],
       "id": "98fff41f-2f49-4ccf-8906-d248c5397284",
       "active": true
     },
     {
-      "name": "Nightfall",
-      "cover":
-        "chillhop2.jpg",
-      "artist": "Aiguille",
-      "audio": "nightfall.mp3",
+      "name": "It's in the way",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "its_in_the_way.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "bc99ffdf-120a-4b32-9c2a-3b52733a480f",
+      "active": false
+    },
+    {
+      "name": "One Wish",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "one_wish.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "d016cddb-36ee-4185-98f1-95714c35bfeb",
+      "active": false
+    },
+    {
+      "name": "I'ts in the way (Inst)",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "its_in_the_way_inst.mp3",
       "color": ["#EF8EA9", "#ab417f"],
       "id": "fa645577-6931-4f5b-a786-2b9c29a7ce0e",
       "active": false
     },
     {
-      "name": "Under the City Stars",
-      "cover":
-        "chillhop3.jpg",
-      "artist": "Aso, Middle School, Aviino",
-      "audio": "under_the_city_stars.mp3",
+      "name": "One Wish (Inst)",
+      "coverDark": "theneoncoder.jpg",
+      "cover": "bankole_esan.webp",
+      "artist": "Bankole Esan",
+      "artistDark": "The Neon Coder",
+      "audio": "one_wish_inst.mp3",
       "color": ["#205950", "#2ab3bf"],
       "id": "7f2beaab-b73e-424f-aaef-e8ca402e39bc",
       "active": false
     }
   ],
-  "image": "ambience.image.jpg"
+  "imageDark": "theneoncoder.jpg",
+  "image": "theneoncoder.jpg"
 }

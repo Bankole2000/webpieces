@@ -1,0 +1,267 @@
+{
+  "name": "Genshin",
+  "key": "genshin",
+  "songs": [
+    {
+      "name": "Dream Aria",
+      "cover":
+        "celestia.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "dream_aria.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "5bcc6dbf-ea32-4a84-9d55-7d61b4615750",
+      "active": false
+    },
+    {
+      "name": "Eternal Anamnesis",
+      "cover":
+        "celestia.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "eternal_anamnesis.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "3ec74636-d756-4f36-a371-0fdc9c91ba51",
+      "active": false
+    },
+    {
+      "name": "Mondstadt starlit",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "mondstadt_starlit.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "f5d731bd-c58f-4a26-88a7-acda4e7e1a78",
+      "active": false
+    },
+    {
+      "name": "Moonlight in Mondstadt",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "moonlight_in_mondstadt.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "5525a4c0-21dd-4018-9e80-a142c8e6c61a",
+      "active": false
+    },
+    {
+      "name": "His Resolution",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "his_resolution.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "872ba865-8f74-4a7d-84ed-6847066b5007",
+      "active": false
+    },
+    {
+      "name": "Photon of Fluctuation",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "photon_of_fluctuation.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "997c82e2-0cdb-4651-84d8-7ff02cd9b613",
+      "active": false
+    },
+    {
+      "name": "Rite of Battle",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "rite_of_battle.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "676ad731-278c-40c9-8e2c-b4391e9228e9",
+      "active": false
+    },
+    {
+      "name": "Beats of water",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "beats_of_water.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "857efa48-4dbc-4b48-8e87-bf8ebb240166",
+      "active": false
+    },
+    {
+      "name": "Rhythm ancient times",
+      "cover":
+        "mondstadt.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "rhythm_from_ancient_times.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "3b3bc5b2-e6f2-4397-b042-121575d395f7",
+      "active": false
+    },
+    {
+      "name": "All Conquering Tide",
+      "cover":
+        "dragonspine.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "all_conquering_tide.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "dd792b26-6f4a-4fa4-87e3-3d4951676705",
+      "active": true
+    },
+    {
+      "name": "Liyue",
+      "cover":
+        "liyue.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "liyue.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "eb255d55-eb75-4610-a185-170f8ba39bcb",
+      "active": false
+    },
+    {
+      "name": "Moon in one's cup",
+      "cover":
+        "liyue.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "moon_in_ones_cup.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "2083f4cd-609c-424f-aaa6-0a403c6f4e29",
+      "active": false
+    },
+    {
+      "name": "Chasing the torrents",
+      "cover":
+        "liyue.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "chasing_the_torrents.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "c0a25521-0b01-48bb-9b65-6e5bd49060ec",
+      "active": false
+    },
+    {
+      "name": "Streets of Elegance",
+      "cover":
+        "inazuma.jpeg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "inazuma_city_ost_1.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "bfa7f17a-7b16-4a32-84c0-d605bc026ab2",
+      "active": false
+    },
+    {
+      "name": "Blue Dream",
+      "cover":
+        "inazuma.jpeg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "inazuma_city_ost_2.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "23a3f41e-a05b-40c9-8c84-bfce442086c3",
+      "active": false
+    },
+    {
+      "name": "Murmuring Creek",
+      "cover":
+        "inazuma.jpeg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "murmuring_creek.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "1cfaac11-adbe-4a65-91ab-9e41381aa6f4",
+      "active": false
+    },
+    {
+      "name": "Duel in the Mist",
+      "cover":
+        "inazuma.jpeg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "duel_in_the_mist.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "3dc84a5a-5aca-46ca-85e1-06feb58a05f7",
+      "active": false
+    },
+    {
+      "name": "Raiden Shogun OST",
+      "cover":
+        "inazuma.jpeg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "raiden_shogun_boss_theme.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "d53da4be-e823-4ec9-88da-05df074f2cf8",
+      "active": false
+    },
+    {
+      "name": "Combat the waves",
+      "cover":
+        "enkonomiya.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "enkonomiya_battle_theme.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "7d215679-caa1-4e4d-bdb2-65d4e96670b8",
+      "active": false
+    },
+    {
+      "name": "Undersea Encounters",
+      "cover":
+        "enkonomiya.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "undersea_encounters.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "561503de-436e-4eb0-9a25-a40652cf34d2",
+      "active": false
+    },
+    {
+      "name": "Evergreen Wish",
+      "cover":
+        "sumeru.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "evergreen_wish.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "db0cab36-aa50-4ee3-bfbb-ebacb04cbd90",
+      "active": false
+    },
+    {
+      "name": "Fresh breeze of dawn",
+      "cover":
+        "sumeru.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "fresh_breezes_of_dawn.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "cb579421-aa14-4243-bf0f-b792be7ab689",
+      "active": false
+    },
+    {
+      "name": "Swirls of the Stream",
+      "cover":
+        "sumeru.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "swirls_of_stream.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "532c022c-4989-4d08-a566-11e983677c31",
+      "active": false
+    },
+    {
+      "name": "Across Asterisms",
+      "cover":
+        "desert.jpg",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "accross_dimming_asterisms.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "21ff485d-e867-4cde-b170-c35980ac8c70",
+      "active": false
+    },
+    {
+      "name": "Rondeau des Fleurs",
+      "cover":
+        "fontaine.png",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "rondeau_des_fleurs.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "51ad7f50-95b2-4e21-9037-6212f53ba14e",
+      "active": false
+    },
+    {
+      "name": "Virelai des marees",
+      "cover":
+        "fontaine.png",
+      "artist": "Yu-Peng Chen, Hoyo-Mix",
+      "audio": "virelai_des_marees.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "73c49fb4-dda2-4436-993e-1f858c73f109",
+      "active": false
+    }
+  ],
+  "image": "genshin.image.webp"
+}

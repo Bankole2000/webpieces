@@ -1,0 +1,233 @@
+{
+  "name": "For Coding",
+  "key": "coding",
+  "songs": [
+    {
+      "name": "Amble",
+      "cover": "coding.jpg",
+      "artist": "Edamame",
+      "audio": "amble.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "08ac995c-881a-4ee9-912b-eff1fb38d462",
+      "active": false
+    },
+    {
+      "name": "Bask",
+      "cover": "coding.jpg",
+      "artist": "Edamame",
+      "audio": "bask.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "180e2eaa-3a9c-4705-b907-c10646ff044c",
+      "active": false
+    },
+    {
+      "name": "Noisy Early Inventions",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "noisy_early_inventions.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "6a5c2cf6-5673-4aac-9dce-c1a06d8e49cc",
+      "active": false
+    },
+    {
+      "name": "Ergo",
+      "cover": "urban.jpg",
+      "artist": "Birocratic",
+      "audio": "ergo.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "e7c42760-a0f7-4633-878c-ea39f599210b",
+      "active": false
+    },
+    {
+      "name": "Of Busy City Days",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "of_busy_city_days.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "21207675-0660-426e-b151-5feef6ba62b7",
+      "active": false
+    },
+    {
+      "name": "Foreverlasing",
+      "cover": "futuristic.webp",
+      "artist": "Frumhere & Justnormal",
+      "audio": "foreverlasting.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "98162638-a277-4a2a-a586-1789c168bfa7",
+      "active": false
+    },
+    {
+      "name": "AI Jazz Assist",
+      "cover": "futuristic.webp",
+      "artist": "chillhop",
+      "audio": "ai_assist.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "80b258b0-2fdc-4dd2-9fed-939158fc6ce8",
+      "active": false
+    },
+    {
+      "name": "Tinkering Tinkerer",
+      "cover": "urban.jpg",
+      "artist": "chillhop",
+      "audio": "tinkering.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "0bd0ec28-31dd-414b-b5b6-7167862e8599",
+      "active": false
+    },
+    {
+      "name": "Come Back",
+      "cover": "sunset.jpg",
+      "artist": "Tom Misch",
+      "audio": "comeback.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "9b2f004f-660b-4cbe-9483-1295884e4545",
+      "active": false
+    },
+    {
+      "name": "Pretty AF",
+      "cover": "sunset.jpg",
+      "artist": "Aves",
+      "audio": "prettyaf.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "695cbda9-69e5-4700-be2d-8afe798a0883",
+      "active": false
+    },
+    {
+      "name": "A green morning",
+      "cover": "sunrise.jpg",
+      "artist": "Chillhop",
+      "audio": "a_greener_chiller_world.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "b28327a9-3449-48d6-bdf6-defec21fe149",
+      "active": false
+    },
+    {
+      "name": "Internal Snooze",
+      "cover": "sunrise.jpg",
+      "artist": "Chillhop",
+      "audio": "morning_day_off.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "cd5855e3-9190-4b7d-bb80-1d20fecb2b63",
+      "active": false
+    },
+    {
+      "name": "Soul",
+      "cover": "sunset.jpg",
+      "artist": "Engelwood",
+      "audio": "soul.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "0ac8c589-b4a5-4859-be34-be094c71df05",
+      "active": false
+    },
+    {
+      "name": "Morning Radio",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "morning_radio.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "2ed1587b-5ccb-4901-962a-b06a4c57255b",
+      "active": false
+    },
+    {
+      "name": "Home from Work",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "home_after_work.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "3a2dcd58-120f-4fa0-bfb9-201ed566629a",
+      "active": false
+    },
+    {
+      "name": "Forest of Light",
+      "cover": "forest_of_light.jpg",
+      "artist": "Chillhop",
+      "audio": "forest_of_light.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "0e70db98-052e-40b0-9403-0f5a384e742d",
+      "active": false
+    },
+    {
+      "name": "Starry Awakening",
+      "cover": "forest_of_light.jpg",
+      "artist": "Chillhop",
+      "audio": "starry_awakening.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "08022010-1690-4c45-8964-cee612c07bd4",
+      "active": false
+    },
+    {
+      "name": "Downtown Playground",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "down_town_playground.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "1a0f0827-c753-40bd-b2db-64464c6561b9",
+      "active": false
+    },
+    {
+      "name": "Just like old times",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "teenage_hangout.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "06547099-e858-4d66-89cf-652fe000c77d",
+      "active": false
+    },
+    {
+      "name": "Boys Basement Base",
+      "cover": "urban.jpg",
+      "artist": "Chillhop",
+      "audio": "boys_basement.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "115efa02-3b75-4041-bebc-86fcd9783c48",
+      "active": false
+    },
+
+    {
+      "name": "Haze",
+      "cover": "sunset.jpg",
+      "artist": "G Mills & Kyle McEvoy",
+      "audio": "haze.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "8fefaa72-3675-46f2-83da-0939979553a8",
+      "active": false
+    },
+    {
+      "name": "Modern Samurai",
+      "cover": "city.jpg",
+      "artist": "Chillhop",
+      "audio": "samurai_in_the_bamboo.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "ca6bdb3f-a852-43f4-9120-8a8854a9d80e",
+      "active": false
+    },
+    {
+      "name": "Move Together",
+      "cover": "city.jpg",
+      "artist": "Yasmin",
+      "audio": "move_together.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "51394427-7d48-4462-8bca-05ed31739ad3",
+      "active": false
+    },
+    {
+      "name": "Dice and Heists",
+      "cover": "city.jpg",
+      "artist": "Chillhop",
+      "audio": "heist_dice_nice.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "ab8111fa-612f-4ff2-9a1a-586b97a84416",
+      "active": false
+    },
+    {
+      "name": "Sunset Ride",
+      "cover": "city.jpg",
+      "artist": "Chillhop",
+      "audio": "sunset_ride.ogg",
+      "color": ["#CD607D", "#c94043"],
+      "id": "cf24ac4c-6f8a-4577-ad60-6ad2d1760d3a",
+      "active": false
+    }
+  ],
+  "image": "coding.jpg"
+}

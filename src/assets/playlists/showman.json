@@ -1,0 +1,79 @@
+{
+  "name": "Showman",
+  "key": "showman",
+  "songs": [
+    {
+      "name": "The Greatest Show",
+      "cover": "showman.png",
+      "artist": "Greatest Showman Ensemble",
+      "audio": "the_greatest_show.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "0e70db98-052e-40b0-9403-0f5a384e742d",
+      "active": false
+    },
+    {
+      "name": "A Million Dreams",
+      "cover": "showman.png",
+      "artist": "Greatest Showman Ensemble",
+      "audio": "a_million_dreams.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "98fff41f-2f49-4ccf-8906-d248c5397284",
+      "active": true
+    },
+    {
+      "name": "The Other Side",
+      "cover": "showman.png",
+      "artist": "Hugh Jackman, Zac Effron",
+      "audio": "the_other_side.mp3",
+      "color": ["#CD607D", "#c94043"],
+      "id": "bc99ffdf-120a-4b32-9c2a-3b52733a480f",
+      "active": false
+    },
+    {
+      "name": "Never Enough",
+      "cover": "showman.png",
+      "artist": "Loren Allred",
+      "audio": "never_enough.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "d016cddb-36ee-4185-98f1-95714c35bfeb",
+      "active": false
+    },
+    {
+      "name": "This is Me",
+      "cover": "showman.png",
+      "artist": "Greatest Showman Ensemble",
+      "audio": "this_is_me.mp3",
+      "color": ["#EF8EA9", "#ab417f"],
+      "id": "fa645577-6931-4f5b-a786-2b9c29a7ce0e",
+      "active": false
+    },
+    {
+      "name": "Rewrite the Stars",
+      "cover": "showman.png",
+      "artist": "Zac Effron, Zendaya",
+      "audio": "rewrite_the_stars.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "7f2beaab-b73e-424f-aaef-e8ca402e39bc",
+      "active": false
+    },
+    {
+      "name": "Tight Rope",
+      "cover": "showman.png",
+      "artist": "Michelle Williams",
+      "audio": "tight_rope.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "c4d1fe46-9073-43e8-b78a-3a4ca053049c",
+      "active": false
+    },
+    {
+      "name": "From Now On",
+      "cover": "showman.png",
+      "artist": "Greatest Showman Ensemble",
+      "audio": "from_now_on.mp3",
+      "color": ["#205950", "#2ab3bf"],
+      "id": "51ea59cc-a09e-4470-89d7-99a653a469b2",
+      "active": false
+    }
+  ],
+  "image": "showman.png"
+}

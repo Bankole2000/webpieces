@@ -80,11 +80,12 @@
     </v-slide-y-reverse-transition>
     <audio
       :src="
-        currentSong
+        currentSong && playListIncludesSong
           ? require(`@/assets/audio/${currentPlaylist.key}/${currentSong.audio}`)
           : ''
       "
       @loadeddata="songReady = true"
+      @loadstart="songReady = false"
       @timeupdate="updateSongTime"
       @ended="handleSongEnded"
       ref="audioPlayer"
@@ -94,7 +95,7 @@
 
 <script>
 import { mapGetters, mapActions, mapMutations } from "vuex";
-import allSongs from "../../utils/songs";
+// import allSongs from "../../utils/songs";
 import getPlaylists from "../../utils/playlists";
 export default {
   data() {
@@ -179,7 +180,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"])
+    ...mapGetters(["musicPlayer", "currentSong", "currentPlaylist"]),
+    playListIncludesSong() {
+      if (!this.currentPlaylist || !this.currentSong) return false;
+      const songNames = this.currentPlaylist.songs.map(x => x.name);
+      if (!songNames.includes(this.currentSong.name)) return false;
+      return true;
+    }
   },
   mounted() {
     console.log(this.$refs);
@@ -187,9 +194,15 @@ export default {
   },
 
   async created() {
+    console.log({ query: this.$route.query });
+    const selectedPlaylist = this.$route.query.playlist;
     const playlists = getPlaylists();
     await this.setPlaylists(playlists);
-    const playlist = playlists['ambience'];
+    console.log(Object.keys(playlists));
+
+    const playlist = Object.keys(playlists).includes(selectedPlaylist)
+      ? playlists[selectedPlaylist]
+      : playlists["ambience"];
     // console.log(getPlaylists());
     console.log({ playlist });
     this.setCurrentPlaylist(playlist).then(() => {
